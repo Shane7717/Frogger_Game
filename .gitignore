@@ -7,5 +7,3 @@ bin/*
 #ignore Mac default generated file
 .DS_Store
 
-#ignore .settings
-.settings
