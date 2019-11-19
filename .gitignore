@@ -4,8 +4,8 @@ bin/*
 #ignore files with .class
 *.class
 
-#ignore Mac default generated file
+#ignore the Mac default generated files
 .DS_Store
 
-#ignore .settings
+#ignore the .settings
 .settings
