@@ -1,2 +1,2 @@
-# Screenshot of Game
-![alt text](https://raw.githubusercontent.com/hirish99/Frogger-Arcade-Game/master/arcade.png)
+Now, I'm starting this project
+--- Nov. 19: 50
