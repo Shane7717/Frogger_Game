@@ -1,12 +1,6 @@
 package p4_group_8_repo;
-
-//Problems to be solved:
-//1. Should I add an SSH key to my project?
-//2. I'm thinking ??
-
 import java.io.File;
 import java.util.List;
-
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -17,6 +11,10 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+//Problems to be solved:
+//1. Should I add an SSH key to my project?
+//2. Should I delete my branches after finishing the whole project?
 
 public class Main extends Application {
 	AnimationTimer timer;
@@ -30,15 +28,15 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 	    background = new MyStage();
-	    Scene scene  = new Scene(background,600, 800);
+	    Scene scene  = new Scene(background, 600, 800);
 	    
 		//Obstacle obstacle = new Obstacle("file:resources/truck1Right.png", 25, 25, 3);
 		//Obstacle obstacle1 = new Obstacle("file:resources/truck2Right.png", 100, 100, 2 );
 		//Obstacle obstacle2 = new Obstacle("file:resources/truck1Right.png",0, 150, 1);
 
-		BackgroundImage froggerback = new BackgroundImage("file:resources/arcade.png");
+		BackgroundImage gameBackground = new BackgroundImage("file:resources/arcade.png");
 	    
-		background.add(froggerback);
+		background.add(gameBackground);
 		
 		background.add(new Log("file:resources/log3.png", 150, 0, 166, 0.75));
 		background.add(new Log("file:resources/log3.png", 150, 220, 166, 0.75));
@@ -77,11 +75,11 @@ public class Main extends Application {
 		//End end3 = new End();
 		//End end4 = new End();
 		//End end5 = new End();
-		background.add(new End(13,96));
-		background.add(new End(141,96));
-		background.add(new End(141 + 141-13,96));
-		background.add(new End(141 + 141-13+141-13+1,96));
-		background.add(new End(141 + 141-13+141-13+141-13+3,96));
+		background.add(new End(13, 96));
+		background.add(new End(141, 96));
+		background.add(new End(141+141-13, 96));
+		background.add(new End(141+141-13+141-13+1, 96));
+		background.add(new End(141+141-13+141-13+141-13+3, 96));
 		animal = new Animal("file:resources/froggerUp.png");
 		background.add(animal);
 		background.add(new Obstacle("file:resources/truck1"+"Right.png", 0, 649, 1, 120, 120));
@@ -104,8 +102,9 @@ public class Main extends Application {
 		primaryStage.show();
 		start();  
 	}
+	
 	public void createTimer() {
-        timer = new AnimationTimer() {
+		timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
             	if (animal.changeScore()) {
@@ -123,11 +122,12 @@ public class Main extends Application {
             		alert.show();
             	}
             }
-        };
+        };   
     }
+	
 	public void start() {
 		background.playMusic();
-    	createTimer();
+		createTimer();
         timer.start();
     }
 
@@ -138,11 +138,12 @@ public class Main extends Application {
     public void setNumber(int n) {
     	int shift = 0;
     	while (n > 0) {
-    		  int d = n / 10;
-    		  int k = n - d * 10;
-    		  n = d;
-    		  background.add(new Digit(k, 30, 360 - shift, 25));
-    		  shift+=30;
-    		}
+    		int d = n / 10;
+    		int k = n - d * 10;
+    		n = d;
+    		background.add(new Digit(k, 30, 360 - shift, 25));
+    		shift+=30;
+    	}
     }
 }
+

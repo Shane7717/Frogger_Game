@@ -9,6 +9,17 @@ public class Turtle extends Actor{
 	private int speed;
 	int i = 1;
 	boolean bool = true;
+	
+	public Turtle(int xpos, int ypos, int s, int w, int h) {
+		turtle1 = new Image("file:resources/TurtleAnimation1.png", w, h, true, true);
+		turtle2 = new Image("file:resources/TurtleAnimation2.png", w, h, true, true);
+		turtle3 = new Image("file:resources/TurtleAnimation3.png", w, h, true, true);
+		setX(xpos);
+		setY(ypos);
+		speed = s;
+		setImage(turtle2);
+	}
+	
 	@Override
 	public void act(long now) {
 
@@ -30,14 +41,5 @@ public class Turtle extends Actor{
 			setX(-200);
 		if (getX() < -75 && speed<0)
 			setX(600);
-	}
-	public Turtle(int xpos, int ypos, int s, int w, int h) {
-		turtle1 = new Image("file:resources/TurtleAnimation1.png", w, h, true, true);
-		turtle2 = new Image("file:resources/TurtleAnimation2.png", w, h, true, true);
-		turtle3 = new Image("file:resources/TurtleAnimation3.png", w, h, true, true);
-		setX(xpos);
-		setY(ypos);
-		speed = s;
-		setImage(turtle2);
 	}
 }

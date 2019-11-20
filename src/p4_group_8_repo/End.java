@@ -4,15 +4,16 @@ import javafx.scene.image.Image;
 
 public class End extends Actor{
 	boolean activated = false;
-	@Override
-	public void act(long now) {
-		// TODO Auto-generated method st
-	}
 	
 	public End(int x, int y) {
 		setX(x);
 		setY(y);
 		setImage(new Image("file:resources/End.png", 60, 60, true, true));
+	}
+	
+	@Override
+	public void act(long now) {
+		// TODO Auto-generated method st
 	}
 	
 	public void setEnd() {
@@ -23,6 +24,4 @@ public class End extends Actor{
 	public boolean isActivated() {
 		return activated;
 	}
-	
-
 }
