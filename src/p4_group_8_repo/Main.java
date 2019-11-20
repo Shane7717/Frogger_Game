@@ -26,13 +26,13 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 	    background = new MyStage();
-	    Scene scene  = new Scene(background,600,800);
+	    Scene scene  = new Scene(background,600, 800);
 	    
 		//Obstacle obstacle = new Obstacle("file:resources/truck1Right.png", 25, 25, 3);
 		//Obstacle obstacle1 = new Obstacle("file:resources/truck2Right.png", 100, 100, 2 );
 		//Obstacle obstacle2 = new Obstacle("file:resources/truck1Right.png",0, 150, 1);
 
-		BackgroundImage froggerback = new BackgroundImage("file:resources/Screen Shot 2017-05-29 at 10.02.14 PM.png");
+		BackgroundImage froggerback = new BackgroundImage("file:resources/arcade.png");
 	    
 		background.add(froggerback);
 		
