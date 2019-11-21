@@ -33,9 +33,10 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		
 	 	primaryStage.setTitle("Frogger");
-    	Parent root = FXMLLoader.load(getClass().getResource("/Sample.fxml"));
-    	primaryStage.setScene(new Scene(root, 200, 200));
-    	primaryStage.show(); 
+    //	Parent root = FXMLLoader.load(getClass().getResource("/Sample.fxml"));
+	// 	Scene menuScene = new Scene(root, 200, 200);
+    // 	primaryStage.setScene(menuScene);
+    //	primaryStage.show(); 
 		
     	
 	    background = new MyStage();
@@ -127,11 +128,15 @@ public class Main extends Application {
 		
 		
 		background.start();
+		
+		
+		
 		primaryStage.setScene(mainScene);
 		primaryStage.show();
 		
 		//Invoke the start function
 		start();  
+	
 	}
 	
 	
