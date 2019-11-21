@@ -6,11 +6,14 @@ public class SampleController {
 	
 	@FXML
 	private Button btn1;
-	//貌似在这里不能用lambda expressions
+	
 	
 	public void eventButton() {
-		System.out.println("Bye!");
+		System.out.println("Game begins");
 		System.exit(0);
 	}
 	
 }
+
+
+

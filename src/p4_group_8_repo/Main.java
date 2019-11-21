@@ -31,9 +31,15 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-						
+		
+	 	primaryStage.setTitle("Frogger");
+    	Parent root = FXMLLoader.load(getClass().getResource("/Sample.fxml"));
+    	primaryStage.setScene(new Scene(root, 200, 200));
+    	primaryStage.show(); 
+		
+    	
 	    background = new MyStage();
-	    Scene scene  = new Scene(background, 600, 800);
+	    Scene mainScene  = new Scene(background, 600, 800);
 	    
 		//Obstacle obstacle = new Obstacle("file:resources/truck1Right.png", 25, 25, 3);
 		//Obstacle obstacle1 = new Obstacle("file:resources/truck2Right.png", 100, 100, 2);
@@ -121,7 +127,7 @@ public class Main extends Application {
 		
 		
 		background.start();
-		primaryStage.setScene(scene);
+		primaryStage.setScene(mainScene);
 		primaryStage.show();
 		
 		//Invoke the start function

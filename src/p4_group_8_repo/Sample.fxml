@@ -8,7 +8,7 @@
    <center>
       <StackPane prefHeight="308.0" prefWidth="399.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btn1" mnemonicParsing="false" onMouseClicked="#eventButton" text="Close App" />
+            <Button fx:id="btn1" mnemonicParsing="false" onMouseClicked="#eventButton" text="Start game" />
          </children>
       </StackPane>
    </center>
