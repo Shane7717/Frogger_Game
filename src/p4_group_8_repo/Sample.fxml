@@ -4,11 +4,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="p4_group_8_repo.SampleController">
    <center>
       <StackPane prefHeight="308.0" prefWidth="399.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btn1" mnemonicParsing="false" onMouseClicked="#eventButton" text="Start game" />
+            <Button fx:id="btn1" mnemonicParsing="false" onMouseClicked="#openMainScene" text="Start game" />
          </children>
       </StackPane>
    </center>

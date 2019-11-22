@@ -5,7 +5,6 @@ import javafx.scene.input.InputEvent;
 
 import java.util.ArrayList;
 
-
 public abstract class Actor extends ImageView{
 
     //move the object to a specific location
@@ -13,7 +12,7 @@ public abstract class Actor extends ImageView{
         setX(getX() + dx);
         setY(getY() + dy);
     }
-	
+		
     public World getWorld() {
         return (World) getParent();
     }

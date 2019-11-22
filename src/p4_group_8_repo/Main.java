@@ -6,6 +6,8 @@ import initialization.TurtlesInit;
 import initialization.EndsInit;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -20,26 +22,19 @@ public class Main extends Application {
 	AnimationTimer timer;
 	MyStage background;
 	Animal animal;
-	
+	int base_position;
+
 	public static void main(String[] args) {
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		base_position = 300;
+		background = new MyStage();
 		
-	 	primaryStage.setTitle("Frogger");
-    //	Parent root = FXMLLoader.load(getClass().getResource("/Sample.fxml"));
-	// 	Scene menuScene = new Scene(root, 200, 200);
-    // 	primaryStage.setScene(menuScene);
-    //	primaryStage.show(); 
-		
-    	
-	    background = new MyStage();
-	    Scene mainScene  = new Scene(background, 600, 800);
 		BackgroundImage gameBackground = new BackgroundImage("file:resources/images/arcade.png");
-	    
-		background.add(gameBackground);
+		background.add(gameBackground);	
 		
 		//Initialize logs in the background
 		LogsInit logs_initializer = new LogsInit(background);
@@ -62,18 +57,30 @@ public class Main extends Application {
 		background.add(animal);
 		
 		//Add the digit 0 to the background. 
-		background.add(new Digit(0, 30, 360, 25));
-		
-	
+		background.add(new Digit(0, 30, base_position, 25));
 		background.start();	
-		primaryStage.setScene(mainScene);
-		primaryStage.show();
-		
+				
+		Scene mainScene = new Scene(background, 600, 800);
+		//Main scene has been created now
+				 
+		FXMLLoader menuPageLoader = new FXMLLoader(getClass().getResource("./Sample.fxml"));
+	    Parent secondPane = menuPageLoader.load();
+	    Scene menuScene = new Scene(secondPane,200, 200);
+	 	//Menu scene has been created now	 	
+	 	
+	    SampleController sampleController = (SampleController) menuPageLoader.getController();
+        sampleController.setMainScene(mainScene, primaryStage);
+
+		primaryStage.setTitle("Frogger");
+     	primaryStage.setScene(menuScene);
+    	primaryStage.show();
+    	
+    	
+		//primaryStage.setScene(mainScene);
+    	//primaryStage.show();
 		//Invoke the start function
-		start();  
-		
+		start();
 	}
-	
 	
 	public void start() {
 		background.playMusic();
@@ -115,7 +122,7 @@ public class Main extends Application {
     		int d = n / 10;
     		int k = n - d * 10;
     		n = d;
-    		background.add(new Digit(k, 30, 360 - shift, 25));
+    		background.add(new Digit(k, 30, base_position - shift, 25));
     		shift+=30;
     	}
     }
