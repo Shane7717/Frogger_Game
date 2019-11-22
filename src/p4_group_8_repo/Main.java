@@ -1,25 +1,15 @@
 package p4_group_8_repo;
 
-//import java.io.File;
-//import java.util.List;
-
 import initialization.LogsInit;
 import initialization.ObstaclesInit;
 import initialization.TurtlesInit;
 import initialization.EndsInit;
-
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-//import javafx.fxml.FXMLLoader;
-//import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-//import javafx.scene.media.Media;
-//import javafx.scene.media.MediaPlayer;
-//import javafx.scene.text.Text;
 import javafx.stage.Stage;
-//import javafx.util.Duration;
 
 //Problems to be solved:
 //1. Should I add an SSH key to my project?
@@ -47,7 +37,7 @@ public class Main extends Application {
     	
 	    background = new MyStage();
 	    Scene mainScene  = new Scene(background, 600, 800);
-		BackgroundImage gameBackground = new BackgroundImage("file:resources/arcade.png");
+		BackgroundImage gameBackground = new BackgroundImage("file:resources/images/arcade.png");
 	    
 		background.add(gameBackground);
 		
@@ -68,7 +58,7 @@ public class Main extends Application {
 		ends_initializer.initialize();
 		
 		//Add the frog to the background
-		animal = new Animal("file:resources/froggerUp.png");
+		animal = new Animal("file:resources/images/froggerUp.png");
 		background.add(animal);
 		
 		//Add the digit 0 to the background. 
