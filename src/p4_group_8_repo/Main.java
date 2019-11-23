@@ -9,8 +9,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 //Problems to be solved:
@@ -65,66 +63,19 @@ public class Main extends Application {
 				 
 		FXMLLoader menuPageLoader = new FXMLLoader(getClass().getResource("./Sample.fxml"));
 	    Parent secondPane = menuPageLoader.load();
-	    Scene menuScene = new Scene(secondPane,200, 200);
+	    Scene menuScene = new Scene(secondPane, 600, 800);
 	 	//Menu scene has been created now	 	
 	 	
 	    SampleController sampleController = (SampleController) menuPageLoader.getController();
-        sampleController.setMainScene(mainScene, primaryStage);
-
+        sampleController.setMainScene(mainScene);
+        sampleController.setStage(primaryStage);
+        sampleController.setTimer(timer);
+        sampleController.setBackground(background);
+        sampleController.setAnimal(animal);
+        sampleController.setBasePosition(base_position);
+       
 		primaryStage.setTitle("Frogger");
      	primaryStage.setScene(menuScene);
     	primaryStage.show();
-    	
-    	
-		//primaryStage.setScene(mainScene);
-    	//primaryStage.show();
-		//Invoke the start function
-		start();
 	}
-	
-	public void start() {
-		background.playMusic();
-		createTimer();
-        timer.start();
-    }
-	
-	
-	public void createTimer() {
-		timer = new AnimationTimer() {
-			
-            @Override
-            public void handle(long now) {
-            	if (animal.changeScore()) {
-            		setNumber(animal.getPoints());
-            	}
-            	if (animal.getStop()) {
-            		System.out.print("STOPP:");
-            		background.stopMusic();
-            		stop();
-            		background.stop();
-            		Alert alert = new Alert(AlertType.INFORMATION);
-            		alert.setTitle("You Have Won The Game!");
-            		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
-            		alert.setContentText("Highest Possible Score: 800");
-            		alert.show();
-            	}
-            }
-        };   
-    }
-	
-    public void stop() {
-        timer.stop();
-    }
-    
-    public void setNumber(int n) {
-    	int shift = 0;
-    	while (n > 0) {
-    		int d = n / 10;
-    		int k = n - d * 10;
-    		n = d;
-    		background.add(new Digit(k, 30, base_position - shift, 25));
-    		shift+=30;
-    	}
-    }
 }
-
