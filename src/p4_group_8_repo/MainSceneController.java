@@ -8,7 +8,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 
-public class SampleController {
+public class MainSceneController {
 	private Scene mainScene;
 	private Stage primaryStage;
 	private AnimationTimer timer;

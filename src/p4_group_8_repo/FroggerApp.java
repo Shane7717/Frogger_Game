@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 //2. Should I delete my branches after finishing the whole project?
 //3. Should I include the "module"?
 
-public class Main extends Application {
+public class FroggerApp extends Application {
 	AnimationTimer timer;
 	MyStage background;
 	Animal animal;
@@ -61,18 +61,18 @@ public class Main extends Application {
 		Scene mainScene = new Scene(background, 600, 800);
 		//Main scene has been created now
 				 
-		FXMLLoader menuPageLoader = new FXMLLoader(getClass().getResource("./Sample.fxml"));
+		FXMLLoader menuPageLoader = new FXMLLoader(getClass().getResource("./ToMainScene.fxml"));
 	    Parent secondPane = menuPageLoader.load();
 	    Scene menuScene = new Scene(secondPane, 600, 800);
 	 	//Menu scene has been created now	 	
 	 	
-	    SampleController sampleController = (SampleController) menuPageLoader.getController();
-        sampleController.setMainScene(mainScene);
-        sampleController.setStage(primaryStage);
-        sampleController.setTimer(timer);
-        sampleController.setBackground(background);
-        sampleController.setAnimal(animal);
-        sampleController.setBasePosition(base_position);
+	    MainSceneController mainSceneController = (MainSceneController) menuPageLoader.getController();
+	    mainSceneController.setMainScene(mainScene);
+	    mainSceneController.setStage(primaryStage);
+	    mainSceneController.setTimer(timer);
+	    mainSceneController.setBackground(background);
+	    mainSceneController.setAnimal(animal);
+	    mainSceneController.setBasePosition(base_position);
        
 		primaryStage.setTitle("Frogger");
      	primaryStage.setScene(menuScene);
