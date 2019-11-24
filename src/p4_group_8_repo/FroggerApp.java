@@ -9,6 +9,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import initialization.Init;
 
@@ -20,17 +22,23 @@ import initialization.Init;
 //but for coursework, one module is enough, with module-info.
 
 public class FroggerApp extends Application {
-	AnimationTimer timer;
-	MyStage background;
-	Animal animal;
-	int base_position;
+	private static Stage primaryStage;
+	private static AnimationTimer timer;
+	private static MyStage background;
+	private static Animal animal;
+	private static int base_position;
+	private static Scene mainScene;
+	Scene menuScene;
+	
 
 	public static void main(String[] args) {
 		launch(args);
 	}
-
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		setPrimaryStage(primaryStage);
+		
 		base_position = 300;
 		background = new MyStage();
 		
@@ -61,24 +69,76 @@ public class FroggerApp extends Application {
 		background.add(new Digit(0, 30, base_position, 25));
 		background.start();	
 			
-		Scene mainScene = new Scene(background, 600, 800);
+		setMainScene(new Scene(background, 600, 800));
 		//Main scene has been created now
 				 
-		FXMLLoader menuPageLoader = new FXMLLoader(getClass().getResource("./ToMainScene.fxml"));
+		FXMLLoader menuPageLoader = new FXMLLoader(getClass().getResource("./MenuScene.fxml"));
 	    Parent secondPane = menuPageLoader.load();
-	    Scene menuScene = new Scene(secondPane, 600, 800);
+	    menuScene = new Scene(secondPane, 600, 800);
 	 	//Menu scene has been created now	 	
-	 	
-	    MainSceneController mainSceneController = (MainSceneController) menuPageLoader.getController();
-	    mainSceneController.setMainScene(mainScene);
-	    mainSceneController.setStage(primaryStage);
-	    mainSceneController.setTimer(timer);
-	    mainSceneController.setBackground(background);
-	    mainSceneController.setAnimal(animal);
-	    mainSceneController.setBasePosition(base_position);
-       
+	             
 		primaryStage.setTitle("Frogger");
      	primaryStage.setScene(menuScene);
     	primaryStage.show();
+	}
+	
+	public static void createTimer() {
+		timer = new AnimationTimer() {
+			
+            @Override
+            public void handle(long now) {
+            	if (animal.changeScore()) {
+            		setNumber(animal.getPoints());
+            	}
+            	if (animal.getStop()) {
+            		System.out.print("STOPP:");
+            		background.stopMusic();
+            		stop();
+            		background.stop();
+            		Alert alert = new Alert(AlertType.INFORMATION);
+            		alert.setTitle("You Have Won The Game!");
+            		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
+            		alert.setContentText("Highest Possible Score: 800");
+            		alert.show();
+            	}
+            }
+        };   
+    }
+	
+	public static void start() {
+		background.playMusic();
+		createTimer();
+        timer.start();
+    }
+	
+    public void stop() {
+        timer.stop();
+    }
+    
+    public static void setNumber(int n) {
+    	int shift = 0;
+    	while (n > 0) {
+    		int d = n / 10;
+    		int k = n - d * 10;
+    		n = d;
+    		background.add(new Digit(k, 30, base_position - shift, 25));
+    		shift+=30;
+    	}
+    }
+	
+	public static Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	public static void setPrimaryStage(Stage primaryStage) {
+		FroggerApp.primaryStage = primaryStage;
+	}
+
+	public static Scene getMainScene() {
+		return mainScene;
+	}
+
+	public static void setMainScene(Scene mainScene) {
+		FroggerApp.mainScene = mainScene;
 	}
 }
