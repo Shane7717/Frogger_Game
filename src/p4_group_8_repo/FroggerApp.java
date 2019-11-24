@@ -10,11 +10,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import initialization.Init;
 
 //Problems to be solved:
 //1. Should I add an SSH key to my project?
 //2. Should I delete my branches after finishing the whole project?
 //3. Should I include the "module"?
+//Yes, add one module. Generally, a module stands for one version of your game
+//but for coursework, one module is enough, with module-info.
 
 public class FroggerApp extends Application {
 	AnimationTimer timer;
@@ -33,21 +36,21 @@ public class FroggerApp extends Application {
 		
 		BackgroundImage gameBackground = new BackgroundImage("file:resources/images/arcade.png");
 		background.add(gameBackground);	
-		
+	
 		//Initialize logs in the background
-		LogsInit logs_initializer = new LogsInit(background);
+		Init logs_initializer = new LogsInit(background);
 		logs_initializer.initialize();
 		
 		//Initialize obstacles(trucks, cars) in the background
-		ObstaclesInit obstacles_initializer = new ObstaclesInit(background);
+		Init obstacles_initializer = new ObstaclesInit(background);
 		obstacles_initializer.initialize();
 		
 		//Initialize turtles in the background
-		TurtlesInit turtles_initializer = new TurtlesInit(background);
+		Init turtles_initializer = new TurtlesInit(background);
 		turtles_initializer.initialize();
 				
 		//Initialize ends in the background
-		EndsInit ends_initializer = new EndsInit(background);
+		Init ends_initializer = new EndsInit(background);
 		ends_initializer.initialize();
 		
 		//Add the frog to the background
@@ -57,7 +60,7 @@ public class FroggerApp extends Application {
 		//Add the digit 0 to the background. 
 		background.add(new Digit(0, 30, base_position, 25));
 		background.start();	
-				
+			
 		Scene mainScene = new Scene(background, 600, 800);
 		//Main scene has been created now
 				 

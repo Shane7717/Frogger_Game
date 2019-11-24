@@ -5,10 +5,11 @@ import javafx.scene.image.Image;
 public class End extends Actor{
 	boolean activated = false;
 	
-	public End(int x, int y) {
+	//Constructor
+	public End(String imageLink, int x, int y) {
 		setX(x);
 		setY(y);
-		setImage(new Image("file:resources/images/End.png", 60, 60, true, true));
+		setImage(new Image(imageLink, 60, 60, true, true));
 	}
 	
 	@Override

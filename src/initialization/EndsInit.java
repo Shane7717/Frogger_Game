@@ -11,10 +11,10 @@ public class EndsInit extends Init {
 	}
 	
 	public void initialize() {
-		background.add(new End(13, 96));
-		background.add(new End(141, 96));
-		background.add(new End(141+141-13, 96));
-		background.add(new End(141+141-13+141-13+1, 96));
-		background.add(new End(141+141-13+141-13+141-13+3, 96));
+		background.add(new End("file:resources/images/End.png", 13, 96));
+		background.add(new End("file:resources/images/End.png", 141, 96));
+		background.add(new End("file:resources/images/End.png", 141+141-13, 96));
+		background.add(new End("file:resources/images/End.png", 141+141-13+141-13+1, 96));
+		background.add(new End("file:resources/images/End.png", 141+141-13+141-13+141-13+3, 96));
 	}
 }
