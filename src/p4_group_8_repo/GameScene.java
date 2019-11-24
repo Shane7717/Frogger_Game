@@ -55,7 +55,9 @@ public class GameScene {
 				              
 		FroggerApp.getPrimaryStage().setTitle("Frogger");
 		FroggerApp.getPrimaryStage().setScene(mainScene);
+		start();
 		FroggerApp.getPrimaryStage().show();
+		
 	}
 	
 	public void createTimer() {

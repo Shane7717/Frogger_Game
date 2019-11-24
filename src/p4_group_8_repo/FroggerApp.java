@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
 //Problems to be solved:
 //1. Should I add an SSH key to my project?
 //2. Should I delete my branches after finishing the whole project?
@@ -16,9 +15,17 @@ import javafx.stage.Stage;
 
 public class FroggerApp extends Application {
 	private static Stage primaryStage;
-//	Scene menuScene;
-
-	public void main(String[] args) {
+	
+	public static Stage getPrimaryStage() {
+		return FroggerApp.primaryStage;
+	}
+	
+	public void setPrimaryStage(Stage primaryStage) {
+		FroggerApp.primaryStage = primaryStage;
+	}
+	
+	
+	public static void main(String[] args) {
 		launch(args);
 	}
 	
@@ -26,21 +33,10 @@ public class FroggerApp extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		
 		//When program starts running, the menu page will be shown
-		setPrimaryStage(primaryStage);			 
-		FXMLLoader menuPageLoader = new FXMLLoader(getClass().getResource("./MenuScene.fxml"));
-	    Parent secondPane = menuPageLoader.load();
-//	    menuScene = new Scene(secondPane, 600, 800);
-	 	 	            
-		primaryStage.setTitle("Frogger");
-     	primaryStage.setScene(new Scene(secondPane, 600, 800));
-    	primaryStage.show();
-	}
-	
-	public static Stage getPrimaryStage() {
-		return primaryStage;
-	}
-
-	public static void setPrimaryStage(Stage primaryStage) {
-		FroggerApp.primaryStage = primaryStage;
+		setPrimaryStage(primaryStage);			     	            
+	    Parent root = FXMLLoader.load(getClass().getResource("./MenuScene.fxml"));
+	    primaryStage.setScene(new Scene(root, 600, 800));
+	    primaryStage.setTitle("Frogger");
+	    primaryStage.show();
 	}
 }
