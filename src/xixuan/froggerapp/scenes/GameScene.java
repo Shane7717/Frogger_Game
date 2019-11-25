@@ -8,7 +8,7 @@ import p4_group_8_repo.Animal;
 import p4_group_8_repo.BackgroundImage;
 import p4_group_8_repo.Digit;
 import p4_group_8_repo.MyStage;
-import xixuan.froggerapp.scenes.FroggerApp;
+import xixuan.froggerapp.FroggerApp;
 import xixuan.froggerapp.initialization.EndsInit;
 import xixuan.froggerapp.initialization.Init;
 import xixuan.froggerapp.initialization.LogsInit;
