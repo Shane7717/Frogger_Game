@@ -1,4 +1,4 @@
-package initialization;
+package xixuan.froggerapp.initialization;
 
 import p4_group_8_repo.MyStage;
 import p4_group_8_repo.Turtle;
