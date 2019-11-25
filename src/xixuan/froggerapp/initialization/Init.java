@@ -1,4 +1,4 @@
-package initialization;
+package xixuan.froggerapp.initialization;
 
 public abstract class Init {
 	
