@@ -1,10 +1,11 @@
-package p4_group_8_repo;
+package unuk.xixuan.froggerapp.controllers;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import p4_group_8_repo.FroggerApp;
 
 
 public class MenuSceneController {

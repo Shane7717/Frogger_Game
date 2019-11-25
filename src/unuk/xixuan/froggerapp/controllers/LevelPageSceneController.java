@@ -1,4 +1,6 @@
-package p4_group_8_repo;
+package unuk.xixuan.froggerapp.controllers;
+
+import p4_group_8_repo.GameScene;
 
 public class LevelPageSceneController {
 	
