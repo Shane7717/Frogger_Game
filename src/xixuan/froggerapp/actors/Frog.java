@@ -1,4 +1,4 @@
-package p4_group_8_repo;
+package xixuan.froggerapp.actors;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 
-public class Animal extends Actor {
+public class Frog extends Actor {
 	
 	Image imgW1; 
 	Image imgA1; 
@@ -38,7 +38,7 @@ public class Animal extends Actor {
 	ArrayList<End> inter = new ArrayList<End>();
 	
 	
-	public Animal(String imageLink) {
+	public Frog(String imageLink) {
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);
 		setY(679.8+movement);

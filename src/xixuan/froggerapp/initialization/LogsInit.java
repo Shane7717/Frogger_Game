@@ -1,7 +1,7 @@
 package xixuan.froggerapp.initialization;
 
-import p4_group_8_repo.Log;
-import p4_group_8_repo.MyStage;
+import xixuan.froggerapp.actors.Log;
+import xixuan.froggerapp.settings.MyStage;
 
 public class LogsInit extends Init {
 	MyStage background; 

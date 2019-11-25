@@ -1,4 +1,4 @@
-package p4_group_8_repo;
+package xixuan.froggerapp.settings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +13,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import xixuan.froggerapp.actors.Actor;
 
 
 public abstract class World extends Pane {

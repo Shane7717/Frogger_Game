@@ -1,4 +1,4 @@
-package p4_group_8_repo;
+package xixuan.froggerapp.actors;
 
 import javafx.scene.image.Image;
 

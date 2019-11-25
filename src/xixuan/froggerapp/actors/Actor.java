@@ -1,7 +1,8 @@
-package p4_group_8_repo;
+package xixuan.froggerapp.actors;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.input.InputEvent;
+import xixuan.froggerapp.settings.World;
 
 import java.util.ArrayList;
 

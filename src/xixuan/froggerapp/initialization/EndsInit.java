@@ -1,7 +1,7 @@
 package xixuan.froggerapp.initialization;
 
-import p4_group_8_repo.End;
-import p4_group_8_repo.MyStage;
+import xixuan.froggerapp.actors.End;
+import xixuan.froggerapp.settings.MyStage;
 
 public class EndsInit extends Init {
 	MyStage background; 

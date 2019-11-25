@@ -1,8 +1,8 @@
 package xixuan.froggerapp.initialization;
 
-import p4_group_8_repo.MyStage;
-import p4_group_8_repo.Turtle;
-import p4_group_8_repo.WetTurtle;
+import xixuan.froggerapp.actors.Turtle;
+import xixuan.froggerapp.actors.WetTurtle;
+import xixuan.froggerapp.settings.MyStage;
 
 public class TurtlesInit extends Init {
 	MyStage background; 

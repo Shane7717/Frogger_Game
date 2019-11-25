@@ -4,11 +4,11 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import p4_group_8_repo.Animal;
-import p4_group_8_repo.BackgroundImage;
-import p4_group_8_repo.Digit;
-import p4_group_8_repo.MyStage;
+import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.FroggerApp;
+import xixuan.froggerapp.actors.BackgroundImage;
+import xixuan.froggerapp.actors.Digit;
+import xixuan.froggerapp.actors.Frog;
 import xixuan.froggerapp.initialization.EndsInit;
 import xixuan.froggerapp.initialization.Init;
 import xixuan.froggerapp.initialization.LogsInit;
@@ -19,7 +19,7 @@ public class GameScene {
 
 	AnimationTimer timer;
 	MyStage background;
-	Animal animal;
+	Frog mainfrog;
 	int base_position;
 	Scene mainScene;
 	
@@ -48,8 +48,8 @@ public class GameScene {
 		ends_initializer.initialize();
 		
 		//Add the frog to the background
-		animal = new Animal("file:resources/images/frogs/froggerUp.png");
-		background.add(animal);
+		mainfrog = new Frog("file:resources/images/frogs/froggerUp.png");
+		background.add(mainfrog);
 		
 		//Add the digit 0 to the background. 
 		background.add(new Digit(0, 30, base_position, 25));
@@ -70,17 +70,17 @@ public class GameScene {
 			
             @Override
             public void handle(long now) {
-            	if (animal.changeScore()) {
-            		setNumber(animal.getPoints());
+            	if (mainfrog.changeScore()) {
+            		setNumber(mainfrog.getPoints());
             	}
-            	if (animal.getStop()) {
+            	if (mainfrog.getStop()) {
             		System.out.print("STOPP:");
             		background.stopMusic();
             		stop();
             		background.stop();
             		Alert alert = new Alert(AlertType.INFORMATION);
             		alert.setTitle("You Have Won The Game!");
-            		alert.setHeaderText("Your High Score: "+animal.getPoints()+"!");
+            		alert.setHeaderText("Your High Score: "+mainfrog.getPoints()+"!");
             		alert.setContentText("Highest Possible Score: 800");
             		alert.show();
             	}
