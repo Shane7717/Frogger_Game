@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 //Yes, add one module. Generally, a module stands for one version of your game
 //but for coursework, one module is enough, with module-info.
 //4. Should I add "." files into .gitignore?
+//5.
 
 public class FroggerApp extends Application {
 	private static Stage primaryStage;
