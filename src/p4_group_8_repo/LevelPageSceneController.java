@@ -1,4 +1,4 @@
-package unuk.xixuan.froggerapp.controllers;
+package p4_group_8_repo;
 
 import p4_group_8_repo.GameScene;
 

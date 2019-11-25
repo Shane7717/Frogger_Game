@@ -1,14 +1,14 @@
 package p4_group_8_repo;
 
-import initialization.LogsInit;
-import initialization.ObstaclesInit;
-import initialization.TurtlesInit;
-import initialization.EndsInit;
 import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import initialization.Init;
+import xixuan.froggerapp.initialization.EndsInit;
+import xixuan.froggerapp.initialization.Init;
+import xixuan.froggerapp.initialization.LogsInit;
+import xixuan.froggerapp.initialization.ObstaclesInit;
+import xixuan.froggerapp.initialization.TurtlesInit;
 
 public class GameScene {
 
@@ -23,7 +23,7 @@ public class GameScene {
 		base_position = 300;
 		background = new MyStage();
 		
-		BackgroundImage gameBackground = new BackgroundImage("file:resources/images/arcade.png");
+		BackgroundImage gameBackground = new BackgroundImage("file:resources/images/background/arcade.png");
 		background.add(gameBackground);	
 	
 		//Initialize logs in the background
@@ -43,7 +43,7 @@ public class GameScene {
 		ends_initializer.initialize();
 		
 		//Add the frog to the background
-		animal = new Animal("file:resources/images/froggerUp.png");
+		animal = new Animal("file:resources/images/frogs/froggerUp.png");
 		background.add(animal);
 		
 		//Add the digit 0 to the background. 
@@ -104,4 +104,3 @@ public class GameScene {
     	}
     }
 }	
-

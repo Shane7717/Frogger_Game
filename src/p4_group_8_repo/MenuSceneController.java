@@ -1,4 +1,4 @@
-package unuk.xixuan.froggerapp.controllers;
+package p4_group_8_repo;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
