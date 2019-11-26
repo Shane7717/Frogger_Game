@@ -13,9 +13,9 @@
             <Image url="@../../../../resources/images/scenes/menu.png" />
          </image>
       </ImageView>
-      <Button layoutX="262.0" layoutY="173.0" mnemonicParsing="false" onMouseClicked="#toLevelPageScene" prefHeight="40.0" prefWidth="76.0" text="Start" textFill="#13256b">
+      <Button layoutX="258.0" layoutY="478.0" mnemonicParsing="false" onMouseClicked="#toLevelPageScene" prefHeight="42.0" prefWidth="81.0" text="Start" textFill="#13256b">
          <font>
-            <Font name="Arial Bold" size="19.0" />
+            <Font name="Arial Bold" size="20.0" />
          </font></Button>
    </children>
 </AnchorPane>
