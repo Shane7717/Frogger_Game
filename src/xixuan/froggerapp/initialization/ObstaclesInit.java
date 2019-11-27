@@ -1,7 +1,7 @@
 package xixuan.froggerapp.initialization;
 
-import p4_group_8_repo.MyStage;
-import p4_group_8_repo.Obstacle;
+import xixuan.froggerapp.models.Obstacle;
+import xixuan.froggerapp.settings.MyStage;
 
 public class ObstaclesInit extends Init {
 	MyStage background; 

@@ -1,4 +1,4 @@
-package p4_group_8_repo;
+package xixuan.froggerapp;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 //3. Should I include the "module"?
 //Yes, add one module. Generally, a module stands for one version of your game
 //but for coursework, one module is enough, with module-info.
+//4. Should I add "." files into .gitignore?
 
 public class FroggerApp extends Application {
 	private static Stage primaryStage;
@@ -34,7 +35,7 @@ public class FroggerApp extends Application {
 		
 		//When program starts running, the menu page will be shown
 		setPrimaryStage(primaryStage);			     	            
-	    Parent root = FXMLLoader.load(getClass().getResource("./MenuScene.fxml"));
+	    Parent root = FXMLLoader.load(getClass().getResource("./views/MenuScene.fxml"));
 	    primaryStage.setScene(new Scene(root, 600, 800));
 	    primaryStage.setTitle("Frogger");
 	    primaryStage.show();
