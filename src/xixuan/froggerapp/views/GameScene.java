@@ -1,4 +1,4 @@
-package xixuan.froggerapp.scenes;
+package xixuan.froggerapp.views;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
@@ -6,14 +6,14 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.FroggerApp;
-import xixuan.froggerapp.actors.BackgroundImage;
-import xixuan.froggerapp.actors.Digit;
-import xixuan.froggerapp.actors.Frog;
 import xixuan.froggerapp.initialization.EndsInit;
 import xixuan.froggerapp.initialization.Init;
 import xixuan.froggerapp.initialization.LogsInit;
 import xixuan.froggerapp.initialization.ObstaclesInit;
 import xixuan.froggerapp.initialization.TurtlesInit;
+import xixuan.froggerapp.models.BackgroundImage;
+import xixuan.froggerapp.models.Digit;
+import xixuan.froggerapp.models.Frog;
 
 public class GameScene {
 

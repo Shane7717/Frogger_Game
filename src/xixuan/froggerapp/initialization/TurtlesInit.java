@@ -1,7 +1,7 @@
 package xixuan.froggerapp.initialization;
 
-import xixuan.froggerapp.actors.Turtle;
-import xixuan.froggerapp.actors.WetTurtle;
+import xixuan.froggerapp.models.Turtle;
+import xixuan.froggerapp.models.WetTurtle;
 import xixuan.froggerapp.settings.MyStage;
 
 public class TurtlesInit extends Init {

@@ -1,6 +1,6 @@
 package xixuan.froggerapp.initialization;
 
-import xixuan.froggerapp.actors.End;
+import xixuan.froggerapp.models.End;
 import xixuan.froggerapp.settings.MyStage;
 
 public class EndsInit extends Init {

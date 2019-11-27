@@ -1,6 +1,6 @@
 package xixuan.froggerapp.initialization;
 
-import xixuan.froggerapp.actors.Log;
+import xixuan.froggerapp.models.Log;
 import xixuan.froggerapp.settings.MyStage;
 
 public class LogsInit extends Init {

@@ -1,6 +1,6 @@
 package xixuan.froggerapp.controllers;
 
-import xixuan.froggerapp.scenes.GameScene;
+import xixuan.froggerapp.views.GameScene;
 
 public class LevelPageSceneController {
 	

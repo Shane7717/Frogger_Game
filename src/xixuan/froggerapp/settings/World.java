@@ -11,7 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import xixuan.froggerapp.actors.Actor;
+import xixuan.froggerapp.models.Actor;
 
 
 public abstract class World extends Pane {

@@ -1,4 +1,4 @@
-package xixuan.froggerapp.actors;
+package xixuan.froggerapp.models;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.input.InputEvent;

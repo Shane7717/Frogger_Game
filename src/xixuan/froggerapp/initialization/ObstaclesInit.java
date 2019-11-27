@@ -1,6 +1,6 @@
 package xixuan.froggerapp.initialization;
 
-import xixuan.froggerapp.actors.Obstacle;
+import xixuan.froggerapp.models.Obstacle;
 import xixuan.froggerapp.settings.MyStage;
 
 public class ObstaclesInit extends Init {
