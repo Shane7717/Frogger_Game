@@ -35,7 +35,7 @@ public class FroggerApp extends Application {
 		
 		//When program starts running, the menu page will be shown
 		setPrimaryStage(primaryStage);			     	            
-	    Parent root = FXMLLoader.load(getClass().getResource("./views/MenuScene.fxml"));
+	    Parent root = FXMLLoader.load(getClass().getResource("./views/MenuView.fxml"));
 	    primaryStage.setScene(new Scene(root, 600, 800));
 	    primaryStage.setTitle("Frogger");
 	    primaryStage.show();

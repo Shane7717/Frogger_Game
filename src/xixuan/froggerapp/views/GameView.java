@@ -6,24 +6,19 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.FroggerApp;
-import xixuan.froggerapp.initialization.EndsInit;
-import xixuan.froggerapp.initialization.Init;
-import xixuan.froggerapp.initialization.LogsInit;
-import xixuan.froggerapp.initialization.ObstaclesInit;
-import xixuan.froggerapp.initialization.TurtlesInit;
 import xixuan.froggerapp.models.BackgroundImage;
 import xixuan.froggerapp.models.Digit;
 import xixuan.froggerapp.models.Frog;
 
-public class GameScene {
+public class GameView {
 
 	AnimationTimer timer;
 	MyStage background;
-	Frog mainfrog;
+	Frog mainFrog;
 	int base_position;
 	Scene mainScene;
 	
-	public void launchGameScene() {
+	public void launchGameView() {
 				
 		base_position = 300;
 		background = new MyStage();
@@ -31,25 +26,27 @@ public class GameScene {
 		BackgroundImage gameBackground = new BackgroundImage("file:resources/images/background/arcade.png");
 		background.add(gameBackground);	
 	
-		//Initialize logs in the background
-		Init logs_initializer = new LogsInit(background);
-		logs_initializer.initialize();
+		//Display logs in the game
+		LogView logView = new LogView(background);
+		logView.viewLogs();
 		
-		//Initialize obstacles(trucks, cars) in the background
-		Init obstacles_initializer = new ObstaclesInit(background);
-		obstacles_initializer.initialize();
+		//Display obstacles in the game
+		ObstacleView obstacleView = new ObstacleView(background);
+		obstacleView.viewObstacles();
 		
-		//Initialize turtles in the background
-		Init turtles_initializer = new TurtlesInit(background);
-		turtles_initializer.initialize();
+		//Display turtles in the game
+		TurtleView turtleView = new TurtleView(background);
+		turtleView.viewTurtles();
 				
-		//Initialize ends in the background
-		Init ends_initializer = new EndsInit(background);
-		ends_initializer.initialize();
+		//Display ends in the game
+		EndView endView = new EndView(background);
+		endView.viewEnds();
 		
-		//Add the frog to the background
-		mainfrog = new Frog("file:resources/images/frogs/froggerUp.png");
-		background.add(mainfrog);
+		//Display the frog in the game
+		mainFrog = new Frog("file:resources/images/frogs/froggerUp.png");
+		FrogView frogView = new FrogView(background, mainFrog);
+		frogView.viewFrog();
+	
 		
 		//Add the digit 0 to the background. 
 		background.add(new Digit(0, 30, base_position, 25));
@@ -60,8 +57,8 @@ public class GameScene {
 				              
 		FroggerApp.getPrimaryStage().setTitle("Frogger");
 		FroggerApp.getPrimaryStage().setScene(mainScene);
-		start();
 		FroggerApp.getPrimaryStage().show();
+		start();
 		
 	}
 	
@@ -70,17 +67,17 @@ public class GameScene {
 			
             @Override
             public void handle(long now) {
-            	if (mainfrog.changeScore()) {
-            		setNumber(mainfrog.getPoints());
+            	if (mainFrog.changeScore()) {
+            		setNumber(mainFrog.getPoints());
             	}
-            	if (mainfrog.getStop()) {
+            	if (mainFrog.getStop()) {
             		System.out.print("STOPP:");
             		background.stopMusic();
             		stop();
             		background.stop();
             		Alert alert = new Alert(AlertType.INFORMATION);
             		alert.setTitle("You Have Won The Game!");
-            		alert.setHeaderText("Your High Score: "+mainfrog.getPoints()+"!");
+            		alert.setHeaderText("Your High Score: "+ mainFrog.getPoints()+"!");
             		alert.setContentText("Highest Possible Score: 800");
             		alert.show();
             	}

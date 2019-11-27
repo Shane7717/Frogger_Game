@@ -21,6 +21,7 @@ public class Frog extends Actor {
 	int end = 0;
 	
 	//This value is false at the beginning of the game
+	//Used to check if the button is pressed without releasing
 	private boolean second = false;
 
 	boolean noMove = false;
@@ -35,7 +36,7 @@ public class Frog extends Actor {
 	double w = 800;
 	ArrayList<End> inter = new ArrayList<End>();
 	
-	
+	//Constructor
 	public Frog(String imageLink) {
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);

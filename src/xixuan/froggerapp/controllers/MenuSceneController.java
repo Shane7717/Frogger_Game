@@ -12,7 +12,7 @@ public class MenuSceneController {
 		
 	@FXML
 	public void toLevelPageScene() throws IOException {	
-		Parent root = FXMLLoader.load(getClass().getResource("../views/LevelPageScene.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("../views/LevelPageView.fxml"));
 		FroggerApp.getPrimaryStage().setScene(new Scene(root, 600, 800));	
         FroggerApp.getPrimaryStage().show();
 	}
