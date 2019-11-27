@@ -10,8 +10,6 @@ import javafx.stage.Stage;
 //1. Should I add an SSH key to my project?
 //2. Should I delete my branches after finishing the whole project?
 //3. Should I include the "module"?
-//Yes, add one module. Generally, a module stands for one version of your game
-//but for coursework, one module is enough, with module-info.
 //4. Should I add "." files into .gitignore?
 
 public class FroggerApp extends Application {
