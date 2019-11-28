@@ -5,7 +5,7 @@ import xixuan.froggerapp.models.Obstacle;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.ObstacleView;
 
-public class ObstaclesInitializer {
+public class ObstaclesInitializer implements Initializable {
 	MyStage background;
 	
 	public ObstaclesInitializer(MyStage background) {

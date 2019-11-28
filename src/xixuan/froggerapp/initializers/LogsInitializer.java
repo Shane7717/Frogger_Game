@@ -5,7 +5,7 @@ import xixuan.froggerapp.models.Log;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.LogView;
 
-public class LogsInitializer {
+public class LogsInitializer implements Initializable {
 	MyStage background;
 	
 	public LogsInitializer(MyStage background) {

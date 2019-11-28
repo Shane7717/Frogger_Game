@@ -5,7 +5,7 @@ import xixuan.froggerapp.models.End;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.EndView;
 
-public class EndsInitializer {
+public class EndsInitializer implements Initializable {
 	MyStage background;
 	
 	public EndsInitializer(MyStage background) {

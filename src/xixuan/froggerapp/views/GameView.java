@@ -61,14 +61,10 @@ public class GameView {
 		EndsInitializer endsInitializer = new EndsInitializer(background);
 		endsInitializer.initialize();
 		
-		
-		
-		
 		//Display the frog in the game
 		mainFrog = new Frog("file:resources/images/frogs/froggerUp.png");
 		FrogView frogView = new FrogView(background, mainFrog);
 		frogView.viewFrog();
-	
 		
 		//Add the digit 0 to the background. 
 		background.add(new Digit(0, 30, base_position, 25));
@@ -81,7 +77,6 @@ public class GameView {
 		FroggerApp.getPrimaryStage().setScene(mainScene);
 		FroggerApp.getPrimaryStage().show();
 		start();
-		
 	}
 	
 	public void createTimer() {

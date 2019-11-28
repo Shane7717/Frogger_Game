@@ -5,7 +5,7 @@ import xixuan.froggerapp.models.Turtle;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.TurtleView;
 
-public class TurtlesInitializer {
+public class TurtlesInitializer implements Initializable {
 	MyStage background;
 	
 	public TurtlesInitializer(MyStage background) {
