@@ -5,10 +5,10 @@ import xixuan.froggerapp.models.Log;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.LogView;
 
-public class LogInitializer {
+public class LogsInitializer {
 	MyStage background;
 	
-	public LogInitializer(MyStage background) {
+	public LogsInitializer(MyStage background) {
 		this.background = background;
 	}
 

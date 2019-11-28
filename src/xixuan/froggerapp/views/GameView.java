@@ -6,12 +6,24 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.FroggerApp;
+import xixuan.froggerapp.controllers.EndController;
 import xixuan.froggerapp.controllers.LogController;
-import xixuan.froggerapp.initializers.LogInitializer;
+import xixuan.froggerapp.controllers.ObstacleController;
+import xixuan.froggerapp.controllers.TurtleController;
+import xixuan.froggerapp.controllers.WetTurtleController;
+import xixuan.froggerapp.initializers.EndsInitializer;
+import xixuan.froggerapp.initializers.LogsInitializer;
+import xixuan.froggerapp.initializers.ObstaclesInitializer;
+import xixuan.froggerapp.initializers.TurtlesInitializer;
+import xixuan.froggerapp.initializers.WetTurtlesInitializer;
 import xixuan.froggerapp.models.BackgroundImage;
 import xixuan.froggerapp.models.Digit;
+import xixuan.froggerapp.models.End;
 import xixuan.froggerapp.models.Frog;
 import xixuan.froggerapp.models.Log;
+import xixuan.froggerapp.models.Obstacle;
+import xixuan.froggerapp.models.Turtle;
+import xixuan.froggerapp.models.WetTurtle;
 
 public class GameView {
 
@@ -30,20 +42,27 @@ public class GameView {
 		background.add(gameBackground);	
 	
 		//Display logs in the game
-		LogInitializer logInitializer = new LogInitializer(background);
-		logInitializer.initialize();
+		LogsInitializer logsInitializer = new LogsInitializer(background);
+		logsInitializer.initialize();
 		
 		//Display obstacles in the game
-		ObstacleView obstacleView = new ObstacleView(background);
-		obstacleView.viewObstacles();
-		
+		ObstaclesInitializer obstaclesInitializer = new ObstaclesInitializer(background);
+		obstaclesInitializer.initialize();
+			
 		//Display turtles in the game
-		TurtleView turtleView = new TurtleView(background);
-		turtleView.viewTurtles();
-				
+		TurtlesInitializer turtlesInitializer = new TurtlesInitializer(background);
+		turtlesInitializer.initialize();
+			
+		//Display wet turtles in the game
+		WetTurtlesInitializer wetTurtlesInitializer = new WetTurtlesInitializer(background);
+		wetTurtlesInitializer.initialize();
+					
 		//Display ends in the game
-		EndView endView = new EndView(background);
-		endView.viewEnds();
+		EndsInitializer endsInitializer = new EndsInitializer(background);
+		endsInitializer.initialize();
+		
+		
+		
 		
 		//Display the frog in the game
 		mainFrog = new Frog("file:resources/images/frogs/froggerUp.png");

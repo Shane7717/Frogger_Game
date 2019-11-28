@@ -13,17 +13,9 @@ import javafx.stage.Stage;
 //4. Should I add "." files into .gitignore?？
 
 public class FroggerApp extends Application {
+	
 	private static Stage primaryStage;
-	
-	public static Stage getPrimaryStage() {
-		return FroggerApp.primaryStage;
-	}
-	
-	public void setPrimaryStage(Stage primaryStage) {
-		FroggerApp.primaryStage = primaryStage;
-	}
-	
-	
+		
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -37,5 +29,13 @@ public class FroggerApp extends Application {
 	    primaryStage.setScene(new Scene(root, 600, 800));
 	    primaryStage.setTitle("Frogger");
 	    primaryStage.show();
+	}
+	
+	public static Stage getPrimaryStage() {
+		return FroggerApp.primaryStage;
+	}
+	
+	public void setPrimaryStage(Stage primaryStage) {
+		FroggerApp.primaryStage = primaryStage;
 	}
 }

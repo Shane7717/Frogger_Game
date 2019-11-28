@@ -3,23 +3,27 @@ package xixuan.froggerapp.models;
 import javafx.scene.image.Image;
 
 public class WetTurtle extends Actor{
-	Image turtle1;
-	Image turtle2;
-	Image turtle3;
-	Image turtle4;
+	private Image turtle1;
+	private Image turtle2;
+	private Image turtle3;
+	private Image turtle4;
 	private int speed;
-	int i = 1;
-	boolean bool = true;
-	boolean sunk = false;
+	private int size;
+	private int xpos;
+	private int ypos;
+	private boolean sunk = false;
 	
-	public WetTurtle(int xpos, int ypos, int s, int w, int h) {
-		turtle1 = new Image("file:resources/images/turtles/TurtleAnimation1.png", w, h, true, true);
-		turtle2 = new Image("file:resources/images/turtles/TurtleAnimation2Wet.png", w, h, true, true);
-		turtle3 = new Image("file:resources/images/turtles/TurtleAnimation3Wet.png", w, h, true, true);
-		turtle4 = new Image("file:resources/images/turtles/TurtleAnimation4Wet.png", w, h, true, true);
-		setX(xpos);
-		setY(ypos);
-		speed = s;
+	public WetTurtle(int size, int xpos, int ypos, int speed) {
+		setSize(size);
+		setXpos(xpos);
+		setYpos(ypos);
+		setSpeed(speed);	
+		
+		turtle1 = new Image("file:resources/images/turtles/TurtleAnimation1.png", size, size, true, true);
+		turtle2 = new Image("file:resources/images/turtles/TurtleAnimation2Wet.png", size, size, true, true);
+		turtle3 = new Image("file:resources/images/turtles/TurtleAnimation3Wet.png", size, size, true, true);
+		turtle4 = new Image("file:resources/images/turtles/TurtleAnimation4Wet.png", size, size, true, true);
+		
 		setImage(turtle2);
 	}
 	
@@ -51,4 +55,46 @@ public class WetTurtle extends Actor{
 	public boolean isSunk() {
 		return sunk;
 	}
+	
+	//Set the speed of the wet turtle
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+	
+	//Return the speed of the wet turtle
+	public double getSpeed() {
+		return this.speed;
+	}
+
+	//Return the size of the wet turtle
+	public int getSize() {
+		return this.size;
+	}
+
+	//Set the size of the wet turtle
+	public void setSize(int size) {
+		this.size = size;
+	}
+	
+	//Return the x position of the wet turtle
+	public int getXpos() {
+		return this.xpos;
+	}
+
+	//Set the x position of the wet turtle
+	public void setXpos(int xpos) {
+		this.xpos = xpos;
+		setX(xpos);
+	}
+
+	//Return the y position of the wet turtle
+	public int getYpos() {
+		return this.ypos;
+	}
+
+	//Set the y position of the wet turtle
+	public void setYpos(int ypos) {
+		this.ypos = ypos;
+		setY(ypos);
+	}	
 }
