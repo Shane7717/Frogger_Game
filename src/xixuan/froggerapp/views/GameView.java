@@ -6,9 +6,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.FroggerApp;
+import xixuan.froggerapp.controllers.LogController;
+import xixuan.froggerapp.initializers.LogInitializer;
 import xixuan.froggerapp.models.BackgroundImage;
 import xixuan.froggerapp.models.Digit;
 import xixuan.froggerapp.models.Frog;
+import xixuan.froggerapp.models.Log;
 
 public class GameView {
 
@@ -27,8 +30,8 @@ public class GameView {
 		background.add(gameBackground);	
 	
 		//Display logs in the game
-		LogView logView = new LogView(background);
-		logView.viewLogs();
+		LogInitializer logInitializer = new LogInitializer(background);
+		logInitializer.initialize();
 		
 		//Display obstacles in the game
 		ObstacleView obstacleView = new ObstacleView(background);
