@@ -6,7 +6,7 @@ import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.EndView;
 
 public class EndsInitializer implements Initializable {
-	MyStage background;
+	private MyStage background;
 	
 	public EndsInitializer(MyStage background) {
 		this.background = background;

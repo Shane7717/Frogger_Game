@@ -6,24 +6,16 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.FroggerApp;
-import xixuan.froggerapp.controllers.EndController;
-import xixuan.froggerapp.controllers.LogController;
-import xixuan.froggerapp.controllers.ObstacleController;
-import xixuan.froggerapp.controllers.TurtleController;
-import xixuan.froggerapp.controllers.WetTurtleController;
+import xixuan.froggerapp.controllers.FrogController;
+import xixuan.froggerapp.initializers.BackgroundImageInitializer;
+import xixuan.froggerapp.initializers.DigitInitializer;
 import xixuan.froggerapp.initializers.EndsInitializer;
 import xixuan.froggerapp.initializers.LogsInitializer;
 import xixuan.froggerapp.initializers.ObstaclesInitializer;
 import xixuan.froggerapp.initializers.TurtlesInitializer;
 import xixuan.froggerapp.initializers.WetTurtlesInitializer;
-import xixuan.froggerapp.models.BackgroundImage;
 import xixuan.froggerapp.models.Digit;
-import xixuan.froggerapp.models.End;
 import xixuan.froggerapp.models.Frog;
-import xixuan.froggerapp.models.Log;
-import xixuan.froggerapp.models.Obstacle;
-import xixuan.froggerapp.models.Turtle;
-import xixuan.froggerapp.models.WetTurtle;
 
 public class GameView {
 
@@ -35,12 +27,13 @@ public class GameView {
 	
 	public void launchGameView() {
 				
-		base_position = 300;
+		base_position = 300; //This needs to be changed
 		background = new MyStage();
 		
-		BackgroundImage gameBackground = new BackgroundImage("file:resources/images/background/arcade.png");
-		background.add(gameBackground);	
-	
+		//Display background image in the game
+		BackgroundImageInitializer bgImageInitializer = new BackgroundImageInitializer(background);
+		bgImageInitializer.initialize();
+		
 		//Display logs in the game
 		LogsInitializer logsInitializer = new LogsInitializer(background);
 		logsInitializer.initialize();
@@ -61,13 +54,16 @@ public class GameView {
 		EndsInitializer endsInitializer = new EndsInitializer(background);
 		endsInitializer.initialize();
 		
+		//Display the digit in the game
+		DigitInitializer digitInitializer = new DigitInitializer(background);
+		digitInitializer.initialize();
+		
 		//Display the frog in the game
 		mainFrog = new Frog("file:resources/images/frogs/froggerUp.png");
-		FrogView frogView = new FrogView(background, mainFrog);
-		frogView.viewFrog();
-		
-		//Add the digit 0 to the background. 
-		background.add(new Digit(0, 30, base_position, 25));
+		FrogView frogview = new FrogView(background);
+		FrogController frogController = new FrogController(mainFrog, frogview);
+		frogController.updateView();
+					
 		background.start();	
 			
 		mainScene = new Scene(background, 600, 800);

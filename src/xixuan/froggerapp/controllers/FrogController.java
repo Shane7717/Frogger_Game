@@ -1,12 +1,18 @@
 package xixuan.froggerapp.controllers;
 
 import xixuan.froggerapp.models.Frog;
+import xixuan.froggerapp.views.FrogView;
 
 public class FrogController {
 	private Frog model;
-
-	public FrogController() {
-		// TODO Auto-generated constructor stub
+	private FrogView view;
+	
+	public FrogController(Frog model, FrogView view) {
+		this.model = model;
+		this.view = view;
 	}
 
+	public void updateView() {
+		view.viewFrog(model);
+	}
 }

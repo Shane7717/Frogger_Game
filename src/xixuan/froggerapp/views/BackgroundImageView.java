@@ -1,17 +1,17 @@
 package xixuan.froggerapp.views;
 
-import xixuan.froggerapp.models.Frog;
+import xixuan.froggerapp.models.BackgroundImage;
 import xixuan.froggerapp.settings.MyStage;
 
-public class FrogView {
+public class BackgroundImageView {
 	MyStage background;
 
-	public FrogView(MyStage background) {
+	public BackgroundImageView(MyStage background) {
 		this.background = background;
 	}
 	
 	//Display the frog that player manipulates.
-	public void viewFrog(Frog model) {
+	public void viewBackgroundImage(BackgroundImage model) {
 		background.add(model);
 	}
 }
