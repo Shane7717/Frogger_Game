@@ -24,7 +24,7 @@ public class End extends Actor{
 	
 	public void setEnd() {
 		setImage(new Image("file:resources/images/ends/FrogEnd.png", 70, 70, true, true));
-		activated = true;
+		this.activated = true;
 	}
 	
 	public boolean isActivated() {

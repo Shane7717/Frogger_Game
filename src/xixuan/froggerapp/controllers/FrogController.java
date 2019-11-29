@@ -15,4 +15,8 @@ public class FrogController {
 	public void updateView() {
 		view.viewFrog(model);
 	}
+	
+	public void keyboardMonitor() {
+		model.keyboardMonitor();
+	}
 }

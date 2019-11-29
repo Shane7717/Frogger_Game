@@ -26,8 +26,9 @@ public class GameView {
 	Scene mainScene;
 	
 	public void launchGameView() {
-				
-		base_position = 300; //This needs to be changed
+		
+		//This needs to be changed
+		base_position = 300; 
 		background = new MyStage();
 		
 		//Display background image in the game
@@ -39,8 +40,8 @@ public class GameView {
 		logsInitializer.initialize();
 		
 		//Display obstacles in the game
-		ObstaclesInitializer obstaclesInitializer = new ObstaclesInitializer(background);
-		obstaclesInitializer.initialize();
+//		ObstaclesInitializer obstaclesInitializer = new ObstaclesInitializer(background);
+//		obstaclesInitializer.initialize();
 			
 		//Display turtles in the game
 		TurtlesInitializer turtlesInitializer = new TurtlesInitializer(background);
@@ -63,6 +64,7 @@ public class GameView {
 		FrogView frogview = new FrogView(background);
 		FrogController frogController = new FrogController(mainFrog, frogview);
 		frogController.updateView();
+		frogController.keyboardMonitor();
 					
 		background.start();	
 			
@@ -80,9 +82,8 @@ public class GameView {
 			
             @Override
             public void handle(long now) {
-            	if (mainFrog.changeScore()) {
+            	if (mainFrog.changeScore()) 
             		setNumber(mainFrog.getPoints());
-            	}
             	if (mainFrog.getStop()) {
             		System.out.print("STOPP:");
             		background.stopMusic();

@@ -8,3 +8,6 @@ So I make the parameter orders of them exactly the same for maintenance.
 
 -Private-
 I tried to make data fileds private for protection purpose
+
+-Methods- 
+In Animal(Frog) class, I extracted a lot of code and make them into different specific functions
