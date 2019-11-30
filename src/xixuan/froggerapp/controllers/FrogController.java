@@ -11,6 +11,18 @@ public class FrogController {
 		this.model = model;
 		this.view = view;
 	}
+	
+	public boolean checkChangeScore() {
+		return model.changeScore();
+	}
+	
+	public int getPlayerPoints() {
+		return model.getPoints();
+	}
+	
+	public boolean checkGetStop() {
+		return model.getStop();
+	}
 
 	public void updateView() {
 		view.viewFrog(model);

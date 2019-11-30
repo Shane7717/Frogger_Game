@@ -21,7 +21,7 @@ public class GameView {
 
 	AnimationTimer timer;
 	MyStage background;
-	Frog mainFrog;
+	FrogController frogController;
 	int base_position;
 	Scene mainScene;
 	
@@ -40,8 +40,8 @@ public class GameView {
 		logsInitializer.initialize();
 		
 		//Display obstacles in the game
-//		ObstaclesInitializer obstaclesInitializer = new ObstaclesInitializer(background);
-//		obstaclesInitializer.initialize();
+		ObstaclesInitializer obstaclesInitializer = new ObstaclesInitializer(background);
+		obstaclesInitializer.initialize();
 			
 		//Display turtles in the game
 		TurtlesInitializer turtlesInitializer = new TurtlesInitializer(background);
@@ -60,9 +60,9 @@ public class GameView {
 		digitInitializer.initialize();
 		
 		//Display the frog in the game
-		mainFrog = new Frog("file:resources/images/frogs/froggerUp.png");
+		Frog mainFrog = new Frog("file:resources/images/frogs/froggerUp.png");
 		FrogView frogview = new FrogView(background);
-		FrogController frogController = new FrogController(mainFrog, frogview);
+		frogController = new FrogController(mainFrog, frogview);
 		frogController.updateView();
 		frogController.keyboardMonitor();
 					
@@ -82,16 +82,16 @@ public class GameView {
 			
             @Override
             public void handle(long now) {
-            	if (mainFrog.changeScore()) 
-            		setNumber(mainFrog.getPoints());
-            	if (mainFrog.getStop()) {
+            	if (frogController.checkChangeScore()) 
+            		setNumber(frogController.getPlayerPoints());
+            	if (frogController.checkGetStop()) {
             		System.out.print("STOPP:");
             		background.stopMusic();
             		stop();
             		background.stop();
             		Alert alert = new Alert(AlertType.INFORMATION);
             		alert.setTitle("You Have Won The Game!");
-            		alert.setHeaderText("Your High Score: "+ mainFrog.getPoints()+"!");
+            		alert.setHeaderText("Your High Score: "+ frogController.getPlayerPoints()+"!");
             		alert.setContentText("Highest Possible Score: 800");
             		alert.show();
             	}

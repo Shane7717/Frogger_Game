@@ -22,6 +22,7 @@ public class Frog extends Actor {
 	private int pressAtimes = 0;
 	private int pressStimes = 0;
 	private int pressDtimes = 0;
+	private long now;
 	
 	//Used to check if the button is continuously pressed without releasing
 	private boolean second = false;
@@ -48,102 +49,34 @@ public class Frog extends Actor {
 	
 	@Override
 	public void act(long now) {
-		
+		this.now = now;
+		resetPosition();
+		carDeathCheck();
+		waterDeathCheck();
+		intersectionCheck();	
+	}
+	
+	//Check the conditions for resetting frog's position
+	public void resetPosition() {
 		if (getY()<0 || getY()>734) 
 			setFrogPosition();
-		
 		if (getX()<0) 
 			move(movement*2, 0);
-		
-		if (carDeath) {
-			noMove = true;
-			if ((now)% 11 ==0) 
-				frogD++;
-			if (frogD >= 1 && frogD <= 3)
-				setImage(new Image("file:resources/images/deaths/cardeath"+frogD+".png", imgSize, imgSize, true, true));
-			if (frogD == 4) {
-				setFrogPosition();
-				carDeath = false;
-				frogD = 0;
-				setImage(new Image("file:resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true));
-				noMove = false;
-				if (points>50) {
-					points-=50;
-					changeScore = true;
-				}
-			}
-		}
-		
-		if (waterDeath) {
-			noMove = true;
-			if ((now)% 11 ==0) 
-				frogD++;
-			if (frogD >= 1 && frogD <= 4) 
-				setImage(new Image("file:resources/images/deaths/waterdeath"+frogD+".png", imgSize,imgSize , true, true));
-			if (frogD == 5) {
-				setFrogPosition();
-				waterDeath = false;
-				frogD = 0;
-				setImage(new Image("file:resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true));
-				noMove = false;
-				if (points>50) {
-					points-=50;
-					changeScore = true;
-				}
-			}
-		}
-		
 		if (getX()>600) 
 			move(-movement*2, 0);
-		if (getIntersectingObjects(Obstacle.class).size() >= 1) 
-			carDeath = true;	
-		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
-			if(getIntersectingObjects(Log.class).get(0).getLeft())
-				move(-2,0);
-			else
-				move (.75,0);
-		}
-		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) 
-			move(-1,0);
-		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
-			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) 
-				waterDeath = true;
-			else 
-				move(-1,0);
-		}
-		else if (getIntersectingObjects(End.class).size() >= 1) {
-			inter = (ArrayList<End>) getIntersectingObjects(End.class);
-			if (getIntersectingObjects(End.class).get(0).isActivated()) {
-			//If the frog has already been in the hole
-				move(0, movement*2);
-				changeScore = false;
-			} else {
-				System.out.println("+50!!!");
-				points+=50;
-				changeScore = true;
-				countPosition=800;
-				getIntersectingObjects(End.class).get(0).setEnd();
-				endOccupy++;
-				setFrogPosition();
-			}
-		}
-		else if (getY()<413){
-			waterDeath = true;
-			//setX(300);
-			//setY(679.8+movement);
-		}
 	}
-		
-		
-
+	
+	//Check game stop condition
 	public boolean getStop() {
 		return endOccupy==5;
 	}
 	
+	//Return the points of the player
 	public int getPoints() {
 		return points;
 	}
 	
+	//Check if the score has been changed
 	public boolean changeScore() {
 		if (changeScore) {
 			changeScore = false;
@@ -152,6 +85,7 @@ public class Frog extends Actor {
 		return false;
 	}
 	
+	//Set images when pressing keys W, A, S, or D
 	public void setPressingImages() {
 		imgW1 = new Image("file:resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true);
 		imgA1 = new Image("file:resources/images/frogs/froggerLeft.png", imgSize, imgSize, true, true);
@@ -163,6 +97,7 @@ public class Frog extends Actor {
 		imgD2 = new Image("file:resources/images/frogs/froggerRightJump.png", imgSize, imgSize, true, true);
 	}
 	
+	//Set the default position of the frog
 	public void setFrogPosition() {
 		setX(300);
 		setY(679.8+movement);
@@ -271,5 +206,89 @@ public class Frog extends Actor {
 	        }
 			}
 		});
+	}
+	
+	//Check if the frog is dead due to car crash
+	public void carDeathCheck() {
+		if (carDeath) {
+			noMove = true;
+			if ((now)% 11 ==0) 
+				frogD++;
+			if (frogD >= 1 && frogD <= 3)
+				setImage(new Image("file:resources/images/deaths/cardeath"+frogD+".png", imgSize, imgSize, true, true));
+			if (frogD == 4) {
+				setFrogPosition();
+				carDeath = false;
+				frogD = 0;
+				setImage(new Image("file:resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true));
+				noMove = false;
+				if (points>50) {
+					points-=50;
+					changeScore = true;
+				}
+			}
+		}
+	}
+	
+	//Check if the frog is dead due to water 
+	public void waterDeathCheck() {
+		if (waterDeath) {
+			noMove = true;
+			if ((now)% 11 ==0) 
+				frogD++;
+			if (frogD >= 1 && frogD <= 4) 
+				setImage(new Image("file:resources/images/deaths/waterdeath"+frogD+".png", imgSize,imgSize , true, true));
+			if (frogD == 5) {
+				setFrogPosition();
+				waterDeath = false;
+				frogD = 0;
+				setImage(new Image("file:resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true));
+				noMove = false;
+				if (points>50) {
+					points-=50;
+					changeScore = true;
+				}
+			}
+		}	
+	}
+	
+	public void intersectionCheck() {
+		
+		if (getIntersectingObjects(Obstacle.class).size() >= 1) 
+			carDeath = true;	
+		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
+			if(getIntersectingObjects(Log.class).get(0).getLeft())
+				move(-2,0);
+			else
+				move (.75,0);
+		}
+		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) 
+			move(-1,0);
+		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
+			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) 
+				waterDeath = true;
+			else 
+				move(-1,0);
+		}
+		else if (getIntersectingObjects(End.class).size() >= 1) {
+			inter = (ArrayList<End>) getIntersectingObjects(End.class);
+			if (getIntersectingObjects(End.class).get(0).isActivated()) {
+			//If the frog has already been in the hole
+				move(0, movement*2);
+				changeScore = false;
+			} else {
+				points+=50;
+				changeScore = true;
+				countPosition=800;
+				getIntersectingObjects(End.class).get(0).setEnd();
+				endOccupy++;
+				setFrogPosition();
+			}
+		}
+		else if (getY()<413){
+			waterDeath = true;
+			//setX(300);
+			//setY(679.8+movement);
+		}
 	}
 }
