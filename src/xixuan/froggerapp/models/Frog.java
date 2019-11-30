@@ -18,11 +18,10 @@ public class Frog extends Actor {
 	private Image imgD2;
 	private int points = 0;
 	private int endOccupy = 0;
-	private int pressWtimes = 0;
-	private int pressAtimes = 0;
-	private int pressStimes = 0;
-	private int pressDtimes = 0;
 	private long now;
+	public static double logRightIntersectSpeed = 0;
+	public static double logLeftIntersectSpeed = 0;
+	public static double turtleIntersectSpeed = 0;
 	
 	//Used to check if the button is continuously pressed without releasing
 	private boolean second = false;
@@ -114,51 +113,51 @@ public class Frog extends Actor {
 				if (second) {
 					if (event.getCode() == KeyCode.W) {	  
 		                move(0, -movement);
-		                pressWtimes++;
+		                //pressWtimes++;
 		                changeScore = false;
 		                setImage(imgW1);
 		                second = false;
 		            }
 		            else if (event.getCode() == KeyCode.A) {	            	
 		            	 move(-movementX, 0);
-		            	 pressAtimes++;
+		            	 //pressAtimes++;
 		            	 setImage(imgA1);
 		            	 second = false;
 		            }
 		            else if (event.getCode() == KeyCode.S) {	            	
 		            	 move(0, movement);
-		            	 pressStimes++;
+		            	 //pressStimes++;
 		            	 setImage(imgS1);
 		            	 second = false;
 		            }
 		            else if (event.getCode() == KeyCode.D) {	            	
 		            	 move(movementX, 0);
-		            	 pressDtimes++;
+		            	 //pressDtimes++;
 		            	 setImage(imgD1);
 		            	 second = false;
 		            }
 				}
 				else if (event.getCode() == KeyCode.W) {	            	
 	                move(0, -movement);
-	                pressWtimes++;
+	                //pressWtimes++;
 	                setImage(imgW2);
 	                second = true;
 	            }
 	            else if (event.getCode() == KeyCode.A) {	            	
 	            	 move(-movementX, 0);
-	            	 pressAtimes++;
+	            	 //pressAtimes++;
 	            	 setImage(imgA2);
 	            	 second = true;
 	            }
 	            else if (event.getCode() == KeyCode.S) {	            	
 	            	 move(0, movement);
-	            	 pressStimes++;
+	            	 //pressStimes++;
 	            	 setImage(imgS2);
 	            	 second = true;
 	            }
 	            else if (event.getCode() == KeyCode.D) {	            	
 	            	 move(movementX, 0);
-	            	 pressDtimes++;
+	            	 //pressDtimes++;
 	            	 setImage(imgD2);
 	            	 second = true;
 	            }
@@ -176,30 +175,30 @@ public class Frog extends Actor {
 							points+=10;
 							changeScore = true;
 						}
-						if (pressWtimes % 2 == 1)
-							move(0, -movement);
-		                pressWtimes = 0;
+						//if (pressWtimes % 2 == 1)
+						move(0, -movement);
+		                //pressWtimes = 0;
 		                setImage(imgW1);
 		                second = false;
 		            }
 		            else if (event.getCode() == KeyCode.A) {
-		            	 if (pressAtimes % 2 == 1)	
-		            		 move(-movementX, 0);
-		            	 pressAtimes = 0;
+		            	 //if (pressAtimes % 2 == 1)	
+		            	 move(-movementX, 0);
+		            	 //pressAtimes = 0;
 		            	 setImage(imgA1);
 		            	 second = false;
 		            }
 		            else if (event.getCode() == KeyCode.S) {	
-		            	 if (pressStimes % 2 == 1)
-		            		 move(0, movement);
-		            	 pressStimes = 0;
+		            	 //if (pressStimes % 2 == 1)
+		            	 move(0, movement);
+		            	 //pressStimes = 0;
 		            	 setImage(imgS1);
 		            	 second = false;
 		            }
 		            else if (event.getCode() == KeyCode.D) {	
-		            	 if (pressDtimes % 2 == 1)
-		            		 move(movementX, 0);
-		            	 pressDtimes = 0;
+		            	 //if (pressDtimes % 2 == 1)
+		            	 move(movementX, 0);
+		            	//pressDtimes = 0;
 		            	 setImage(imgD1);
 		            	 second = false;
 	            }
@@ -258,17 +257,17 @@ public class Frog extends Actor {
 			carDeath = true;	
 		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
 			if(getIntersectingObjects(Log.class).get(0).getLeft())
-				move(-2,0);
+				move(logLeftIntersectSpeed, 0);
 			else
-				move (.75,0);
+				move(logRightIntersectSpeed, 0);
 		}
 		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) 
-			move(-1,0);
+			move(turtleIntersectSpeed,0);
 		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) 
 				waterDeath = true;
 			else 
-				move(-1,0);
+				move(turtleIntersectSpeed,0);
 		}
 		else if (getIntersectingObjects(End.class).size() >= 1) {
 			inter = (ArrayList<End>) getIntersectingObjects(End.class);

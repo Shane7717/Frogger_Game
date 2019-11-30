@@ -6,7 +6,7 @@ public class Turtle extends Actor{
 	private Image turtle1;
 	private Image turtle2;
 	private Image turtle3;
-	private int speed;
+	private double speed;
 	private int size;
 	private int xpos;
 	private int ypos;
@@ -46,7 +46,7 @@ public class Turtle extends Actor{
 	}
 	
 	//Set the speed of the turtle
-	public void setSpeed(int speed) {
+	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
 	

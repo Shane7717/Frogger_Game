@@ -13,7 +13,7 @@ public class TurtleController {
 		this.view = view;
 	}
 	
-	public void setTurtleSpeed(int speed) {
+	public void setTurtleSpeed(double speed) {
 		model.setSpeed(speed);
 	}
 	

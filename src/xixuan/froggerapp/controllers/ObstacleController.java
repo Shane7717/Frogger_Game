@@ -13,7 +13,7 @@ public class ObstacleController {
 		this.view = view;
 	}
 	
-	public void setObstacleSpeed(int speed) {
+	public void setObstacleSpeed(double speed) {
 		model.setSpeed(speed);
 	}
 	

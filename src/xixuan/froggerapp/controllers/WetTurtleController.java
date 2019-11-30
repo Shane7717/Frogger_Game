@@ -13,7 +13,7 @@ public class WetTurtleController {
 		this.view = view;
 	}
 	
-	public void setWetTurtleSpeed(int speed) {
+	public void setWetTurtleSpeed(double speed) {
 		model.setSpeed(speed);
 	}
 	

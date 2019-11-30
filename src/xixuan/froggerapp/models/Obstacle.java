@@ -3,7 +3,7 @@ package xixuan.froggerapp.models;
 import javafx.scene.image.Image;
 
 public class Obstacle extends Actor {
-	private int speed;
+	private double speed;
 	private int size;
 	private String imageLink;
 	private int xpos;
@@ -28,7 +28,7 @@ public class Obstacle extends Actor {
 	}
 
 	//Set the speed of the obstacle
-	public void setSpeed(int speed) {
+	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
 	

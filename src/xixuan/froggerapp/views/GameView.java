@@ -19,55 +19,18 @@ import xixuan.froggerapp.models.Frog;
 
 public class GameView {
 
-	AnimationTimer timer;
-	MyStage background;
-	FrogController frogController;
-	int base_position;
-	Scene mainScene;
+	private AnimationTimer timer;
+	private MyStage background;
+	private FrogController frogController;
+	private int base_position;
+	private Scene mainScene;
+	private LogsInitializer logsInitializer;
+	private TurtlesInitializer turtlesInitializer;
+	private WetTurtlesInitializer wetTurtlesInitializer;
+	private ObstaclesInitializer obstaclesInitializer;
 	
-	public void launchGameView() {
-		
-		//This needs to be changed
-		base_position = 300; 
-		background = new MyStage();
-		
-		//Display background image in the game
-		BackgroundImageInitializer bgImageInitializer = new BackgroundImageInitializer(background);
-		bgImageInitializer.initialize();
-		
-		//Display logs in the game
-		LogsInitializer logsInitializer = new LogsInitializer(background);
-		logsInitializer.initialize();
-		
-		//Display obstacles in the game
-		ObstaclesInitializer obstaclesInitializer = new ObstaclesInitializer(background);
-		obstaclesInitializer.initialize();
-			
-		//Display turtles in the game
-		TurtlesInitializer turtlesInitializer = new TurtlesInitializer(background);
-		turtlesInitializer.initialize();
-			
-		//Display wet turtles in the game
-		WetTurtlesInitializer wetTurtlesInitializer = new WetTurtlesInitializer(background);
-		wetTurtlesInitializer.initialize();
-					
-		//Display ends in the game
-		EndsInitializer endsInitializer = new EndsInitializer(background);
-		endsInitializer.initialize();
-		
-		//Display the digit in the game
-		DigitInitializer digitInitializer = new DigitInitializer(background);
-		digitInitializer.initialize();
-		
-		//Display the frog in the game
-		Frog mainFrog = new Frog("file:resources/images/frogs/froggerUp.png");
-		FrogView frogview = new FrogView(background);
-		frogController = new FrogController(mainFrog, frogview);
-		frogController.updateView();
-		frogController.keyboardMonitor();
-					
-		background.start();	
-			
+	public void launchGameView() {			
+		background.start();		
 		mainScene = new Scene(background, 600, 800);
 		//Main scene has been created now
 				              
@@ -98,9 +61,56 @@ public class GameView {
             }
         };   
     }
-	
+	    
+    public void basicInitializeAll() {
+    	base_position = 300; 
+		background = new MyStage();
+		
+		//Display background image in the game
+		BackgroundImageInitializer bgImageInitializer = new BackgroundImageInitializer(background);
+		bgImageInitializer.initialize();
+		
+		//Display logs in the game
+		logsInitializer = new LogsInitializer(background);
+		logsInitializer.initialize();
+		
+		//Display obstacles in the game
+		obstaclesInitializer = new ObstaclesInitializer(background);
+		obstaclesInitializer.initialize();
+			
+		//Display turtles in the game
+		turtlesInitializer = new TurtlesInitializer(background);
+		turtlesInitializer.initialize();
+			
+		//Display wet turtles in the game
+		wetTurtlesInitializer = new WetTurtlesInitializer(background);
+		wetTurtlesInitializer.initialize();
+					
+		//Display ends in the game
+		EndsInitializer endsInitializer = new EndsInitializer(background);
+		endsInitializer.initialize();
+		
+		//Display the digit in the game
+		DigitInitializer digitInitializer = new DigitInitializer(background);
+		digitInitializer.initialize();
+		
+		//Display the frog in the game
+		Frog mainFrog = new Frog("file:resources/images/frogs/froggerUp.png");
+		FrogView frogview = new FrogView(background);
+		frogController = new FrogController(mainFrog, frogview);
+		frogController.updateView();
+		frogController.keyboardMonitor();
+    }
+    
+    public void normal_initialize() {
+    	logsInitializer.normal_settings();
+    	turtlesInitializer.normal_settings();
+    	wetTurtlesInitializer.normal_settings();
+    	obstaclesInitializer.normal_settings();
+    }
+    
 	public void start() {
-		background.playMusic();
+		//background.playMusic();
 		createTimer();
         timer.start();
     }

@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 //Bug 2: Frogs in the end will be more thant 1
 //Bug 3: Keep pressing but score mounting is false
 //TO DO: 
-//1. Can I remove some useless setters and getters??? Yes!Remove some!
+//1. Can I remove some useless setters and getters??? (ask!!!) 
 
 public class FroggerApp extends Application {
 	

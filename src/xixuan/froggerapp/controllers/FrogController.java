@@ -23,7 +23,7 @@ public class FrogController {
 	public boolean checkGetStop() {
 		return model.getStop();
 	}
-
+	
 	public void updateView() {
 		view.viewFrog(model);
 	}

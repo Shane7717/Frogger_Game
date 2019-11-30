@@ -4,9 +4,29 @@ import xixuan.froggerapp.views.GameView;
 
 public class LevelPageSceneController {
 	
-	//public void openMainScene(ActionEvent actionEvent) throws IOException {
-	public void toMainScene() {
-		GameView gameView = new GameView();
+	GameView gameView = new GameView();
+	
+	public void toEasyMainScene() {
+		gameView.basicInitializeAll();
 		gameView.launchGameView();
 	}
+	
+	public void toNormalMainScene() {
+		gameView.basicInitializeAll();
+		gameView.normal_initialize();
+		gameView.launchGameView();
+	}
+	
+	public void toHardMainScene() {
+		gameView.basicInitializeAll();
+		//gameView.normal_initialize();
+		gameView.launchGameView();
+	}
+	
+	public void toNightmareMainScene() {
+		gameView.basicInitializeAll();
+		//gameView.normal_initialize();
+		gameView.launchGameView();
+	}
+	
 }
