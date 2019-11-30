@@ -7,6 +7,7 @@ import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.WetTurtleView;
 
 public class WetTurtlesInitializer implements Initializable {
+	
 	private MyStage background;
 	WetTurtleController wetTurtle1controller;
 	WetTurtleController wetTurtle2controller;

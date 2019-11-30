@@ -22,3 +22,6 @@ Not all data fields should have setters and getters, which may make the whole pr
 
 --Static fields--
 Very convenient to be used in multiple classes without instantiating.
+
+--Highscores--
+We will be using a .dat file to keep the high-scores in, this will avoid cheating.

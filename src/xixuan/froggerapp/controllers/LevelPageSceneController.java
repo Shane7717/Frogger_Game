@@ -27,6 +27,5 @@ public class LevelPageSceneController {
 		gameView.easy_initialize();
 		gameView.nightMare_initialize();
 		gameView.launchGameView();
-	}
-	
+	}	
 }

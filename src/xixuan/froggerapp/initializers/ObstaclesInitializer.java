@@ -6,6 +6,7 @@ import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.ObstacleView;
 
 public class ObstaclesInitializer implements Initializable {
+	
 	private MyStage background;
 	ObstacleController obstacle1controller; 
 	ObstacleController obstacle2controller; 
