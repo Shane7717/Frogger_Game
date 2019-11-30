@@ -62,7 +62,7 @@ public class GameView {
         };   
     }
 	    
-    public void basicInitializeAll() {
+    public void easy_initialize() {
     	base_position = 300; 
 		background = new MyStage();
 		
@@ -107,6 +107,20 @@ public class GameView {
     	turtlesInitializer.normal_settings();
     	wetTurtlesInitializer.normal_settings();
     	obstaclesInitializer.normal_settings();
+    }
+    
+    public void hard_initialize() {
+    	logsInitializer.hard_settings();
+    	turtlesInitializer.hard_settings();
+    	wetTurtlesInitializer.hard_settings();
+    	obstaclesInitializer.hard_settings();
+    }
+    
+    public void nightMare_initialize() {
+    	logsInitializer.nightmare_settings();
+    	turtlesInitializer.nightmare_settings();
+    	wetTurtlesInitializer.nightmare_settings();
+    	obstaclesInitializer.nightmare_settings();
     }
     
 	public void start() {

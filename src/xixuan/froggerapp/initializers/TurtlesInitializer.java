@@ -18,18 +18,18 @@ public class TurtlesInitializer implements Initializable {
 	}
 
 	public void initialize() { 
-		
-		Turtle turtle1model = new Turtle(130, 500, 376, -1);
+		Frog.turtleIntersectSpeed = -0.7;
+		Turtle turtle1model = new Turtle(130, 500, 376, Frog.turtleIntersectSpeed);
 		TurtleView turtle1view = new TurtleView(background);
 		turtle1controller = new TurtleController(turtle1model, turtle1view);
 		turtle1controller.updateView();
 		
-		Turtle turtle2model = new Turtle(130, 300, 376, -1);
+		Turtle turtle2model = new Turtle(130, 300, 376, Frog.turtleIntersectSpeed);
 		TurtleView turtle2view = new TurtleView(background);
 		turtle2controller = new TurtleController(turtle2model, turtle2view);
 		turtle2controller.updateView();
 		
-		Turtle Turtle3model = new Turtle(130, 400, 222, -1);
+		Turtle Turtle3model = new Turtle(130, 400, 222, Frog.turtleIntersectSpeed);
 		TurtleView Turtle3view = new TurtleView(background);
 		turtle3controller = new TurtleController(Turtle3model, Turtle3view);
 		turtle3controller.updateView();
@@ -38,6 +38,20 @@ public class TurtlesInitializer implements Initializable {
 	
 	public void normal_settings() {
 		Frog.turtleIntersectSpeed = -1.4;
+		turtle1controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
+		turtle2controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
+		turtle3controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
+	}
+	
+	public void hard_settings() {
+		Frog.turtleIntersectSpeed = -3.2;
+		turtle1controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
+		turtle2controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
+		turtle3controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
+	}
+	
+	public void nightmare_settings() {
+		Frog.turtleIntersectSpeed = -6.4;
 		turtle1controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
 		turtle2controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
 		turtle3controller.setTurtleSpeed(Frog.turtleIntersectSpeed);

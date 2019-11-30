@@ -11,7 +11,7 @@ public class Turtle extends Actor{
 	private int xpos;
 	private int ypos;
 	 
-	public Turtle(int size, int xpos, int ypos, int speed) {
+	public Turtle(int size, int xpos, int ypos, double speed) {
 		setSize(size);
 		setXpos(xpos);
 		setYpos(ypos);

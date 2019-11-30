@@ -13,7 +13,7 @@ public class WetTurtle extends Actor{
 	private int ypos;
 	private boolean sunk = false;
 	
-	public WetTurtle(int size, int xpos, int ypos, int speed) {
+	public WetTurtle(int size, int xpos, int ypos, double speed) {
 		setSize(size);
 		setXpos(xpos);
 		setYpos(ypos);

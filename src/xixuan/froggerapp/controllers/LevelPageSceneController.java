@@ -7,25 +7,25 @@ public class LevelPageSceneController {
 	GameView gameView = new GameView();
 	
 	public void toEasyMainScene() {
-		gameView.basicInitializeAll();
+		gameView.easy_initialize();
 		gameView.launchGameView();
 	}
 	
 	public void toNormalMainScene() {
-		gameView.basicInitializeAll();
+		gameView.easy_initialize();
 		gameView.normal_initialize();
 		gameView.launchGameView();
 	}
 	
 	public void toHardMainScene() {
-		gameView.basicInitializeAll();
-		//gameView.normal_initialize();
+		gameView.easy_initialize();
+		gameView.hard_initialize();
 		gameView.launchGameView();
 	}
 	
-	public void toNightmareMainScene() {
-		gameView.basicInitializeAll();
-		//gameView.normal_initialize();
+	public void toNightMareMainScene() {
+		gameView.easy_initialize();
+		gameView.nightMare_initialize();
 		gameView.launchGameView();
 	}
 	

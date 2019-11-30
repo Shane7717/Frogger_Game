@@ -9,7 +9,7 @@ public class Obstacle extends Actor {
 	private int xpos;
 	private int ypos;
 		
-	public Obstacle(String imageLink, int size, int xpos, int ypos, int speed) {
+	public Obstacle(String imageLink, int size, int xpos, int ypos, double speed) {
 		setImageLink(imageLink);
 		setSize(size);
 		setXpos(xpos);
