@@ -54,5 +54,10 @@
             <Font size="16.0" />
          </font>
       </Text>
+      <Button layoutX="257.0" layoutY="718.0" mnemonicParsing="false" onMouseClicked="#back" text="Back" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="Arial Italic" size="19.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

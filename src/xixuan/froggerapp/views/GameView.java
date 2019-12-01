@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.FroggerApp;
 import xixuan.froggerapp.controllers.FrogController;
@@ -33,9 +34,9 @@ public class GameView {
 	private TurtlesInitializer turtlesInitializer;
 	private WetTurtlesInitializer wetTurtlesInitializer;
 	private ObstaclesInitializer obstaclesInitializer;
-	private String userName;
 	
-	public void launchGameView() {			
+	public void launchGameView() {	
+		setBackButton();
 		background.start();		
 		mainScene = new Scene(background, 600, 800);
 		//Main scene has been created now
@@ -56,7 +57,7 @@ public class GameView {
             	if (frogController.checkGetStop()) {
             		System.out.print("GAME STOPPED!!!");
             		background.stopMusic();
-            		stop();
+            		timer.stop();
             		background.stop();
             		
 //            		Alert alert = new Alert(AlertType.INFORMATION);
@@ -150,11 +151,7 @@ public class GameView {
 		createTimer();
         timer.start();
     }
-	
-    public void stop() {
-        timer.stop();
-    }
-    
+	 
     public void setNumber(int n) {
     	int shift = 0;
     	while (n > 0) {
@@ -164,5 +161,28 @@ public class GameView {
     		background.add(new Digit(k, 30, base_position - shift, 25));
     		shift+=30;
     	}
+    }
+    
+    public void setBackButton() {
+    	Button backButton = new Button();
+    	backButton.setText("QUIT");
+    	backButton.setLayoutX(470);
+    	backButton.setLayoutY(28);
+    	backButton.setPrefSize(60, 30);
+    	background.getChildren().add(backButton);
+    	backButton.setOnAction(event -> {
+			Parent root = null;
+			try {
+				root = FXMLLoader.load(getClass().getResource("../views/MenuView.fxml"));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			FroggerApp.getPrimaryStage().setScene(new Scene(root, 600, 800));	
+	        FroggerApp.getPrimaryStage().show();
+	        background.stopMusic();
+    		timer.stop();
+    		background.stop();
+		});
     }
 }	

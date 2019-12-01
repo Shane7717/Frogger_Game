@@ -19,7 +19,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="240.0" layoutY="667.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="87.0" text="Back">
+      <Button fx:id="backButton" layoutX="257.0" layoutY="667.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="87.0" text="Back" underline="true">
          <font>
             <Font size="22.0" />
          </font>
