@@ -7,25 +7,20 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 //Problems to be solved:
-//1. Should I add an SSH key to my project?
+//1. Should I add an SSH key to my project??
 //2. Should I delete my branches after finishing the whole project?
-//3. Should I include the "module"?
-//Yes, add one module. Generally, a module stands for one version of your game
-//but for coursework, one module is enough, with module-info.
-//4. Should I add "." files into .gitignore?
+//3. Should I include the "module"??
+//4. Should I add "." files into .gitignore?？
+//Bug 1: If you keep pressing keys, the position of your frog will be wrong!
+//Bug 2: Frogs in the end will be more thant 1
+//Bug 3: Keep pressing but score mounting is false
+//TO DO: 
+//1. Can I remove some useless setters and getters??? (ask!!!) 
 
 public class FroggerApp extends Application {
+	
 	private static Stage primaryStage;
-	
-	public static Stage getPrimaryStage() {
-		return FroggerApp.primaryStage;
-	}
-	
-	public void setPrimaryStage(Stage primaryStage) {
-		FroggerApp.primaryStage = primaryStage;
-	}
-	
-	
+		
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -35,9 +30,17 @@ public class FroggerApp extends Application {
 		
 		//When program starts running, the menu page will be shown
 		setPrimaryStage(primaryStage);			     	            
-	    Parent root = FXMLLoader.load(getClass().getResource("./views/MenuScene.fxml"));
+	    Parent root = FXMLLoader.load(getClass().getResource("./views/MenuView.fxml"));
 	    primaryStage.setScene(new Scene(root, 600, 800));
 	    primaryStage.setTitle("Frogger");
 	    primaryStage.show();
 	}
+	
+	public static Stage getPrimaryStage() {
+		return FroggerApp.primaryStage;
+	}
+	
+	public void setPrimaryStage(Stage primaryStage) {
+		FroggerApp.primaryStage = primaryStage;
+	}	
 }

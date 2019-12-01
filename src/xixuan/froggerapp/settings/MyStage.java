@@ -11,7 +11,7 @@ public class MyStage extends World{
 	
 	@Override
 	public void act(long now) {
-		
+		//System.out.println("1");
 	}
 	
 	public MyStage() {

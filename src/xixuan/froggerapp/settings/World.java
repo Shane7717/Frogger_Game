@@ -86,6 +86,7 @@ public abstract class World extends Pane {
         timer.stop();
     }
     
+    //Add actors to the game world
     public void add(Actor actor) {
         getChildren().add(actor);
     }

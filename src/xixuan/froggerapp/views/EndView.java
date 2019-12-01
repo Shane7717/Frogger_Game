@@ -1,17 +1,17 @@
 package xixuan.froggerapp.views;
 
-import xixuan.froggerapp.models.Log;
+import xixuan.froggerapp.models.End;
 import xixuan.froggerapp.settings.MyStage;
 
-public class LogView {
+public class EndView {
 	MyStage background; 
 	
-	public LogView(MyStage background) {
+	public EndView(MyStage background) {
 		this.background = background;
 	}
 	
-	//Display the log on the screen
-	public void viewLog(Log model) {
+	//Display the end on the screen
+	public void viewEnd(End model) {
 		background.add(model);
 	}
 }

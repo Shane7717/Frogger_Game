@@ -14,22 +14,22 @@
             <Image url="@../../../../resources/images/scenes/iKogsKW.png" />
          </image>
       </ImageView>
-      <Button layoutX="254.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#toMainScene" text="Easy" textAlignment="CENTER">
+      <Button layoutX="255.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#toEasyMainScene" text="Easy" textAlignment="CENTER">
          <font>
             <Font name="Arial Italic" size="19.0" />
          </font>
       </Button>
-      <Button layoutX="245.0" layoutY="315.0" mnemonicParsing="false" text="Normal" textAlignment="CENTER">
+      <Button layoutX="245.0" layoutY="315.0" mnemonicParsing="false" onMouseClicked="#toNormalMainScene" text="Normal" textAlignment="CENTER">
          <font>
             <Font name="Arial Italic" size="19.0" />
          </font>
       </Button>
-      <Button layoutX="245.0" layoutY="431.0" mnemonicParsing="false" text="Difficult" textAlignment="CENTER">
+      <Button layoutX="256.0" layoutY="431.0" mnemonicParsing="false" onMouseClicked="#toHardMainScene" text="Hard" textAlignment="CENTER">
          <font>
             <Font name="Arial Italic" size="19.0" />
          </font>
       </Button>
-      <Button layoutX="234.0" layoutY="553.0" mnemonicParsing="false" text="Nightmare" textAlignment="CENTER">
+      <Button layoutX="234.0" layoutY="547.0" mnemonicParsing="false" onMouseClicked="#toNightMareMainScene" text="Nightmare" textAlignment="CENTER">
          <font>
             <Font name="Arial Italic" size="19.0" />
          </font>
@@ -44,12 +44,12 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Text fill="#d32b50" layoutX="152.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suitable for players who  want  challenges">
+      <Text fill="#d32b50" layoutX="134.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suitable for players who want some challenges">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text fill="#f50929" layoutX="215.0" layoutY="609.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suitable for players ???">
+      <Text fill="#f50929" layoutX="197.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Probably not suitable for you">
          <font>
             <Font size="16.0" />
          </font>
