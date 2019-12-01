@@ -42,5 +42,5 @@ public class FroggerApp extends Application {
 	
 	public void setPrimaryStage(Stage primaryStage) {
 		FroggerApp.primaryStage = primaryStage;
-	}
+	}	
 }

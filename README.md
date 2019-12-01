@@ -25,3 +25,7 @@ Very convenient to be used in multiple classes without instantiating.
 
 --Highscores--
 We will be using a .dat file to keep the high-scores in, this will avoid cheating.
+
+--feature1--
+You can't enter nothing before clicking the "submit" button, which means you have to enter
+your name or just quit the game directly

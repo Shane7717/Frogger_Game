@@ -1,12 +1,17 @@
 package xixuan.froggerapp.views;
 
+import java.io.IOException;
+
 import javafx.animation.AnimationTimer;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.FroggerApp;
 import xixuan.froggerapp.controllers.FrogController;
+import xixuan.froggerapp.controllers.HighscoresSceneController;
 import xixuan.froggerapp.initializers.BackgroundImageInitializer;
 import xixuan.froggerapp.initializers.DigitInitializer;
 import xixuan.froggerapp.initializers.EndsInitializer;
@@ -28,6 +33,7 @@ public class GameView {
 	private TurtlesInitializer turtlesInitializer;
 	private WetTurtlesInitializer wetTurtlesInitializer;
 	private ObstaclesInitializer obstaclesInitializer;
+	private String userName;
 	
 	public void launchGameView() {			
 		background.start();		
@@ -48,15 +54,31 @@ public class GameView {
             	if (frogController.checkChangeScore()) 
             		setNumber(frogController.getPlayerPoints());
             	if (frogController.checkGetStop()) {
-            		System.out.print("STOPP:");
+            		System.out.print("GAME STOPPED!!!");
             		background.stopMusic();
             		stop();
             		background.stop();
-            		Alert alert = new Alert(AlertType.INFORMATION);
-            		alert.setTitle("You Have Won The Game!");
-            		alert.setHeaderText("Your High Score: "+ frogController.getPlayerPoints()+"!");
-            		alert.setContentText("Highest Possible Score: 800");
-            		alert.show();
+            		
+//            		Alert alert = new Alert(AlertType.INFORMATION);
+//            		alert.setTitle("You Have Won The Game!");
+//            		alert.setHeaderText("Your High Score: "+ frogController.getPlayerPoints()+"!");
+//            		alert.setContentText("Highest Possible Score: 800");
+//            		alert.show();
+            		         		
+            		//After the game ends, show the highscores
+            		HighscoresSceneController hsController = new HighscoresSceneController(frogController.getPlayerPoints());          	
+            		FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/HighscoresView.fxml"));
+            		loader.setController(hsController);
+            				
+            		Parent root = null;
+					try {
+						root = loader.load();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+            		FroggerApp.getPrimaryStage().setScene(new Scene(root, 600, 800));	
+            		FroggerApp.getPrimaryStage().show();
             	}
             }
         };   
@@ -124,7 +146,7 @@ public class GameView {
     }
     
 	public void start() {
-		//background.playMusic();
+		background.playMusic();
 		createTimer();
         timer.start();
     }

@@ -67,7 +67,7 @@ public class Frog extends Actor {
 	
 	//Check game stop condition
 	public boolean getStop() {
-		return endOccupy==5;
+		return endOccupy==1;
 	}
 	
 	//Return the points of the player
