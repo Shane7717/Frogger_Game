@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="800.0" fitWidth="600.0">
          <image>
-            <Image url="@../../../../resources/images/scenes/highScores.png" />
+            <Image url="@../../../../resources/images/scenes/otherPages.png" />
          </image>
       </ImageView>
       <Label fx:id="scoreLabel" layoutX="85.0" layoutY="180.0" prefHeight="44.0" prefWidth="471.0" text="TO BE UPDATED">
@@ -45,7 +45,12 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="hsString" layoutX="118.0" layoutY="301.0" prefHeight="414.0" prefWidth="421.0" text="TO BE UPDATED" textFill="#18cd96">
+      <Label fx:id="hsName" layoutX="62.0" layoutY="301.0" prefHeight="335.0" prefWidth="259.0" text="TO BE UPDATED" textFill="#18cd96">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="hsScore" layoutX="361.0" layoutY="301.0" prefHeight="335.0" prefWidth="195.0" text="TO BE UPDATED" textFill="#18cd96">
          <font>
             <Font size="20.0" />
          </font>

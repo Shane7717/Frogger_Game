@@ -1,0 +1,15 @@
+.button:hover 
+{
+  -fx-background-color: yellow;
+  -fx-cursor: hand;
+} 
+
+.button:pressed
+{
+  -fx-background-color: brown;
+}
+
+.button
+ {
+    -fx-background-color: transparent;
+ }

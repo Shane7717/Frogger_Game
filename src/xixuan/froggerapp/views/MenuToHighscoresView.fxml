@@ -6,23 +6,34 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="800.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../resources/images/scenes/highScores.png" />
+            <Image url="@../../../../resources/images/scenes/otherPages.png" />
          </image>
       </ImageView>
-      <Label fx:id="scoreLabel" layoutX="100.0" layoutY="187.0" prefHeight="434.0" prefWidth="377.0" text="TO BE UPDATED" textFill="#e11212">
+      <Label fx:id="hsName" layoutX="99.0" layoutY="183.0" prefHeight="374.0" prefWidth="317.0" text="Names" textFill="#e11212">
          <font>
-            <Font size="24.0" />
+            <Font name="ArcadeClassic" size="26.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="257.0" layoutY="667.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="87.0" text="Back" underline="true">
+      <Button fx:id="backButton" layoutX="189.0" layoutY="667.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="218.0" stylesheets="@../../../../resources/css/button.css" text="Back to Menu" textFill="#00aaff" underline="true">
          <font>
-            <Font size="22.0" />
+            <Font name="Xingkai SC Bold" size="32.0" />
          </font>
       </Button>
+      <Text fill="#0fd00c" layoutX="145.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Higscores">
+         <font>
+            <Font name="Arcade Interlaced" size="36.0" />
+         </font>
+      </Text>
+      <Label fx:id="hsScore" layoutX="440.0" layoutY="183.0" prefHeight="374.0" prefWidth="130.0" text="Scores" textFill="#e11212">
+         <font>
+            <Font name="ArcadeClassic" size="26.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

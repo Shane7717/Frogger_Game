@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.FroggerApp;
 import xixuan.froggerapp.controllers.FrogController;
-import xixuan.froggerapp.controllers.HighscoresSceneController;
+import xixuan.froggerapp.controllers.EndHighscoresSceneController;
 import xixuan.froggerapp.initializers.BackgroundImageInitializer;
 import xixuan.froggerapp.initializers.DigitInitializer;
 import xixuan.froggerapp.initializers.EndsInitializer;
@@ -67,8 +67,8 @@ public class GameView {
 //            		alert.show();
             		         		
             		//After the game ends, show the highscores
-            		HighscoresSceneController hsController = new HighscoresSceneController(frogController.getPlayerPoints());          	
-            		FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/HighscoresView.fxml"));
+            		EndHighscoresSceneController hsController = new EndHighscoresSceneController(frogController.getPlayerPoints());          	
+            		FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/EndHighscoresView.fxml"));
             		loader.setController(hsController);
             				
             		Parent root = null;

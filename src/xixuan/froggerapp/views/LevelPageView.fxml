@@ -11,53 +11,58 @@
    <children>
       <ImageView fitHeight="800.0" fitWidth="600.0">
          <image>
-            <Image url="@../../../../resources/images/scenes/iKogsKW.png" />
+            <Image url="@../../../../resources/images/scenes/otherPages.png" />
          </image>
       </ImageView>
-      <Button layoutX="255.0" layoutY="206.0" mnemonicParsing="false" onMouseClicked="#toEasyMainScene" text="Easy" textAlignment="CENTER">
+      <Button layoutX="100.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#toEasyMainScene" prefHeight="0.0" prefWidth="128.0" stylesheets="@../../../../resources/css/button.css" text="Easy" textAlignment="CENTER" textFill="#1fc966">
          <font>
-            <Font name="Arial Italic" size="19.0" />
+            <Font name="ArcadeClassic" size="36.0" />
          </font>
       </Button>
-      <Button layoutX="245.0" layoutY="315.0" mnemonicParsing="false" onMouseClicked="#toNormalMainScene" text="Normal" textAlignment="CENTER">
+      <Button layoutX="83.0" layoutY="316.0" mnemonicParsing="false" onMouseClicked="#toNormalMainScene" stylesheets="@../../../../resources/css/button.css" text="Normal" textAlignment="CENTER" textFill="#1fc966">
          <font>
-            <Font name="Arial Italic" size="19.0" />
+            <Font name="ArcadeClassic" size="36.0" />
          </font>
       </Button>
-      <Button layoutX="256.0" layoutY="431.0" mnemonicParsing="false" onMouseClicked="#toHardMainScene" text="Hard" textAlignment="CENTER">
+      <Button layoutX="102.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#toHardMainScene" stylesheets="@../../../../resources/css/button.css" text="Hard" textAlignment="CENTER" textFill="#1fc966">
          <font>
-            <Font name="Arial Italic" size="19.0" />
+            <Font name="ArcadeClassic" size="36.0" />
          </font>
       </Button>
-      <Button layoutX="234.0" layoutY="547.0" mnemonicParsing="false" onMouseClicked="#toNightMareMainScene" text="Nightmare" textAlignment="CENTER">
+      <Button layoutX="57.0" layoutY="521.0" mnemonicParsing="false" onMouseClicked="#toNightMareMainScene" stylesheets="@../../../../resources/css/button.css" text="NIGHTMARE" textAlignment="CENTER" textFill="#1fc966">
          <font>
-            <Font name="Arial Italic" size="19.0" />
+            <Font name="ArcadeClassic" size="36.0" />
          </font>
       </Button>
-      <Text fill="#06ddd3" layoutX="215.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suitable for beginners">
+      <Text fill="#25d6ca" layoutX="351.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suitable for beginners">
          <font>
-            <Font size="16.0" />
+            <Font name="HanziPen SC Regular" size="18.0" />
          </font>
       </Text>
-      <Text fill="#1fd036" layoutX="113.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suitable for players who have some game experience">
+      <Text fill="#25d6ca" layoutX="329.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suitable for players who have some game experience" wrappingWidth="214.765625">
          <font>
-            <Font size="16.0" />
+            <Font name="HanziPen SC Regular" size="18.0" />
          </font>
       </Text>
-      <Text fill="#d32b50" layoutX="134.0" layoutY="486.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suitable for players who want some challenges">
+      <Text fill="#f50929" layoutX="328.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Probably not suitable for you">
          <font>
-            <Font size="16.0" />
+            <Font name="HanziPen SC Regular" size="18.0" />
          </font>
       </Text>
-      <Text fill="#f50929" layoutX="197.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Probably not suitable for you">
+      <Button layoutX="196.0" layoutY="666.0" mnemonicParsing="false" onMouseClicked="#back" stylesheets="@../../../../resources/css/button.css" text="Back to Menu" textAlignment="CENTER" textFill="#00aaff" underline="true">
          <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Button layoutX="257.0" layoutY="718.0" mnemonicParsing="false" onMouseClicked="#back" text="Back" textAlignment="CENTER" underline="true">
-         <font>
-            <Font name="Arial Italic" size="19.0" />
+            <Font name="Xingkai SC Bold" size="32.0" />
          </font>
       </Button>
+      <Text fill="#0fd00c" layoutX="90.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Level">
+         <font>
+            <Font name="Arcade Interlaced" size="36.0" />
+         </font>
+      </Text>
+      <Text fill="#25d6ca" layoutX="340.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suitable for players who want some challenges" wrappingWidth="203.91201782226562">
+         <font>
+            <Font name="HanziPen SC Regular" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

@@ -5,6 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="xixuan.froggerapp.controllers.MenuSceneController">
    <children>
@@ -13,14 +14,24 @@
             <Image url="@../../../../resources/images/scenes/menu.png" />
          </image>
       </ImageView>
-      <Button layoutX="258.0" layoutY="475.0" mnemonicParsing="false" onMouseClicked="#toLevelPageScene" prefHeight="42.0" prefWidth="81.0" text="Start" textFill="#13256b">
+      <Button fx:id="startButton" layoutX="200.0" layoutY="455.0" mnemonicParsing="false" onMouseClicked="#toLevelPageScene" prefHeight="0.0" prefWidth="209.0" stylesheets="@../../../../resources/css/button.css" text="STA R T" textFill="#1fc966">
          <font>
-            <Font name="Arial Bold" size="20.0" />
+            <Font name="ArcadeClassic" size="48.0" />
          </font></Button>
-      <Button layoutX="226.0" layoutY="549.0" mnemonicParsing="false" onMouseClicked="#toHighscoreScene" prefHeight="42.0" prefWidth="145.0" text="High Score" textFill="#13256b">
+      <Button fx:id="highscoreButton" layoutX="138.0" layoutY="562.0" mnemonicParsing="false" onMouseClicked="#toHighscoreScene" prefHeight="86.0" prefWidth="338.0" stylesheets="@../../../../resources/css/button.css" text="High ScoreS" textFill="#1fc966">
          <font>
-            <Font name="Arial Bold" size="20.0" />
+            <Font name="ArcadeClassic" size="48.0" />
          </font>
       </Button>
+      <Text fx:id="title" fill="#0fd00c" focusTraversable="true" layoutX="54.0" layoutY="195.0" stroke="#3f8646" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="0.0" text="FROGGER" wrappingWidth="503.8087463378906">
+         <font>
+            <Font name="Arcade Interlaced" size="73.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="165.0" fitWidth="173.0" layoutX="213.0" layoutY="245.0" opacity="0.85">
+         <image>
+            <Image url="@../../../../resources/images/scenes/logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
