@@ -34,7 +34,7 @@ public class EndHighscoresSceneController {
 	
 	//Could be automatically invoked when loaded
 	public void initialize() {
-		scoreLabel.setText("YOUR FINAL SCORE: " + String.valueOf(score) + " !");
+		scoreLabel.setText("YOUR FINAL SCORE: " + String.valueOf(score));
 		hsName.setText((hs_manager.getHighscoreString())[0]);
 		hsScore.setText((hs_manager.getHighscoreString())[1]);
 		submitButton.setOnAction(event -> {

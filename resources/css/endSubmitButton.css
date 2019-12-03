@@ -1,0 +1,26 @@
+@font-face {
+	src: url('../fonts/Angelika.ttf');
+}
+
+
+.text {
+    -fx-font-family: "Angelika";
+    -fx-font-size: 16px;
+}
+
+.button:hover 
+{
+  -fx-background-color: yellow;
+  -fx-cursor: hand;
+} 
+
+.button:pressed
+{
+  -fx-background-color: brown;
+}
+
+.button
+ {
+    -fx-background-color: transparent;
+ }
+

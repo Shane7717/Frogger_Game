@@ -1,0 +1,9 @@
+@font-face {
+	src: url('../fonts/Pixelony.ttf');
+}
+
+
+.text {
+    -fx-font-family: "Pixelony";
+    -fx-font-size: 24px;
+}

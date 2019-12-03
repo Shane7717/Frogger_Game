@@ -5,8 +5,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -15,25 +16,33 @@
             <Image url="@../../../../resources/images/scenes/otherPages.png" />
          </image>
       </ImageView>
-      <Label fx:id="hsName" layoutX="99.0" layoutY="183.0" prefHeight="374.0" prefWidth="317.0" text="Names" textFill="#e11212">
+      <Label fx:id="hsName" layoutX="72.0" layoutY="213.0" prefHeight="352.0" prefWidth="317.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Names" textFill="#e11212">
          <font>
             <Font name="ArcadeClassic" size="26.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="189.0" layoutY="667.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="218.0" stylesheets="@../../../../resources/css/button.css" text="Back to Menu" textFill="#00aaff" underline="true">
+      <Button fx:id="backButton" layoutX="175.0" layoutY="669.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="237.0" stylesheets="@../../../../resources/css/backButton.css" text="Back to Menu" textFill="#00aaff" underline="true">
          <font>
             <Font name="Xingkai SC Bold" size="32.0" />
          </font>
       </Button>
-      <Text fill="#0fd00c" layoutX="145.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Higscores">
-         <font>
-            <Font name="Arcade Interlaced" size="36.0" />
-         </font>
-      </Text>
-      <Label fx:id="hsScore" layoutX="440.0" layoutY="183.0" prefHeight="374.0" prefWidth="130.0" text="Scores" textFill="#e11212">
+      <Label fx:id="hsScore" layoutX="456.0" layoutY="213.0" prefHeight="352.0" prefWidth="118.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Scores" textFill="#e11212">
          <font>
             <Font name="ArcadeClassic" size="26.0" />
          </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="106.0" prefHeight="101.0" prefWidth="437.0" stylesheets="@../../../../resources/css/highscoresLabel.css" text="High scores">
+         <font>
+            <Font size="64.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#14e46b" />
+                  <Stop color="#27834d" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
       </Label>
    </children>
 </AnchorPane>
