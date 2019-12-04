@@ -86,4 +86,5 @@ public class Log extends Actor {
 		this.ypos = ypos;
 		setY(ypos);
 	}
+	
 }

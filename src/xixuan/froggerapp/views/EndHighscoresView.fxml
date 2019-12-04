@@ -53,7 +53,7 @@
             </Lighting>
          </effect>
       </TextField>
-      <Button fx:id="submitButton" layoutX="503.0" layoutY="188.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="83.0" stylesheets="@../../../../resources/css/endSubmitButton.css" text="Submit" textFill="#ff5900">
+      <Button fx:id="submitButton" layoutX="502.0" layoutY="189.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="83.0" stylesheets="@../../../../resources/css/endSubmitButton.css" text="Submit" textFill="#ff5900">
          <font>
             <Font size="14.0" />
          </font>
