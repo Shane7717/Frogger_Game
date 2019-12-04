@@ -1,0 +1,9 @@
+@font-face {
+	src: url('../fonts/ARCADECLASSIC.ttf');
+}
+
+
+.text {
+    -fx-font-family: "ARCADECLASSIC";
+    -fx-font-size: 30px;
+}

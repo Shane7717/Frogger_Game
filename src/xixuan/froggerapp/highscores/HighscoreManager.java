@@ -81,9 +81,12 @@ public class HighscoreManager {
         }
     }
     
-    public String getHighscoreString() {
+    public String[] getHighscoreString() {
     	//The function will only have the top 10 players 
-        String highscoreString = "";
+    	String[] highscores  = new String[2];
+    	highscores[0] = "";
+    	highscores[1] = "";
+    	
         int max = 10;
 
         ArrayList<Score> scores;
@@ -95,9 +98,10 @@ public class HighscoreManager {
             x = max;
         }
         while (i < x) {
-            highscoreString += (i + 1) + ".\t"+scores.get(i).getName()+":  "+scores.get(i).getScore() + "\n";
+            highscores[0] += (i + 1) + ".\t"+scores.get(i).getName()+"\n"; 
+            highscores[1] += scores.get(i).getScore() + "\n";
             i++;
         }
-        return highscoreString;
+        return highscores;
     }    
 }

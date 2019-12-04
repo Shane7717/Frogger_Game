@@ -33,7 +33,7 @@ public class LogController {
 	public void setLogYpos(int ypos) {
 		model.setYpos(ypos);
 	}
-	
+
 	public void updateView() {
 		view.viewLog(model);
 	}

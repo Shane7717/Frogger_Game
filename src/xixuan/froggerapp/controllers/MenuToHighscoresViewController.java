@@ -11,16 +11,18 @@ import javafx.scene.control.Label;
 import xixuan.froggerapp.FroggerApp;
 
 public class MenuToHighscoresViewController {
-	@FXML private Label scoreLabel;
+	@FXML private Label hsName;
+	@FXML private Label hsScore;
 	@FXML private Button backButton;
-	private String scoreList;
+	private String[] scoreList;
 	
-	public MenuToHighscoresViewController(String scoreList) {
+	public MenuToHighscoresViewController(String[] scoreList) {
 		this.scoreList = scoreList;
 	}
 		
 	public void initialize() {
-		scoreLabel.setText(this.scoreList);
+		hsName.setText(scoreList[0]);
+		hsScore.setText(scoreList[1]);
 		backButton.setOnAction(event -> {
 			Parent root = null;
 			try {

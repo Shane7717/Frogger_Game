@@ -18,7 +18,7 @@ public class TurtlesInitializer implements Initializable {
 	}
 
 	public void initialize() { 
-		Frog.turtleIntersectSpeed = -0.7;
+		Frog.turtleIntersectSpeed = -0.8;
 		Turtle turtle1model = new Turtle(130, 500, 376, Frog.turtleIntersectSpeed);
 		TurtleView turtle1view = new TurtleView(background);
 		turtle1controller = new TurtleController(turtle1model, turtle1view);
@@ -38,7 +38,8 @@ public class TurtlesInitializer implements Initializable {
 	
 	public void normal_settings() {
 		Frog.turtleIntersectSpeed = -1.4;
-		turtle1controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
+		turtle1controller.setTurtleXpos(1000);
+		turtle1controller.setTurtleSpeed(0);
 		turtle2controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
 		turtle3controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
 	}

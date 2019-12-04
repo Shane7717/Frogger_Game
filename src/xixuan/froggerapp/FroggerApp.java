@@ -16,6 +16,8 @@ import javafx.stage.Stage;
 //Bug 3: Keep pressing but score mounting is false
 //TO DO: 
 //1. Can I remove some useless setters and getters??? (ask!!!) 
+//2. Highscore -- two labels and no ranking number when shown same marks
+//3. Unit test -- see email by PEER
 
 public class FroggerApp extends Application {
 	
@@ -31,7 +33,14 @@ public class FroggerApp extends Application {
 		//When program starts running, the menu page will be shown
 		setPrimaryStage(primaryStage);			     	            
 	    Parent root = FXMLLoader.load(getClass().getResource("./views/MenuView.fxml"));
-	    primaryStage.setScene(new Scene(root, 600, 800));
+	    Scene menuScene = new Scene(root, 600, 800); 
+	    primaryStage.setScene(menuScene);
+	    
+	    //Mustn't change the size of the main window
+	    primaryStage.setMaxWidth(600);
+	    primaryStage.setMaxHeight(800);
+	    primaryStage.setMinWidth(600);
+	    primaryStage.setMinHeight(800);
 	    primaryStage.setTitle("Frogger");
 	    primaryStage.show();
 	}

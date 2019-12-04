@@ -22,49 +22,49 @@ public class LogsInitializer implements Initializable {
 	}
 
 	public void initialize() { 
-		Frog.logRightIntersectSpeed = 0.5;
-		Frog.logLeftIntersectSpeed = -1.2;
-		Log log1model = new Log("file:resources/images/logs/"+"log3.png", 152, 0, 175, Frog.logRightIntersectSpeed); 
+		Frog.logRightIntersectSpeed = 0.9;
+		Frog.logLeftIntersectSpeed = -1.3;
+		Log log1model = new Log("file:resources/images/logs/"+"logRight.png", 130, 0, 180, Frog.logRightIntersectSpeed); 
 		LogView log1view = new LogView(background);
 		log1controller = new LogController(log1model, log1view);
 		log1controller.updateView();
 		
-		Log log2model = new Log("file:resources/images/logs/"+"log3.png", 152, 220, 175, Frog.logRightIntersectSpeed); 
+		Log log2model = new Log("file:resources/images/logs/"+"logRight.png", 130, 220, 180, Frog.logRightIntersectSpeed); 
 		LogView log2view = new LogView(background);
 		log2controller = new LogController(log2model, log2view);
 		log2controller.updateView();
 		
-		Log log3model = new Log("file:resources/images/logs/"+"log3.png", 152, 440, 175, Frog.logRightIntersectSpeed); 
+		Log log3model = new Log("file:resources/images/logs/"+"logRight.png", 130, 440, 180, Frog.logRightIntersectSpeed); 
 		LogView log3view = new LogView(background);
 		log3controller = new LogController(log3model, log3view);
 		log3controller.updateView();
 		
-		Log log4model = new Log("file:resources/images/logs/"+"logs.png", 310, 0, 280, Frog.logLeftIntersectSpeed); 
+		Log log4model = new Log("file:resources/images/logs/"+"logLongLeft.png", 200, 0, 285, Frog.logLeftIntersectSpeed); 
 		LogView log4view = new LogView(background);
 		log4controller = new LogController(log4model, log4view);
 		log4controller.updateView();
 		
-		Log log5model = new Log("file:resources/images/logs/"+"logs.png", 310, 400, 280, Frog.logLeftIntersectSpeed); 
+		Log log5model = new Log("file:resources/images/logs/"+"logLeft.png", 130, 600, 285, Frog.logLeftIntersectSpeed); 
 		LogView log5view = new LogView(background);
 		log5controller = new LogController(log5model, log5view);
 		log5controller.updateView();
 		
-		Log log6model = new Log("file:resources/images/logs/"+"log3.png", 152, 50, 329, Frog.logRightIntersectSpeed ); 
+		Log log6model = new Log("file:resources/images/logs/"+"logRight.png", 130, 50, 335, Frog.logRightIntersectSpeed ); 
 		LogView log6view = new LogView(background);
 		log6controller = new LogController(log6model, log6view);
 		log6controller.updateView();
 				
-		Log log7model = new Log("file:resources/images/logs/"+"log3.png", 152, 270, 329, Frog.logRightIntersectSpeed ); 
+		Log log7model = new Log("file:resources/images/logs/"+"logRight.png", 130, 270, 335, Frog.logRightIntersectSpeed ); 
 		LogView log7view = new LogView(background);
 		log7controller = new LogController(log7model, log7view);
 		log7controller.updateView();
 		
-		Log log8model = new Log("file:resources/images/logs/"+"log3.png", 152, 490, 329, Frog.logRightIntersectSpeed ); 
+		Log log8model = new Log("file:resources/images/logs/"+"logLongRight.png", 200, 510, 335, Frog.logRightIntersectSpeed ); 
 		LogView log8view = new LogView(background);
 		log8controller = new LogController(log8model, log8view);
 		log8controller.updateView();
 	}
-	
+
 	public void normal_settings() {
 		Frog.logRightIntersectSpeed = 1.2;
 		log1controller.setLogSpeed(Frog.logRightIntersectSpeed);
