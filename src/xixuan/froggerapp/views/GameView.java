@@ -14,6 +14,7 @@ import xixuan.froggerapp.FroggerApp;
 import xixuan.froggerapp.controllers.FrogController;
 import xixuan.froggerapp.controllers.EndHighscoresSceneController;
 import xixuan.froggerapp.initializers.BackgroundImageInitializer;
+import xixuan.froggerapp.initializers.CrocodilesInitializer;
 import xixuan.froggerapp.initializers.DigitInitializer;
 import xixuan.froggerapp.initializers.EndsInitializer;
 import xixuan.froggerapp.initializers.LogsInitializer;
@@ -34,6 +35,7 @@ public class GameView {
 	private TurtlesInitializer turtlesInitializer;
 	private WetTurtlesInitializer wetTurtlesInitializer;
 	private ObstaclesInitializer obstaclesInitializer;
+	private CrocodilesInitializer crocodilesInitializer;
 	
 	public void launchGameView() {	
 		setBackButton();
@@ -117,6 +119,10 @@ public class GameView {
 		DigitInitializer digitInitializer = new DigitInitializer(background);
 		digitInitializer.initialize();
 		
+		//Display the crocodile in the game except the easy level
+		crocodilesInitializer = new CrocodilesInitializer(background);
+		crocodilesInitializer.initialize();
+		
 		//Display the frog in the game
 		Frog mainFrog = new Frog("file:resources/images/frogs/froggerUp.png");
 		FrogView frogview = new FrogView(background);
@@ -130,6 +136,8 @@ public class GameView {
     	turtlesInitializer.normal_settings();
     	wetTurtlesInitializer.normal_settings();
     	obstaclesInitializer.normal_settings();
+    	crocodilesInitializer.normal_settings();
+    	
     }
     
     public void hard_initialize() {

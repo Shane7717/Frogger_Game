@@ -22,6 +22,7 @@ public class Frog extends Actor {
 	public static double logRightIntersectSpeed = 0;
 	public static double logLeftIntersectSpeed = 0;
 	public static double turtleIntersectSpeed = 0;
+	public static double crocodileIntersectSpeed = 0;
 	
 	//Used to check if the button is continuously pressed without releasing
 	private boolean second = false;
@@ -261,8 +262,19 @@ public class Frog extends Actor {
 			else
 				move(logRightIntersectSpeed, 0);
 		}
+		
+		//Intersect with crocodiles
+		else if (getIntersectingObjects(Crocodile.class).size() >= 1 && !noMove) {
+			if (getIntersectingObjects(Crocodile.class).get(0).isCrazyDeath()) 
+				waterDeath = true;
+			else 
+				move(crocodileIntersectSpeed, 0);
+		} 
+		
 		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) 
 			move(turtleIntersectSpeed,0);
+		
+		//Intersect with wet turtles
 		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) 
 				waterDeath = true;

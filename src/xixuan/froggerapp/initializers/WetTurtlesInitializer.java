@@ -19,7 +19,7 @@ public class WetTurtlesInitializer implements Initializable {
 	}
 
 	public void initialize() { 
-		Frog.turtleIntersectSpeed = -0.7;
+		Frog.turtleIntersectSpeed = -0.8;
 		WetTurtle wetTurtle1model = new WetTurtle(130, 700, 376, Frog.turtleIntersectSpeed);
 		WetTurtleView wetTurtle1view = new WetTurtleView(background);
 		wetTurtle1controller = new WetTurtleController(wetTurtle1model, wetTurtle1view);

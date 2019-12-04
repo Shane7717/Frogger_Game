@@ -22,8 +22,8 @@ public class LogsInitializer implements Initializable {
 	}
 
 	public void initialize() { 
-		Frog.logRightIntersectSpeed = 0.5;
-		Frog.logLeftIntersectSpeed = -1.2;
+		Frog.logRightIntersectSpeed = 0.9;
+		Frog.logLeftIntersectSpeed = -1.3;
 		Log log1model = new Log("file:resources/images/logs/"+"logRight.png", 130, 0, 180, Frog.logRightIntersectSpeed); 
 		LogView log1view = new LogView(background);
 		log1controller = new LogController(log1model, log1view);
@@ -64,7 +64,7 @@ public class LogsInitializer implements Initializable {
 		log8controller = new LogController(log8model, log8view);
 		log8controller.updateView();
 	}
-	
+
 	public void normal_settings() {
 		Frog.logRightIntersectSpeed = 1.2;
 		log1controller.setLogSpeed(Frog.logRightIntersectSpeed);

@@ -26,7 +26,7 @@ public class ObstaclesInitializer implements Initializable {
 
 	public void initialize() { 
 		double rightSpeed = 0.8;
-		double leftSpeed = 0.8;
+		double leftSpeed = -0.8;
 		
 		Obstacle obstacle1model = new Obstacle( "file:resources/images/obstacles/"+"car1"+"Right.png", 50, 0, 653, rightSpeed); 
 		ObstacleView obstacle1view = new ObstacleView(background);
