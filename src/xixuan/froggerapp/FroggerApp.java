@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 //1. Can I remove some useless setters and getters??? (ask!!!) 
 //2. Highscore -- two labels and no ranking number when shown same marks
 //3. Unit test -- see email by PEER
+//4. pause the game.
 
 public class FroggerApp extends Application {
 	

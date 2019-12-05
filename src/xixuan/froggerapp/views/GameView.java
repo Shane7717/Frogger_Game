@@ -17,6 +17,7 @@ import xixuan.froggerapp.initializers.BackgroundImageInitializer;
 import xixuan.froggerapp.initializers.CrocodilesInitializer;
 import xixuan.froggerapp.initializers.DigitInitializer;
 import xixuan.froggerapp.initializers.EndsInitializer;
+import xixuan.froggerapp.initializers.LizardsInitializer;
 import xixuan.froggerapp.initializers.LogsInitializer;
 import xixuan.froggerapp.initializers.ObstaclesInitializer;
 import xixuan.froggerapp.initializers.TurtlesInitializer;
@@ -36,6 +37,8 @@ public class GameView {
 	private WetTurtlesInitializer wetTurtlesInitializer;
 	private ObstaclesInitializer obstaclesInitializer;
 	private CrocodilesInitializer crocodilesInitializer;
+	private LizardsInitializer lizardsInitializer;
+	private BackgroundImageInitializer bgImageInitializer;
 	
 	public void launchGameView() {	
 		setBackButton();
@@ -61,13 +64,7 @@ public class GameView {
             		background.stopMusic();
             		timer.stop();
             		background.stop();
-            		
-//            		Alert alert = new Alert(AlertType.INFORMATION);
-//            		alert.setTitle("You Have Won The Game!");
-//            		alert.setHeaderText("Your High Score: "+ frogController.getPlayerPoints()+"!");
-//            		alert.setContentText("Highest Possible Score: 800");
-//            		alert.show();
-            		         		
+            		            		         		
             		//After the game ends, show the highscores
             		EndHighscoresSceneController hsController = new EndHighscoresSceneController(frogController.getPlayerPoints());          	
             		FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/EndHighscoresView.fxml"));
@@ -92,7 +89,7 @@ public class GameView {
 		background = new MyStage();
 		
 		//Display background image in the game
-		BackgroundImageInitializer bgImageInitializer = new BackgroundImageInitializer(background);
+		bgImageInitializer = new BackgroundImageInitializer(background);
 		bgImageInitializer.initialize();
 		
 		//Display logs in the game
@@ -123,6 +120,11 @@ public class GameView {
 		crocodilesInitializer = new CrocodilesInitializer(background);
 		crocodilesInitializer.initialize();
 		
+		//Display the lizards in the game except easy and normal levels
+		lizardsInitializer = new LizardsInitializer(background);
+		lizardsInitializer.initialize();
+		
+		
 		//Display the frog in the game
 		Frog mainFrog = new Frog("file:resources/images/frogs/froggerUp.png");
 		FrogView frogview = new FrogView(background);
@@ -145,13 +147,20 @@ public class GameView {
     	turtlesInitializer.hard_settings();
     	wetTurtlesInitializer.hard_settings();
     	obstaclesInitializer.hard_settings();
+    	crocodilesInitializer.hard_settings();
+    	lizardsInitializer.hard_settings();
     }
     
     public void nightMare_initialize() {
+    	frogController.setSignalValue(0);
     	logsInitializer.nightmare_settings();
     	turtlesInitializer.nightmare_settings();
     	wetTurtlesInitializer.nightmare_settings();
     	obstaclesInitializer.nightmare_settings();
+    	crocodilesInitializer.nightmare_settings();
+    	lizardsInitializer.nightmare_settings();
+    	bgImageInitializer.nightmare_settings();
+    	
     }
     
 	public void start() {

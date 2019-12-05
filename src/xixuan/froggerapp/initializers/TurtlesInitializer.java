@@ -37,7 +37,7 @@ public class TurtlesInitializer implements Initializable {
 	}
 	
 	public void normal_settings() {
-		Frog.turtleIntersectSpeed = -1.4;
+		Frog.turtleIntersectSpeed = -1.6;
 		turtle1controller.setTurtleXpos(1000);
 		turtle1controller.setTurtleSpeed(0);
 		turtle2controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
@@ -46,15 +46,20 @@ public class TurtlesInitializer implements Initializable {
 	
 	public void hard_settings() {
 		Frog.turtleIntersectSpeed = -3.2;
-		turtle1controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
+		turtle1controller.setTurtleXpos(1000);
+		turtle1controller.setTurtleSpeed(0);
 		turtle2controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
 		turtle3controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
 	public void nightmare_settings() {
-		Frog.turtleIntersectSpeed = -6.4;
-		turtle1controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
-		turtle2controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
-		turtle3controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
+		Frog.turtleIntersectSpeed = -5.0;
+		turtle1controller.setTurtleXpos(1000);
+		turtle1controller.setTurtleSpeed(0);
+		turtle2controller.setTurtleXpos(1000);
+		turtle2controller.setTurtleSpeed(0);
+		turtle3controller.setTurtleXpos(1000);
+		turtle3controller.setTurtleSpeed(0);
+		
 	}
 }

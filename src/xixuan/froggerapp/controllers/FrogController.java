@@ -31,4 +31,8 @@ public class FrogController {
 	public void keyboardMonitor() {
 		model.keyboardMonitor();
 	}
+	
+	public void setSignalValue(int value) {
+		model.setSignalValue(value);
+	}
 }

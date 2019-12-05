@@ -19,6 +19,9 @@ public class ObstaclesInitializer implements Initializable {
 	ObstacleController obstacle9controller; 
 	ObstacleController obstacle10controller;
 	ObstacleController obstacle11controller; 
+	ObstacleController obstacle12controller; 
+	ObstacleController obstacle13controller; 
+	ObstacleController obstacle14controller; 
 	
 	public ObstaclesInitializer(MyStage background) {
 		this.background = background;
@@ -83,47 +86,87 @@ public class ObstaclesInitializer implements Initializable {
 		obstacle10controller = new ObstacleController(obstacle10model, obstacle10view);
 		obstacle10controller.updateView();
 		
+		Obstacle obstacle12model = new Obstacle( "file:resources/images/obstacles/"+"racingCar2.png", 50, 1000, 540, 0);
+		ObstacleView obstacle12view = new ObstacleView(background);
+		obstacle12controller = new ObstacleController(obstacle12model, obstacle12view);
+		obstacle12controller.updateView();
+		
+		Obstacle obstacle13model = new Obstacle( "file:resources/images/obstacles/"+"racingCar.png", 50, 1000, 597, 0);
+		ObstacleView obstacle13view = new ObstacleView(background);
+		obstacle13controller = new ObstacleController(obstacle13model, obstacle13view);
+		obstacle13controller.updateView();
+		
+		Obstacle obstacle14model = new Obstacle( "file:resources/images/obstacles/"+"racingCar2.png", 50, 1000, 653, 0);
+		ObstacleView obstacle14view = new ObstacleView(background);
+		obstacle14controller = new ObstacleController(obstacle14model, obstacle14view);
+		obstacle14controller.updateView();
+		
+		
+		
 	}
 	
 	public void normal_settings() {
-		obstacle1controller.setObstacleSpeed(1.4);
-		obstacle2controller.setObstacleSpeed(1.4);
-		obstacle3controller.setObstacleSpeed(1.4);
-		obstacle4controller.setObstacleSpeed(-1.4);
-		obstacle5controller.setObstacleSpeed(-1.4);
-		obstacle6controller.setObstacleSpeed(-1.4);
-		obstacle7controller.setObstacleSpeed(-1.4);
-		obstacle8controller.setObstacleSpeed(1.4);
-		obstacle9controller.setObstacleSpeed(1.4);
-		obstacle11controller.setObstacleSpeed(1.4);
-		obstacle10controller.setObstacleSpeed(-5);	
+		double rightSpeed = 1.6;
+		double leftSpeed = -1.6;
+		
+		obstacle1controller.setObstacleSpeed(rightSpeed);
+		obstacle2controller.setObstacleSpeed(rightSpeed);
+		obstacle3controller.setObstacleSpeed(rightSpeed);
+		obstacle4controller.setObstacleSpeed(leftSpeed);
+		obstacle5controller.setObstacleSpeed(leftSpeed);
+		obstacle6controller.setObstacleSpeed(leftSpeed);
+		obstacle7controller.setObstacleSpeed(leftSpeed);
+		obstacle8controller.setObstacleSpeed(rightSpeed);
+		obstacle9controller.setObstacleSpeed(rightSpeed);
+		obstacle11controller.setObstacleSpeed(rightSpeed);
+		obstacle10controller.setObstacleSpeed(-5);
+		obstacle12controller.setObstacleXpos(200);
+		obstacle12controller.setObstacleSpeed(-5);
+		
 	}
 	
 	public void hard_settings() {
-		obstacle1controller.setObstacleSpeed(2.8);
-		obstacle2controller.setObstacleSpeed(2.8);
-		obstacle3controller.setObstacleSpeed(2.8);
-		obstacle4controller.setObstacleSpeed(-2.8);
-		obstacle5controller.setObstacleSpeed(-2.8);
-		obstacle6controller.setObstacleSpeed(-2.8);
-		obstacle7controller.setObstacleSpeed(-2.8);
-		obstacle8controller.setObstacleSpeed(2.8);
-		obstacle9controller.setObstacleSpeed(2.8);
-		obstacle11controller.setObstacleSpeed(2.8);
-		obstacle10controller.setObstacleSpeed(-10);	
+		double rightSpeed = 3.0;
+		double leftSpeed = -3.0;
+		obstacle1controller.setObstacleSpeed(rightSpeed);
+		obstacle2controller.setObstacleSpeed(rightSpeed);
+		obstacle3controller.setObstacleSpeed(rightSpeed);
+		obstacle4controller.setObstacleSpeed(leftSpeed);
+		obstacle5controller.setObstacleSpeed(leftSpeed);
+		obstacle6controller.setObstacleSpeed(leftSpeed);
+		obstacle7controller.setObstacleSpeed(leftSpeed);
+		obstacle8controller.setObstacleSpeed(rightSpeed);
+		obstacle9controller.setObstacleSpeed(rightSpeed);
+		obstacle11controller.setObstacleSpeed(rightSpeed);
+		obstacle10controller.setObstacleSpeed(-11);
+	
 	}
 	
 	public void nightmare_settings() {
-		obstacle1controller.setObstacleSpeed(3.5);
-		obstacle2controller.setObstacleSpeed(3.5);
-		obstacle3controller.setObstacleSpeed(3.5);
-		obstacle4controller.setObstacleSpeed(-3.5);
-		obstacle5controller.setObstacleSpeed(-3.5);
-		obstacle6controller.setObstacleSpeed(-3.5);
-		obstacle7controller.setObstacleSpeed(-3.5);
-		obstacle8controller.setObstacleSpeed(3.5);
-		obstacle9controller.setObstacleSpeed(3.5);
-		obstacle11controller.setObstacleSpeed(3.5);
-		obstacle10controller.setObstacleSpeed(-15);	
+		obstacle1controller.setObstacleXpos(1000);
+		obstacle1controller.setObstacleSpeed(0);
+		obstacle2controller.setObstacleXpos(1000);
+		obstacle2controller.setObstacleSpeed(0);
+		obstacle3controller.setObstacleXpos(1000);
+		obstacle3controller.setObstacleSpeed(0);
+		obstacle4controller.setObstacleXpos(1000);
+		obstacle4controller.setObstacleSpeed(0);
+		obstacle5controller.setObstacleXpos(1000);
+		obstacle5controller.setObstacleSpeed(0);
+		obstacle6controller.setObstacleXpos(1000);
+		obstacle6controller.setObstacleSpeed(0);
+		obstacle7controller.setObstacleXpos(1000);
+		obstacle7controller.setObstacleSpeed(0);
+		obstacle8controller.setObstacleXpos(1000);
+		obstacle8controller.setObstacleSpeed(0);
+		obstacle9controller.setObstacleXpos(1000);
+		obstacle9controller.setObstacleSpeed(0);
+		obstacle11controller.setObstacleSpeed(0);
+		obstacle11controller.setObstacleXpos(1000);
+		
+		obstacle10controller.setObstacleSpeed(-8);	
+		obstacle12controller.setObstacleSpeed(9);	
+		obstacle13controller.setObstacleSpeed(-12);	
+		obstacle14controller.setObstacleSpeed(13);	
 	}
 }
