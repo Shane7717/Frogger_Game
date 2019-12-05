@@ -27,7 +27,7 @@ public class Frog extends Actor {
 	public static double crocodileLeftIntersectSpeed = 0;
 	public static double crocodileRightIntersectSpeed = 0;
 	private boolean disableKey = false;
-	private int lifeNum = 0;
+	private int lifeNum = -1;
 	
 	
 	//Used to check if the button is continuously pressed without releasing
@@ -224,7 +224,8 @@ public class Frog extends Actor {
 				setImage(new Image("file:resources/images/deaths/cardeath"+frogD+".png", imgSize, imgSize, true, true));
 			if (frogD == 4) {
 				lifeNum--;
-				((GameView.symbols)[lifeNum]).setXpos(1000);
+				if (lifeNum >= 0)
+					((GameView.symbols)[lifeNum]).setXpos(1000);
 				setFrogPosition();
 				carDeath = false;
 				frogD = 0;
@@ -249,7 +250,8 @@ public class Frog extends Actor {
 					setImage(new Image("file:resources/images/deaths/waterdeath"+frogD+".png", imgSize,imgSize , true, true));
 				if (frogD == 5) {
 					lifeNum--;
-					((GameView.symbols)[lifeNum]).setXpos(1000);
+					if (lifeNum >= 0)
+						((GameView.symbols)[lifeNum]).setXpos(1000);
 					setFrogPosition();
 					waterDeath = false;
 					frogD = 0;

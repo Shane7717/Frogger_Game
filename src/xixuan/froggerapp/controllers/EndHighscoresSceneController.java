@@ -19,14 +19,16 @@ public class EndHighscoresSceneController {
 	private int score;
 	private String name;
 	private HighscoreManager hs_manager;
+	private int timeSecond;
 	
 	//Used to check if the user has input his name twice
 	private int check;
 	
 	//Constructor
-	public EndHighscoresSceneController(int score, int lifeNum) {
+	public EndHighscoresSceneController(int score, int lifeNum, int second) {
 		this.score = score;
 		this.lifeNum = lifeNum;
+		this.timeSecond = second;
 		hs_manager = new HighscoreManager();
 		this.check = 0;
 	}
@@ -37,7 +39,7 @@ public class EndHighscoresSceneController {
 	
 	//Could be automatically invoked when loaded
 	public void initialize() {	
-		if (lifeNum != 0) {
+		if (lifeNum != 0 && timeSecond > 0) {
 			state.setText("YOU WIN!!!");
 		} else {
 			state.setText("YOU LOSE!!!");

@@ -58,12 +58,12 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="hsName" layoutX="74.0" layoutY="353.0" prefHeight="335.0" prefWidth="338.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Name" textFill="#ef0639">
+      <Label fx:id="hsName" layoutX="74.0" layoutY="323.0" prefHeight="380.0" prefWidth="338.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Name" textFill="#ef0639">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="hsScore" layoutX="448.0" layoutY="353.0" prefHeight="335.0" prefWidth="109.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Score" textFill="#ef0639">
+      <Label fx:id="hsScore" layoutX="446.0" layoutY="323.0" prefHeight="380.0" prefWidth="109.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Score" textFill="#ef0639">
          <font>
             <Font size="20.0" />
          </font>

@@ -10,7 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.image.Image;
+import javafx.scene.control.Label;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.FroggerApp;
 import xixuan.froggerapp.controllers.FrogController;
@@ -45,38 +45,50 @@ public class GameView {
 	private int musicSignal = 1;
 	private int gameSignal = 1;
 	public static FrogLifeSymbol[] symbols;
+	private Integer frameTime = 0;
+	private Integer second = 1;
+	private Label timerlabel;
 	
 	public void launchGameView() {	
 		setQuitButton();
 		setPauseMusicButton();
 		setPauseGameButton();
+		setCountDown();
 		background.start();		
-		mainScene = new Scene(background, 600, 800);
-		//Main scene has been created now
-				              
+        mainScene = new Scene(background, 600, 800);
+   
 		FroggerApp.getPrimaryStage().setTitle("Frogger");
-//		String css = this.getClass().getResource("/resources/css/gameButton.css").toExternalForm(); 
-//		mainScene.getStylesheets().add(css);
 		FroggerApp.getPrimaryStage().setScene(mainScene);
 		FroggerApp.getPrimaryStage().show();
 		start();
 	}
+	
+	public void start() {
+		background.playMusic();    
+		createTimer();
+        timer.start();
+    }
 	
 	public void createTimer() {
 		timer = new AnimationTimer() {
 			
             @Override
             public void handle(long now) {
+            	frameTime++;       
+            	if ((frameTime % 60) == 0) {
+            		second = 100 - frameTime / 60;           
+            		timerlabel.setText(second.toString());
+            	}          	     	
             	if (frogController.checkChangeScore()) 
             		setNumber(frogController.getPlayerPoints());
-            	if (frogController.checkGetStop()) {
+            	if (frogController.checkGetStop() || (second == 0)) {
             		System.out.print("GAME STOPPED!!!");
             		background.stopMusic();
             		timer.stop();
             		background.stop();
             		            		         		
             		//After the game ends, show the highscores
-            		EndHighscoresSceneController hsController = new EndHighscoresSceneController(frogController.getPlayerPoints(), frogController.getLifeNum());          	
+            		EndHighscoresSceneController hsController = new EndHighscoresSceneController(frogController.getPlayerPoints(), frogController.getLifeNum(), second);          	
             		FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/EndHighscoresView.fxml"));
             		loader.setController(hsController);
             				
@@ -97,7 +109,7 @@ public class GameView {
     public void easy_initialize() {
     	digit_position = 100; 
 		background = new MyStage();
-		
+			
 		//Display background image in the game
 		bgImageInitializer = new BackgroundImageInitializer(background);
 		bgImageInitializer.initialize();
@@ -175,13 +187,7 @@ public class GameView {
     	obstaclesInitializer.extra_settings();
     	bgImageInitializer.extra_settings();	
     }
-    
-	public void start() {
-		background.playMusic();    
-		createTimer();
-        timer.start();
-    }
-	 
+     
     public void setNumber(int n) {
     	int shift = 0;
     	while (n > 0) {
@@ -249,7 +255,7 @@ public class GameView {
     	Button pauseGameButton = new Button();
     	pauseGameButton.setText("PAUSE GAME");
     	pauseGameButton.setUnderline(true);
-    	pauseGameButton.setStyle("-fx-background-color:#1fc966;");
+    	pauseGameButton.setStyle("-fx-background-color:#1fc966;-fx-font-weight:bold");
     	pauseGameButton.setLayoutX(310);
     	pauseGameButton.setLayoutY(28);
     	pauseGameButton.setPrefSize(110, 30);
@@ -280,4 +286,14 @@ public class GameView {
     		xpos -= 30;
     	} 	
     }
+    
+    public void setCountDown() {
+    	timerlabel = new Label();
+        timerlabel.setLayoutX(50);
+     	timerlabel.setLayoutY(700);
+     	timerlabel.setStyle("-fx-font-size:40;-fx-background-color:purple");
+     	background.getChildren().add(timerlabel);
+    }
 }	
+
+
