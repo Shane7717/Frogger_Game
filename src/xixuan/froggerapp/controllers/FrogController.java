@@ -35,4 +35,12 @@ public class FrogController {
 	public void setSignalValue(int value) {
 		model.setSignalValue(value);
 	}
+	
+	public void setDisableKey(boolean value) {
+		model.setDisableKey(value);
+	}
+	
+	public boolean getDisableKey() { 
+		return model.getDisableKey();
+	}
 }

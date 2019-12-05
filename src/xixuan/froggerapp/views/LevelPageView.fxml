@@ -16,17 +16,17 @@
             <Image url="@../../../../resources/images/scenes/otherPages.png" />
          </image>
       </ImageView>
-      <Button layoutX="95.0" layoutY="218.0" mnemonicParsing="false" onMouseClicked="#toEasyMainScene" prefHeight="70.0" prefWidth="136.0" stylesheets="@../../../../resources/css/levelButton.css" text="Easy" textAlignment="CENTER" textFill="#1fc966">
+      <Button layoutX="97.0" layoutY="228.0" mnemonicParsing="false" onMouseClicked="#toEasyMainScene" prefHeight="70.0" prefWidth="136.0" stylesheets="@../../../../resources/css/levelButton.css" text="Easy" textAlignment="CENTER" textFill="#1fc966">
          <font>
             <Font name="ArcadeClassic" size="36.0" />
          </font>
       </Button>
-      <Button layoutX="81.0" layoutY="315.0" mnemonicParsing="false" onMouseClicked="#toNormalMainScene" prefHeight="64.0" prefWidth="178.0" stylesheets="@../../../../resources/css/levelButton.css" text="Normal" textAlignment="CENTER" textFill="#1fc966">
+      <Button layoutX="76.0" layoutY="326.0" mnemonicParsing="false" onMouseClicked="#toNormalMainScene" prefHeight="64.0" prefWidth="178.0" stylesheets="@../../../../resources/css/levelButton.css" text="Normal" textAlignment="CENTER" textFill="#1fc966">
          <font>
             <Font name="ArcadeClassic" size="36.0" />
          </font>
       </Button>
-      <Button layoutX="97.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#toHardMainScene" prefHeight="64.0" prefWidth="136.0" stylesheets="@../../../../resources/css/levelButton.css" text="Hard" textAlignment="CENTER" textFill="#1fc966">
+      <Button layoutX="97.0" layoutY="417.0" mnemonicParsing="false" onMouseClicked="#toHardMainScene" prefHeight="64.0" prefWidth="136.0" stylesheets="@../../../../resources/css/levelButton.css" text="Hard" textAlignment="CENTER" textFill="#1fc966">
          <font>
             <Font name="ArcadeClassic" size="36.0" />
          </font>
@@ -36,8 +36,8 @@
             <Font name="ArcadeClassic" size="36.0" />
          </font>
       </Button>
-      <Button layoutX="188.0" layoutY="667.0" mnemonicParsing="false" onMouseClicked="#back" stylesheets="@../../../../resources/css/backButton.css" text="Back to Menu" textAlignment="CENTER" textFill="#0b80c9" underline="true" />
-      <Label layoutX="50.0" layoutY="94.0" prefHeight="101.0" prefWidth="550.0" stylesheets="@../../../../resources/css/levelLabel.css" text="CHOOSE  LEVEL">
+      <Button layoutX="187.0" layoutY="667.0" mnemonicParsing="false" onMouseClicked="#back" stylesheets="@../../../../resources/css/backButton.css" text="Back to Menu" textAlignment="CENTER" textFill="#0b80c9" underline="true" />
+      <Label layoutX="48.0" layoutY="91.0" prefHeight="101.0" prefWidth="550.0" stylesheets="@../../../../resources/css/levelLabel.css" text="CHOOSE  LEVEL">
          <font>
             <Font size="64.0" />
          </font>
@@ -50,9 +50,9 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Label layoutX="382.0" layoutY="236.0" stylesheets="@../../../../resources/css/levelLabel2.css" text="Classic arcade mode" textFill="#ee0000" />
-      <Label layoutX="378.0" layoutY="330.0" stylesheets="@../../../../resources/css/levelLabel2.css" text="Add crazy crocodiles" textFill="#ee0000" />
-      <Label layoutX="336.0" layoutY="431.0" prefHeight="32.0" prefWidth="218.0" stylesheets="@../../../../resources/css/levelLabel2.css" text="Add crazy crocodiles and huge lizards" textFill="#ee0000" />
-      <Label layoutX="344.0" layoutY="533.0" prefHeight="32.0" prefWidth="198.0" stylesheets="@../../../../resources/css/levelLabel2.css" text="Racing cars may drive you crazy" textFill="#ee0000" />
+      <Label layoutX="361.0" layoutY="244.0" stylesheets="@../../../../resources/css/levelLabel2.css" text="Classic arcade mode" textFill="#ee0000" />
+      <Label layoutX="357.0" layoutY="339.0" stylesheets="@../../../../resources/css/levelLabel2.css" text="Add crazy crocodiles" textFill="#ee0000" />
+      <Label layoutX="308.0" layoutY="430.0" prefHeight="35.0" prefWidth="257.0" stylesheets="@../../../../resources/css/levelLabel2.css" text="Add crazy crocodiles and huge lizards" textFill="#ee0000" />
+      <Label layoutX="321.0" layoutY="531.0" prefHeight="35.0" prefWidth="234.0" stylesheets="@../../../../resources/css/levelLabel2.css" text="Racing cars may drive you crazy" textFill="#ee0000" />
    </children>
 </AnchorPane>

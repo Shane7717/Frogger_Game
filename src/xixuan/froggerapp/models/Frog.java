@@ -25,6 +25,7 @@ public class Frog extends Actor {
 	public static double turtleIntersectSpeed = 0;
 	public static double crocodileLeftIntersectSpeed = 0;
 	public static double crocodileRightIntersectSpeed = 0;
+	private boolean disableKey = false;
 	
 	
 	//Used to check if the button is continuously pressed without releasing
@@ -114,8 +115,8 @@ public class Frog extends Actor {
 					;
 				}
 				else {
-				if (second) {
-					if (event.getCode() == KeyCode.W) {	  
+				if (second && (!disableKey) ) {
+					if (event.getCode() == KeyCode.W) {	 
 		                move(0, -movement);
 		                //pressWtimes++;
 		                changeScore = false;
@@ -141,25 +142,25 @@ public class Frog extends Actor {
 		            	 second = false;
 		            }
 				}
-				else if (event.getCode() == KeyCode.W) {	            	
+				else if (event.getCode() == KeyCode.W && (!disableKey)) {	            	
 	                move(0, -movement);
 	                //pressWtimes++;
 	                setImage(imgW2);
 	                second = true;
 	            }
-	            else if (event.getCode() == KeyCode.A) {	            	
+	            else if (event.getCode() == KeyCode.A && (!disableKey)) {	            	
 	            	 move(-movementX, 0);
 	            	 //pressAtimes++;
 	            	 setImage(imgA2);
 	            	 second = true;
 	            }
-	            else if (event.getCode() == KeyCode.S) {	            	
+	            else if (event.getCode() == KeyCode.S && (!disableKey)) {	            	
 	            	 move(0, movement);
 	            	 //pressStimes++;
 	            	 setImage(imgS2);
 	            	 second = true;
 	            }
-	            else if (event.getCode() == KeyCode.D) {	            	
+	            else if (event.getCode() == KeyCode.D && (!disableKey)) {	            	
 	            	 move(movementX, 0);
 	            	 //pressDtimes++;
 	            	 setImage(imgD2);
@@ -173,7 +174,7 @@ public class Frog extends Actor {
 			public void handle(KeyEvent event) {
 				if (noMove) {}
 				else {
-					if (event.getCode() == KeyCode.W) {  
+					if (event.getCode() == KeyCode.W && (!disableKey)) {  
 						if (getY() < countPosition) {
 							countPosition = getY();
 							points+=10;
@@ -185,21 +186,21 @@ public class Frog extends Actor {
 		                setImage(imgW1);
 		                second = false;
 		            }
-		            else if (event.getCode() == KeyCode.A) {
+		            else if (event.getCode() == KeyCode.A && (!disableKey)) {
 		            	 //if (pressAtimes % 2 == 1)	
 		            	 move(-movementX, 0);
 		            	 //pressAtimes = 0;
 		            	 setImage(imgA1);
 		            	 second = false;
 		            }
-		            else if (event.getCode() == KeyCode.S) {	
+		            else if (event.getCode() == KeyCode.S && (!disableKey)) {	
 		            	 //if (pressStimes % 2 == 1)
 		            	 move(0, movement);
 		            	 //pressStimes = 0;
 		            	 setImage(imgS1);
 		            	 second = false;
 		            }
-		            else if (event.getCode() == KeyCode.D) {	
+		            else if (event.getCode() == KeyCode.D && (!disableKey)) {	
 		            	 //if (pressDtimes % 2 == 1)
 		            	 move(movementX, 0);
 		            	//pressDtimes = 0;
@@ -319,4 +320,14 @@ public class Frog extends Actor {
 	public void setSignalValue(int value) {
 		this.checkSignal = value;
 	}
+	
+	public void setDisableKey(boolean value) {
+		this.disableKey = value;
+	}
+	
+	public boolean getDisableKey() {
+		return this.disableKey;
+	}
+	
+	
 }
