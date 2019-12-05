@@ -5,5 +5,9 @@
 
 .text {
     -fx-font-family: "Reyna Demo";
-    -fx-font-size: 20px;
+    -fx-font-size: 21px;
+}
+
+.text:hover {
+	-fx-font-size: 22px;
 }
