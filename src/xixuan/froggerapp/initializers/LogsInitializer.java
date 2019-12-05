@@ -95,35 +95,27 @@ public class LogsInitializer implements Initializable {
 		log8controller.setLogSpeed(Frog.logRightIntersectSpeed);
 	}
 	
-	public void nightmare_settings() {
-		int size = 60;
-		Frog.logRightIntersectSpeed = 9.0;
-		Frog.logLeftIntersectSpeed = -11.0;
-		log1controller.setLogSpeed(Frog.logRightIntersectSpeed);
-		log1controller.setImageLink("file:resources/images/logs/"+"shortlogRight.png");
-		log1controller.setLogSize(size);
-		log2controller.setLogSpeed(Frog.logRightIntersectSpeed);
-		log2controller.setImageLink("file:resources/images/logs/"+"shortlogRight.png");
-		log2controller.setLogSize(size);
-		log3controller.setLogSpeed(Frog.logRightIntersectSpeed);
-		log3controller.setImageLink("file:resources/images/logs/"+"shortlogRight.png");
-		log3controller.setLogSize(size);		
-		log4controller.setLogSpeed(Frog.logLeftIntersectSpeed);
-		log4controller.setImageLink("file:resources/images/logs/"+"shortlogLeft.png");
-		log4controller.setLogSize(size);	
-		log5controller.setLogSpeed(Frog.logLeftIntersectSpeed);
-		log5controller.setImageLink("file:resources/images/logs/"+"shortlogLeft.png");
-		log5controller.setLogSize(size);	
-		log6controller.setLogSpeed(Frog.logRightIntersectSpeed);
-		log6controller.setImageLink("file:resources/images/logs/"+"shortlogRight.png");
-		log6controller.setLogSize(size);	
-		log7controller.setLogSpeed(Frog.logRightIntersectSpeed);
-		log7controller.setImageLink("file:resources/images/logs/"+"shortlogRight.png");
-		log7controller.setLogSize(size);	
-		log8controller.setLogSpeed(Frog.logRightIntersectSpeed);
-		log8controller.setImageLink("file:resources/images/logs/"+"shortlogRight.png");
-		log8controller.setLogSize(size);
-	
+	public void extra_settings() {
+		Frog.logRightIntersectSpeed = 0;
+		Frog.logLeftIntersectSpeed = 0;	
+		log3controller.setLogSpeed(0);
+		log3controller.setLogXpos(1000);
+		log2controller.setLogSpeed(0);
+		log2controller.setLogXpos(1000);
+		log1controller.setLogSpeed(0);
+		log1controller.setLogXpos(1000);
+		log8controller.setLogSpeed(0);
+		log8controller.setLogXpos(1000);
+		log2controller.setLogSpeed(0);
+		log2controller.setLogXpos(1000);
+		log4controller.setLogSpeed(0);
+		log4controller.setLogXpos(1000);
+		log5controller.setLogSpeed(0);
+		log5controller.setLogXpos(1000);
+		log6controller.setLogSpeed(0);
+		log6controller.setLogXpos(1000);
+		log7controller.setLogSpeed(0);
+		log7controller.setLogXpos(1000);
 	}
 	
 	

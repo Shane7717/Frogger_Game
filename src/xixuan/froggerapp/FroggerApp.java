@@ -19,6 +19,8 @@ import javafx.stage.Stage;
 //2. Highscore -- two labels and no ranking number when shown same marks
 //3. Unit test -- see email by PEER
 //4. pause the game.
+//5. improvement: make all the controllers in an array in order to reduce code
+//6. check the red font in level page, to see if it exists in lab computers
 
 public class FroggerApp extends Application {
 	

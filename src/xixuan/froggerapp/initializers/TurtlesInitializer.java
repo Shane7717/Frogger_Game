@@ -52,8 +52,8 @@ public class TurtlesInitializer implements Initializable {
 		turtle3controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
-	public void nightmare_settings() {
-		Frog.turtleIntersectSpeed = -5.0;
+	public void extra_settings() {
+		Frog.turtleIntersectSpeed = 0;
 		turtle1controller.setTurtleXpos(1000);
 		turtle1controller.setTurtleSpeed(0);
 		turtle2controller.setTurtleXpos(1000);

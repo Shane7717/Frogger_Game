@@ -46,11 +46,5 @@ public class CrocodilesInitializer implements Initializable {
 		crocodile2controller.setCrocodileSpeed(Frog.crocodileLeftIntersectSpeed);
 		
 	}
-	
-	public void nightmare_settings() {
-		crocodile1controller.setCrocodileSpeed(0);
-		crocodile1controller.setCrocodileXpos(1000);
-		crocodile2controller.setCrocodileSpeed(0);
-		crocodile2controller.setCrocodileXpos(1000);
-	}	
+
 }

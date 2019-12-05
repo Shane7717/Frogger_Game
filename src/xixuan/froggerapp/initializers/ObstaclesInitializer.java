@@ -22,6 +22,12 @@ public class ObstaclesInitializer implements Initializable {
 	ObstacleController obstacle12controller; 
 	ObstacleController obstacle13controller; 
 	ObstacleController obstacle14controller; 
+	ObstacleController obstacle15controller; 
+	ObstacleController obstacle16controller; 
+	ObstacleController obstacle17controller; 
+	ObstacleController obstacle18controller; 
+	ObstacleController obstacle19controller; 
+	ObstacleController obstacle20controller; 
 	
 	public ObstaclesInitializer(MyStage background) {
 		this.background = background;
@@ -101,7 +107,35 @@ public class ObstaclesInitializer implements Initializable {
 		obstacle14controller = new ObstacleController(obstacle14model, obstacle14view);
 		obstacle14controller.updateView();
 		
+		Obstacle obstacle15model = new Obstacle( "file:resources/images/obstacles/"+"racingCar2.png", 50, 1000, 432, 0);
+		ObstacleView obstacle15view = new ObstacleView(background);
+		obstacle15controller = new ObstacleController(obstacle15model, obstacle15view);
+		obstacle15controller.updateView();
 		
+		Obstacle obstacle16model = new Obstacle( "file:resources/images/obstacles/"+"racingCar.png", 50, 1000, 378, 0);
+		ObstacleView obstacle16view = new ObstacleView(background);
+		obstacle16controller = new ObstacleController(obstacle16model, obstacle16view);
+		obstacle16controller.updateView();
+		
+		Obstacle obstacle17model = new Obstacle( "file:resources/images/obstacles/"+"racingCar2.png", 50, 1000, 327, 0);
+		ObstacleView obstacle17view = new ObstacleView(background);
+		obstacle17controller = new ObstacleController(obstacle17model, obstacle17view);
+		obstacle17controller.updateView();
+		
+		Obstacle obstacle18model = new Obstacle( "file:resources/images/obstacles/"+"racingCar.png", 50, 1000, 276, 0);
+		ObstacleView obstacle18view = new ObstacleView(background);
+		obstacle18controller = new ObstacleController(obstacle18model, obstacle18view);
+		obstacle18controller.updateView();
+		
+		Obstacle obstacle19model = new Obstacle( "file:resources/images/obstacles/"+"racingCar2.png", 50, 1000, 222, 0);
+		ObstacleView obstacle19view = new ObstacleView(background);
+		obstacle19controller = new ObstacleController(obstacle19model, obstacle19view);
+		obstacle19controller.updateView();
+		
+		Obstacle obstacle20model = new Obstacle( "file:resources/images/obstacles/"+"racingCar.png", 50, 1000, 164, 0);
+		ObstacleView obstacle20view = new ObstacleView(background);
+		obstacle20controller = new ObstacleController(obstacle20model, obstacle20view);
+		obstacle20controller.updateView();
 		
 	}
 	
@@ -119,9 +153,7 @@ public class ObstaclesInitializer implements Initializable {
 		obstacle8controller.setObstacleSpeed(rightSpeed);
 		obstacle9controller.setObstacleSpeed(rightSpeed);
 		obstacle11controller.setObstacleSpeed(rightSpeed);
-		obstacle10controller.setObstacleSpeed(-5);
-		obstacle12controller.setObstacleXpos(200);
-		obstacle12controller.setObstacleSpeed(-5);
+		obstacle10controller.setObstacleSpeed(-7);
 		
 	}
 	
@@ -142,7 +174,7 @@ public class ObstaclesInitializer implements Initializable {
 	
 	}
 	
-	public void nightmare_settings() {
+	public void extra_settings() {
 		obstacle1controller.setObstacleXpos(1000);
 		obstacle1controller.setObstacleSpeed(0);
 		obstacle2controller.setObstacleXpos(1000);
@@ -164,9 +196,15 @@ public class ObstaclesInitializer implements Initializable {
 		obstacle11controller.setObstacleSpeed(0);
 		obstacle11controller.setObstacleXpos(1000);
 		
-		obstacle10controller.setObstacleSpeed(-8);	
-		obstacle12controller.setObstacleSpeed(9);	
-		obstacle13controller.setObstacleSpeed(-12);	
-		obstacle14controller.setObstacleSpeed(13);	
+		obstacle10controller.setObstacleSpeed(-7);	
+		obstacle12controller.setObstacleSpeed(10);	
+		obstacle13controller.setObstacleSpeed(-6);	
+		obstacle14controller.setObstacleSpeed(9);
+		obstacle15controller.setObstacleSpeed(7);
+		obstacle16controller.setObstacleSpeed(-10);
+		obstacle17controller.setObstacleSpeed(6);
+		obstacle18controller.setObstacleSpeed(-8);
+		obstacle19controller.setObstacleSpeed(7);
+		obstacle20controller.setObstacleSpeed(-9);
 	}
 }

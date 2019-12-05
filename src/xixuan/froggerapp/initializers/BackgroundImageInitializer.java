@@ -23,7 +23,7 @@ public class BackgroundImageInitializer implements Initializable {
 		
 	}
 	
-	public void nightmare_settings() {
+	public void extra_settings() {
 		bgImageController.setImageLink("file:resources/images/background/arcade2.png");
 	}
 }

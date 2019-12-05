@@ -151,16 +151,13 @@ public class GameView {
     	lizardsInitializer.hard_settings();
     }
     
-    public void nightMare_initialize() {
+    public void extra_initialize() {
     	frogController.setSignalValue(0);
-    	logsInitializer.nightmare_settings();
-    	turtlesInitializer.nightmare_settings();
-    	wetTurtlesInitializer.nightmare_settings();
-    	obstaclesInitializer.nightmare_settings();
-    	crocodilesInitializer.nightmare_settings();
-    	lizardsInitializer.nightmare_settings();
-    	bgImageInitializer.nightmare_settings();
-    	
+    	logsInitializer.extra_settings();
+    	turtlesInitializer.extra_settings();
+    	wetTurtlesInitializer.extra_settings();
+    	obstaclesInitializer.extra_settings();
+    	bgImageInitializer.extra_settings();	
     }
     
 	public void start() {

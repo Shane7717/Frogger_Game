@@ -52,7 +52,7 @@ public class WetTurtlesInitializer implements Initializable {
 		wetTurtle3controller.setWetTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
-	public void nightmare_settings() {
+	public void extra_settings() {
 		wetTurtle1controller.setWetTurtleSpeed(0);
 		wetTurtle1controller.setWetTurtleXpos(1000);
 		wetTurtle2controller.setWetTurtleSpeed(0);
