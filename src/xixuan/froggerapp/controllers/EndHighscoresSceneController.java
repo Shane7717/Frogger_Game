@@ -14,6 +14,8 @@ public class EndHighscoresSceneController {
 	@FXML private TextField nameField;
 	@FXML private Label hsName;
 	@FXML private Label hsScore;
+	@FXML private Label state;
+	private int lifeNum;
 	private int score;
 	private String name;
 	private HighscoreManager hs_manager;
@@ -22,8 +24,9 @@ public class EndHighscoresSceneController {
 	private int check;
 	
 	//Constructor
-	public EndHighscoresSceneController(int score) {
+	public EndHighscoresSceneController(int score, int lifeNum) {
 		this.score = score;
+		this.lifeNum = lifeNum;
 		hs_manager = new HighscoreManager();
 		this.check = 0;
 	}
@@ -33,7 +36,12 @@ public class EndHighscoresSceneController {
 	}
 	
 	//Could be automatically invoked when loaded
-	public void initialize() {
+	public void initialize() {	
+		if (lifeNum != 0) {
+			state.setText("YOU WIN!!!");
+		} else {
+			state.setText("YOU LOSE!!!");
+		}
 		scoreLabel.setText("YOUR FINAL SCORE: " + String.valueOf(score));
 		hsName.setText((hs_manager.getHighscoreString())[0]);
 		hsScore.setText((hs_manager.getHighscoreString())[1]);

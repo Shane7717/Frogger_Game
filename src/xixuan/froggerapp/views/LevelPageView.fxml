@@ -36,8 +36,8 @@
             <Font name="ArcadeClassic" size="36.0" />
          </font>
       </Button>
-      <Button layoutX="187.0" layoutY="667.0" mnemonicParsing="false" onMouseClicked="#back" stylesheets="@../../../../resources/css/backButton.css" text="Back to Menu" textAlignment="CENTER" textFill="#0b80c9" underline="true" />
-      <Label layoutX="48.0" layoutY="91.0" prefHeight="101.0" prefWidth="550.0" stylesheets="@../../../../resources/css/levelLabel.css" text="CHOOSE  LEVEL">
+      <Button layoutX="187.0" layoutY="637.0" mnemonicParsing="false" onMouseClicked="#back" stylesheets="@../../../../resources/css/backButton.css" text="Back to Menu" textAlignment="CENTER" textFill="#0b80c9" underline="true" />
+      <Label layoutX="63.0" layoutY="91.0" prefHeight="101.0" prefWidth="550.0" stylesheets="@../../../../resources/css/levelLabel.css" text="CHOOSE  LEVEL">
          <font>
             <Font size="64.0" />
          </font>

@@ -7,7 +7,7 @@ import xixuan.froggerapp.views.DigitView;
 
 public class DigitInitializer implements Initializable {
 	private MyStage background;
-	private int digit_position = 120;
+	private int digit_position = 100;
 	
 	public DigitInitializer(MyStage background) {
 		this.background = background;
@@ -15,7 +15,7 @@ public class DigitInitializer implements Initializable {
 	
 	@Override
 	public void initialize() {
-		Digit digit = new Digit(0, 30, digit_position, 25);
+		Digit digit = new Digit(0, 30, digit_position, 28);
 		DigitView digitView = new DigitView(background);
 		DigitController digitController = new DigitController(digit, digitView);
 		digitController.updateView();

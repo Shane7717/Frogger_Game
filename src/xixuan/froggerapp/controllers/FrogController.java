@@ -43,4 +43,12 @@ public class FrogController {
 	public boolean getDisableKey() { 
 		return model.getDisableKey();
 	}
+	
+	public void setLifeNum(int value) {
+		model.setLiftNum(value);
+	}
+	
+	public int getLifeNum() {
+		return model.getLiftNum();
+	}
 }

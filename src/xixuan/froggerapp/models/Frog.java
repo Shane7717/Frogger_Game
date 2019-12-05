@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import xixuan.froggerapp.views.GameView;
 
 public class Frog extends Actor {
 	
@@ -26,6 +27,7 @@ public class Frog extends Actor {
 	public static double crocodileLeftIntersectSpeed = 0;
 	public static double crocodileRightIntersectSpeed = 0;
 	private boolean disableKey = false;
+	private int lifeNum = 0;
 	
 	
 	//Used to check if the button is continuously pressed without releasing
@@ -72,7 +74,7 @@ public class Frog extends Actor {
 	
 	//Check game stop condition
 	public boolean getStop() {
-		return endOccupy==5;
+		return (endOccupy==5 || lifeNum==0);
 	}
 	
 	//Return the points of the player
@@ -221,6 +223,8 @@ public class Frog extends Actor {
 			if (frogD >= 1 && frogD <= 3)
 				setImage(new Image("file:resources/images/deaths/cardeath"+frogD+".png", imgSize, imgSize, true, true));
 			if (frogD == 4) {
+				lifeNum--;
+				((GameView.symbols)[lifeNum]).setXpos(1000);
 				setFrogPosition();
 				carDeath = false;
 				frogD = 0;
@@ -244,6 +248,8 @@ public class Frog extends Actor {
 				if (frogD >= 1 && frogD <= 4) 
 					setImage(new Image("file:resources/images/deaths/waterdeath"+frogD+".png", imgSize,imgSize , true, true));
 				if (frogD == 5) {
+					lifeNum--;
+					((GameView.symbols)[lifeNum]).setXpos(1000);
 					setFrogPosition();
 					waterDeath = false;
 					frogD = 0;
@@ -329,5 +335,12 @@ public class Frog extends Actor {
 		return this.disableKey;
 	}
 	
+	public void setLiftNum(int value) {
+		this.lifeNum = value;
+	}
+	
+	public int getLiftNum() {
+		return this.lifeNum;
+	}
 	
 }

@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.FroggerApp;
 import xixuan.froggerapp.controllers.FrogController;
@@ -25,6 +26,7 @@ import xixuan.froggerapp.initializers.TurtlesInitializer;
 import xixuan.froggerapp.initializers.WetTurtlesInitializer;
 import xixuan.froggerapp.models.Digit;
 import xixuan.froggerapp.models.Frog;
+import xixuan.froggerapp.models.FrogLifeSymbol;
 
 public class GameView {
 
@@ -42,6 +44,7 @@ public class GameView {
 	private BackgroundImageInitializer bgImageInitializer;
 	private int musicSignal = 1;
 	private int gameSignal = 1;
+	public static FrogLifeSymbol[] symbols;
 	
 	public void launchGameView() {	
 		setQuitButton();
@@ -73,7 +76,7 @@ public class GameView {
             		background.stop();
             		            		         		
             		//After the game ends, show the highscores
-            		EndHighscoresSceneController hsController = new EndHighscoresSceneController(frogController.getPlayerPoints());          	
+            		EndHighscoresSceneController hsController = new EndHighscoresSceneController(frogController.getPlayerPoints(), frogController.getLifeNum());          	
             		FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/EndHighscoresView.fxml"));
             		loader.setController(hsController);
             				
@@ -92,7 +95,7 @@ public class GameView {
     }
 	    
     public void easy_initialize() {
-    	digit_position = 120; 
+    	digit_position = 100; 
 		background = new MyStage();
 		
 		//Display background image in the game
@@ -141,6 +144,8 @@ public class GameView {
     }
     
     public void normal_initialize() {
+    	frogController.setLifeNum(3);
+    	setLifeSymbols();
     	logsInitializer.normal_settings();
     	turtlesInitializer.normal_settings();
     	wetTurtlesInitializer.normal_settings();
@@ -150,6 +155,8 @@ public class GameView {
     }
     
     public void hard_initialize() {
+    	frogController.setLifeNum(4);
+    	setLifeSymbols();
     	logsInitializer.hard_settings();
     	turtlesInitializer.hard_settings();
     	wetTurtlesInitializer.hard_settings();
@@ -159,6 +166,8 @@ public class GameView {
     }
     
     public void extra_initialize() {
+    	frogController.setLifeNum(5);
+    	setLifeSymbols();
     	frogController.setSignalValue(0);
     	logsInitializer.extra_settings();
     	turtlesInitializer.extra_settings();
@@ -179,7 +188,7 @@ public class GameView {
     		int d = n / 10;
     		int k = n - d * 10;
     		n = d;
-    		background.add(new Digit(k, 30, digit_position - shift, 25));
+    		background.add(new Digit(k, 30, digit_position - shift, 28));
     		shift+=30;
     	}
     }
@@ -188,8 +197,8 @@ public class GameView {
     	Button quitButton = new Button();
     	quitButton.setText("QUIT");
     	quitButton.setUnderline(true);
-    	quitButton.setStyle("-fx-background-color:green;");
-    	quitButton.setLayoutX(520);
+    	quitButton.setStyle("-fx-background-color: pink;");
+    	quitButton.setLayoutX(540);
     	quitButton.setLayoutY(28);
     	quitButton.setPrefSize(50, 30);
     	background.getChildren().add(quitButton);
@@ -218,8 +227,8 @@ public class GameView {
     	Button pauseMusicButton = new Button();
     	pauseMusicButton.setText("PAUSE MUSIC");
     	pauseMusicButton.setUnderline(true);
-    	pauseMusicButton.setStyle("-fx-background-color:green;");
-    	pauseMusicButton.setLayoutX(410);
+    	pauseMusicButton.setStyle("-fx-background-color: #1fc966;");
+    	pauseMusicButton.setLayoutX(430);
     	pauseMusicButton.setLayoutY(28);
     	pauseMusicButton.setPrefSize(100, 30);
     	background.getChildren().add(pauseMusicButton);
@@ -240,8 +249,8 @@ public class GameView {
     	Button pauseGameButton = new Button();
     	pauseGameButton.setText("PAUSE GAME");
     	pauseGameButton.setUnderline(true);
-    	pauseGameButton.setStyle("-fx-background-color:green;");
-    	pauseGameButton.setLayoutX(290);
+    	pauseGameButton.setStyle("-fx-background-color:#1fc966;");
+    	pauseGameButton.setLayoutX(310);
     	pauseGameButton.setLayoutY(28);
     	pauseGameButton.setPrefSize(110, 30);
     	background.getChildren().add(pauseGameButton);
@@ -260,5 +269,15 @@ public class GameView {
 				pauseGameButton.setText("PAUSE GAME");		
 			}		
 		}); 
+    }
+    
+    public void setLifeSymbols() {
+    	int xpos = 275;
+    	symbols = new FrogLifeSymbol[frogController.getLifeNum()];
+    	for (int i = 0; i < frogController.getLifeNum(); ++i ) {
+    		symbols[i] = new FrogLifeSymbol("file:resources/images/scenes/lifeSymbol.png", 25, xpos, 30);
+    		background.add(symbols[i]);
+    		xpos -= 30;
+    	} 	
     }
 }	
