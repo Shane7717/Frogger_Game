@@ -7,8 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 //Problems to be solved:
-//1. Should I add an SSH key to my project??
-//2. Should I delete my branches after finishing the whole project?
 //3. Should I include the "module"??
 //4. Should I add "." files into .gitignore?？
 //Bug 1: If you keep pressing keys, the position of your frog will be wrong!
