@@ -28,7 +28,6 @@ public class Frog extends Actor {
 	public static double logLeftIntersectSpeed = 0;
 	public static double turtleIntersectSpeed = 0;
 	public static double crocodileLeftIntersectSpeed = 0;
-	public static double crocodileRightIntersectSpeed = 0;
 	private boolean disableKey = false;
 	private int lifeNum = -1;
 	MediaPlayer frogSoundEffect;
@@ -296,11 +295,8 @@ public class Frog extends Actor {
 		else if (getIntersectingObjects(Crocodile.class).size() >= 1 && !noMove) {
 			if (getIntersectingObjects(Crocodile.class).get(0).isCrazyDeath()) 
 				waterDeath = true;
-			else {
-				if(getIntersectingObjects(Crocodile.class).get(0).getLeft())
-					move(crocodileLeftIntersectSpeed, 0);
-				else
-					move(crocodileRightIntersectSpeed, 0); 
+			else {			
+				move(crocodileLeftIntersectSpeed, 0);
 			}
 		} 
 		

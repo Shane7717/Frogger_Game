@@ -18,60 +18,40 @@ public class End extends Actor{
 	}
 	
 	@Override
-	public void act(long now) {
-		// TODO Auto-generated method st
-	}
+	public void act(long now) {}
 	
+	//Set the image of the end in the game
 	public void setEnd() {
 		setImage(new Image("file:resources/images/ends/FrogEnd.png", 70, 70, true, true));
 		this.activated = true;
 	}
 	
+	//Check if this end has contained a frog already
 	public boolean isActivated() {
 		return activated;
 	}
-	
-	//Return the image link of the log
-	public String getImageLink() {
-		return this.imageLink;
-	}
 
-	//Set the image link of the log
+	//Set the image of the end
 	public void setImageLink(String imageLink) {
 		this.imageLink = imageLink;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 	
-	//Return the size of the log
-	public int getSize() {
-		return this.size;
-	}
-
-	//Set the size of the log
+	//Set the size of the end
 	public void setSize(int size) {
 		this.size = size;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 	
-	//Return the x position of the log
-	public int getXpos() {
-		return this.xpos;
-	}
-
-	//Set the x position of the log
+	//Set the x position of the end
 	public void setXpos(int xpos) {
 		this.xpos = xpos;
-		setX(xpos);
+		setX(this.xpos);
 	}
 
-	//Return the y position of the log
-	public int getYpos() {
-		return this.ypos;
-	}
-
-	//Set the y position of the log
+	//Set the y position of the end
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
-		setY(ypos);
+		setY(this.ypos);
 	}
 }

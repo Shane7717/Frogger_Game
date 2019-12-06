@@ -27,19 +27,11 @@ public class LizardsInitializer implements Initializable {
 		lizard2controller.updateView(); 
 				
 	}
-	
-	public void normal_settings() {
-		;
-	}
-	
+		
 	public void hard_settings() {
 		lizard1controller.setLizardXpos(300);
 		lizard1controller.setLizardSpeed(-4.0);
 		lizard2controller.setLizardXpos(120);
 		lizard2controller.setLizardSpeed(-4.8);
-	}
-	
-	public void nightmare_settings() {
-		;
 	}	
 }

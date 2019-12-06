@@ -31,16 +31,6 @@ public class Obstacle extends Actor {
 	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
-	
-	//Return the speed of the obstacle
-	public double getSpeed() {
-		return this.speed;
-	}
-
-	//Return the size of the obstacle
-	public int getSize() {
-		return this.size;
-	}
 
 	//Set the size of the obstacle
 	public void setSize(int size) {
@@ -48,36 +38,21 @@ public class Obstacle extends Actor {
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 
-	//Return the image link of the obstacle
-	public String getImageLink() {
-		return this.imageLink;
-	}
-
-	//Set the image link of the obstacle
+	//Set the image of the obstacle
 	public void setImageLink(String imageLink) {
 		this.imageLink = imageLink;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 
-	//Return the x position of the obstacle
-	public int getXpos() {
-		return this.xpos;
-	}
-
 	//Set the x position of the obstacle
 	public void setXpos(int xpos) {
 		this.xpos = xpos;
-		setX(xpos);
-	}
-
-	//Return the y position of the obstacle
-	public int getYpos() {
-		return this.ypos;
+		setX(this.xpos);
 	}
 
 	//Set the y position of the obstacle
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
-		setY(ypos);
+		setY(this.ypos);
 	}	
 }

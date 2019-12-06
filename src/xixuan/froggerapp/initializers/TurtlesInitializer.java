@@ -6,60 +6,58 @@ import xixuan.froggerapp.models.Turtle;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.TurtleView;
 
-
 public class TurtlesInitializer implements Initializable {
 	private MyStage background;
-	TurtleController turtle1controller;
-	TurtleController turtle2controller;
-	TurtleController turtle3controller;
-	
+	private Turtle[] turtleModels = new Turtle[3];
+	private TurtleController[] turtleControllers = new TurtleController[3];
+	private TurtleView[] turtleViews = new TurtleView[3];
+		
 	public TurtlesInitializer(MyStage background) {
 		this.background = background;
 	}
 
 	public void initialize() { 
 		Frog.turtleIntersectSpeed = -0.8;
-		Turtle turtle1model = new Turtle(130, 500, 376, Frog.turtleIntersectSpeed);
-		TurtleView turtle1view = new TurtleView(background);
-		turtle1controller = new TurtleController(turtle1model, turtle1view);
-		turtle1controller.updateView();
-		
-		Turtle turtle2model = new Turtle(130, 300, 376, Frog.turtleIntersectSpeed);
-		TurtleView turtle2view = new TurtleView(background);
-		turtle2controller = new TurtleController(turtle2model, turtle2view);
-		turtle2controller.updateView();
-		
-		Turtle Turtle3model = new Turtle(130, 400, 222, Frog.turtleIntersectSpeed);
-		TurtleView Turtle3view = new TurtleView(background);
-		turtle3controller = new TurtleController(Turtle3model, Turtle3view);
-		turtle3controller.updateView();
+		turtleModels[0]= new Turtle(130, 500, 376, Frog.turtleIntersectSpeed);
+		turtleViews[0] = new TurtleView(background);
+		turtleControllers[0] = new TurtleController(turtleModels[0], turtleViews[0]);
+		turtleControllers[0].updateView();
+			
+		turtleModels[1]= new Turtle(130, 300, 376, Frog.turtleIntersectSpeed);
+		turtleViews[1] = new TurtleView(background);
+		turtleControllers[1] = new TurtleController(turtleModels[1], turtleViews[1]);
+		turtleControllers[1].updateView();
+				
+		turtleModels[2]= new Turtle(130, 400, 222, Frog.turtleIntersectSpeed);
+		turtleViews[2] = new TurtleView(background);
+		turtleControllers[2] = new TurtleController(turtleModels[2], turtleViews[2]);
+		turtleControllers[2].updateView();
 		
 	}
 	
 	public void normal_settings() {
 		Frog.turtleIntersectSpeed = -1.6;
-		turtle1controller.setTurtleXpos(1000);
-		turtle1controller.setTurtleSpeed(0);
-		turtle2controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
-		turtle3controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
+		turtleControllers[0].setTurtleXpos(1000);
+		turtleControllers[0].setTurtleSpeed(0);
+		turtleControllers[1].setTurtleSpeed(Frog.turtleIntersectSpeed);
+		turtleControllers[2].setTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
 	public void hard_settings() {
 		Frog.turtleIntersectSpeed = -3.2;
-		turtle1controller.setTurtleXpos(1000);
-		turtle1controller.setTurtleSpeed(0);
-		turtle2controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
-		turtle3controller.setTurtleSpeed(Frog.turtleIntersectSpeed);
+		turtleControllers[0].setTurtleXpos(1000);
+		turtleControllers[0].setTurtleSpeed(0);
+		turtleControllers[1].setTurtleSpeed(Frog.turtleIntersectSpeed);
+		turtleControllers[2].setTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
 	public void extra_settings() {
 		Frog.turtleIntersectSpeed = 0;
-		turtle1controller.setTurtleXpos(1000);
-		turtle1controller.setTurtleSpeed(0);
-		turtle2controller.setTurtleXpos(1000);
-		turtle2controller.setTurtleSpeed(0);
-		turtle3controller.setTurtleXpos(1000);
-		turtle3controller.setTurtleSpeed(0);
-		
+		turtleControllers[0].setTurtleXpos(1000);
+		turtleControllers[0].setTurtleSpeed(0);
+		turtleControllers[1].setTurtleXpos(1000);
+		turtleControllers[1].setTurtleSpeed(0);
+		turtleControllers[2].setTurtleXpos(1000);
+		turtleControllers[2].setTurtleSpeed(0);		
 	}
 }

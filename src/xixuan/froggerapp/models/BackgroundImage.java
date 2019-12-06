@@ -13,35 +13,24 @@ public class BackgroundImage extends Actor {
 		setImage(new Image(this.imageLink, this.imageWidth, this.imageHeight, true, true));
 	}
 
-	public String getImageLink() {
-		return imageLink;
-	}
-
+	//Set the background image
 	public void setImageLink(String imageLink) {
 		this.imageLink = imageLink;
 		setImage(new Image(this.imageLink, this.imageWidth, this.imageHeight, true, true));
 	}
 
-	public int getImageWidth() {
-		return imageWidth;
-	}
-
+	//Set the width of the background image
 	public void setImageWidth(int imageWidth) {
 		this.imageWidth = imageWidth;
 		setImage(new Image(this.imageLink, this.imageWidth, this.imageHeight, true, true));
 	}
 
-	public int getImageHeight() {
-		return imageHeight;
-	}
-
+	//Set the height of the background image
 	public void setImageHeight(int imageHeight) {
 		this.imageHeight = imageHeight;
 		setImage(new Image(this.imageLink, this.imageWidth, this.imageHeight, true, true));
 	}
 	
 	@Override
-	public void act(long now) {
-		;	
-	}
+	public void act(long now) {}
 }

@@ -33,7 +33,7 @@ public class TurtleController {
 		model.setYpos(ypos);
 	}
 	
-	//Show this turtle in the game
+	//Display this turtle in the game
 	public void updateView() {
 		view.viewTurtle(model);
 	}

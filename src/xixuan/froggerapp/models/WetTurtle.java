@@ -19,10 +19,10 @@ public class WetTurtle extends Actor{
 		setYpos(ypos);
 		setSpeed(speed);	
 		
-		turtle1 = new Image("file:resources/images/turtles/TurtleAnimation1.png", size, size, true, true);
-		turtle2 = new Image("file:resources/images/turtles/TurtleAnimation2Wet.png", size, size, true, true);
-		turtle3 = new Image("file:resources/images/turtles/TurtleAnimation3Wet.png", size, size, true, true);
-		turtle4 = new Image("file:resources/images/turtles/TurtleAnimation4Wet.png", size, size, true, true);
+		turtle1 = new Image("file:resources/images/turtles/TurtleAnimation1.png", this.size, this.size, true, true);
+		turtle2 = new Image("file:resources/images/turtles/TurtleAnimation2Wet.png", this.size, this.size, true, true);
+		turtle3 = new Image("file:resources/images/turtles/TurtleAnimation3Wet.png", this.size, this.size, true, true);
+		turtle4 = new Image("file:resources/images/turtles/TurtleAnimation4Wet.png", this.size, this.size, true, true);
 		
 		setImage(turtle2);
 	}
@@ -61,40 +61,20 @@ public class WetTurtle extends Actor{
 		this.speed = speed;
 	}
 	
-	//Return the speed of the wet turtle
-	public double getSpeed() {
-		return this.speed;
-	}
-
-	//Return the size of the wet turtle
-	public int getSize() {
-		return this.size;
-	}
-
 	//Set the size of the wet turtle
 	public void setSize(int size) {
 		this.size = size;
 	}
 	
-	//Return the x position of the wet turtle
-	public int getXpos() {
-		return this.xpos;
-	}
-
 	//Set the x position of the wet turtle
 	public void setXpos(int xpos) {
 		this.xpos = xpos;
-		setX(xpos);
-	}
-
-	//Return the y position of the wet turtle
-	public int getYpos() {
-		return this.ypos;
+		setX(this.xpos);
 	}
 
 	//Set the y position of the wet turtle
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
-		setY(ypos);
+		setY(this.ypos);
 	}	
 }

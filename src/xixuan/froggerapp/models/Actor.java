@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public abstract class Actor extends ImageView{
 
-    //Move the object to a specific location
+    //Move an object to a specific location
 	public void move(double dx, double dy) {
         setX(getX() + dx);
         setY(getY() + dy);
@@ -36,9 +36,7 @@ public abstract class Actor extends ImageView{
         return someArray;
     }
     
-    public void manageInput(InputEvent e) {
-        
-    }
+    public void manageInput(InputEvent e) {}
 
     public <A extends Actor> A getOneIntersectingObject(java.lang.Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();

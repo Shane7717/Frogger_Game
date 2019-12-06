@@ -13,46 +13,32 @@ public class ObstacleController {
 		this.view = view;
 	}
 	
+	//Set the speed of the obstacle
 	public void setObstacleSpeed(double speed) {
 		model.setSpeed(speed);
 	}
-	
-	public double getObstacleSpeed() {
-		return model.getSpeed();
-	}
-	
+		
+	//Set the size of the obstacle
 	public void setObstacleSize(int size) {
 		model.setSize(size);
 	}
 	
-	public int getObstacleSize() {
-		return model.getSize();
-	}
-	
+	//Set the image of the obstacle
 	public void setImageLink(String imageLink) {
 		model.setImageLink(imageLink);
 	}
-	
-	public String getImageLink() {
-		return model.getImageLink();
-	}
-	
+		
+	//Set the x position of the obstacle
 	public void setObstacleXpos(int xpos) {
 		model.setXpos(xpos);
 	}
 	
-	public int getObstacleXpos() {
-		return model.getXpos();
-	}
-
+	//Set the y position of the obstacle
 	public void setObstacleYpos(int ypos) {
 		model.setYpos(ypos);
 	}
 	
-	public int getObstacleYpos() {
-		return model.getYpos();
-	}
-	
+	//Display this obstacle in the game
 	public void updateView() {
 		view.viewObstacle(model);
 	}

@@ -13,22 +13,27 @@ public class LizardController {
 		this.view = view;
 	}
 	
+	//Set the speed of the lizard
 	public void setLizardSpeed(double speed) {
 		model.setSpeed(speed);
 	}
 	
+	//Set the size of the lizard
 	public void setLizardSize(int size) {
 		model.setSize(size);
 	}
 	
+	//Set the x position of the lizard
 	public void setLizardXpos(int xpos) {
 		model.setXpos(xpos);
 	}
 	
+	//Set the y position of the lizard
 	public void setLizardYpos(int ypos) {
 		model.setYpos(ypos);
 	}
 
+	//Display thie lizard in the game
 	public void updateView() {
 		view.viewLizard(model);
 	}
