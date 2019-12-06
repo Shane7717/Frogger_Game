@@ -58,16 +58,17 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Label fx:id="hsName" layoutX="74.0" layoutY="323.0" prefHeight="380.0" prefWidth="338.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Name" textFill="#ef0639">
+      <Label fx:id="hsName" layoutX="74.0" layoutY="315.0" prefHeight="380.0" prefWidth="338.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Name" textFill="#ef0639">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label fx:id="hsScore" layoutX="446.0" layoutY="323.0" prefHeight="380.0" prefWidth="109.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Score" textFill="#ef0639">
+      <Label fx:id="hsScore" layoutX="446.0" layoutY="315.0" prefHeight="380.0" prefWidth="109.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Score" textFill="#ef0639">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
       <Label fx:id="state" layoutX="194.0" layoutY="119.0" stylesheets="@../../../../resources/css/endLabel.css" text="YOU WIN!!!" textFill="RED" />
+      <Button layoutX="187.0" layoutY="678.0" mnemonicParsing="false" onMouseClicked="#toMainScene" stylesheets="@../../../../resources/css/backButton.css" text="Back to Main" textFill="#179db5" />
    </children>
 </AnchorPane>

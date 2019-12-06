@@ -1,11 +1,17 @@
 package xixuan.froggerapp.controllers;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import xixuan.froggerapp.FroggerApp;
 import xixuan.froggerapp.highscores.HighscoreManager;
 
 public class EndHighscoresSceneController {
@@ -79,4 +85,16 @@ public class EndHighscoresSceneController {
 			}
 		});
 	}	
+	
+	public void toMainScene() {
+		Parent root = null;
+		try {
+			root = FXMLLoader.load(getClass().getResource("../views/MenuView.fxml"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		FroggerApp.getPrimaryStage().setScene(new Scene(root, 600, 800));	
+        FroggerApp.getPrimaryStage().show();
+	}
 }

@@ -40,4 +40,11 @@ public class MenuSceneController {
 		FroggerApp.getPrimaryStage().setScene(new Scene(root, 600, 800));	
 		FroggerApp.getPrimaryStage().show();
 	}	
+	
+	@FXML
+	public void toIntroScene() throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("../views/IntroView.fxml"));
+		FroggerApp.getPrimaryStage().setScene(new Scene(root, 600, 800));	
+        FroggerApp.getPrimaryStage().show();
+	}
 }

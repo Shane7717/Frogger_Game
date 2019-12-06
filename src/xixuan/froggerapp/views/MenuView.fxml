@@ -43,5 +43,10 @@
             </RadialGradient>
          </textFill>
       </Label>
+      <Button layoutX="192.0" layoutY="632.0" mnemonicParsing="false" onMouseClicked="#toIntroScene" prefHeight="60.0" prefWidth="219.0" stylesheets="@../../../../resources/css/menuIntroButton.css" text="H o w    to    P la y" textFill="#c72072">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
