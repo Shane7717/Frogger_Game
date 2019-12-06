@@ -7,15 +7,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 //Problems to be solved:
-//1. Should I add an SSH key to my project??
-//2. Should I delete my branches after finishing the whole project?
-//3. Should I include the "module"??
-//4. Should I add "." files into .gitignore?？
 //Bug 1: If you keep pressing keys, the position of your frog will be wrong!
 //Bug 2: Frogs in the end will be more thant 1
 //Bug 3: Keep pressing but score mounting is false
-//TO DO: 
-//1. Can I remove some useless setters and getters??? (ask!!!) 
+//1. Can I remove some useless setters and getters??? (SURE!!DO IT)
 //2. Highscore -- two labels and no ranking number when shown same marks
 //3. Unit test -- see email by PEER
 //4. pause the game.

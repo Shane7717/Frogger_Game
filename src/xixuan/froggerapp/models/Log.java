@@ -20,7 +20,6 @@ public class Log extends Actor {
 	}
 	
 	@Override
-	//Used to move the log
 	public void act(long now) {
 		move(this.speed, 0);
 		if (getX() > 600 && this.speed > 0)
@@ -29,6 +28,7 @@ public class Log extends Actor {
 			setX(700);
 	}
 	
+	//Check if the log is moving left
 	public boolean getLeft() {
 		return this.speed < 0;
 	}
@@ -38,53 +38,28 @@ public class Log extends Actor {
 		this.speed = speed;
 	}
 	
-	//Return the speed of the log
-	public double getSpeed() {
-		return this.speed;
-	}
-
-	//Return the size of the log
-	public int getSize() {
-		return this.size;
-	}
-
 	//Set the size of the log
 	public void setSize(int size) {
 		this.size = size;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 
-	//Return the image link of the log
-	public String getImageLink() {
-		return this.imageLink;
-	}
-
-	//Set the image link of the log
+	//Set the image of the log
 	public void setImageLink(String imageLink) {
 		this.imageLink = imageLink;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 
-	//Return the x position of the log
-	public int getXpos() {
-		return this.xpos;
-	}
-
 	//Set the x position of the log
 	public void setXpos(int xpos) {
 		this.xpos = xpos;
-		setX(xpos);
-	}
-
-	//Return the y position of the log
-	public int getYpos() {
-		return this.ypos;
+		setX(this.xpos);
 	}
 
 	//Set the y position of the log
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
-		setY(ypos);
+		setY(this.ypos);
 	}
 	
 }
