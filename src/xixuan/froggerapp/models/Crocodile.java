@@ -45,6 +45,11 @@ public class Crocodile extends Actor{
 			setX(600);
 	}
 	
+	public boolean getLeft() {
+		return this.speed < 0;
+	}
+	
+	
 	public boolean isCrazyDeath() {
 		return this.crazyDeath;
 	}

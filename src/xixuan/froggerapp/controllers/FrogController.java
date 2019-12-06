@@ -31,4 +31,24 @@ public class FrogController {
 	public void keyboardMonitor() {
 		model.keyboardMonitor();
 	}
+	
+	public void setSignalValue(int value) {
+		model.setSignalValue(value);
+	}
+	
+	public void setDisableKey(boolean value) {
+		model.setDisableKey(value);
+	}
+	
+	public boolean getDisableKey() { 
+		return model.getDisableKey();
+	}
+	
+	public void setLifeNum(int value) {
+		model.setLiftNum(value);
+	}
+	
+	public int getLifeNum() {
+		return model.getLiftNum();
+	}
 }

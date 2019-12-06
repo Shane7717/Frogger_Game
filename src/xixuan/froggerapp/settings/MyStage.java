@@ -10,28 +10,12 @@ public class MyStage extends World{
 	MediaPlayer mediaPlayer;
 	
 	@Override
-	public void act(long now) {
-		//System.out.println("1");
-	}
-	
-	public MyStage() {
-//		mediaPlayer.play();
-//		mediaPlayer.setOnEndOfMedia(new Runnable() {
-//
-//			@Override
-//			public void run() {
-//				mediaPlayer.seek(Duration.ZERO);
-//				
-//			}
-//			
-//		});
-//		mediaPlayer.play();
-	}
-	
+	public void act(long now) {}
+		
 	public void playMusic() {
-		String musicFile = "resources/music/Frogger Main Song Theme (loop).mp3";   
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		mediaPlayer = new MediaPlayer(sound);
+		String musicFile = "resources/music/FroggerMainSound.mp3";   
+		Media music = new Media(new File(musicFile).toURI().toString());
+		mediaPlayer = new MediaPlayer(music);
 		mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
 	    mediaPlayer.play();
 	}

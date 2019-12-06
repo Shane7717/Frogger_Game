@@ -7,6 +7,7 @@ import xixuan.froggerapp.views.BackgroundImageView;
 
 public class BackgroundImageInitializer implements Initializable {
 	private MyStage background;
+	BackgroundImageController bgImageController;
 	
 	public BackgroundImageInitializer(MyStage background) {
 		this.background = background;
@@ -17,8 +18,12 @@ public class BackgroundImageInitializer implements Initializable {
 		
 		BackgroundImage bgImage = new BackgroundImage("file:resources/images/background/arcade.png");
 		BackgroundImageView bgImageView = new BackgroundImageView(background);
-		BackgroundImageController bgImageController = new BackgroundImageController(bgImage, bgImageView);
+		bgImageController = new BackgroundImageController(bgImage, bgImageView);
 		bgImageController.updateView();	
 		
+	}
+	
+	public void extra_settings() {
+		bgImageController.setImageLink("file:resources/images/background/arcade2.png");
 	}
 }

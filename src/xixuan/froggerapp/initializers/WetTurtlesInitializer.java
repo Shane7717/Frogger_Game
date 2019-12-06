@@ -37,23 +37,28 @@ public class WetTurtlesInitializer implements Initializable {
 	}
 	
 	public void normal_settings() {
-		Frog.turtleIntersectSpeed = -1.4;
+		Frog.turtleIntersectSpeed = -1.6;
 		wetTurtle1controller.setWetTurtleSpeed(Frog.turtleIntersectSpeed);
-		wetTurtle2controller.setWetTurtleSpeed(Frog.turtleIntersectSpeed);
+		wetTurtle2controller.setWetTurtleSpeed(0);
+		wetTurtle2controller.setWetTurtleXpos(1000);
 		wetTurtle3controller.setWetTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
 	public void hard_settings() {
 		Frog.turtleIntersectSpeed = -3.2;
 		wetTurtle1controller.setWetTurtleSpeed(Frog.turtleIntersectSpeed);
-		wetTurtle2controller.setWetTurtleSpeed(Frog.turtleIntersectSpeed);
+		wetTurtle2controller.setWetTurtleSpeed(0);
+		wetTurtle2controller.setWetTurtleXpos(1000);
 		wetTurtle3controller.setWetTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
-	public void nightmare_settings() {
-		Frog.turtleIntersectSpeed = -6.4;
-		wetTurtle1controller.setWetTurtleSpeed(Frog.turtleIntersectSpeed);
-		wetTurtle2controller.setWetTurtleSpeed(Frog.turtleIntersectSpeed);
-		wetTurtle3controller.setWetTurtleSpeed(Frog.turtleIntersectSpeed);
+	public void extra_settings() {
+		wetTurtle1controller.setWetTurtleSpeed(0);
+		wetTurtle1controller.setWetTurtleXpos(1000);
+		wetTurtle2controller.setWetTurtleSpeed(0);
+		wetTurtle2controller.setWetTurtleXpos(1000);
+		wetTurtle3controller.setWetTurtleSpeed(0);
+		wetTurtle3controller.setWetTurtleXpos(1000);
+	
 	}
 }

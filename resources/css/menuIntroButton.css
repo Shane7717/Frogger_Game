@@ -1,11 +1,12 @@
 @font-face {
-	src: url('../fonts/Angelika.ttf');
+	src: url('../fonts/ARCADECLASSIC.ttf');
 }
 
 
 .text {
-    -fx-font-family: "Angelika";
-    -fx-font-size: 28px;
+    -fx-font-family: "ARCADECLASSIC";
+    -fx-font-size: 25px;
+    -fx-underline: true;
 }
 
 .button:hover 
@@ -23,4 +24,3 @@
  {
     -fx-background-color: transparent;
  }
- 

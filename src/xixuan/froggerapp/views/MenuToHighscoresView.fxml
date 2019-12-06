@@ -16,17 +16,17 @@
             <Image url="@../../../../resources/images/scenes/otherPages.png" />
          </image>
       </ImageView>
-      <Label fx:id="hsName" layoutX="72.0" layoutY="213.0" prefHeight="352.0" prefWidth="317.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Names" textFill="#e11212">
+      <Label fx:id="hsName" layoutX="72.0" layoutY="227.0" prefHeight="352.0" prefWidth="317.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Names" textFill="#e11212">
          <font>
             <Font name="ArcadeClassic" size="26.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="175.0" layoutY="669.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="237.0" stylesheets="@../../../../resources/css/backButton.css" text="Back to Menu" textFill="#00aaff" underline="true">
+      <Button fx:id="backButton" layoutX="175.0" layoutY="618.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="237.0" stylesheets="@../../../../resources/css/backButton.css" text="Back to Menu" textFill="#00aaff" underline="true">
          <font>
             <Font name="Xingkai SC Bold" size="32.0" />
          </font>
       </Button>
-      <Label fx:id="hsScore" layoutX="456.0" layoutY="213.0" prefHeight="352.0" prefWidth="118.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Scores" textFill="#e11212">
+      <Label fx:id="hsScore" layoutX="456.0" layoutY="224.0" prefHeight="352.0" prefWidth="118.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Scores" textFill="#e11212">
          <font>
             <Font name="ArcadeClassic" size="26.0" />
          </font>
