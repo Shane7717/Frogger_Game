@@ -13,38 +13,27 @@ public class TurtleController {
 		this.view = view;
 	}
 	
+	//Set the speed of the turtle
 	public void setTurtleSpeed(double speed) {
 		model.setSpeed(speed);
 	}
 	
-	public double getTurtleSpeed() {
-		return model.getSpeed();
-	}
-	
+	//Set the size of the turtle
 	public void setTurtleSize(int size) {
 		model.setSize(size);
 	}
-	
-	public int getTurtleSize() {
-		return model.getSize();
-	}
 			
+	//Set the x position of the turtle
 	public void setTurtleXpos(int xpos) {
 		model.setXpos(xpos);
 	}
 	
-	public int getTurtleXpos() {
-		return model.getXpos();
-	}
-
+	//Set the y position of the turtle
 	public void setTurtleYpos(int ypos) {
 		model.setYpos(ypos);
 	}
 	
-	public int getTurtleYpos() {
-		return model.getYpos();
-	}
-	
+	//Show this turtle in the game
 	public void updateView() {
 		view.viewTurtle(model);
 	}
