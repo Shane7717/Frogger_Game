@@ -10,8 +10,13 @@ public class WetTurtleView {
 		this.background = background;
 	}
 	
-	//Display the log on the screen
+	//Display the wet turtle in the game
 	public void viewWetTurtle(WetTurtle model) {
 		background.add(model);
+	}
+	
+	//Remove the wet turtle in the game
+	public void removeWetTurtle(WetTurtle model) {
+		background.remove(model);
 	}
 }

@@ -42,4 +42,9 @@ public class LogController {
 	public void updateView() {
 		view.viewLog(model);
 	}
+	
+	//Remove this log in the game
+	public void removeView() {
+		view.removeLog(model);
+	}
 }

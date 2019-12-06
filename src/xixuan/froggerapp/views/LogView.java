@@ -14,4 +14,9 @@ public class LogView {
 	public void viewLog(Log model) {
 		background.add(model);
 	}
+	
+	//Remove the log on the screen
+	public void removeLog(Log model) {
+		background.remove(model);
+	}
 }

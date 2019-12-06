@@ -33,8 +33,13 @@ public class WetTurtleController {
 		model.setYpos(ypos);
 	}
 		
-	//Display thie wet turtle in the game
+	//Display this wet turtle in the game
 	public void updateView() {
 		view.viewWetTurtle(model);
+	}
+	
+	//Remove this wet turtle in the game
+	public void removeView() {
+		view.removeWetTurtle(model);
 	}
 }

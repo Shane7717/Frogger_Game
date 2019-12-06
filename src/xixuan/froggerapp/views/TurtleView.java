@@ -14,4 +14,9 @@ public class TurtleView {
 	public void viewTurtle(Turtle model) {
 		background.add(model);
 	}
+	
+	//Remove the turtle in the game
+	public void removeTurtle(Turtle model) {
+		background.remove(model);
+	}
 }

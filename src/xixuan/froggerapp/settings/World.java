@@ -91,6 +91,7 @@ public abstract class World extends Pane {
         getChildren().add(actor);
     }
 
+    //Remove actors from the game world
     public void remove(Actor actor) {
         getChildren().remove(actor);
     }

@@ -43,5 +43,10 @@ public class CrocodilesInitializer implements Initializable {
 		crocodile2controller.setCrocodileXpos(600);
 		crocodile2controller.setCrocodileSpeed(Frog.crocodileLeftIntersectSpeed);		
 	}
-
+	
+	public void extra_settings() {
+		Frog.crocodileLeftIntersectSpeed = 0;
+		crocodile1controller.removeView();
+		crocodile2controller.removeView();
+	}
 }

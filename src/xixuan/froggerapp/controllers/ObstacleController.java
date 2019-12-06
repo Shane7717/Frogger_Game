@@ -42,4 +42,9 @@ public class ObstacleController {
 	public void updateView() {
 		view.viewObstacle(model);
 	}
+	
+	//Remove this obstacle in the game
+	public void removeView() {
+		view.removeObstacle(model);
+	}
 }

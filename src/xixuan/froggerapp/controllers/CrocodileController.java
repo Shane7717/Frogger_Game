@@ -37,4 +37,9 @@ public class CrocodileController {
 	public void updateView() {
 		view.viewCrocodile(model);
 	}
+	
+	//Remove the crocodile in the game
+	public void removeView() {
+		view.removeCrocodile(model);
+	}
 }

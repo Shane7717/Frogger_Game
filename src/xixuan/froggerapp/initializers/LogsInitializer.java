@@ -64,8 +64,7 @@ public class LogsInitializer implements Initializable {
 	public void normal_settings() {
 		Frog.logRightIntersectSpeed = 1.4;
 		logControllers[0].setLogSpeed(Frog.logRightIntersectSpeed);
-		logControllers[1].setLogSpeed(0);
-		logControllers[1].setLogXpos(1000);
+		logControllers[1].removeView();
 		logControllers[2].setLogSpeed(Frog.logRightIntersectSpeed);
 		Frog.logLeftIntersectSpeed = -2.8;
 		logControllers[3].setLogSpeed(Frog.logLeftIntersectSpeed);
@@ -80,38 +79,21 @@ public class LogsInitializer implements Initializable {
 		logControllers[0].setLogSpeed(Frog.logRightIntersectSpeed);
 		logControllers[1].setLogSpeed(Frog.logRightIntersectSpeed);
 		logControllers[1].setLogXpos(420);
-		logControllers[2].setLogSpeed(0);
-		logControllers[2].setLogXpos(1000);
+		logControllers[2].removeView();
 		Frog.logLeftIntersectSpeed = -4.8;
 		logControllers[3].setLogSpeed(Frog.logLeftIntersectSpeed);
 		logControllers[4].setLogSpeed(Frog.logLeftIntersectSpeed);
 		logControllers[5].setLogSpeed(Frog.logRightIntersectSpeed);
-		logControllers[6].setLogSpeed(0);
-		logControllers[6].setLogXpos(1000);
+		logControllers[6].removeView();
 		logControllers[7].setLogSpeed(Frog.logRightIntersectSpeed);
 	}
 	
 	public void extra_settings() {
 		Frog.logRightIntersectSpeed = 0;
 		Frog.logLeftIntersectSpeed = 0;	
-		logControllers[2].setLogSpeed(0);
-		logControllers[2].setLogXpos(1000);
-		logControllers[1].setLogSpeed(0);
-		logControllers[1].setLogXpos(1000);
-		logControllers[0].setLogSpeed(0);
-		logControllers[0].setLogXpos(1000);
-		logControllers[7].setLogSpeed(0);
-		logControllers[7].setLogXpos(1000);
-		logControllers[1].setLogSpeed(0);
-		logControllers[1].setLogXpos(1000);
-		logControllers[3].setLogSpeed(0);
-		logControllers[3].setLogXpos(1000);
-		logControllers[4].setLogSpeed(0);
-		logControllers[4].setLogXpos(1000);
-		logControllers[5].setLogSpeed(0);
-		logControllers[5].setLogXpos(1000);
-		logControllers[6].setLogSpeed(0);
-		logControllers[6].setLogXpos(1000);
+		for (int i = 0; i <= 7; ++i) {
+			logControllers[i].removeView();
+		}
 	}
 	
 	

@@ -34,4 +34,9 @@ public class LizardsInitializer implements Initializable {
 		lizard2controller.setLizardXpos(120);
 		lizard2controller.setLizardSpeed(-4.8);
 	}	
+	
+	public void extra_settings() {
+		lizard1controller.removeView();
+		lizard2controller.removeView();
+	}
 }

@@ -157,27 +157,10 @@ public class ObstaclesInitializer implements Initializable {
 	}
 	
 	public void extra_settings() {
-		obstacleControllers[0].setObstacleXpos(1000);
-		obstacleControllers[0].setObstacleSpeed(0);
-		obstacleControllers[1].setObstacleXpos(1000);
-		obstacleControllers[1].setObstacleSpeed(0);
-		obstacleControllers[2].setObstacleXpos(1000);
-		obstacleControllers[2].setObstacleSpeed(0);
-		obstacleControllers[3].setObstacleXpos(1000);
-		obstacleControllers[3].setObstacleSpeed(0);
-		obstacleControllers[4].setObstacleXpos(1000);
-		obstacleControllers[4].setObstacleSpeed(0);
-		obstacleControllers[5].setObstacleXpos(1000);
-		obstacleControllers[5].setObstacleSpeed(0);
-		obstacleControllers[6].setObstacleXpos(1000);
-		obstacleControllers[6].setObstacleSpeed(0);
-		obstacleControllers[7].setObstacleXpos(1000);
-		obstacleControllers[7].setObstacleSpeed(0);
-		obstacleControllers[8].setObstacleXpos(1000);
-		obstacleControllers[8].setObstacleSpeed(0);
-		obstacleControllers[10].setObstacleSpeed(0);
-		obstacleControllers[10].setObstacleXpos(1000);
-		
+		for (int i = 0; i <= 8; ++i) {
+			obstacleControllers[i].removeView();
+		}							
+		obstacleControllers[10].removeView();		
 		obstacleControllers[9].setObstacleSpeed(-7);	
 		obstacleControllers[11].setObstacleSpeed(10);	
 		obstacleControllers[12].setObstacleSpeed(-6);	

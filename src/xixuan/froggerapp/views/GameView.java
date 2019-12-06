@@ -188,6 +188,7 @@ public class GameView {
     	wetTurtlesInitializer.extra_settings();
     	obstaclesInitializer.extra_settings();
     	bgImageInitializer.extra_settings();	
+    	crocodilesInitializer.extra_settings();
     }
      
     public void setNumber(int n) {

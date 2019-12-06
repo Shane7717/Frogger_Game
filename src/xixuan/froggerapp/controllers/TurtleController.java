@@ -37,4 +37,9 @@ public class TurtleController {
 	public void updateView() {
 		view.viewTurtle(model);
 	}
+	
+	//Remove this turtle in the game
+	public void removeView() {
+		view.removeTurtle(model);
+	}
 }

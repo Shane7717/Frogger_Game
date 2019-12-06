@@ -37,27 +37,22 @@ public class TurtlesInitializer implements Initializable {
 	
 	public void normal_settings() {
 		Frog.turtleIntersectSpeed = -1.6;
-		turtleControllers[0].setTurtleXpos(1000);
-		turtleControllers[0].setTurtleSpeed(0);
+		turtleControllers[0].removeView();
 		turtleControllers[1].setTurtleSpeed(Frog.turtleIntersectSpeed);
 		turtleControllers[2].setTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
 	public void hard_settings() {
 		Frog.turtleIntersectSpeed = -3.2;
-		turtleControllers[0].setTurtleXpos(1000);
-		turtleControllers[0].setTurtleSpeed(0);
+		turtleControllers[0].removeView();
 		turtleControllers[1].setTurtleSpeed(Frog.turtleIntersectSpeed);
 		turtleControllers[2].setTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
 	public void extra_settings() {
 		Frog.turtleIntersectSpeed = 0;
-		turtleControllers[0].setTurtleXpos(1000);
-		turtleControllers[0].setTurtleSpeed(0);
-		turtleControllers[1].setTurtleXpos(1000);
-		turtleControllers[1].setTurtleSpeed(0);
-		turtleControllers[2].setTurtleXpos(1000);
-		turtleControllers[2].setTurtleSpeed(0);		
+		for (int i = 0; i <= 2; ++i) {
+			turtleControllers[i].removeView();
+		}	
 	}
 }

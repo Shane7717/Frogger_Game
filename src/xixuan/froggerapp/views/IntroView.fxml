@@ -108,12 +108,12 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="#fc3e3e" layoutX="161.0" layoutY="528.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turtles help the frog to get across the river. However, be careful that turtles may sink into water, if the frog is standing on them at that moment, then it will die immediately" wrappingWidth="212.0">
+      <Text fill="#fc3e3e" layoutX="160.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turtles help the frog to get across the river. However, be careful that turtles may sink into water, if the frog is standing on them at that moment, then it will die immediately" wrappingWidth="212.0">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="#fc3e3e" layoutX="168.0" layoutY="632.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Although crocodiles are dangerous when they become crazy (their body turns red), the frog will be safe if it is standing on green crocodiles (not crazy ones). Green crocodiles can help frog get across the river too" wrappingWidth="190.0">
+      <Text fill="#fc3e3e" layoutX="167.0" layoutY="633.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Although crocodiles are dangerous when they become crazy (their body turns red), the frog will be safe if it is standing on green crocodiles (not crazy ones). Green crocodiles can help frog get across the river too" wrappingWidth="190.0">
          <font>
             <Font size="14.0" />
          </font>

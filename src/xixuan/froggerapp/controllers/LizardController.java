@@ -37,4 +37,9 @@ public class LizardController {
 	public void updateView() {
 		view.viewLizard(model);
 	}
+	
+	//Remove this lizard in the game
+	public void removeView() {
+		view.removeLizard(model);
+	}
 }

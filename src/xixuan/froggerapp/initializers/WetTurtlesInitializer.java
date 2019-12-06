@@ -38,25 +38,21 @@ public class WetTurtlesInitializer implements Initializable {
 	public void normal_settings() {
 		Frog.turtleIntersectSpeed = -1.6;
 		wetTurtleControllers[0].setWetTurtleSpeed(Frog.turtleIntersectSpeed);
-		wetTurtleControllers[1].setWetTurtleSpeed(0);
-		wetTurtleControllers[1].setWetTurtleXpos(1000);
+		wetTurtleControllers[1].removeView();
 		wetTurtleControllers[2].setWetTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
 	public void hard_settings() {
 		Frog.turtleIntersectSpeed = -3.2;
 		wetTurtleControllers[0].setWetTurtleSpeed(Frog.turtleIntersectSpeed);
-		wetTurtleControllers[1].setWetTurtleSpeed(0);
-		wetTurtleControllers[1].setWetTurtleXpos(1000);
+		wetTurtleControllers[1].removeView();
 		wetTurtleControllers[2].setWetTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
 	public void extra_settings() {
-		wetTurtleControllers[0].setWetTurtleSpeed(0);
-		wetTurtleControllers[0].setWetTurtleXpos(1000);
-		wetTurtleControllers[1].setWetTurtleSpeed(0);
-		wetTurtleControllers[1].setWetTurtleXpos(1000);
-		wetTurtleControllers[2].setWetTurtleSpeed(0);
-		wetTurtleControllers[2].setWetTurtleXpos(1000);	
+		Frog.turtleIntersectSpeed = 0;
+		for (int i = 0; i <=2; ++i) {
+			wetTurtleControllers[i].removeView();
+		}
 	}
 }
