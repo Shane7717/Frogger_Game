@@ -14,6 +14,7 @@ import javafx.scene.control.Label;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.FroggerApp;
 import xixuan.froggerapp.controllers.FrogController;
+import xixuan.froggerapp.controllers.MenuSceneController;
 import xixuan.froggerapp.controllers.EndHighscoresSceneController;
 import xixuan.froggerapp.initializers.BackgroundImageInitializer;
 import xixuan.froggerapp.initializers.CrocodilesInitializer;
@@ -60,6 +61,7 @@ public class GameView {
 		FroggerApp.getPrimaryStage().setTitle("Frogger");
 		FroggerApp.getPrimaryStage().setScene(mainScene);
 		FroggerApp.getPrimaryStage().show();
+		(MenuSceneController.beforeGameSound).stop();
 		start();
 	}
 	

@@ -1,4 +1,5 @@
 package xixuan.froggerapp.controllers;
+import java.io.File;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
@@ -6,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import xixuan.froggerapp.FroggerApp;
 import xixuan.froggerapp.highscores.HighscoreManager;
 
@@ -13,6 +16,8 @@ import xixuan.froggerapp.highscores.HighscoreManager;
 public class MenuSceneController {
 	@FXML private Button startButton;
 	@FXML private Button highscoreButton;
+	public static MediaPlayer beforeGameSound;
+	public static int signal = 1;
 	
 	@FXML
 	public void toLevelPageScene() throws IOException {	
@@ -46,5 +51,16 @@ public class MenuSceneController {
 		Parent root = FXMLLoader.load(getClass().getResource("../views/IntroView.fxml"));
 		FroggerApp.getPrimaryStage().setScene(new Scene(root, 600, 800));	
         FroggerApp.getPrimaryStage().show();
+	}
+	
+	public void initialize() {
+		if (signal == 1) {
+			String musicFile2 = "resources/music/beforeGame.mp3";   
+			Media sound = new Media(new File(musicFile2).toURI().toString());
+			beforeGameSound = new MediaPlayer(sound);
+			beforeGameSound.setCycleCount(MediaPlayer.INDEFINITE);	
+			beforeGameSound.play();
+			signal++;
+		}
 	}
 }
