@@ -1,10 +1,13 @@
 package xixuan.froggerapp.models;
 
+import java.io.File;
 import java.util.ArrayList;
 import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import xixuan.froggerapp.views.GameView;
 
 public class Frog extends Actor {
@@ -28,6 +31,7 @@ public class Frog extends Actor {
 	public static double crocodileRightIntersectSpeed = 0;
 	private boolean disableKey = false;
 	private int lifeNum = -1;
+	MediaPlayer frogSoundEffect;
 	
 	
 	//Used to check if the button is continuously pressed without releasing
@@ -144,29 +148,36 @@ public class Frog extends Actor {
 		            	 second = false;
 		            }
 				}
-				else if (event.getCode() == KeyCode.W && (!disableKey)) {	            	
+				else if (event.getCode() == KeyCode.W && (!disableKey)) {	
+					playSoundEffect();	  
 	                move(0, -movement);
 	                //pressWtimes++;
 	                setImage(imgW2);
-	                second = true;
+	                second = true;	
 	            }
-	            else if (event.getCode() == KeyCode.A && (!disableKey)) {	            	
-	            	 move(-movementX, 0);
-	            	 //pressAtimes++;
-	            	 setImage(imgA2);
-	            	 second = true;
+	            else if (event.getCode() == KeyCode.A && (!disableKey)) {
+	            	playSoundEffect();
+	            	//frogSoundEffect.play();		            	
+	            	move(-movementX, 0);
+	            	//pressAtimes++;
+	            	setImage(imgA2);
+	            	second = true;
 	            }
-	            else if (event.getCode() == KeyCode.S && (!disableKey)) {	            	
-	            	 move(0, movement);
-	            	 //pressStimes++;
-	            	 setImage(imgS2);
-	            	 second = true;
+	            else if (event.getCode() == KeyCode.S && (!disableKey)) {	
+	            	playSoundEffect();
+	            	//frogSoundEffect.play();	  	           
+	            	move(0, movement);
+	            	//pressStimes++;
+	            	setImage(imgS2);
+	            	second = true;
 	            }
-	            else if (event.getCode() == KeyCode.D && (!disableKey)) {	            	
-	            	 move(movementX, 0);
-	            	 //pressDtimes++;
-	            	 setImage(imgD2);
-	            	 second = true;
+	            else if (event.getCode() == KeyCode.D && (!disableKey)) {
+	            	playSoundEffect();
+	            	//frogSoundEffect.play();	            
+	            	move(movementX, 0);
+	            	//pressDtimes++;
+	            	setImage(imgD2);
+	            	second = true;
 	            }
 	        }
 			}
@@ -186,7 +197,7 @@ public class Frog extends Actor {
 						move(0, -movement);
 		                //pressWtimes = 0;
 		                setImage(imgW1);
-		                second = false;
+		                second = false;		               
 		            }
 		            else if (event.getCode() == KeyCode.A && (!disableKey)) {
 		            	 //if (pressAtimes % 2 == 1)	
@@ -343,6 +354,16 @@ public class Frog extends Actor {
 	
 	public int getLiftNum() {
 		return this.lifeNum;
+	}
+	
+	public void playSoundEffect() {
+		String musicFile2 = "resources/music/SoundEffect.wav";   
+		Media sound = new Media(new File(musicFile2).toURI().toString());
+		frogSoundEffect = new MediaPlayer(sound);
+		frogSoundEffect.setCycleCount(1);	
+		frogSoundEffect.play();
+		sound = null;
+		frogSoundEffect = null;
 	}
 	
 }
