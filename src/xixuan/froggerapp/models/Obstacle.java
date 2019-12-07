@@ -20,7 +20,7 @@ public class Obstacle extends Actor {
 	
 	@Override
 	public void act(long now) {
-		move(speed , 0);
+		move(speed, 0);
 		if (getX() > 600 && speed>0)
 			setX(-200);
 		if (getX() < -50 && speed<0)

@@ -37,7 +37,7 @@ public class Turtle extends Actor{
 			setImage(turtle3);
 		}
 			
-		move(speed , 0);
+		move(speed, 0);
 		
 		if (getX() > 600 && speed>0)
 			setX(-200);

@@ -6,12 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-//Problems to be solved:
-//Bug 1: If you keep pressing keys, the position of your frog will be wrong!
-//Bug 2: Frogs in the end will be more thant 1
-//Bug 3: Keep pressing but score mounting is false
-//3. Unit test -- see email by PEER
-
 public class FroggerApp extends Application {
 	
 	private static Stage primaryStage;

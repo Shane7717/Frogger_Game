@@ -38,7 +38,7 @@ public class Crocodile extends Actor{
 			setImage(crocodile3);
 			this.crazyDeath = true;
 		}
-		move(speed , 0);
+		move(speed, 0);
 		if (getX() > 600 && speed>0)
 			setX(-200);
 		if (getX() < -75 && speed<0)
