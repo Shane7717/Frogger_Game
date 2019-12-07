@@ -10,7 +10,7 @@ public class DigitView {
 		this.background = background;
 	}
 	
-	//Display the frog that player manipulates.
+	//Display the digit in the game
 	public void viewDigit(Digit model) {
 		background.add(model);
 	}

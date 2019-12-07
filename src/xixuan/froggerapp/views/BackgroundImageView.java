@@ -10,7 +10,7 @@ public class BackgroundImageView {
 		this.background = background;
 	}
 	
-	//Display the frog that player manipulates.
+	//Display the background image in the game
 	public void viewBackgroundImage(BackgroundImage model) {
 		background.add(model);
 	}
