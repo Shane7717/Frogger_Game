@@ -14,7 +14,6 @@ public class IntroViewController {
 		try {
 			root = FXMLLoader.load(getClass().getResource("../views/MenuView.fxml"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		FroggerApp.getPrimaryStage().setScene(new Scene(root, 600, 800));	

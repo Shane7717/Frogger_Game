@@ -35,6 +35,7 @@ public class TurtlesInitializer implements Initializable {
 		
 	}
 	
+	//Settings for normal game level
 	public void normal_settings() {
 		Frog.turtleIntersectSpeed = -1.6;
 		turtleControllers[0].removeView();
@@ -42,6 +43,7 @@ public class TurtlesInitializer implements Initializable {
 		turtleControllers[2].setTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
+	//Settings for hard game level
 	public void hard_settings() {
 		Frog.turtleIntersectSpeed = -3.2;
 		turtleControllers[0].removeView();
@@ -49,6 +51,7 @@ public class TurtlesInitializer implements Initializable {
 		turtleControllers[2].setTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
+	//Settings for extra game level
 	public void extra_settings() {
 		Frog.turtleIntersectSpeed = 0;
 		for (int i = 0; i <= 2; ++i) {

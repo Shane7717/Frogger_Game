@@ -12,8 +12,7 @@ public class EndsInitializer implements Initializable {
 		this.background = background;
 	}
 
-	public void initialize() { 
-		
+	public void initialize() { 		
 		End end1model = new End("file:resources/images/ends/"+"End.png", 13, 96);
 		EndView end1view = new EndView(background);
 		EndController end1controller = new EndController(end1model, end1view);
@@ -37,7 +36,6 @@ public class EndsInitializer implements Initializable {
 		End end5model = new End("file:resources/images/ends/"+"End.png", 141+141-13+141-13+141-13+3, 96);
 		EndView end5view = new EndView(background);
 		EndController end5controller = new EndController(end5model, end5view);
-		end5controller.updateView();
-		
+		end5controller.updateView();		
 	}
 }

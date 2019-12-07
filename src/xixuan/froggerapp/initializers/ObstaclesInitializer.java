@@ -121,6 +121,7 @@ public class ObstaclesInitializer implements Initializable {
 		obstacleControllers[19].updateView();		
 	}
 	
+	//Settings for normal game level
 	public void normal_settings() {
 		double rightSpeed = 1.6;
 		double leftSpeed = -1.6;
@@ -139,6 +140,7 @@ public class ObstaclesInitializer implements Initializable {
 		
 	}
 	
+	//Settings for hard game level
 	public void hard_settings() {
 		double rightSpeed = 3.0;
 		double leftSpeed = -3.0;
@@ -156,6 +158,7 @@ public class ObstaclesInitializer implements Initializable {
 	
 	}
 	
+	//Settings for extra game level
 	public void extra_settings() {
 		for (int i = 0; i <= 8; ++i) {
 			obstacleControllers[i].removeView();

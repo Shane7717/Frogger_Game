@@ -16,7 +16,7 @@ public class WetTurtlesInitializer implements Initializable {
 	public WetTurtlesInitializer(MyStage background) {
 		this.background = background;
 	}
-
+	
 	public void initialize() { 
 		Frog.turtleIntersectSpeed = -0.8;
 		wetTurtleModels[0] = new WetTurtle(130, 700, 376, Frog.turtleIntersectSpeed);
@@ -35,6 +35,7 @@ public class WetTurtlesInitializer implements Initializable {
 		wetTurtleControllers[2].updateView();	
 	}
 	
+	//Settings for normal game level
 	public void normal_settings() {
 		Frog.turtleIntersectSpeed = -1.6;
 		wetTurtleControllers[0].setWetTurtleSpeed(Frog.turtleIntersectSpeed);
@@ -42,6 +43,7 @@ public class WetTurtlesInitializer implements Initializable {
 		wetTurtleControllers[2].setWetTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
+	//Settings for hard game level
 	public void hard_settings() {
 		Frog.turtleIntersectSpeed = -3.2;
 		wetTurtleControllers[0].setWetTurtleSpeed(Frog.turtleIntersectSpeed);
@@ -49,6 +51,7 @@ public class WetTurtlesInitializer implements Initializable {
 		wetTurtleControllers[2].setWetTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
+	//Settings for extra game level
 	public void extra_settings() {
 		Frog.turtleIntersectSpeed = 0;
 		for (int i = 0; i <=2; ++i) {

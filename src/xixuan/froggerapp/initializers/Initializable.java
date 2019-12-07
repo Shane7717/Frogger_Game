@@ -2,6 +2,6 @@ package xixuan.froggerapp.initializers;
 
 public interface Initializable {
 	
-	//Initialize models in the game
+	//Initialize models or objects in the game
 	public void initialize();
 }

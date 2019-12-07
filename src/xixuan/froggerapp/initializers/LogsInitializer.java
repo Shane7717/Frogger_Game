@@ -60,7 +60,8 @@ public class LogsInitializer implements Initializable {
 		logControllers[7] = new LogController(logModels[7], logViews[7]);
 		logControllers[7].updateView();
 	}
-				
+			
+	//Settings for normal game level
 	public void normal_settings() {
 		Frog.logRightIntersectSpeed = 1.4;
 		logControllers[0].setLogSpeed(Frog.logRightIntersectSpeed);
@@ -74,6 +75,7 @@ public class LogsInitializer implements Initializable {
 		logControllers[7].setLogSpeed(Frog.logRightIntersectSpeed);
 	}
 	
+	//Settings for hard game level
 	public void hard_settings() {
 		Frog.logRightIntersectSpeed = 6.0;
 		logControllers[0].setLogSpeed(Frog.logRightIntersectSpeed);
@@ -88,6 +90,7 @@ public class LogsInitializer implements Initializable {
 		logControllers[7].setLogSpeed(Frog.logRightIntersectSpeed);
 	}
 	
+	//Settings for extra game level
 	public void extra_settings() {
 		Frog.logRightIntersectSpeed = 0;
 		Frog.logLeftIntersectSpeed = 0;	
@@ -95,6 +98,4 @@ public class LogsInitializer implements Initializable {
 			logControllers[i].removeView();
 		}
 	}
-	
-	
 }

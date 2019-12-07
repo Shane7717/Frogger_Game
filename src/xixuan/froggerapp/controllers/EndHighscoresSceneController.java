@@ -38,25 +38,20 @@ public class EndHighscoresSceneController {
 		hs_manager = HighscoreManager.getInstance();
 		this.check = 0;
 	}
-
-	public void setScore(int score) {
-		this.score = score;
-	}
 	
-	//Could be automatically invoked when loaded
 	public void initialize() {	
 		(MenuSceneController.beforeGameSound).play();
-		if (lifeNum != 0 && timeSecond > 0) {
+		if (lifeNum != 0 && timeSecond > 0) 
 			state.setText("YOU WIN!!!");
-		} else {
+		else 
 			state.setText("YOU LOSE!!!");
-		}
+		
 		scoreLabel.setText("YOUR FINAL SCORE: " + String.valueOf(score));
 		hsName.setText((hs_manager.getHighscoreString())[0]);
 		hsScore.setText((hs_manager.getHighscoreString())[1]);
+		
 		submitButton.setOnAction(event -> {
-			this.name = nameField.getText();
-						
+			this.name = nameField.getText();						
 			if (name.isEmpty()) {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("EMPTY NAME WARNING");
@@ -92,7 +87,6 @@ public class EndHighscoresSceneController {
 		try {
 			root = FXMLLoader.load(getClass().getResource("../views/MenuView.fxml"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		FroggerApp.getPrimaryStage().setScene(new Scene(root, 600, 800));	

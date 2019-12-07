@@ -13,7 +13,6 @@ public class DigitInitializer implements Initializable {
 		this.background = background;
 	}
 	
-	@Override
 	public void initialize() {
 		Digit digit = new Digit(0, 30, digit_position, 28);
 		DigitView digitView = new DigitView(background);
