@@ -57,7 +57,7 @@ public class GameView {
 		setCountDown();
 		background.start();		
         mainScene = new Scene(background, 600, 800);
-   
+        
 		FroggerApp.getPrimaryStage().setTitle("Frogger");
 		FroggerApp.getPrimaryStage().setScene(mainScene);
 		FroggerApp.getPrimaryStage().show();
@@ -228,6 +228,7 @@ public class GameView {
 		        background.stopMusic();
 	    		timer.stop();
 	    		background.stop();
+	    		(MenuSceneController.beforeGameSound).play();
 			}			
 		});
     }
@@ -267,12 +268,15 @@ public class GameView {
 			if (gameSignal == 1) {
 				background.stop();
 				background.stopMusic();
+				timer.stop();
+				
 				frogController.setDisableKey(true);
 				gameSignal = 0;
 				pauseGameButton.setText("RESUME GAME");			
 			} else {
 				background.start();
 				background.playMusic();
+				timer.start();
 				frogController.setDisableKey(false);
 				gameSignal = 1;
 				pauseGameButton.setText("PAUSE GAME");		

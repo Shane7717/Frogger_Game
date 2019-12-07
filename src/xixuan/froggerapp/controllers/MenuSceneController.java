@@ -28,9 +28,9 @@ public class MenuSceneController {
 	
 	@FXML
 	public void toHighscoreScene() throws IOException {
-		HighscoreManager hs_manager = new HighscoreManager();
+		HighscoreManager hs_manager = HighscoreManager.getInstance();
 		
-		MenuToHighscoresViewController mthsController = new MenuToHighscoresViewController(hs_manager.getHighscoreString());          	
+	   	MenuToHighscoresViewController mthsController = new MenuToHighscoresViewController(hs_manager.getHighscoreString());          	
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/MenuToHighscoresView.fxml"));
 		loader.setController(mthsController);
 		

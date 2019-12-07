@@ -19,4 +19,5 @@ public class WetTurtleView {
 	public void removeWetTurtle(WetTurtle model) {
 		background.remove(model);
 	}
+		
 }

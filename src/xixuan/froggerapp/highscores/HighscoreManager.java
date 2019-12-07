@@ -1,14 +1,18 @@
 package xixuan.froggerapp.highscores;
 
 import java.util.*;
+
+import xixuan.froggerapp.models.Frog;
+
 import java.io.*;
 
 public class HighscoreManager {
+	private static HighscoreManager	uniqueHSManager; //Singleton
 
 	//An arraylist of the type "score" we will use to work with the scores inside the class
 	private ArrayList<Score> scores;
 	
-	public HighscoreManager() {
+	private HighscoreManager() {
 		//initialising the scores-arraylist
         this.scores = new ArrayList<Score>();
 	}
@@ -28,7 +32,7 @@ public class HighscoreManager {
     }
     
     private void sort() {
-        ScoreComparator comparator = new ScoreComparator();
+        ScoreComparator comparator = ScoreComparator.getInstance();
         Collections.sort(scores, comparator);	
         //This allows you to sort the arraylist "scores" with help of "comparator".
     }
@@ -104,4 +108,12 @@ public class HighscoreManager {
         }
         return highscores;
     }    
+    
+    public static HighscoreManager getInstance() {
+    	if (uniqueHSManager == null) {
+    		uniqueHSManager = new HighscoreManager();
+    	}
+    	return uniqueHSManager;
+    }
+    
 }

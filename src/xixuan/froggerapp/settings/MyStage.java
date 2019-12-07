@@ -8,7 +8,7 @@ import javafx.scene.media.MediaPlayer;
 
 public class MyStage extends World{
 	MediaPlayer mediaPlayer;
-	
+		
 	@Override
 	public void act(long now) {}
 		

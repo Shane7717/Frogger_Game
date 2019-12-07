@@ -1,3 +1,21 @@
+Key refactoring for classes and interfaces (Where and Why)
+ 
+
+
+Additions to the game
+
+
+
+
+
+
+
+
+
+
+
+
+
 -Encapsulation-
 Setting private data fileds and the corresponding methods to set them and return them is
 the reflection of encapsulation. So I changed code in Log for now, for better maintenance.
@@ -29,3 +47,5 @@ We will be using a .dat file to keep the high-scores in, this will avoid cheatin
 --feature1--
 You can't enter nothing before clicking the "submit" button, which means you have to enter
 your name or just quit the game directly
+
+frog can't enter the same end for the second time

@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 //Bug 2: Frogs in the end will be more thant 1
 //Bug 3: Keep pressing but score mounting is false
 //3. Unit test -- see email by PEER
-//5. improvement: make all the controllers in an array in order to reduce code
 
 public class FroggerApp extends Application {
 	

@@ -35,7 +35,7 @@ public class EndHighscoresSceneController {
 		this.score = score;
 		this.lifeNum = lifeNum;
 		this.timeSecond = second;
-		hs_manager = new HighscoreManager();
+		hs_manager = HighscoreManager.getInstance();
 		this.check = 0;
 	}
 
@@ -45,6 +45,7 @@ public class EndHighscoresSceneController {
 	
 	//Could be automatically invoked when loaded
 	public void initialize() {	
+		(MenuSceneController.beforeGameSound).play();
 		if (lifeNum != 0 && timeSecond > 0) {
 			state.setText("YOU WIN!!!");
 		} else {

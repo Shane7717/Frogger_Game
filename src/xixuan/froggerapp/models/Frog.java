@@ -11,7 +11,6 @@ import javafx.scene.media.MediaPlayer;
 import xixuan.froggerapp.views.GameView;
 
 public class Frog extends Actor {
-	
 	private Image imgW1; 
 	private Image imgA1; 
 	private Image imgS1; 
@@ -32,10 +31,8 @@ public class Frog extends Actor {
 	private int lifeNum = -1;
 	MediaPlayer frogSoundEffect;
 	
-	
 	//Used to check if the button is continuously pressed without releasing
 	private boolean second = false;
-
 	private boolean noMove = false;
 	private double movement = 13.3333333*2;
 	private double movementX = 10.666666*2;
@@ -155,24 +152,21 @@ public class Frog extends Actor {
 	                second = true;	
 	            }
 	            else if (event.getCode() == KeyCode.A && (!disableKey)) {
-	            	playSoundEffect();
-	            	//frogSoundEffect.play();		            	
+	            	playSoundEffect();	        	            	
 	            	move(-movementX, 0);
 	            	//pressAtimes++;
 	            	setImage(imgA2);
 	            	second = true;
 	            }
 	            else if (event.getCode() == KeyCode.S && (!disableKey)) {	
-	            	playSoundEffect();
-	            	//frogSoundEffect.play();	  	           
+	            	playSoundEffect();	            		           
 	            	move(0, movement);
 	            	//pressStimes++;
 	            	setImage(imgS2);
 	            	second = true;
 	            }
 	            else if (event.getCode() == KeyCode.D && (!disableKey)) {
-	            	playSoundEffect();
-	            	//frogSoundEffect.play();	            
+	            	playSoundEffect();    
 	            	move(movementX, 0);
 	            	//pressDtimes++;
 	            	setImage(imgD2);
@@ -360,6 +354,5 @@ public class Frog extends Actor {
 		frogSoundEffect.play();
 		sound = null;
 		frogSoundEffect = null;
-	}
-	
+	}	
 }
