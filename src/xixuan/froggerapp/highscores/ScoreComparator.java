@@ -21,6 +21,7 @@ public class ScoreComparator implements Comparator<Score>{
 		}
 	}
 	
+	//Used for Singleton design pattern
 	public static ScoreComparator getInstance() {
 		if (uniqueComparator == null) {
 			uniqueComparator = new ScoreComparator();

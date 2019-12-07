@@ -17,13 +17,11 @@ public class FroggerApp extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		//When program starts running, the menu page will be shown
+		//When program starts running, the menu page will be shown first
 		setPrimaryStage(primaryStage);			     	            
 	    Parent root = FXMLLoader.load(getClass().getResource("./views/MenuView.fxml"));
 	    Scene menuScene = new Scene(root, 600, 800); 
 	    primaryStage.setScene(menuScene);
-	    
-	    //Mustn't change the size of the main window
 	    primaryStage.setMaxWidth(600);
 	    primaryStage.setMaxHeight(800);
 	    primaryStage.setMinWidth(600);
