@@ -84,12 +84,13 @@ public class HighscoreManager {
     }
     
     public String[] getHighscoreString() {
-    	//The function will only have the top 10 players shown 
+    	//The function will only have the top 10 players shown
+    	int maxShown = 10;
+    	
     	String[] highscores  = new String[2];
     	highscores[0] = "";
     	highscores[1] = "";  	
-        int maxShown = 10;
-
+       
         ArrayList<Score> scores;
         scores = getScores();
 

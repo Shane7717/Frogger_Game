@@ -11,7 +11,7 @@
 
 .button:hover 
 {
-  -fx-background-color: yellow;
+  -fx-background-color: pink;
   -fx-cursor: hand;
 } 
 
