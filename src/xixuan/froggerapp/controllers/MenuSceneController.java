@@ -18,6 +18,7 @@ public class MenuSceneController {
 	@FXML private Button highscoreButton;
 	public static MediaPlayer beforeGameSound;
 	public static int signal = 1;
+	public static boolean isMusicOn = true;	
 	
 	@FXML
 	public void toLevelPageScene() throws IOException {	
@@ -60,6 +61,18 @@ public class MenuSceneController {
 			beforeGameSound.setCycleCount(MediaPlayer.INDEFINITE);	
 			beforeGameSound.play();
 			signal++;
+		}
+	}
+	
+	//Turn the background music on or off
+	public void onOffSound() {
+		if (isMusicOn) {
+			beforeGameSound.stop();
+			isMusicOn = false;
+		}
+		else {
+			beforeGameSound.play();
+			isMusicOn = true;
 		}
 	}
 }

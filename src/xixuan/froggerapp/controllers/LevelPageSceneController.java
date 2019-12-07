@@ -9,7 +9,6 @@ import xixuan.froggerapp.FroggerApp;
 import xixuan.froggerapp.views.GameView;
 
 public class LevelPageSceneController {
-	
 	GameView gameView = new GameView();
 	
 	//Jump to easy level
@@ -39,6 +38,7 @@ public class LevelPageSceneController {
 		gameView.launchGameView();
 	}
 	
+	//Back to the main menu
 	public void back() {
 		Parent root = null;
 		try {
@@ -50,4 +50,15 @@ public class LevelPageSceneController {
         FroggerApp.getPrimaryStage().show();
 	}
 	
+	//Turn the background music on or off
+	public void onOffSound() {
+		if (MenuSceneController.isMusicOn) {
+			MenuSceneController.beforeGameSound.stop();
+			MenuSceneController.isMusicOn = false;
+		}
+		else {
+			MenuSceneController.beforeGameSound.play();
+			MenuSceneController.isMusicOn = true;
+		}
+	}
 }

@@ -70,5 +70,14 @@
       </Label>
       <Label fx:id="state" layoutX="194.0" layoutY="119.0" stylesheets="@../../../../resources/css/endLabel.css" text="YOU WIN!!!" textFill="RED" />
       <Button layoutX="187.0" layoutY="678.0" mnemonicParsing="false" onMouseClicked="#toMainScene" stylesheets="@../../../../resources/css/backButton.css" text="Back to Main" textFill="#179db5" />
+      <Button layoutX="268.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#onOffSound" prefHeight="9.0" prefWidth="7.0" stylesheets="@../../../../resources/css/musicButton.css">
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/images/scenes/musicSymbol.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

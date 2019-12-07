@@ -92,4 +92,16 @@ public class EndHighscoresSceneController {
 		FroggerApp.getPrimaryStage().setScene(new Scene(root, 600, 800));	
         FroggerApp.getPrimaryStage().show();
 	}
+	
+	//Turn the background music on or off
+	public void onOffSound() {
+		if (MenuSceneController.isMusicOn) {
+			MenuSceneController.beforeGameSound.stop();
+			MenuSceneController.isMusicOn = false;
+		}
+		else {
+			MenuSceneController.beforeGameSound.play();
+			MenuSceneController.isMusicOn = true;
+		}
+	}
 }
