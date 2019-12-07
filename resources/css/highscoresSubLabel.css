@@ -7,3 +7,7 @@
     -fx-font-family: "ARCADECLASSIC";
     -fx-font-size: 30px;
 }
+
+.text{
+	-fx-font-size:31px;
+}

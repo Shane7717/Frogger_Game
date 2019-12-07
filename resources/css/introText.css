@@ -7,3 +7,7 @@
     -fx-font-family: "Angelika";
     -fx-font-size: 17px;
 }
+
+.text:hover {
+	-fx-font-size:18px;
+}

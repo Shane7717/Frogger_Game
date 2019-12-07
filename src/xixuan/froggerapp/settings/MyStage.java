@@ -23,4 +23,3 @@ public class MyStage extends World{
 		mediaPlayer.stop();
 	}
 }
-

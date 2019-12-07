@@ -120,87 +120,93 @@ public class Frog extends Actor {
 	//Monitor the keyboard input from players
 	public void keyboardMonitor() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent event){						
-				if (second && (!disableKey) ) {
-					if (event.getCode() == KeyCode.W) {	 
-		                move(0, -movement);		             
-		                changeScore = false;
-		                setImage(imgW1);
-		                second = false;
+			public void handle(KeyEvent event){	
+				if (noMove) {}
+				else {
+					if (second && (!disableKey) ) {
+						if (event.getCode() == KeyCode.W) {	 
+			                move(0, -movement);		             
+			                changeScore = false;
+			                setImage(imgW1);
+			                second = false;
+			            }
+			            else if (event.getCode() == KeyCode.A) {	            	
+			            	 move(-movementX, 0);		            	
+			            	 setImage(imgA1);
+			            	 second = false;
+			            }
+			            else if (event.getCode() == KeyCode.S) {	            	
+			            	 move(0, movement);		            	
+			            	 setImage(imgS1);
+			            	 second = false;
+			            }
+			            else if (event.getCode() == KeyCode.D) {	            	
+			            	 move(movementX, 0);		            	 
+			            	 setImage(imgD1);
+			            	 second = false;
+			            }
+					}
+					else if (event.getCode() == KeyCode.W && (!disableKey)) {	
+						playSoundEffect();	  
+		                move(0, -movement);	                
+		                setImage(imgW2);
+		                second = true;	
 		            }
-		            else if (event.getCode() == KeyCode.A) {	            	
-		            	 move(-movementX, 0);		            	
-		            	 setImage(imgA1);
-		            	 second = false;
+		            else if (event.getCode() == KeyCode.A && (!disableKey)) {
+		            	playSoundEffect();	        	            	
+		            	move(-movementX, 0);	            	
+		            	setImage(imgA2);
+		            	second = true;
 		            }
-		            else if (event.getCode() == KeyCode.S) {	            	
-		            	 move(0, movement);		            	
-		            	 setImage(imgS1);
-		            	 second = false;
+		            else if (event.getCode() == KeyCode.S && (!disableKey)) {	
+		            	playSoundEffect();	            		           
+		            	move(0, movement);	            	
+		            	setImage(imgS2);
+		            	second = true;
 		            }
-		            else if (event.getCode() == KeyCode.D) {	            	
-		            	 move(movementX, 0);		            	 
-		            	 setImage(imgD1);
-		            	 second = false;
+		            else if (event.getCode() == KeyCode.D && (!disableKey)) {
+		            	playSoundEffect();    
+		            	move(movementX, 0);	            	
+		            	setImage(imgD2);
+		            	second = true;
 		            }
-				}
-				else if (event.getCode() == KeyCode.W && (!disableKey)) {	
-					playSoundEffect();	  
-	                move(0, -movement);	                
-	                setImage(imgW2);
-	                second = true;	
-	            }
-	            else if (event.getCode() == KeyCode.A && (!disableKey)) {
-	            	playSoundEffect();	        	            	
-	            	move(-movementX, 0);	            	
-	            	setImage(imgA2);
-	            	second = true;
-	            }
-	            else if (event.getCode() == KeyCode.S && (!disableKey)) {	
-	            	playSoundEffect();	            		           
-	            	move(0, movement);	            	
-	            	setImage(imgS2);
-	            	second = true;
-	            }
-	            else if (event.getCode() == KeyCode.D && (!disableKey)) {
-	            	playSoundEffect();    
-	            	move(movementX, 0);	            	
-	            	setImage(imgD2);
-	            	second = true;
-	            }
+				}	
 	        }
 		});	
 		
 		setOnKeyReleased(new EventHandler<KeyEvent>() {
 			public void handle(KeyEvent event) {
-				if (event.getCode() == KeyCode.W && (!disableKey)) {  
-					if (getY() < countPosition) {
-						countPosition = getY();
-						points+=10;
-						changeScore = true;
-					}					
-					move(0, -movement);	              
-	                setImage(imgW1);
-	                second = false;		               
-	            }
-	            else if (event.getCode() == KeyCode.A && (!disableKey)) {	            	 
-	            	 move(-movementX, 0);	            	
-	            	 setImage(imgA1);
-	            	 second = false;
-	            }
-	            else if (event.getCode() == KeyCode.S && (!disableKey)) {		            	
-	            	 move(0, movement);
-	            	 //pressStimes = 0;
-	            	 setImage(imgS1);
-	            	 second = false;
-	            }
-	            else if (event.getCode() == KeyCode.D && (!disableKey)) {	
-	            	 //if (pressDtimes % 2 == 1)
-	            	 move(movementX, 0);
-	            	//pressDtimes = 0;
-	            	 setImage(imgD1);
-	            	 second = false;
-	            }				
+				if (noMove) {}
+				else {
+					if (event.getCode() == KeyCode.W && (!disableKey)) {  
+						if (getY() < countPosition) {
+							countPosition = getY();
+							points+=10;
+							changeScore = true;
+						}					
+						move(0, -movement);	              
+		                setImage(imgW1);
+		                second = false;		               
+		            }
+		            else if (event.getCode() == KeyCode.A && (!disableKey)) {	            	 
+		            	 move(-movementX, 0);	            	
+		            	 setImage(imgA1);
+		            	 second = false;
+		            }
+		            else if (event.getCode() == KeyCode.S && (!disableKey)) {		            	
+		            	 move(0, movement);
+		            	 //pressStimes = 0;
+		            	 setImage(imgS1);
+		            	 second = false;
+		            }
+		            else if (event.getCode() == KeyCode.D && (!disableKey)) {	
+		            	 //if (pressDtimes % 2 == 1)
+		            	 move(movementX, 0);
+		            	//pressDtimes = 0;
+		            	 setImage(imgD1);
+		            	 second = false;
+		            }
+				}
 			}
 		});
 	}

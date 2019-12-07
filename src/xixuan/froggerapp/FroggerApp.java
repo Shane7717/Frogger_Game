@@ -9,7 +9,10 @@ import javafx.stage.Stage;
 public class FroggerApp extends Application {
 	
 	private static Stage primaryStage;
-		
+	/**
+	 * 	
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

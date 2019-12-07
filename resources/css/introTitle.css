@@ -7,3 +7,7 @@
     -fx-font-family: "Pixelony";
     -fx-font-size: 60px;
 }
+
+.text:hover {
+	-fx-font-size:61px;
+}
