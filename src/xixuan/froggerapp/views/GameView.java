@@ -29,29 +29,67 @@ import xixuan.froggerapp.models.Digit;
 import xixuan.froggerapp.models.Frog;
 import xixuan.froggerapp.models.FrogLifeSymbol;
 
+/**
+ * This class displays the main game scene in Frogger.
+ * @author XIXUAN WANG
+ */
 public class GameView {
-
 	private AnimationTimer timer;
 	private MyStage background;
 	private FrogController frogController;
 	private int digit_position;
-	private Scene mainScene;
-	private LogsInitializer logsInitializer;
-	private TurtlesInitializer turtlesInitializer;
-	private WetTurtlesInitializer wetTurtlesInitializer;
-	private ObstaclesInitializer obstaclesInitializer;
-	private CrocodilesInitializer crocodilesInitializer;
-	private LizardsInitializer lizardsInitializer;
-	private BackgroundImageInitializer bgImageInitializer;
-	private EndsInitializer endsInitializer;
-	private DigitInitializer digitInitializer;
-	private int musicSignal = 1;	//Whether or not pause music
-	private int gameSignal = 1;		//Whether or not pause game
-	public static FrogLifeSymbol[] symbols;	
-	private Integer frameTime = 0;
-	private Integer second = 1;		//Time in seconds
-	private Label timerlabel;		//Countdown timer label 
 	
+	/** The main game scene that is going to be set. */
+	private Scene mainScene;
+	
+	/** The logs initializer. */
+	private LogsInitializer logsInitializer;
+	
+	/** The turtles initializer. */
+	private TurtlesInitializer turtlesInitializer;
+	
+	/** The wet turtles initializer. */
+	private WetTurtlesInitializer wetTurtlesInitializer;
+	
+	/** The obstacles initializer. */
+	private ObstaclesInitializer obstaclesInitializer;
+	
+	/** The crocodiles initializer. */
+	private CrocodilesInitializer crocodilesInitializer;
+	
+	/** The lizards initializer. */
+	private LizardsInitializer lizardsInitializer;
+	
+	/** The background image initializer. */
+	private BackgroundImageInitializer bgImageInitializer;
+	
+	/** The ends initializer. */
+	private EndsInitializer endsInitializer;
+	
+	/** The digit initializer. */
+	private DigitInitializer digitInitializer;
+	
+	/** The music signal that decides whether or not pausing music. */
+	private int musicSignal = 1;	
+	
+	/** The game signal what decides whether or not pausing game. */
+	private int gameSignal = 1;		
+	
+	/** The life symbols showing the number of lives the frog owns. */
+	public static FrogLifeSymbol[] symbols;	
+	
+	/** The continuously increasing frame time when game starts. */
+	private Integer frameTime = 0;
+	
+	/** The time in seconds. */
+	private Integer second = 1;		
+	
+	/** The countdown timerlabel shown in the left bottom of the game. */
+	private Label timerlabel;		
+	
+	/**
+	 * This launches all the elements of the game scene and thus game begins
+	 */
 	public void launchGameView() {	
 		setQuitButton();
 		setPauseMusicButton();
@@ -67,12 +105,18 @@ public class GameView {
 		startSettings();
 	}
 	
+	/**
+	 * This sets the music and timer of the game
+	 */
 	public void startSettings() {
 		background.playMusic();    
 		createTimer();
         timer.start();
     }
 	
+	/**
+	 * This creates the timer of the game
+	 */
 	public void createTimer() {
 		timer = new AnimationTimer() {
 			
@@ -109,7 +153,9 @@ public class GameView {
         };   
     }
 	  
-	//Easy game level initialization
+	/**
+	 * This initializes all the relevant elements of the easy-level-mode game.
+	 */
     public void easy_initialize() {
     	digit_position = 100; 
 		background = new MyStage();
@@ -158,7 +204,9 @@ public class GameView {
 		frogController.keyboardMonitor();
     }
     
-    //Normal game level initialization
+    /**
+     * This initializes all the relevant elements of the normal-level-mode game.
+     */
     public void normal_initialize() {
     	frogController.setLifeNum(3);
     	setLifeSymbols();
@@ -170,7 +218,9 @@ public class GameView {
     	
     }
     
-    //Hard game level initialization
+    /**
+     * This initializes all the relevant elements of the hard-level-mode game.
+     */  
     public void hard_initialize() {
     	frogController.setLifeNum(4);
     	setLifeSymbols();
@@ -182,7 +232,9 @@ public class GameView {
     	lizardsInitializer.hard_settings();
     }
     
-    //Extra game level initialization
+    /**
+     * This initializes all the relevant elements of the extra-level-mode game.
+     */
     public void extra_initialize() {
     	frogController.setLifeNum(5);
     	setLifeSymbols();
@@ -195,6 +247,10 @@ public class GameView {
     	crocodilesInitializer.extra_settings();
     }
      
+    /**
+     * This sets the number that will be displayed on the screen.
+     * @param n the integer number that will be displayed.
+     */
     //Set scores on screen in the game
     public void setNumber(int n) {
     	int shift = 0;
@@ -207,7 +263,9 @@ public class GameView {
     	}
     }
     
-    //Set the quit button in ghe game
+    /**
+     * This sets the "QUIT" button in the game for players to quit the game directly
+     */
     public void setQuitButton() {
     	Button quitButton = new Button();
     	quitButton.setText("QUIT");
@@ -239,7 +297,9 @@ public class GameView {
 		});
     }
     
-    //Set the music pause button in the game
+    /**
+     * This sets the "PAUSE MUSIC" button for players to pause music during the game process.
+     */
     public void setPauseMusicButton() {
     	Button pauseMusicButton = new Button();
     	pauseMusicButton.setText("PAUSE MUSIC");
@@ -262,7 +322,9 @@ public class GameView {
 		}); 
     }
     
-    //Set the game pause button in the game
+    /**
+     * This sets the "PAUSE GAME" button for players to pause the game.
+     */
     public void setPauseGameButton() {
     	Button pauseGameButton = new Button();
     	pauseGameButton.setText("PAUSE GAME");
@@ -292,7 +354,9 @@ public class GameView {
 		}); 
     }
     
-    //Set the life symbols in the game
+    /**
+     * This sets the life symbols on the screen showing the number of lives the frog owns.
+     */
     public void setLifeSymbols() {
     	int xpos = 275;
     	symbols = new FrogLifeSymbol[frogController.getLifeNum()];
@@ -303,7 +367,9 @@ public class GameView {
     	} 	
     }
     
-    //Set the countdown timer label in the game
+    /**
+     * This sets the visual count-down timer on the screen during the game. 
+     */
     public void setCountDown() {
     	timerlabel = new Label();
         timerlabel.setLayoutX(50);

@@ -1,7 +1,13 @@
 package xixuan.froggerapp.initializers;
 
+/**
+ * This interface makes it possible for all initializer classes to initialize their instances.
+ * @author XIXUAN WANT
+ */
 public interface Initializable {
 	
-	//Initialize models or objects in the game
+	/**
+	 * This initializes models or objects in the game
+	 */
 	public void initialize();
 }

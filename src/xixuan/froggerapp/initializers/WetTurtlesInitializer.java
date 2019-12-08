@@ -6,6 +6,10 @@ import xixuan.froggerapp.models.WetTurtle;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.WetTurtleView;
 
+/**
+ * This class initializes all the relevant instances of WetTurtle.
+ * @author XIXUAN WANG
+ */
 public class WetTurtlesInitializer implements Initializable {
 	
 	private MyStage background;
@@ -17,6 +21,9 @@ public class WetTurtlesInitializer implements Initializable {
 		this.background = background;
 	}
 	
+	/**
+	 * This initializes three wet turtles in the game.
+	 */
 	public void initialize() { 
 		Frog.turtleIntersectSpeed = -0.8;
 		wetTurtleModels[0] = new WetTurtle(130, 700, 376, Frog.turtleIntersectSpeed);
@@ -35,7 +42,10 @@ public class WetTurtlesInitializer implements Initializable {
 		wetTurtleControllers[2].updateView();	
 	}
 	
-	//Settings for normal game level
+	/**
+	 * This sets relevant parameters for the normal game level.<br> 
+	 * Specifically, this adjusts the speed of two wet turtles and removes one.
+	 */
 	public void normal_settings() {
 		Frog.turtleIntersectSpeed = -1.6;
 		wetTurtleControllers[0].setWetTurtleSpeed(Frog.turtleIntersectSpeed);
@@ -43,7 +53,10 @@ public class WetTurtlesInitializer implements Initializable {
 		wetTurtleControllers[2].setWetTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
-	//Settings for hard game level
+	/**
+	 * This sets relevant parameters for the hard game level.<br> 
+	 * Specifically, this adjusts the speed of two wet turtles and removes one.
+	 */
 	public void hard_settings() {
 		Frog.turtleIntersectSpeed = -3.2;
 		wetTurtleControllers[0].setWetTurtleSpeed(Frog.turtleIntersectSpeed);
@@ -51,7 +64,10 @@ public class WetTurtlesInitializer implements Initializable {
 		wetTurtleControllers[2].setWetTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
-	//Settings for extra game level
+	/**
+	 * This sets relevant parameters for the extra game level.<br> 
+	 * Specifically, this removes all the wet turtles in the game.
+	 */
 	public void extra_settings() {
 		Frog.turtleIntersectSpeed = 0;
 		for (int i = 0; i <=2; ++i) {

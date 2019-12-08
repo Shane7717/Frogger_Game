@@ -2,6 +2,10 @@ package xixuan.froggerapp.models;
 
 import javafx.scene.image.Image;
 
+/**
+ * This class is used to instantiate turtles.
+ * @author XIXUAN WANG
+ */
 public class Turtle extends Actor{
 	private Image turtle1;
 	private Image turtle2;
@@ -15,15 +19,17 @@ public class Turtle extends Actor{
 		setSize(size);
 		setXpos(xpos);
 		setYpos(ypos);
-		setSpeed(speed);	
-		
+		setSpeed(speed);			
 		turtle1 = new Image("file:resources/images/turtles/TurtleAnimation1.png", this.size, this.size, true, true);
 		turtle2 = new Image("file:resources/images/turtles/TurtleAnimation2.png", this.size, this.size, true, true);
 		turtle3 = new Image("file:resources/images/turtles/TurtleAnimation3.png", this.size, this.size, true, true);
-
 		setImage(turtle2);
 	}
 	
+	/**
+	 * This implements the animation of turtles from turtle1 to turtle3
+	 * @param now 		this is the real time that is increasing since game starts
+	 */
 	@Override
 	public void act(long now) {
 
@@ -35,33 +41,27 @@ public class Turtle extends Actor{
 		}
 		else if (now/900000000 %3 == 2) {
 			setImage(turtle3);
-		}
-			
-		move(speed, 0);
-		
+		}			
+		move(speed, 0);		
 		if (getX() > 600 && speed>0)
 			setX(-200);
 		if (getX() < -75 && speed<0)
 			setX(600);
 	}
 	
-	//Set the speed of the turtle
 	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
 
-	//Set the size of the turtle
 	public void setSize(int size) {
 		this.size = size;
 	}
 	
-	//Set the x position of the turtle
 	public void setXpos(int xpos) {
 		this.xpos = xpos;
 		setX(this.xpos);
 	}
 
-	//Set the y position of the turtle
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
 		setY(this.ypos);

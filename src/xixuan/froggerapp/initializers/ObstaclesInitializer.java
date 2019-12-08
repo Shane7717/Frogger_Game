@@ -5,6 +5,10 @@ import xixuan.froggerapp.models.Obstacle;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.ObstacleView;
 
+/**
+ * This class initializes all the relevant instances of Obstacle.
+ * @author XIXUAN WANG
+ */
 public class ObstaclesInitializer implements Initializable {
 	
 	private MyStage background;
@@ -16,6 +20,9 @@ public class ObstaclesInitializer implements Initializable {
 		this.background = background;
 	}
 
+	/**
+	 * This initializes 20 obstacles in the game.
+	 */
 	public void initialize() { 
 		double rightSpeed = 0.8;
 		double leftSpeed = -0.8;
@@ -121,7 +128,10 @@ public class ObstaclesInitializer implements Initializable {
 		obstacleControllers[19].updateView();		
 	}
 	
-	//Settings for normal game level
+	/**
+	 * This sets relevant parameters for the normal game level.<br> 
+	 * Specifically, this adjusts the speed of some of the obstacles.
+	 */
 	public void normal_settings() {
 		double rightSpeed = 1.6;
 		double leftSpeed = -1.6;
@@ -140,7 +150,10 @@ public class ObstaclesInitializer implements Initializable {
 		
 	}
 	
-	//Settings for hard game level
+	/**
+	 * This sets relevant parameters for the hard game level.<br> 
+	 * Specifically, this adjusts the speed of some of the obstacles.
+	 */
 	public void hard_settings() {
 		double rightSpeed = 3.0;
 		double leftSpeed = -3.0;
@@ -158,7 +171,10 @@ public class ObstaclesInitializer implements Initializable {
 	
 	}
 	
-	//Settings for extra game level
+	/**
+	 * This sets relevant parameters for the extra game level.<br> 
+	 * Specifically, this removes non-racing cars and adjust the speed of all the racing cars.
+	 */
 	public void extra_settings() {
 		for (int i = 0; i <= 8; ++i) {
 			obstacleControllers[i].removeView();

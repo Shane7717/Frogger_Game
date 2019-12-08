@@ -2,6 +2,10 @@ package xixuan.froggerapp.models;
 
 import javafx.scene.image.Image;
 
+/**
+ * This class is used to instantiate ends.
+ * @author XIXUAN WANG
+ */
 public class End extends Actor{
 	private boolean activated = false;
 	private String imageLink;
@@ -20,36 +24,42 @@ public class End extends Actor{
 	@Override
 	public void act(long now) {}
 	
-	//Set the image of the end in the game
+	/**
+	 * This sets the image after one frog enters one of the empty ends.
+	 */
 	public void setEnd() {
 		setImage(new Image("file:resources/images/ends/FrogEnd.png", 70, 70, true, true));
 		this.activated = true;
 	}
 	
-	//Check if this end has contained a frog already
+	/**
+	 * This checks whether or not this end has contained a frog already
+	 * @return <strong>true</strong> if this end has contained a frog. <br>
+	 * 		   <strong>false</strong> if this end is still empty.
+	 */
 	public boolean isActivated() {
 		return activated;
 	}
 
-	//Set the image of the end
+	/**
+	 * This sets the image of the empty end
+	 * @param imageLink the path of the image
+	 */
 	public void setImageLink(String imageLink) {
 		this.imageLink = imageLink;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 	
-	//Set the size of the end
 	public void setSize(int size) {
 		this.size = size;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
-	
-	//Set the x position of the end
+
 	public void setXpos(int xpos) {
 		this.xpos = xpos;
 		setX(this.xpos);
 	}
-
-	//Set the y position of the end
+	
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
 		setY(this.ypos);

@@ -2,6 +2,10 @@ package xixuan.froggerapp.models;
 
 import javafx.scene.image.Image;
 
+/**
+ * This class is used to instantiate obstacles.
+ * @author XIXUAN WANG
+ */
 public class Obstacle extends Actor {
 	private double speed;
 	private int size;
@@ -18,6 +22,10 @@ public class Obstacle extends Actor {
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 	
+	/**
+	 * This implements the animation of obstacles which are moving throughout the game.
+	 * @param now 		this is the real time that is increasing since game starts
+	 */
 	@Override
 	public void act(long now) {
 		move(speed, 0);
@@ -27,30 +35,25 @@ public class Obstacle extends Actor {
 			setX(600);
 	}
 
-	//Set the speed of the obstacle
 	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
 
-	//Set the size of the obstacle
 	public void setSize(int size) {
 		this.size = size;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 
-	//Set the image of the obstacle
 	public void setImageLink(String imageLink) {
 		this.imageLink = imageLink;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 
-	//Set the x position of the obstacle
 	public void setXpos(int xpos) {
 		this.xpos = xpos;
 		setX(this.xpos);
 	}
 
-	//Set the y position of the obstacle
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
 		setY(this.ypos);

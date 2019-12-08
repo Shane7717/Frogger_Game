@@ -6,6 +6,10 @@ import xixuan.froggerapp.models.Log;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.LogView;
 
+/**
+ * This class initializes all the relevant instances of Log.
+ * @author XIXUAN WANG
+ */
 public class LogsInitializer implements Initializable {
 	private MyStage background;
 	private Log[] logModels = new Log[8];
@@ -16,6 +20,9 @@ public class LogsInitializer implements Initializable {
 		this.background = background;
 	}
 
+	/**
+	 * This initializes eight logs in the game.
+	 */
 	public void initialize() { 
 		Frog.logRightIntersectSpeed = 0.9;
 		Frog.logLeftIntersectSpeed = -1.3;
@@ -61,7 +68,10 @@ public class LogsInitializer implements Initializable {
 		logControllers[7].updateView();
 	}
 			
-	//Settings for normal game level
+	/**
+	 * This sets relevant parameters for the normal game level.<br> 
+	 * Specifically, this adjusts the speed of the logs and removes one in the game.
+	 */	
 	public void normal_settings() {
 		Frog.logRightIntersectSpeed = 1.4;
 		logControllers[0].setLogSpeed(Frog.logRightIntersectSpeed);
@@ -75,7 +85,10 @@ public class LogsInitializer implements Initializable {
 		logControllers[7].setLogSpeed(Frog.logRightIntersectSpeed);
 	}
 	
-	//Settings for hard game level
+	/**
+	 * This sets relevant parameters for the hard game level.<br> 
+	 * Specifically, this adjusts the speed and x position of the logs and removes two.
+	 */
 	public void hard_settings() {
 		Frog.logRightIntersectSpeed = 6.0;
 		logControllers[0].setLogSpeed(Frog.logRightIntersectSpeed);
@@ -90,7 +103,10 @@ public class LogsInitializer implements Initializable {
 		logControllers[7].setLogSpeed(Frog.logRightIntersectSpeed);
 	}
 	
-	//Settings for extra game level
+	/**
+	 * This sets relevant parameters for the extra game level.<br> 
+	 * Specifically, this removes all the logs in the game.
+	 */
 	public void extra_settings() {
 		Frog.logRightIntersectSpeed = 0;
 		Frog.logLeftIntersectSpeed = 0;	

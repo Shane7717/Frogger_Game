@@ -3,6 +3,13 @@ package xixuan.froggerapp.controllers;
 import xixuan.froggerapp.models.Crocodile;
 import xixuan.froggerapp.views.CrocodileView;
 
+/**
+ * This class controls an object of the class Crocodile.<br>
+ * This controls the speed, size, x position, y position and view of a crocodile.
+ * @author XIXUAN WANG
+ * @see xixuan.froggerapp.views.CrocodileView
+ * @see xixuan.froggerapp.models.Crocodile
+ */
 public class CrocodileController {
 
 	private Crocodile model;
@@ -13,32 +20,33 @@ public class CrocodileController {
 		this.view = view;
 	}
 	
-	//Set the speed of the crocodile
+	
 	public void setCrocodileSpeed(double speed) {
 		model.setSpeed(speed);
 	}
 	
-	//Set the size of the crocodile
 	public void setCrocodileSize(int size) {
 		model.setSize(size);
 	}
 	
-	//Set the x position of the crocodile
 	public void setCrocodileXpos(int xpos) {
 		model.setXpos(xpos);
 	}
 	
-	//Set the y position of the crocodile
 	public void setCrocodileYpos(int ypos) {
 		model.setYpos(ypos);
 	}
 
-	//Display thie crocodile in the game
+	/**
+	 * This uses crocodiles's 'view' object to display the crocodile in the game. 
+	 */
 	public void updateView() {
 		view.viewCrocodile(model);
 	}
 	
-	//Remove the crocodile in the game
+	/**
+	 * This uses crocodile's 'view' object to remove the crocodile in the game.
+	 */
 	public void removeView() {
 		view.removeCrocodile(model);
 	}

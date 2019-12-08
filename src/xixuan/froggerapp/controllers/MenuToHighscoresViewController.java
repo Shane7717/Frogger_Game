@@ -10,6 +10,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import xixuan.froggerapp.FroggerApp;
 
+/**
+ * This class controls the initial highscores screen in the game.
+ * @author XIXUAN WANG
+ */
 public class MenuToHighscoresViewController {
 	@FXML private Label hsName;
 	@FXML private Label hsScore;
@@ -20,6 +24,9 @@ public class MenuToHighscoresViewController {
 		this.scoreList = scoreList;
 	}
 		
+	/**
+	 * This displays the top 10 players' names and their corresponding scores on the screen.
+	 */
 	public void initialize() {
 		hsName.setText(scoreList[0]);
 		hsScore.setText(scoreList[1]);
@@ -36,7 +43,10 @@ public class MenuToHighscoresViewController {
 		});
 	}
 	
-	//Turn the background music on or off
+	/**
+	 * This is used for the "Music" button at the top of this page.<br>
+	 * Player can click this button to turn on or turn off the background music.
+	 */
 	public void onOffSound() {
 		if (MenuSceneController.isMusicOn) {
 			MenuSceneController.beforeGameSound.stop();

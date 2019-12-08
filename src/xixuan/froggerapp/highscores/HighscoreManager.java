@@ -3,43 +3,67 @@ package xixuan.froggerapp.highscores;
 import java.util.*;
 import java.io.*;
 
+/**
+ * This class manages all the relevant functionalities of highscores
+ * @author XIXUAN WANG
+ */
 public class HighscoreManager {
-	private static HighscoreManager	uniqueHSManager; //Singleton
+	
+	/** The unique highscore manager instance that uses Singleton Pattern. */
+	private static HighscoreManager	uniqueHSManager; 
 
-	//An arraylist of the type "score" storing players' scores
+	/** An arraylist of the type "score" storing players' scores. */
 	private ArrayList<Score> scores;
 	
+	/**
+	 * Initialise a scores-arraylist
+	 */
 	private HighscoreManager() {
-		//initialising the scores-arraylist
         this.scores = new ArrayList<Score>();
 	}
 	
-	//The name of the file where the highscores will be saved
+	/** The name of the file where the highscores will be saved. */
 	private static final String HIGHSCORE_FILE = "resources/highscores/scores.dat"; 
 	
+    /** The output stream. */
     ObjectOutputStream outputStream = null;
+    
+    /** The input stream. */
     ObjectInputStream inputStream = null;
    
-    //Scores getter
+    /**
+     * Scores getter
+     * @return high scores arraylist
+     */
     public ArrayList<Score> getScores() {
         loadScoreFile();
         sort();
         return scores;
     }
     
-    //Sort the scores
+    /**
+     * Sort the scores with the help of a score comparator
+     */
     private void sort() {
         ScoreComparator comparator = ScoreComparator.getInstance();
         Collections.sort(scores, comparator);	
     }
     
-    //Add scores to the specified file
+    /**
+     * Adds the score and the corresponding player name into the scores arraylist.<br>
+     * And update the highscores disk file.
+     * @param name player's name
+     * @param score player's score
+     */
     public void addScore(String name, int score) {
         loadScoreFile();
         scores.add(new Score(name, score));
         updateScoreFile();
     }
     
+    /**
+     * Load the highscores file.
+     */
     @SuppressWarnings("unchecked")
 	public void loadScoreFile() {
         try {
@@ -63,6 +87,9 @@ public class HighscoreManager {
         }
     }
     
+    /**
+     * Update the highscores disk file.
+     */
     public void updateScoreFile() {
         try {
             outputStream = new ObjectOutputStream(new FileOutputStream(HIGHSCORE_FILE));
@@ -83,6 +110,11 @@ public class HighscoreManager {
         }
     }
     
+    /**
+     * Gets the highscores names and corresponding scores.<br>
+     * Also put them into an String array 
+     * @return the highscores string array
+     */
     public String[] getHighscoreString() {
     	//The function will only have the top 10 players shown
     	int maxShown = 10;
@@ -107,7 +139,10 @@ public class HighscoreManager {
         return highscores;
     }    
     
-    //Used for Singleton design pattern
+    /**
+     * This gets the single instance of HighscoreManager.
+     * @return single instance of HighscoreManager
+     */
     public static HighscoreManager getInstance() {
     	if (uniqueHSManager == null) {
     		uniqueHSManager = new HighscoreManager();

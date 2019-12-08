@@ -3,6 +3,13 @@ package xixuan.froggerapp.controllers;
 import xixuan.froggerapp.models.WetTurtle;
 import xixuan.froggerapp.views.WetTurtleView;
 
+/**
+ * This class controls an object of the class WetTurtle.<br>
+ * This controls the speed, size, x position, y position and view of a wet turtle.
+ * @author XIXUAN WANG
+ * @see xixuan.froggerapp.views.WetTurtleView
+ * @see xixuan.froggerapp.models.WetTurtle
+ */
 public class WetTurtleController {
 
 	private WetTurtle model;
@@ -13,32 +20,32 @@ public class WetTurtleController {
 		this.view = view;
 	}
 	
-	//Set the speed of the wet turtle
 	public void setWetTurtleSpeed(double speed) {
 		model.setSpeed(speed);
 	}
 		
-	//Set the size of the wet turtle
 	public void setWetTurtleSize(int size) {
 		model.setSize(size);
 	}
 	
-	//Set the x position of the wet turtle
 	public void setWetTurtleXpos(int xpos) {
 		model.setXpos(xpos);
 	}
 	
-	//Set the y position of the wet turtle
 	public void setWetTurtleYpos(int ypos) {
 		model.setYpos(ypos);
 	}
 		
-	//Display this wet turtle in the game
+	/**
+	 * This uses wet turtle's 'view' object to display the wet turtle in the game. 
+	 */
 	public void updateView() {
 		view.viewWetTurtle(model);
 	}
 	
-	//Remove this wet turtle in the game
+	/**
+	 * This uses wet turtle's 'view' object to remove the wet turtle in the game. 
+	 */
 	public void removeView() {
 		view.removeWetTurtle(model);
 	}

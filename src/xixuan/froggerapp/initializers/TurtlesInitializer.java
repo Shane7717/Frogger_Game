@@ -6,6 +6,10 @@ import xixuan.froggerapp.models.Turtle;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.TurtleView;
 
+/**
+ * This class initializes all the relevant instances of Crocodile.
+ * @author XIXUAN WANG
+ */
 public class TurtlesInitializer implements Initializable {
 	private MyStage background;
 	private Turtle[] turtleModels = new Turtle[3];
@@ -15,7 +19,10 @@ public class TurtlesInitializer implements Initializable {
 	public TurtlesInitializer(MyStage background) {
 		this.background = background;
 	}
-
+	
+	/**
+	 * This initializes three turtles in the game.
+	 */
 	public void initialize() { 
 		Frog.turtleIntersectSpeed = -0.8;
 		turtleModels[0]= new Turtle(130, 500, 376, Frog.turtleIntersectSpeed);
@@ -35,7 +42,10 @@ public class TurtlesInitializer implements Initializable {
 		
 	}
 	
-	//Settings for normal game level
+	/**
+	 * This sets relevant parameters for the normal game level.<br> 
+	 * Specifically, this adjusts the speed of two turtles and removes one.
+	 */
 	public void normal_settings() {
 		Frog.turtleIntersectSpeed = -1.6;
 		turtleControllers[0].removeView();
@@ -43,7 +53,10 @@ public class TurtlesInitializer implements Initializable {
 		turtleControllers[2].setTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
-	//Settings for hard game level
+	/**
+	 * This sets relevant parameters for the hard game level.<br> 
+	 * Specifically, this adjusts the speed of two turtles and removes one.
+	 */
 	public void hard_settings() {
 		Frog.turtleIntersectSpeed = -3.2;
 		turtleControllers[0].removeView();
@@ -51,7 +64,10 @@ public class TurtlesInitializer implements Initializable {
 		turtleControllers[2].setTurtleSpeed(Frog.turtleIntersectSpeed);
 	}
 	
-	//Settings for extra game level
+	/**
+	 * This sets relevant parameters for the extra game level.<br> 
+	 * Specifically, this removes all the turtles in the game.
+	 */
 	public void extra_settings() {
 		Frog.turtleIntersectSpeed = 0;
 		for (int i = 0; i <= 2; ++i) {

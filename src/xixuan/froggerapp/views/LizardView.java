@@ -3,19 +3,29 @@ package xixuan.froggerapp.views;
 import xixuan.froggerapp.models.Lizard;
 import xixuan.froggerapp.settings.MyStage;
 
+/**
+ * This class displays or removes a lizard in the game
+ * @author XIXUAN WANG
+ */
 public class LizardView {
 	MyStage background; 
 	
 	public LizardView(MyStage background) {
 		this.background = background;
 	}
-	
-	//Display the lizard on the screen
+		
+	/**
+	 * This adds the lizard into the game. 
+	 * @param model an instance of Lizard
+	 */
 	public void viewLizard(Lizard model) {
 		background.add(model);
 	}
 	
-	//Remove the lizard on the screen
+	/**
+	 * This removes the lizard currently in the game.
+	 * @param model an instance of Lizard
+	 */
 	public void removeLizard(Lizard model) {
 		background.remove(model);
 	}

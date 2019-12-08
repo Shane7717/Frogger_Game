@@ -3,6 +3,13 @@ package xixuan.froggerapp.controllers;
 import xixuan.froggerapp.models.Lizard;
 import xixuan.froggerapp.views.LizardView;
 
+/**
+ * This class controls an object of the class Lizard.<br>
+ * This controls the speed, size, x position, y position and view of a lizard.
+ * @author XIXUAN WANG
+ * @see xixuan.froggerapp.views.LizardView
+ * @see xixuan.froggerapp.models.Lizard
+ */
 public class LizardController {
 
 	private Lizard model;
@@ -13,32 +20,32 @@ public class LizardController {
 		this.view = view;
 	}
 	
-	//Set the speed of the lizard
 	public void setLizardSpeed(double speed) {
 		model.setSpeed(speed);
 	}
 	
-	//Set the size of the lizard
 	public void setLizardSize(int size) {
 		model.setSize(size);
 	}
 	
-	//Set the x position of the lizard
 	public void setLizardXpos(int xpos) {
 		model.setXpos(xpos);
 	}
 	
-	//Set the y position of the lizard
 	public void setLizardYpos(int ypos) {
 		model.setYpos(ypos);
 	}
 
-	//Display thie lizard in the game
+	/**
+	 * This uses lizard's 'view' object to display the lizard in the game. 
+	 */
 	public void updateView() {
 		view.viewLizard(model);
 	}
 	
-	//Remove this lizard in the game
+	/**
+	 * This uses lizard's 'view' object to remove the lizard in the game. 
+	 */
 	public void removeView() {
 		view.removeLizard(model);
 	}

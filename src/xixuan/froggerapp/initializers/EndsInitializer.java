@@ -5,6 +5,10 @@ import xixuan.froggerapp.models.End;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.EndView;
 
+/**
+ * This class initializes all the relevant instances of End.
+ * @author XIXUAN WANG
+ */
 public class EndsInitializer implements Initializable {
 	private MyStage background;
 	
@@ -12,6 +16,9 @@ public class EndsInitializer implements Initializable {
 		this.background = background;
 	}
 
+	/**
+	 * This initializes five ends in the game for the frog to stay.
+	 */
 	public void initialize() { 		
 		End end1model = new End("file:resources/images/ends/"+"End.png", 13, 96);
 		EndView end1view = new EndView(background);

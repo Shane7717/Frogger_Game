@@ -2,6 +2,10 @@ package xixuan.froggerapp.models;
 
 import javafx.scene.image.Image;
 
+/**
+ * This class is used to instantiate logs.
+ * @author XIXUAN WANG
+ */
 public class Log extends Actor {
 
 	private double speed;
@@ -19,6 +23,10 @@ public class Log extends Actor {
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 	
+	/**
+	 * This implements the animation of logs which are moving throughout the game.
+	 * @param now 		this is the real time that is increasing since game starts
+	 */
 	@Override
 	public void act(long now) {
 		move(this.speed, 0);
@@ -28,35 +36,34 @@ public class Log extends Actor {
 			setX(700);
 	}
 	
-	//Check if the log is moving left
+	/**
+	 * This checks whether or not the log is moving left.
+	 * @return <strong>true</strong> if the log is moving left
+	 * <br>	   <strong>false</strong> if the log is moving right
+	 */
 	public boolean getLeft() {
 		return this.speed < 0;
 	}
 	
-	//Set the speed of the log
 	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
 	
-	//Set the size of the log
 	public void setSize(int size) {
 		this.size = size;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 
-	//Set the image of the log
 	public void setImageLink(String imageLink) {
 		this.imageLink = imageLink;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
 
-	//Set the x position of the log
 	public void setXpos(int xpos) {
 		this.xpos = xpos;
 		setX(this.xpos);
 	}
 
-	//Set the y position of the log
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
 		setY(this.ypos);
