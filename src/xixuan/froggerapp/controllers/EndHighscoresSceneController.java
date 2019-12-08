@@ -14,20 +14,46 @@ import javafx.scene.control.TextField;
 import xixuan.froggerapp.FroggerApp;
 import xixuan.froggerapp.highscores.HighscoreManager;
 
+/**
+ * This class controls the final highscores screen in the game.
+ * @author XIXUAN WANG
+ */
 public class EndHighscoresSceneController {
+	
+	/** This displays how many scores a player got in the game. */ 
 	@FXML private Label scoreLabel;
-	@FXML private Button submitButton;
-	@FXML private TextField nameField;
-	@FXML private Label hsName;
-	@FXML private Label hsScore;
-	@FXML private Label state;
-	private int lifeNum;
+	
+	/** The represents the actual scores a player got in the game*/
 	private int score;
+	
+	/** This enables a player to submit his own scores */
+	@FXML private Button submitButton;
+	
+	/** This enabls a player to input his own name. */
+	@FXML private TextField nameField;
+	
+	/** This shows all the top 10 players' names in the highscores */
+	@FXML private Label hsName;
+	
+	/** This shows all the top 10 players' scores in the highscores */
+	@FXML private Label hsScore;
+	
+	/** This shows whether or not the player has won the game */
+	@FXML private Label state;
+	
+	/** This represents the number of lives left when the game is finished */
+	private int lifeNum;
+		
+	/** This represents the text that a player has input in the text field */
 	private String name;
+	
+	/** This represents the highscores manager object. */
 	private HighscoreManager hs_manager;
+	
+	/** This represents the time in seconds left when the game if finished. */
 	private int timeSecond;
 	
-	//Used to check if the user has input his name twice
+	/** This checks whether or not a player has submitted his name twice */
 	private int check;
 	
 	//Constructor
@@ -39,6 +65,15 @@ public class EndHighscoresSceneController {
 		this.check = 0;
 	}
 	
+	/**
+	 * This initializes all the content of the highscors page.<br><br>
+	 * The content includes: <br>
+	 * &nbsp&nbsp&nbsp&nbsp<code> the scores a player got in the game. </code><br>
+	 * &nbsp&nbsp&nbsp&nbsp<code> the "win or lose" state of the player</code><br>
+	 * &nbsp&nbsp&nbsp&nbsp<code> a text field for a player to input his own name</code><br>
+	 * &nbsp&nbsp&nbsp&nbsp<code> a submit button for the player to submit his scores</code><br>
+	 * &nbsp&nbsp&nbsp&nbsp<code> the updated highscores board with players' names and corresponding scores </code>
+	 */
 	public void initialize() {	
 		(MenuSceneController.beforeGameSound).play();
 		if (lifeNum != 0 && timeSecond > 0) 
@@ -82,6 +117,10 @@ public class EndHighscoresSceneController {
 		});
 	}	
 	
+	/**
+	 * This is used for the "Back to Main" button in this page. <br>
+	 * After player clicks this button, the page will be jumped to the menu page.
+	 */
 	public void toMainScene() {
 		Parent root = null;
 		try {
@@ -93,7 +132,10 @@ public class EndHighscoresSceneController {
         FroggerApp.getPrimaryStage().show();
 	}
 	
-	//Turn the background music on or off
+	/**
+	 * This is used for the "Music" button at the top of this page.<br>
+	 * Player can click this button to turn on or turn off the background music.
+	 */
 	public void onOffSound() {
 		if (MenuSceneController.isMusicOn) {
 			MenuSceneController.beforeGameSound.stop();

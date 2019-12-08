@@ -3,6 +3,13 @@ package xixuan.froggerapp.controllers;
 import xixuan.froggerapp.models.Obstacle;
 import xixuan.froggerapp.views.ObstacleView;
 
+/**
+ * This class controls an object of the class Obstacle.<br>
+ * This controls the speed, size, image, x position, y position and view of an obstacle.
+ * @author XIXUAN WANG
+ * @see xixuan.froggerapp.views.ObstacleView
+ * @see xixuan.froggerapp.models.Obstacle
+ */
 public class ObstacleController {
 
 	private Obstacle model;
@@ -13,37 +20,36 @@ public class ObstacleController {
 		this.view = view;
 	}
 	
-	//Set the speed of the obstacle
 	public void setObstacleSpeed(double speed) {
 		model.setSpeed(speed);
 	}
 		
-	//Set the size of the obstacle
 	public void setObstacleSize(int size) {
 		model.setSize(size);
 	}
 	
-	//Set the image of the obstacle
 	public void setImageLink(String imageLink) {
 		model.setImageLink(imageLink);
 	}
 		
-	//Set the x position of the obstacle
 	public void setObstacleXpos(int xpos) {
 		model.setXpos(xpos);
 	}
 	
-	//Set the y position of the obstacle
 	public void setObstacleYpos(int ypos) {
 		model.setYpos(ypos);
 	}
 	
-	//Display this obstacle in the game
+	/**
+	 * This uses obstacle's 'view' object to display the obstacle in the game. 
+	 */
 	public void updateView() {
 		view.viewObstacle(model);
 	}
 	
-	//Remove this obstacle in the game
+	/**
+	 * This uses obstacle's 'view' object to remove the obstacle in the game.
+	 */
 	public void removeView() {
 		view.removeObstacle(model);
 	}

@@ -6,6 +6,10 @@ import xixuan.froggerapp.models.Frog;
 import xixuan.froggerapp.settings.MyStage;
 import xixuan.froggerapp.views.CrocodileView;
 
+/**
+ * This class initializes all the relevant instances of Crocodile.
+ * @author XIXUAN WANG
+ */
 public class CrocodilesInitializer implements Initializable {
 	private MyStage background;
 	private CrocodileController crocodile1controller;
@@ -15,6 +19,9 @@ public class CrocodilesInitializer implements Initializable {
 		this.background = background;
 	}
 	
+	/**
+	 * This initializes two crocodiles in the game.
+	 */
 	public void initialize() {
 		Crocodile crocodile1model = new Crocodile(130, 1000, 376, 0);
 		CrocodileView crocodile1view = new CrocodileView(background);
@@ -27,7 +34,10 @@ public class CrocodilesInitializer implements Initializable {
 		crocodile2controller.updateView();	
 	}
 	
-	//Settings for normal game level
+	/**
+	 * This sets relevant parameters for the normal game level.<br> 
+	 * Specifically, this adjusts the speed and x position of the two crocodiles.
+	 */
 	public void normal_settings() {
 		Frog.crocodileLeftIntersectSpeed = -1.6;
 		crocodile1controller.setCrocodileXpos(500);
@@ -36,7 +46,10 @@ public class CrocodilesInitializer implements Initializable {
 		crocodile2controller.setCrocodileSpeed(Frog.crocodileLeftIntersectSpeed);
 	}
 	
-	//Settings for hard game level
+	/**
+	 * This sets relevant parameters for the hard game level.<br> 
+	 * Specifically, this adjusts the speed and x position of the two crocodiles.
+	 */
 	public void hard_settings() {
 		Frog.crocodileLeftIntersectSpeed = -3.2;
 		crocodile1controller.setCrocodileXpos(500);
@@ -45,7 +58,10 @@ public class CrocodilesInitializer implements Initializable {
 		crocodile2controller.setCrocodileSpeed(Frog.crocodileLeftIntersectSpeed);		
 	}
 	
-	//Settings for extra game level
+	/**
+	 * This sets relevant parameters for the extra game level.<br> 
+	 * Specifically, this removes the two crocodiles in the game.
+	 */
 	public void extra_settings() {
 		Frog.crocodileLeftIntersectSpeed = 0;
 		crocodile1controller.removeView();

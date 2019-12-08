@@ -3,6 +3,10 @@ package xixuan.froggerapp.views;
 import xixuan.froggerapp.models.Turtle;
 import xixuan.froggerapp.settings.MyStage;
 
+/**
+ * This class displays or removes a turtle in the game
+ * @author XIXUAN WANG
+ */
 public class TurtleView {
 	MyStage background; 
 	
@@ -10,12 +14,18 @@ public class TurtleView {
 		this.background = background;
 	}
 	
-	//Display the turtle in the game
+	/**
+	 * This adds the turtle into the game. 
+	 * @param model an instance of Turtle
+	 */
 	public void viewTurtle(Turtle model) {
 		background.add(model);
 	}
 	
-	//Remove the turtle in the game
+	/**
+	 * This removes the turtle currently in the game.
+	 * @param model an instance of Turtle
+	 */
 	public void removeTurtle(Turtle model) {
 		background.remove(model);
 	}

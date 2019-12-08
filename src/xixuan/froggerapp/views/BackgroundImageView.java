@@ -3,6 +3,10 @@ package xixuan.froggerapp.views;
 import xixuan.froggerapp.models.BackgroundImage;
 import xixuan.froggerapp.settings.MyStage;
 
+/**
+ * This class displays the background object(model) in the game.
+ * @author XIXUAN WANG
+ */
 public class BackgroundImageView {
 	MyStage background;
 
@@ -10,7 +14,10 @@ public class BackgroundImageView {
 		this.background = background;
 	}
 	
-	//Display the background image in the game
+	/**
+	 * This adds the background object into the game.
+	 * @param model an instance of BackgroundImage
+	 */
 	public void viewBackgroundImage(BackgroundImage model) {
 		background.add(model);
 	}

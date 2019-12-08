@@ -14,9 +14,15 @@ import javafx.scene.layout.Pane;
 import xixuan.froggerapp.models.Actor;
 
 
+/**
+ * This abstract class defines fundamental attributes/settings of the Frogger game. 
+ * @author XIXUAN WANG
+ */
 public abstract class World extends Pane {
+    
     private AnimationTimer timer;
     
+    /** Instantiates a new world. */
     public World() {   	
     	sceneProperty().addListener(new ChangeListener<Scene>() {
 
@@ -51,46 +57,56 @@ public abstract class World extends Pane {
 									anActor.getOnKeyPressed().handle(event);
 								}
 							}
-						}
-						
+						}						
 					});
-				}
-				
-			}
-    		
+				}				
+			}   		
 		});
     }
 
+    /**
+     * This creates the timer.
+     */
     public void createTimer() {
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
                 act(now);
-                List<Actor> actors = getObjects(Actor.class);
-                
+                List<Actor> actors = getObjects(Actor.class);              
                 for (Actor anActor: actors) {
                 	anActor.act(now);
                 }
-      
             }
         };
     }
 
+    /**
+     * This starts the timer.
+     */
     public void start() {
     	createTimer();
         timer.start();
     }
 
+    /**
+     * This stops the timer.
+     */
     public void stop() {
         timer.stop();
     }
     
-    //Add actors to the game world
+    /**
+     * This adds an actor (model) to the game world.
+     * @param actor 	the model/instance of a specific class that inherits "Actor"
+     */
     public void add(Actor actor) {
         getChildren().add(actor);
     }
 
-    //Remove actors from the game world
+    /**
+     * This removes an actor(model) out of the game world.
+     * @param actor 	the model/instance of a specific class that inherits "Actor"
+     */
     public void remove(Actor actor) {
         getChildren().remove(actor);
     }
@@ -106,5 +122,9 @@ public abstract class World extends Pane {
         return someArray;
     }
 
+    /**
+     * This makes it possible for different kinds of objects to act differently.
+     * @param now the current time that is increasing when game begins.
+     */
     public abstract void act(long now);
 }

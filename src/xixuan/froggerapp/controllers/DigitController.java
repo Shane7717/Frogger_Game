@@ -3,6 +3,13 @@ package xixuan.froggerapp.controllers;
 import xixuan.froggerapp.models.Digit;
 import xixuan.froggerapp.views.DigitView;
 
+/**
+ * This class controls an object of the class Digit.<br>
+ * This controls the size, x position, y position, digit number and view of a Digit object.
+ * @author XIXUAN WANG
+ * @see xixuan.froggerapp.views.DigitView
+ * @see xixuan.froggerapp.models.Digit
+ */
 public class DigitController {
 
 	private Digit model;
@@ -13,27 +20,29 @@ public class DigitController {
 		this.view = view;
 	}
 	
-	//Set the size of the digit
 	public void setDigitSize(int size) {
 		model.setSize(size);
 	}
 
-	//Set the x position of the digit
 	public void setDigitXpos(int xpos) {
 		model.setXpos(xpos);
 	}
 
-	//Set the y position of the digit
 	public void setYpos(int ypos) {
 		model.setYpos(ypos);	
 	}
 
-	//Set the image of the digit
+	/**
+	 * This sets the image of an instance of Digit.
+	 * @param digit an integer ranged from 0-9 that wants the instance to represent
+	 */
 	public void setDigit(int digit) {
 		model.setDigit(digit);		
 	}	
 	
-	//Display this digit in the game
+	/**
+	 * This uses digit's 'view' object to display the digit in the game.
+	 */
 	public void updateView() {
 		view.viewDigit(model);
 	}

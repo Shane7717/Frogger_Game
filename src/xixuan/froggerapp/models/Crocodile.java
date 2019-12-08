@@ -2,6 +2,10 @@ package xixuan.froggerapp.models;
 
 import javafx.scene.image.Image;
 
+/**
+ * This class is used to instantiate crocodiles.
+ * @author XIXUAN WANG
+ */
 public class Crocodile extends Actor{
 	private Image crocodile1;
 	private Image crocodile2;
@@ -10,8 +14,11 @@ public class Crocodile extends Actor{
 	private int size;
 	private int xpos;
 	private int ypos;
+	
+	/** If the crocodile becomes red(crocodile3), this value will be set true.*/
 	private boolean crazyDeath = false;
 	 
+	//Constructor
 	public Crocodile(int size, int xpos, int ypos, double speed) {
 		setSize(size);
 		setXpos(xpos);
@@ -23,9 +30,13 @@ public class Crocodile extends Actor{
 		setImage(crocodile1);
 	}
 	
+	/**
+	 * This implements the animation of crocodiles from crocodile1 to crocodile3
+	 * @param now 		this is the real time that is increasing since game starts
+	 */
 	@Override
 	public void act(long now) {
-
+		
 		if (now/900000000  % 3 == 0) {
 			setImage(crocodile1);
 			this.crazyDeath = false; 
@@ -45,28 +56,28 @@ public class Crocodile extends Actor{
 			setX(600);
 	}
 	
-	//Check if the crocodile turns red and gets crazy
+	/**
+	 * This checks whether or not the crocodile turns red and gets crazy.<br>
+	 * @return <strong>true</strong> if the crocodile becomes red and crazy. <br>
+	 *		   <strong>false</strong> if the crocodile is not red and not crazy.
+	 */
 	public boolean isCrazyDeath() {
 		return this.crazyDeath;
 	}
 	
-	//Set the speed of the crocodile
 	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
 	
-	//Set the size of the crocodile
 	public void setSize(int size) {
 		this.size = size;
 	}
 	
-	//Set the x position of the crocodile
 	public void setXpos(int xpos) {
 		this.xpos = xpos;
 		setX(this.xpos);
 	}
 
-	//Set the y position of the crocodile
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
 		setY(this.ypos);
