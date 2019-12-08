@@ -11,7 +11,6 @@ import javafx.scene.media.MediaPlayer;
 import xixuan.froggerapp.views.GameView;
 
 public class Frog extends Actor {
-	
 	private Image imgW1; 
 	private Image imgA1; 
 	private Image imgS1; 
@@ -23,20 +22,24 @@ public class Frog extends Actor {
 	private int points = 0;
 	private int endOccupy = 0;
 	private long now;
-	private int checkSignal = 1;
+	
+	//This will be set to 0 if there's no water death checking for extra level
+	private int checkSignal = 1;	
+	
 	public static double logRightIntersectSpeed = 0;
 	public static double logLeftIntersectSpeed = 0;
 	public static double turtleIntersectSpeed = 0;
 	public static double crocodileLeftIntersectSpeed = 0;
-	public static double crocodileRightIntersectSpeed = 0;
-	private boolean disableKey = false;
-	private int lifeNum = -1;
-	MediaPlayer frogSoundEffect;
 	
+	//This will be set to true when pausing the whole game
+	private boolean disableKey = false;
+	
+	//This will be reset for different levels
+	private int lifeNum = -1;	
+	MediaPlayer frogSoundEffect;
 	
 	//Used to check if the button is continuously pressed without releasing
 	private boolean second = false;
-
 	private boolean noMove = false;
 	private double movement = 13.3333333*2;
 	private double movementX = 10.666666*2;
@@ -46,7 +49,8 @@ public class Frog extends Actor {
 	boolean stop = false;
 	private boolean changeScore = false;
 	private int frogD = 0;
-	//The y position which is the limit position used to start counting points
+	
+	//The y position which is the frog's previous death position used to count points
 	private double countPosition = 800;
 	ArrayList<End> inter = new ArrayList<End>();
 	
@@ -61,9 +65,9 @@ public class Frog extends Actor {
 	public void act(long now) {
 		this.now = now;
 		resetPosition();
-		carDeathCheck();
-		waterDeathCheck();
-		intersectionCheck();	
+		carDeathCheck();		//Check if frog dies from cars
+		waterDeathCheck();		//Check if frog dies from water
+		enableIntersection();	//Enable frog to intersect with specific objects	
 	}
 	
 	//Check the conditions for resetting frog's position
@@ -72,7 +76,7 @@ public class Frog extends Actor {
 			setFrogPosition();
 		if (getX()<0) 
 			move(movement*2, 0);
-		if (getX()>600) 
+		if (getX()>580) 
 			move(-movement*2, 0);
 	}
 	
@@ -81,9 +85,9 @@ public class Frog extends Actor {
 		return (endOccupy==5 || lifeNum==0);
 	}
 	
-	//Return the points of the player
+	//Return the points of the player/frog
 	public int getPoints() {
-		return points;
+		return this.points;
 	}
 	
 	//Check if the score has been changed
@@ -116,71 +120,58 @@ public class Frog extends Actor {
 	//Monitor the keyboard input from players
 	public void keyboardMonitor() {
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent event){
-				if (noMove) {
-					;
-				}
+			public void handle(KeyEvent event){	
+				if (noMove) {}
 				else {
-				if (second && (!disableKey) ) {
-					if (event.getCode() == KeyCode.W) {	 
-		                move(0, -movement);
-		                //pressWtimes++;
-		                changeScore = false;
-		                setImage(imgW1);
-		                second = false;
+					if (second && (!disableKey) ) {
+						if (event.getCode() == KeyCode.W) {	 
+			                move(0, -movement);		             
+			                changeScore = false;
+			                setImage(imgW1);
+			                second = false;
+			            }
+			            else if (event.getCode() == KeyCode.A) {	            	
+			            	 move(-movementX, 0);		            	
+			            	 setImage(imgA1);
+			            	 second = false;
+			            }
+			            else if (event.getCode() == KeyCode.S) {	            	
+			            	 move(0, movement);		            	
+			            	 setImage(imgS1);
+			            	 second = false;
+			            }
+			            else if (event.getCode() == KeyCode.D) {	            	
+			            	 move(movementX, 0);		            	 
+			            	 setImage(imgD1);
+			            	 second = false;
+			            }
+					}
+					else if (event.getCode() == KeyCode.W && (!disableKey)) {	
+						playSoundEffect();	  
+		                move(0, -movement);	                
+		                setImage(imgW2);
+		                second = true;	
 		            }
-		            else if (event.getCode() == KeyCode.A) {	            	
-		            	 move(-movementX, 0);
-		            	 //pressAtimes++;
-		            	 setImage(imgA1);
-		            	 second = false;
+		            else if (event.getCode() == KeyCode.A && (!disableKey)) {
+		            	playSoundEffect();	        	            	
+		            	move(-movementX, 0);	            	
+		            	setImage(imgA2);
+		            	second = true;
 		            }
-		            else if (event.getCode() == KeyCode.S) {	            	
-		            	 move(0, movement);
-		            	 //pressStimes++;
-		            	 setImage(imgS1);
-		            	 second = false;
+		            else if (event.getCode() == KeyCode.S && (!disableKey)) {	
+		            	playSoundEffect();	            		           
+		            	move(0, movement);	            	
+		            	setImage(imgS2);
+		            	second = true;
 		            }
-		            else if (event.getCode() == KeyCode.D) {	            	
-		            	 move(movementX, 0);
-		            	 //pressDtimes++;
-		            	 setImage(imgD1);
-		            	 second = false;
+		            else if (event.getCode() == KeyCode.D && (!disableKey)) {
+		            	playSoundEffect();    
+		            	move(movementX, 0);	            	
+		            	setImage(imgD2);
+		            	second = true;
 		            }
-				}
-				else if (event.getCode() == KeyCode.W && (!disableKey)) {	
-					playSoundEffect();	  
-	                move(0, -movement);
-	                //pressWtimes++;
-	                setImage(imgW2);
-	                second = true;	
-	            }
-	            else if (event.getCode() == KeyCode.A && (!disableKey)) {
-	            	playSoundEffect();
-	            	//frogSoundEffect.play();		            	
-	            	move(-movementX, 0);
-	            	//pressAtimes++;
-	            	setImage(imgA2);
-	            	second = true;
-	            }
-	            else if (event.getCode() == KeyCode.S && (!disableKey)) {	
-	            	playSoundEffect();
-	            	//frogSoundEffect.play();	  	           
-	            	move(0, movement);
-	            	//pressStimes++;
-	            	setImage(imgS2);
-	            	second = true;
-	            }
-	            else if (event.getCode() == KeyCode.D && (!disableKey)) {
-	            	playSoundEffect();
-	            	//frogSoundEffect.play();	            
-	            	move(movementX, 0);
-	            	//pressDtimes++;
-	            	setImage(imgD2);
-	            	second = true;
-	            }
+				}	
 	        }
-			}
 		});	
 		
 		setOnKeyReleased(new EventHandler<KeyEvent>() {
@@ -192,22 +183,17 @@ public class Frog extends Actor {
 							countPosition = getY();
 							points+=10;
 							changeScore = true;
-						}
-						//if (pressWtimes % 2 == 1)
-						move(0, -movement);
-		                //pressWtimes = 0;
+						}					
+						move(0, -movement);	              
 		                setImage(imgW1);
 		                second = false;		               
 		            }
-		            else if (event.getCode() == KeyCode.A && (!disableKey)) {
-		            	 //if (pressAtimes % 2 == 1)	
-		            	 move(-movementX, 0);
-		            	 //pressAtimes = 0;
+		            else if (event.getCode() == KeyCode.A && (!disableKey)) {	            	 
+		            	 move(-movementX, 0);	            	
 		            	 setImage(imgA1);
 		            	 second = false;
 		            }
-		            else if (event.getCode() == KeyCode.S && (!disableKey)) {	
-		            	 //if (pressStimes % 2 == 1)
+		            else if (event.getCode() == KeyCode.S && (!disableKey)) {		            	
 		            	 move(0, movement);
 		            	 //pressStimes = 0;
 		            	 setImage(imgS1);
@@ -252,35 +238,36 @@ public class Frog extends Actor {
 	
 	//Check if the frog is dead due to water 
 	public void waterDeathCheck() {
-		if (checkSignal == 1) {
-			if (waterDeath) {
-				noMove = true;
-				if ((now)% 11 ==0) 
-					frogD++;
-				if (frogD >= 1 && frogD <= 4) 
-					setImage(new Image("file:resources/images/deaths/waterdeath"+frogD+".png", imgSize,imgSize , true, true));
-				if (frogD == 5) {
-					lifeNum--;
-					if (lifeNum >= 0)
-						((GameView.symbols)[lifeNum]).setXpos(1000);
-					setFrogPosition();
-					waterDeath = false;
-					frogD = 0;
-					setImage(new Image("file:resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true));
-					noMove = false;
-					if (points>50) {
-						points-=50;
-						changeScore = true;
-					}
+		if (waterDeath) {
+			noMove = true;
+			if ((now)% 11 ==0) 
+				frogD++;
+			if (frogD >= 1 && frogD <= 4) 
+				setImage(new Image("file:resources/images/deaths/waterdeath"+frogD+".png", imgSize,imgSize , true, true));
+			if (frogD == 5) {
+				lifeNum--;
+				if (lifeNum >= 0)
+					((GameView.symbols)[lifeNum]).setXpos(1000);
+				setFrogPosition();
+				waterDeath = false;
+				frogD = 0;
+				setImage(new Image("file:resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true));
+				noMove = false;
+				if (points>50) {
+					points-=50;
+					changeScore = true;
 				}
-			}	
-		}
+			}
+		}			
 	}
 	
-	public void intersectionCheck() {
-		
+	//Enable the frog to intersect with specific objects
+	public void enableIntersection() {
+		//Intersect with obstacles
 		if (getIntersectingObjects(Obstacle.class).size() >= 1) 
 			carDeath = true;	
+		
+		//Intersect with lizards
 		if (getIntersectingObjects(Lizard.class).size() >= 1) 
 			carDeath = true;	
 		
@@ -296,14 +283,11 @@ public class Frog extends Actor {
 		else if (getIntersectingObjects(Crocodile.class).size() >= 1 && !noMove) {
 			if (getIntersectingObjects(Crocodile.class).get(0).isCrazyDeath()) 
 				waterDeath = true;
-			else {
-				if(getIntersectingObjects(Crocodile.class).get(0).getLeft())
-					move(crocodileLeftIntersectSpeed, 0);
-				else
-					move(crocodileRightIntersectSpeed, 0); 
-			}
+			else 			
+				move(crocodileLeftIntersectSpeed, 0);
 		} 
 		
+		//Intersect with wet turtles
 		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) 
 			move(turtleIntersectSpeed,0);
 		
@@ -314,6 +298,8 @@ public class Frog extends Actor {
 			else 
 				move(turtleIntersectSpeed,0);
 		}
+		
+		//Intersect with ends
 		else if (getIntersectingObjects(End.class).size() >= 1) {
 			inter = (ArrayList<End>) getIntersectingObjects(End.class);
 			if (getIntersectingObjects(End.class).get(0).isActivated()) {
@@ -329,10 +315,11 @@ public class Frog extends Actor {
 				setFrogPosition();
 			}
 		}
+		
+		//Intersect with water(will die)
 		else if (getY()<413){
-			waterDeath = true;
-			//setX(300);
-			//setY(679.8+movement);
+			if (checkSignal == 1)
+				waterDeath = true;
 		}
 	}
 	
@@ -364,6 +351,5 @@ public class Frog extends Actor {
 		frogSoundEffect.play();
 		sound = null;
 		frogSoundEffect = null;
-	}
-	
+	}	
 }

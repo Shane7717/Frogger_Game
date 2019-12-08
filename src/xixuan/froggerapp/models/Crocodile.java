@@ -38,18 +38,14 @@ public class Crocodile extends Actor{
 			setImage(crocodile3);
 			this.crazyDeath = true;
 		}
-		move(speed , 0);
+		move(speed, 0);
 		if (getX() > 600 && speed>0)
 			setX(-200);
 		if (getX() < -75 && speed<0)
 			setX(600);
 	}
 	
-	public boolean getLeft() {
-		return this.speed < 0;
-	}
-	
-	
+	//Check if the crocodile turns red and gets crazy
 	public boolean isCrazyDeath() {
 		return this.crazyDeath;
 	}

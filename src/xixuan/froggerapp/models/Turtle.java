@@ -37,7 +37,7 @@ public class Turtle extends Actor{
 			setImage(turtle3);
 		}
 			
-		move(speed , 0);
+		move(speed, 0);
 		
 		if (getX() > 600 && speed>0)
 			setX(-200);
@@ -49,41 +49,21 @@ public class Turtle extends Actor{
 	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
-	
-	//Return the speed of the turtle
-	public double getSpeed() {
-		return this.speed;
-	}
-
-	//Return the size of the turtle
-	public int getSize() {
-		return this.size;
-	}
 
 	//Set the size of the turtle
 	public void setSize(int size) {
 		this.size = size;
 	}
 	
-	//Return the x position of the turtle
-	public int getXpos() {
-		return this.xpos;
-	}
-
 	//Set the x position of the turtle
 	public void setXpos(int xpos) {
 		this.xpos = xpos;
-		setX(xpos);
-	}
-
-	//Return the y position of the turtle
-	public int getYpos() {
-		return this.ypos;
+		setX(this.xpos);
 	}
 
 	//Set the y position of the turtle
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
-		setY(ypos);
+		setY(this.ypos);
 	}	
 }

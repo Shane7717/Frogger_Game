@@ -14,4 +14,9 @@ public class LizardView {
 	public void viewLizard(Lizard model) {
 		background.add(model);
 	}
+	
+	//Remove the lizard on the screen
+	public void removeLizard(Lizard model) {
+		background.remove(model);
+	}
 }

@@ -10,7 +10,7 @@ public class FrogView {
 		this.background = background;
 	}
 	
-	//Display the frog that player manipulates.
+	//Display the frog that player manipulates in the game.
 	public void viewFrog(Frog model) {
 		background.add(model);
 	}

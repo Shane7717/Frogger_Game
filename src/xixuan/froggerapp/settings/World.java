@@ -17,8 +17,7 @@ import xixuan.froggerapp.models.Actor;
 public abstract class World extends Pane {
     private AnimationTimer timer;
     
-    public World() {
-    	
+    public World() {   	
     	sceneProperty().addListener(new ChangeListener<Scene>() {
 
 			@Override
@@ -91,11 +90,13 @@ public abstract class World extends Pane {
         getChildren().add(actor);
     }
 
+    //Remove actors from the game world
     public void remove(Actor actor) {
         getChildren().remove(actor);
     }
 
-    public <A extends Actor> List<A> getObjects(Class<A> cls) {
+    @SuppressWarnings("unchecked")
+	public <A extends Actor> List<A> getObjects(Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
         for (Node n: getChildren()) {
             if (cls.isInstance(n)) {

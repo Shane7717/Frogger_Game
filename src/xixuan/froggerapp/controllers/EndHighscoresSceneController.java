@@ -35,27 +35,23 @@ public class EndHighscoresSceneController {
 		this.score = score;
 		this.lifeNum = lifeNum;
 		this.timeSecond = second;
-		hs_manager = new HighscoreManager();
+		hs_manager = HighscoreManager.getInstance();
 		this.check = 0;
 	}
-
-	public void setScore(int score) {
-		this.score = score;
-	}
 	
-	//Could be automatically invoked when loaded
 	public void initialize() {	
-		if (lifeNum != 0 && timeSecond > 0) {
+		(MenuSceneController.beforeGameSound).play();
+		if (lifeNum != 0 && timeSecond > 0) 
 			state.setText("YOU WIN!!!");
-		} else {
+		else 
 			state.setText("YOU LOSE!!!");
-		}
+		
 		scoreLabel.setText("YOUR FINAL SCORE: " + String.valueOf(score));
 		hsName.setText((hs_manager.getHighscoreString())[0]);
 		hsScore.setText((hs_manager.getHighscoreString())[1]);
+		
 		submitButton.setOnAction(event -> {
-			this.name = nameField.getText();
-						
+			this.name = nameField.getText();						
 			if (name.isEmpty()) {
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("EMPTY NAME WARNING");
@@ -91,10 +87,21 @@ public class EndHighscoresSceneController {
 		try {
 			root = FXMLLoader.load(getClass().getResource("../views/MenuView.fxml"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		FroggerApp.getPrimaryStage().setScene(new Scene(root, 600, 800));	
         FroggerApp.getPrimaryStage().show();
+	}
+	
+	//Turn the background music on or off
+	public void onOffSound() {
+		if (MenuSceneController.isMusicOn) {
+			MenuSceneController.beforeGameSound.stop();
+			MenuSceneController.isMusicOn = false;
+		}
+		else {
+			MenuSceneController.beforeGameSound.play();
+			MenuSceneController.isMusicOn = true;
+		}
 	}
 }

@@ -15,11 +15,8 @@ public class CrocodilesInitializer implements Initializable {
 		this.background = background;
 	}
 	
-	@Override
 	public void initialize() {
 		Crocodile crocodile1model = new Crocodile(130, 1000, 376, 0);
-		//Easy level has no crocodile.
-		//I do this in order to make the crocodile disappear in 600*800 window	
 		CrocodileView crocodile1view = new CrocodileView(background);
 		crocodile1controller = new CrocodileController(crocodile1model, crocodile1view);
 		crocodile1controller.updateView(); 
@@ -30,6 +27,7 @@ public class CrocodilesInitializer implements Initializable {
 		crocodile2controller.updateView();	
 	}
 	
+	//Settings for normal game level
 	public void normal_settings() {
 		Frog.crocodileLeftIntersectSpeed = -1.6;
 		crocodile1controller.setCrocodileXpos(500);
@@ -38,13 +36,19 @@ public class CrocodilesInitializer implements Initializable {
 		crocodile2controller.setCrocodileSpeed(Frog.crocodileLeftIntersectSpeed);
 	}
 	
+	//Settings for hard game level
 	public void hard_settings() {
 		Frog.crocodileLeftIntersectSpeed = -3.2;
 		crocodile1controller.setCrocodileXpos(500);
 		crocodile1controller.setCrocodileSpeed(Frog.crocodileLeftIntersectSpeed);
 		crocodile2controller.setCrocodileXpos(600);
-		crocodile2controller.setCrocodileSpeed(Frog.crocodileLeftIntersectSpeed);
-		
+		crocodile2controller.setCrocodileSpeed(Frog.crocodileLeftIntersectSpeed);		
 	}
-
+	
+	//Settings for extra game level
+	public void extra_settings() {
+		Frog.crocodileLeftIntersectSpeed = 0;
+		crocodile1controller.removeView();
+		crocodile2controller.removeView();
+	}
 }

@@ -14,38 +14,27 @@ public class EndController {
 		this.view = view;
 	}
 		
+	//Set the size of the end
 	public void setEndSize(int size) {
 		model.setSize(size);
 	}
 	
-	public int getEndSize() {
-		return model.getSize();
-	}
-	
+	//Set the image of the end
 	public void setImageLink(String imageLink) {
 		model.setImageLink(imageLink);
 	}
 	
-	public String getImageLink() {
-		return model.getImageLink();
-	}
-	
+	//Set the x position of the end
 	public void setEndXpos(int xpos) {
 		model.setXpos(xpos);
 	}
 	
-	public int getEndXpos() {
-		return model.getXpos();
-	}
-
+	//Set the y position of the end
 	public void setEndYpos(int ypos) {
 		model.setYpos(ypos);
 	}
-	
-	public int getEndYpos() {
-		return model.getYpos();
-	}
-	
+		
+	//Display thie end in the game
 	public void updateView() {
 		view.viewEnd(model);
 	}

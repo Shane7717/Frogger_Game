@@ -10,8 +10,13 @@ public class TurtleView {
 		this.background = background;
 	}
 	
-	//Display the log on the screen
+	//Display the turtle in the game
 	public void viewTurtle(Turtle model) {
 		background.add(model);
+	}
+	
+	//Remove the turtle in the game
+	public void removeTurtle(Turtle model) {
+		background.remove(model);
 	}
 }

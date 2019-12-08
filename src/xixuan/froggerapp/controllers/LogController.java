@@ -38,8 +38,13 @@ public class LogController {
 		model.setYpos(ypos);
 	}
 	
-	//Show this log in the game
+	//Display this log in the game
 	public void updateView() {
 		view.viewLog(model);
+	}
+	
+	//Remove this log in the game
+	public void removeView() {
+		view.removeLog(model);
 	}
 }

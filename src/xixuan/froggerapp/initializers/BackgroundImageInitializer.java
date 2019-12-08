@@ -13,9 +13,7 @@ public class BackgroundImageInitializer implements Initializable {
 		this.background = background;
 	}
 	
-	@Override
-	public void initialize() {
-		
+	public void initialize() {	
 		BackgroundImage bgImage = new BackgroundImage("file:resources/images/background/arcade.png");
 		BackgroundImageView bgImageView = new BackgroundImageView(background);
 		bgImageController = new BackgroundImageController(bgImage, bgImageView);
@@ -23,6 +21,7 @@ public class BackgroundImageInitializer implements Initializable {
 		
 	}
 	
+	//Settings for hard game level
 	public void extra_settings() {
 		bgImageController.setImageLink("file:resources/images/background/arcade2.png");
 	}

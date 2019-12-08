@@ -14,4 +14,9 @@ public class ObstacleView {
 	public void viewObstacle(Obstacle model) {
 		background.add(model);
 	}
+	
+	//Remove the obstacle on the screen
+	public void removeObstacle(Obstacle model) {
+		background.remove(model);
+	}
 }

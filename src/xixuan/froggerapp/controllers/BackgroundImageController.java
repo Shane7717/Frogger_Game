@@ -13,30 +13,22 @@ public class BackgroundImageController {
 		this.view = view;
 	}
 	
-	public String getImageLink() {
-		return model.getImageLink();
-	}
-
+	//Set the background image
 	public void setImageLink(String imageLink) {
 		model.setImageLink(imageLink);
 	}
 
-	public int getImageWidth() {
-		return model.getImageWidth();
-	}
-
+	//Set the width of the background image
 	public void setImageWidth(int imageWidth) {
 		model.setImageWidth(imageWidth);
 	}
 
-	public int getImageHeight() {
-		return model.getImageHeight();
-	}
-
+	//Set the height of the background image
 	public void setImageHeight(int imageHeight) {
 		model.setImageHeight(imageHeight);
 	}
 
+	//Display this background image in the game
 	public void updateView() {
 		view.viewBackgroundImage(model);
 	}

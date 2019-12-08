@@ -14,4 +14,9 @@ public class CrocodileView {
 	public void viewCrocodile(Crocodile model) {
 		background.add(model);
 	}
-}
+	
+	//Remove the crocodile on the screen
+	public void removeCrocodile(Crocodile model) {
+		background.remove(model);
+	}
+} 

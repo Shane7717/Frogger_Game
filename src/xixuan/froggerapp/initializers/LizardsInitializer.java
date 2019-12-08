@@ -14,7 +14,6 @@ public class LizardsInitializer implements Initializable {
 		this.background = background;
 	}
 	
-	@Override
 	public void initialize() {
 		Lizard lizard1model = new Lizard(130, 1000, 435, 0);
 		LizardView lizard1view = new LizardView(background);
@@ -28,18 +27,17 @@ public class LizardsInitializer implements Initializable {
 				
 	}
 	
-	public void normal_settings() {
-		;
-	}
-	
+	//Settings for hard game level
 	public void hard_settings() {
 		lizard1controller.setLizardXpos(300);
 		lizard1controller.setLizardSpeed(-4.0);
 		lizard2controller.setLizardXpos(120);
 		lizard2controller.setLizardSpeed(-4.8);
-	}
-	
-	public void nightmare_settings() {
-		;
 	}	
+	
+	//Settings for extra game level
+	public void extra_settings() {
+		lizard1controller.removeView();
+		lizard2controller.removeView();
+	}
 }

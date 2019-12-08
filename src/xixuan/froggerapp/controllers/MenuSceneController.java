@@ -18,6 +18,7 @@ public class MenuSceneController {
 	@FXML private Button highscoreButton;
 	public static MediaPlayer beforeGameSound;
 	public static int signal = 1;
+	public static boolean isMusicOn = true;	
 	
 	@FXML
 	public void toLevelPageScene() throws IOException {	
@@ -28,9 +29,9 @@ public class MenuSceneController {
 	
 	@FXML
 	public void toHighscoreScene() throws IOException {
-		HighscoreManager hs_manager = new HighscoreManager();
+		HighscoreManager hs_manager = HighscoreManager.getInstance();
 		
-		MenuToHighscoresViewController mthsController = new MenuToHighscoresViewController(hs_manager.getHighscoreString());          	
+	   	MenuToHighscoresViewController mthsController = new MenuToHighscoresViewController(hs_manager.getHighscoreString());          	
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/MenuToHighscoresView.fxml"));
 		loader.setController(mthsController);
 		
@@ -38,7 +39,6 @@ public class MenuSceneController {
 		try {
 			root = loader.load();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -61,6 +61,18 @@ public class MenuSceneController {
 			beforeGameSound.setCycleCount(MediaPlayer.INDEFINITE);	
 			beforeGameSound.play();
 			signal++;
+		}
+	}
+	
+	//Turn the background music on or off
+	public void onOffSound() {
+		if (isMusicOn) {
+			beforeGameSound.stop();
+			isMusicOn = false;
+		}
+		else {
+			beforeGameSound.play();
+			isMusicOn = true;
 		}
 	}
 }

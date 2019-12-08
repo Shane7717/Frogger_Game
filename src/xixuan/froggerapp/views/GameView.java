@@ -43,12 +43,14 @@ public class GameView {
 	private CrocodilesInitializer crocodilesInitializer;
 	private LizardsInitializer lizardsInitializer;
 	private BackgroundImageInitializer bgImageInitializer;
-	private int musicSignal = 1;
-	private int gameSignal = 1;
-	public static FrogLifeSymbol[] symbols;
+	private EndsInitializer endsInitializer;
+	private DigitInitializer digitInitializer;
+	private int musicSignal = 1;	//Whether or not pause music
+	private int gameSignal = 1;		//Whether or not pause game
+	public static FrogLifeSymbol[] symbols;	
 	private Integer frameTime = 0;
-	private Integer second = 1;
-	private Label timerlabel;
+	private Integer second = 1;		//Time in seconds
+	private Label timerlabel;		//Countdown timer label 
 	
 	public void launchGameView() {	
 		setQuitButton();
@@ -57,15 +59,15 @@ public class GameView {
 		setCountDown();
 		background.start();		
         mainScene = new Scene(background, 600, 800);
-   
+        
 		FroggerApp.getPrimaryStage().setTitle("Frogger");
 		FroggerApp.getPrimaryStage().setScene(mainScene);
 		FroggerApp.getPrimaryStage().show();
 		(MenuSceneController.beforeGameSound).stop();
-		start();
+		startSettings();
 	}
 	
-	public void start() {
+	public void startSettings() {
 		background.playMusic();    
 		createTimer();
         timer.start();
@@ -98,7 +100,6 @@ public class GameView {
 					try {
 						root = loader.load();
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
             		FroggerApp.getPrimaryStage().setScene(new Scene(root, 600, 800));	
@@ -107,7 +108,8 @@ public class GameView {
             }
         };   
     }
-	    
+	  
+	//Easy game level initialization
     public void easy_initialize() {
     	digit_position = 100; 
 		background = new MyStage();
@@ -133,22 +135,21 @@ public class GameView {
 		wetTurtlesInitializer.initialize();
 					
 		//Display ends in the game
-		EndsInitializer endsInitializer = new EndsInitializer(background);
+		endsInitializer = new EndsInitializer(background);
 		endsInitializer.initialize();
 		
 		//Display the digit in the game
-		DigitInitializer digitInitializer = new DigitInitializer(background);
+		digitInitializer = new DigitInitializer(background);
 		digitInitializer.initialize();
 		
-		//Display the crocodile in the game except the easy level
+		//Display crocodiles in the game
 		crocodilesInitializer = new CrocodilesInitializer(background);
 		crocodilesInitializer.initialize();
 		
-		//Display the lizards in the game except easy and normal levels
+		//Display lizards in the game
 		lizardsInitializer = new LizardsInitializer(background);
 		lizardsInitializer.initialize();
-		
-		
+			
 		//Display the frog in the game
 		Frog mainFrog = new Frog("file:resources/images/frogs/froggerUp.png");
 		FrogView frogview = new FrogView(background);
@@ -157,6 +158,7 @@ public class GameView {
 		frogController.keyboardMonitor();
     }
     
+    //Normal game level initialization
     public void normal_initialize() {
     	frogController.setLifeNum(3);
     	setLifeSymbols();
@@ -168,6 +170,7 @@ public class GameView {
     	
     }
     
+    //Hard game level initialization
     public void hard_initialize() {
     	frogController.setLifeNum(4);
     	setLifeSymbols();
@@ -179,6 +182,7 @@ public class GameView {
     	lizardsInitializer.hard_settings();
     }
     
+    //Extra game level initialization
     public void extra_initialize() {
     	frogController.setLifeNum(5);
     	setLifeSymbols();
@@ -188,8 +192,10 @@ public class GameView {
     	wetTurtlesInitializer.extra_settings();
     	obstaclesInitializer.extra_settings();
     	bgImageInitializer.extra_settings();	
+    	crocodilesInitializer.extra_settings();
     }
      
+    //Set scores on screen in the game
     public void setNumber(int n) {
     	int shift = 0;
     	while (n > 0) {
@@ -201,6 +207,7 @@ public class GameView {
     	}
     }
     
+    //Set the quit button in ghe game
     public void setQuitButton() {
     	Button quitButton = new Button();
     	quitButton.setText("QUIT");
@@ -227,10 +234,12 @@ public class GameView {
 		        background.stopMusic();
 	    		timer.stop();
 	    		background.stop();
+	    		(MenuSceneController.beforeGameSound).play();
 			}			
 		});
     }
     
+    //Set the music pause button in the game
     public void setPauseMusicButton() {
     	Button pauseMusicButton = new Button();
     	pauseMusicButton.setText("PAUSE MUSIC");
@@ -253,6 +262,7 @@ public class GameView {
 		}); 
     }
     
+    //Set the game pause button in the game
     public void setPauseGameButton() {
     	Button pauseGameButton = new Button();
     	pauseGameButton.setText("PAUSE GAME");
@@ -266,12 +276,15 @@ public class GameView {
 			if (gameSignal == 1) {
 				background.stop();
 				background.stopMusic();
+				timer.stop();
+				
 				frogController.setDisableKey(true);
 				gameSignal = 0;
 				pauseGameButton.setText("RESUME GAME");			
 			} else {
 				background.start();
 				background.playMusic();
+				timer.start();
 				frogController.setDisableKey(false);
 				gameSignal = 1;
 				pauseGameButton.setText("PAUSE GAME");		
@@ -279,6 +292,7 @@ public class GameView {
 		}); 
     }
     
+    //Set the life symbols in the game
     public void setLifeSymbols() {
     	int xpos = 275;
     	symbols = new FrogLifeSymbol[frogController.getLifeNum()];
@@ -289,6 +303,7 @@ public class GameView {
     	} 	
     }
     
+    //Set the countdown timer label in the game
     public void setCountDown() {
     	timerlabel = new Label();
         timerlabel.setLayoutX(50);
@@ -297,5 +312,3 @@ public class GameView {
      	background.getChildren().add(timerlabel);
     }
 }	
-
-

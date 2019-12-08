@@ -17,42 +17,27 @@ public class Digit extends Actor{
 	}
 	
 	@Override
-	public void act(long now) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void act(long now) {}
 
-	public int getSize() {
-		return size;
-	}
-
+	//Set the size of the digit
 	public void setSize(int size) {
 		this.size = size;
 		setImage(new Image("file:resources/images/numbers/"+digit+".png", size, size, true, true));
 	}
 
-	public int getXpos() {
-		return xpos;
-	}
-
+	//Set the x position of the digit
 	public void setXpos(int xpos) {
 		this.xpos = xpos;
-		setX(xpos);
+		setX(this.xpos);
 	}
 
-	public int getYpos() {
-		return ypos;
-	}
-
+	//Set the y position of the digit
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
-		setX(ypos);
+		setX(this.ypos);
 	}
 
-	public int getDigit() {
-		return digit;
-	}
-
+	//Set the image of the digit
 	public void setDigit(int digit) {
 		this.digit = digit;
 		setImage(new Image("file:resources/images/numbers/"+digit+".png", size, size, true, true));

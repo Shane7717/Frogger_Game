@@ -12,10 +12,12 @@ public class Score implements Serializable {
 		this.score = score;
 	}
 
+	//Player score getter
 	public int getScore() {
 		return this.score;
 	}
 	
+	//Player name getter
 	public String getName() {
 		return this.name;
 	}

@@ -13,38 +13,27 @@ public class DigitController {
 		this.view = view;
 	}
 	
-	public int getDigitSize() {
-		return model.getSize();
-	}
-
+	//Set the size of the digit
 	public void setDigitSize(int size) {
 		model.setSize(size);
 	}
 
-	public int getDigitXpos() {
-		return model.getXpos();
-	}
-
+	//Set the x position of the digit
 	public void setDigitXpos(int xpos) {
 		model.setXpos(xpos);
 	}
 
-	public int getDigitYpos() {
-		return model.getYpos();
-	}
-
+	//Set the y position of the digit
 	public void setYpos(int ypos) {
 		model.setYpos(ypos);	
 	}
 
-	public int getDigit() {
-		return model.getDigit();
-	}
-
+	//Set the image of the digit
 	public void setDigit(int digit) {
 		model.setDigit(digit);		
 	}	
 	
+	//Display this digit in the game
 	public void updateView() {
 		view.viewDigit(model);
 	}

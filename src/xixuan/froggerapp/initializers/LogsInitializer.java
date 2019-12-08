@@ -8,15 +8,10 @@ import xixuan.froggerapp.views.LogView;
 
 public class LogsInitializer implements Initializable {
 	private MyStage background;
-	private LogController log1controller;
-	private LogController log2controller;
-	private LogController log3controller;
-	private LogController log4controller;
-	private LogController log5controller;
-	private LogController log6controller;
-	private LogController log7controller;
-	private LogController log8controller;
-	
+	private Log[] logModels = new Log[8];
+	private LogController[] logControllers = new LogController[8];
+	private LogView[] logViews = new LogView[8];
+		
 	public LogsInitializer(MyStage background) {
 		this.background = background;
 	}
@@ -24,99 +19,83 @@ public class LogsInitializer implements Initializable {
 	public void initialize() { 
 		Frog.logRightIntersectSpeed = 0.9;
 		Frog.logLeftIntersectSpeed = -1.3;
-		Log log1model = new Log("file:resources/images/logs/"+"logRight.png", 130, 0, 180, Frog.logRightIntersectSpeed); 
-		LogView log1view = new LogView(background);
-		log1controller = new LogController(log1model, log1view);
-		log1controller.updateView();
 		
-		Log log2model = new Log("file:resources/images/logs/"+"logRight.png", 130, 220, 180, Frog.logRightIntersectSpeed); 
-		LogView log2view = new LogView(background);
-		log2controller = new LogController(log2model, log2view);
-		log2controller.updateView();
+		logModels[0] = new Log("file:resources/images/logs/"+"logRight.png", 130, 0, 180, Frog.logRightIntersectSpeed); 
+		logViews[0] = new LogView(background);
+		logControllers[0] = new LogController(logModels[0], logViews[0]);
+		logControllers[0].updateView();
 		
-		Log log3model = new Log("file:resources/images/logs/"+"logRight.png", 130, 440, 180, Frog.logRightIntersectSpeed); 
-		LogView log3view = new LogView(background);
-		log3controller = new LogController(log3model, log3view);
-		log3controller.updateView();
+		logModels[1] = new Log("file:resources/images/logs/"+"logRight.png", 130, 220, 180, Frog.logRightIntersectSpeed); 
+		logViews[1] = new LogView(background);
+		logControllers[1] = new LogController(logModels[1], logViews[1]);
+		logControllers[1].updateView();
 		
-		Log log4model = new Log("file:resources/images/logs/"+"logLongLeft.png", 200, 0, 285, Frog.logLeftIntersectSpeed); 
-		LogView log4view = new LogView(background);
-		log4controller = new LogController(log4model, log4view);
-		log4controller.updateView();
+		logModels[2] = new Log("file:resources/images/logs/"+"logRight.png", 130, 440, 180, Frog.logRightIntersectSpeed); 
+		logViews[2] = new LogView(background);
+		logControllers[2] = new LogController(logModels[2], logViews[2]);
+		logControllers[2].updateView();
 		
-		Log log5model = new Log("file:resources/images/logs/"+"logLeft.png", 130, 600, 285, Frog.logLeftIntersectSpeed); 
-		LogView log5view = new LogView(background);
-		log5controller = new LogController(log5model, log5view);
-		log5controller.updateView();
+		logModels[3] = new Log("file:resources/images/logs/"+"logLongLeft.png", 200, 0, 285, Frog.logLeftIntersectSpeed); 
+		logViews[3] = new LogView(background);
+		logControllers[3] = new LogController(logModels[3], logViews[3]);
+		logControllers[3].updateView();
 		
-		Log log6model = new Log("file:resources/images/logs/"+"logRight.png", 130, 120, 335, Frog.logRightIntersectSpeed ); 
-		LogView log6view = new LogView(background);
-		log6controller = new LogController(log6model, log6view);
-		log6controller.updateView();
-				
-		Log log7model = new Log("file:resources/images/logs/"+"logRight.png", 130, 340, 335, Frog.logRightIntersectSpeed ); 
-		LogView log7view = new LogView(background);
-		log7controller = new LogController(log7model, log7view);
-		log7controller.updateView();
+		logModels[4] = new Log("file:resources/images/logs/"+"logLeft.png", 130, 600, 285, Frog.logLeftIntersectSpeed); 
+		logViews[4] = new LogView(background);
+		logControllers[4] = new LogController(logModels[4], logViews[4]);
+		logControllers[4].updateView();
+	
+		logModels[5] = new Log("file:resources/images/logs/"+"logRight.png", 130, 120, 335, Frog.logRightIntersectSpeed); 
+		logViews[5] = new LogView(background);
+		logControllers[5] = new LogController(logModels[5], logViews[5]);
+		logControllers[5].updateView();
 		
-		Log log8model = new Log("file:resources/images/logs/"+"logLongRight.png", 200, 580, 335, Frog.logRightIntersectSpeed ); 
-		LogView log8view = new LogView(background);
-		log8controller = new LogController(log8model, log8view);
-		log8controller.updateView();
+		logModels[6] = new Log("file:resources/images/logs/"+"logRight.png", 130, 340, 335, Frog.logRightIntersectSpeed); 
+		logViews[6] = new LogView(background);
+		logControllers[6] = new LogController(logModels[6], logViews[6]);
+		logControllers[6].updateView();
+		
+		logModels[7] = new Log("file:resources/images/logs/"+"logLongRight.png", 200, 580, 335, Frog.logRightIntersectSpeed); 
+		logViews[7] = new LogView(background);
+		logControllers[7] = new LogController(logModels[7], logViews[7]);
+		logControllers[7].updateView();
 	}
-				
+			
+	//Settings for normal game level
 	public void normal_settings() {
 		Frog.logRightIntersectSpeed = 1.4;
-		log1controller.setLogSpeed(Frog.logRightIntersectSpeed);
-		log2controller.setLogSpeed(0);
-		log2controller.setLogXpos(1000);
-		log3controller.setLogSpeed(Frog.logRightIntersectSpeed);
+		logControllers[0].setLogSpeed(Frog.logRightIntersectSpeed);
+		logControllers[1].removeView();
+		logControllers[2].setLogSpeed(Frog.logRightIntersectSpeed);
 		Frog.logLeftIntersectSpeed = -2.8;
-		log4controller.setLogSpeed(Frog.logLeftIntersectSpeed);
-		log5controller.setLogSpeed(Frog.logLeftIntersectSpeed);
-		log6controller.setLogSpeed(Frog.logRightIntersectSpeed);
-		log7controller.setLogSpeed(Frog.logRightIntersectSpeed);
-		log8controller.setLogSpeed(Frog.logRightIntersectSpeed);
+		logControllers[3].setLogSpeed(Frog.logLeftIntersectSpeed);
+		logControllers[4].setLogSpeed(Frog.logLeftIntersectSpeed);
+		logControllers[5].setLogSpeed(Frog.logRightIntersectSpeed);
+		logControllers[6].setLogSpeed(Frog.logRightIntersectSpeed);
+		logControllers[7].setLogSpeed(Frog.logRightIntersectSpeed);
 	}
 	
+	//Settings for hard game level
 	public void hard_settings() {
 		Frog.logRightIntersectSpeed = 6.0;
-		log1controller.setLogSpeed(Frog.logRightIntersectSpeed);
-		log2controller.setLogSpeed(Frog.logRightIntersectSpeed);
-		log2controller.setLogXpos(420);
-		log3controller.setLogSpeed(0);
-		log3controller.setLogXpos(1000);
+		logControllers[0].setLogSpeed(Frog.logRightIntersectSpeed);
+		logControllers[1].setLogSpeed(Frog.logRightIntersectSpeed);
+		logControllers[1].setLogXpos(420);
+		logControllers[2].removeView();
 		Frog.logLeftIntersectSpeed = -4.8;
-		log4controller.setLogSpeed(Frog.logLeftIntersectSpeed);
-		log5controller.setLogSpeed(Frog.logLeftIntersectSpeed);
-		log6controller.setLogSpeed(Frog.logRightIntersectSpeed);
-		log7controller.setLogSpeed(0);
-		log7controller.setLogXpos(1000);
-		log8controller.setLogSpeed(Frog.logRightIntersectSpeed);
+		logControllers[3].setLogSpeed(Frog.logLeftIntersectSpeed);
+		logControllers[4].setLogSpeed(Frog.logLeftIntersectSpeed);
+		logControllers[5].setLogSpeed(Frog.logRightIntersectSpeed);
+		logControllers[6].removeView();
+		logControllers[7].setLogSpeed(Frog.logRightIntersectSpeed);
 	}
 	
+	//Settings for extra game level
 	public void extra_settings() {
 		Frog.logRightIntersectSpeed = 0;
 		Frog.logLeftIntersectSpeed = 0;	
-		log3controller.setLogSpeed(0);
-		log3controller.setLogXpos(1000);
-		log2controller.setLogSpeed(0);
-		log2controller.setLogXpos(1000);
-		log1controller.setLogSpeed(0);
-		log1controller.setLogXpos(1000);
-		log8controller.setLogSpeed(0);
-		log8controller.setLogXpos(1000);
-		log2controller.setLogSpeed(0);
-		log2controller.setLogXpos(1000);
-		log4controller.setLogSpeed(0);
-		log4controller.setLogXpos(1000);
-		log5controller.setLogSpeed(0);
-		log5controller.setLogXpos(1000);
-		log6controller.setLogSpeed(0);
-		log6controller.setLogXpos(1000);
-		log7controller.setLogSpeed(0);
-		log7controller.setLogXpos(1000);
+		for (int i = 0; i <= 7; ++i) {
+			logControllers[i].removeView();
+		}
 	}
-	
-	
 }
