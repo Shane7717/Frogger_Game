@@ -9,4 +9,4 @@ bin/*
 
 #ignore the .settings
 .settings
-
+/bin/

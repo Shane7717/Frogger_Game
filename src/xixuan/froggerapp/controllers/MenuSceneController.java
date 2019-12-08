@@ -36,7 +36,7 @@ public class MenuSceneController {
 	/**
 	 * This is used for the "Start" button on the menu screen.<br>
 	 * After player clicks this button, the page will be jumped to the level choosing page.
-	 * @throws IOException
+	 * @throws IOException possible IO Exception
 	 */
 	@FXML
 	public void toLevelPageScene() throws IOException {	
@@ -48,7 +48,7 @@ public class MenuSceneController {
 	/**
 	 * This is used for the "Highscores" button on the menu screen.<br>
 	 * After player clicks this button, the page will be jumped to the highscores board.
-	 * @throws IOException
+	 * @throws IOException possible IO Exception
 	 */
 	@FXML
 	public void toHighscoreScene() throws IOException {
@@ -72,7 +72,7 @@ public class MenuSceneController {
 	/**
 	 * This is used for the "How to Play" button on the menu screen.<br>
 	 * After player clicks this button, the page will be jumped to the introduction screen.
-	 * @throws IOException
+	 * @throws IOException possible IO Exception
 	 */
 	@FXML
 	public void toIntroScene() throws IOException {
