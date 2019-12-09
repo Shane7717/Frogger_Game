@@ -18,7 +18,7 @@ public class Digit extends Actor{
 		setSize(size);
 		setX(xpos);
 		setY(ypos);	
-		setImage(new Image("file:resources/images/numbers/"+digit+".png", size, size, true, true));
+		setImage(new Image("file:src/main/resources/images/numbers/"+digit+".png", size, size, true, true));
 	}
 	
 	@Override
@@ -27,7 +27,7 @@ public class Digit extends Actor{
 	//Set the size of the digit
 	public void setSize(int size) {
 		this.size = size;
-		setImage(new Image("file:resources/images/numbers/"+digit+".png", size, size, true, true));
+		setImage(new Image("file:src/main/resources/images/numbers/"+digit+".png", size, size, true, true));
 	}
 
 	//Set the x position of the digit
@@ -48,6 +48,6 @@ public class Digit extends Actor{
 	 */
 	public void setDigit(int digit) {
 		this.digit = digit;
-		setImage(new Image("file:resources/images/numbers/"+digit+".png", size, size, true, true));
+		setImage(new Image("file:src/main/resources/images/numbers/"+digit+".png", size, size, true, true));
 	}	
 }

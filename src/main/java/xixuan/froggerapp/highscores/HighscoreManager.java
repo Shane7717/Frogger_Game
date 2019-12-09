@@ -23,7 +23,7 @@ public class HighscoreManager {
 	}
 	
 	/** The name of the file where the highscores will be saved. */
-	private static final String HIGHSCORE_FILE = "resources/highscores/scores.dat"; 
+	private static final String HIGHSCORE_FILE = "src/main/resources/highscores/scores.dat"; 
 	
     /** The output stream. */
     ObjectOutputStream outputStream = null;

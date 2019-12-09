@@ -161,14 +161,14 @@ public class Frog extends Actor {
 	 * This sets the pressing images when player pressing keys "W", "A", "S" or "D".
 	 */
 	public void setPressingImages() {
-		imgW1 = new Image("file:resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true);
-		imgA1 = new Image("file:resources/images/frogs/froggerLeft.png", imgSize, imgSize, true, true);
-		imgS1 = new Image("file:resources/images/frogs/froggerDown.png", imgSize, imgSize, true, true);
-		imgD1 = new Image("file:resources/images/frogs/froggerRight.png", imgSize, imgSize, true, true);
-		imgW2 = new Image("file:resources/images/frogs/froggerUpJump.png", imgSize, imgSize, true, true);
-		imgA2 = new Image("file:resources/images/frogs/froggerLeftJump.png", imgSize, imgSize, true, true);
-		imgS2 = new Image("file:resources/images/frogs/froggerDownJump.png", imgSize, imgSize, true, true);
-		imgD2 = new Image("file:resources/images/frogs/froggerRightJump.png", imgSize, imgSize, true, true);
+		imgW1 = new Image("file:src/main/resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true);
+		imgA1 = new Image("file:src/main/resources/images/frogs/froggerLeft.png", imgSize, imgSize, true, true);
+		imgS1 = new Image("file:src/main/resources/images/frogs/froggerDown.png", imgSize, imgSize, true, true);
+		imgD1 = new Image("file:src/main/resources/images/frogs/froggerRight.png", imgSize, imgSize, true, true);
+		imgW2 = new Image("file:src/main/resources/images/frogs/froggerUpJump.png", imgSize, imgSize, true, true);
+		imgA2 = new Image("file:src/main/resources/images/frogs/froggerLeftJump.png", imgSize, imgSize, true, true);
+		imgS2 = new Image("file:src/main/resources/images/frogs/froggerDownJump.png", imgSize, imgSize, true, true);
+		imgD2 = new Image("file:src/main/resources/images/frogs/froggerRightJump.png", imgSize, imgSize, true, true);
 	}
 	
 	/**
@@ -286,7 +286,7 @@ public class Frog extends Actor {
 			if ((now)% 11 ==0) 
 				frogD++;
 			if (frogD >= 1 && frogD <= 3)
-				setImage(new Image("file:resources/images/deaths/cardeath"+frogD+".png", imgSize, imgSize, true, true));
+				setImage(new Image("file:src/main/resources/images/deaths/cardeath"+frogD+".png", imgSize, imgSize, true, true));
 			if (frogD == 4) {
 				lifeNum--;
 				if (lifeNum >= 0)
@@ -294,7 +294,7 @@ public class Frog extends Actor {
 				setFrogPosition();
 				carDeath = false;
 				frogD = 0;
-				setImage(new Image("file:resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true));
+				setImage(new Image("file:src/main/resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true));
 				noMove = false;
 				if (points>50) {
 					points-=50;
@@ -315,7 +315,7 @@ public class Frog extends Actor {
 			if ((now)% 11 ==0) 
 				frogD++;
 			if (frogD >= 1 && frogD <= 4) 
-				setImage(new Image("file:resources/images/deaths/waterdeath"+frogD+".png", imgSize,imgSize , true, true));
+				setImage(new Image("file:src/main/resources/images/deaths/waterdeath"+frogD+".png", imgSize,imgSize , true, true));
 			if (frogD == 5) {
 				lifeNum--;
 				if (lifeNum >= 0)
@@ -323,7 +323,7 @@ public class Frog extends Actor {
 				setFrogPosition();
 				waterDeath = false;
 				frogD = 0;
-				setImage(new Image("file:resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true));
+				setImage(new Image("file:src/main/resources/images/frogs/froggerUp.png", imgSize, imgSize, true, true));
 				noMove = false;
 				if (points>50) {
 					points-=50;
@@ -434,7 +434,7 @@ public class Frog extends Actor {
 	 * This plays the sound effect when the frog jumps every time.
 	 */
 	public void playSoundEffect() {
-		String musicFile2 = "resources/music/SoundEffect.wav";   
+		String musicFile2 = "src/main/resources/music/SoundEffect.wav";   
 		Media sound = new Media(new File(musicFile2).toURI().toString());
 		frogSoundEffect = new MediaPlayer(sound);
 		frogSoundEffect.setCycleCount(1);	

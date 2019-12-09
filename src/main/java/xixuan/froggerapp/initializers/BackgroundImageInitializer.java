@@ -23,7 +23,7 @@ public class BackgroundImageInitializer implements Initializable {
 	 * This initializes a background image instance in the game
 	 */
 	public void initialize() {	
-		BackgroundImage bgImage = new BackgroundImage("file:resources/images/background/arcade.png");
+		BackgroundImage bgImage = new BackgroundImage("file:src/main/resources/images/background/arcade.png");
 		BackgroundImageView bgImageView = new BackgroundImageView(background);
 		bgImageController = new BackgroundImageController(bgImage, bgImageView);
 		bgImageController.updateView();	
@@ -35,6 +35,6 @@ public class BackgroundImageInitializer implements Initializable {
 	 * Specifically, this changes a background image of the instance.
 	 */
 	public void extra_settings() {
-		bgImageController.setImageLink("file:resources/images/background/arcade2.png");
+		bgImageController.setImageLink("file:src/main/resources/images/background/arcade2.png");
 	}
 }

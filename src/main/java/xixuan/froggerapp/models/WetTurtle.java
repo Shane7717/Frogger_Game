@@ -22,10 +22,10 @@ public class WetTurtle extends Actor{
 		setXpos(xpos);
 		setYpos(ypos);
 		setSpeed(speed);			
-		wetturtle1 = new Image("file:resources/images/turtles/TurtleAnimation1.png", this.size, this.size, true, true);
-		wetturtle2 = new Image("file:resources/images/turtles/TurtleAnimation2Wet.png", this.size, this.size, true, true);
-		wetturtle3 = new Image("file:resources/images/turtles/TurtleAnimation3Wet.png", this.size, this.size, true, true);
-		wetturtle4 = new Image("file:resources/images/turtles/TurtleAnimation4Wet.png", this.size, this.size, true, true);		
+		wetturtle1 = new Image("file:src/main/resources/images/turtles/TurtleAnimation1.png", this.size, this.size, true, true);
+		wetturtle2 = new Image("file:src/main/resources/images/turtles/TurtleAnimation2Wet.png", this.size, this.size, true, true);
+		wetturtle3 = new Image("file:src/main/resources/images/turtles/TurtleAnimation3Wet.png", this.size, this.size, true, true);
+		wetturtle4 = new Image("file:src/main/resources/images/turtles/TurtleAnimation4Wet.png", this.size, this.size, true, true);		
 		setImage(wetturtle2);
 	}
 	

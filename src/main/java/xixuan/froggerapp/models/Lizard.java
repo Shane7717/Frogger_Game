@@ -22,10 +22,10 @@ public class Lizard extends Actor{
 		setXpos(xpos);
 		setYpos(ypos);
 		setSpeed(speed);			
-		lizard1 = new Image("file:resources/images/lizards/lizard1.png", this.size, this.size, true, true);
-		lizard2 = new Image("file:resources/images/lizards/lizard2.png", this.size, this.size, true, true);
-		lizard3 = new Image("file:resources/images/lizards/lizard3.png", this.size, this.size, true, true);
-		lizard4 = new Image("file:resources/images/lizards/lizard4.png", this.size, this.size, true, true);
+		lizard1 = new Image("file:src/main/resources/images/lizards/lizard1.png", this.size, this.size, true, true);
+		lizard2 = new Image("file:src/main/resources/images/lizards/lizard2.png", this.size, this.size, true, true);
+		lizard3 = new Image("file:src/main/resources/images/lizards/lizard3.png", this.size, this.size, true, true);
+		lizard4 = new Image("file:src/main/resources/images/lizards/lizard4.png", this.size, this.size, true, true);
 		setImage(lizard1);
 	}
 	

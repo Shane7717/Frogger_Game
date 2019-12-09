@@ -86,7 +86,7 @@ public class MenuSceneController {
 	 */
 	public void initialize() {
 		if (signal == 1) {
-			String musicFile2 = "resources/music/beforeGame.mp3";   
+			String musicFile2 = "src/main/resources/music/beforeGame.mp3";   
 			Media sound = new Media(new File(musicFile2).toURI().toString());
 			beforeGameSound = new MediaPlayer(sound);
 			beforeGameSound.setCycleCount(MediaPlayer.INDEFINITE);	

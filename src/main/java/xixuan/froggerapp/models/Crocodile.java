@@ -24,9 +24,9 @@ public class Crocodile extends Actor{
 		setXpos(xpos);
 		setYpos(ypos);
 		setSpeed(speed);			
-		crocodile1 = new Image("file:resources/images/crocodiles/closeCrocodile.png", this.size, this.size, true, true);
-		crocodile2 = new Image("file:resources/images/crocodiles/openCrocodile.png", this.size, this.size, true, true);
-		crocodile3 = new Image("file:resources/images/crocodiles/deathCrocodile.png", this.size, this.size, true, true);
+		crocodile1 = new Image("file:src/main/resources/images/crocodiles/closeCrocodile.png", this.size, this.size, true, true);
+		crocodile2 = new Image("file:src/main/resources/images/crocodiles/openCrocodile.png", this.size, this.size, true, true);
+		crocodile3 = new Image("file:src/main/resources/images/crocodiles/deathCrocodile.png", this.size, this.size, true, true);
 		setImage(crocodile1);
 	}
 	

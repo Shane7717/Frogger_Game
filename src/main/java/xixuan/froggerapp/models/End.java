@@ -28,7 +28,7 @@ public class End extends Actor{
 	 * This sets the image after one frog enters one of the empty ends.
 	 */
 	public void setEnd() {
-		setImage(new Image("file:resources/images/ends/FrogEnd.png", 70, 70, true, true));
+		setImage(new Image("file:src/main/resources/images/ends/FrogEnd.png", 70, 70, true, true));
 		this.activated = true;
 	}
 	

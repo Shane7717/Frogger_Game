@@ -361,7 +361,7 @@ public class GameView {
     	int xpos = 275;
     	symbols = new FrogLifeSymbol[frogController.getLifeNum()];
     	for (int i = 0; i < frogController.getLifeNum(); ++i ) {
-    		symbols[i] = new FrogLifeSymbol("file:resources/images/scenes/lifeSymbol.png", 25, xpos, 30);
+    		symbols[i] = new FrogLifeSymbol("file:src/main/resources/images/scenes/lifeSymbol.png", 25, xpos, 30);
     		background.add(symbols[i]);
     		xpos -= 30;
     	} 	

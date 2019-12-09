@@ -20,9 +20,9 @@ public class Turtle extends Actor{
 		setXpos(xpos);
 		setYpos(ypos);
 		setSpeed(speed);			
-		turtle1 = new Image("file:resources/images/turtles/TurtleAnimation1.png", this.size, this.size, true, true);
-		turtle2 = new Image("file:resources/images/turtles/TurtleAnimation2.png", this.size, this.size, true, true);
-		turtle3 = new Image("file:resources/images/turtles/TurtleAnimation3.png", this.size, this.size, true, true);
+		turtle1 = new Image("file:src/main/resources/images/turtles/TurtleAnimation1.png", this.size, this.size, true, true);
+		turtle2 = new Image("file:src/main/resources/images/turtles/TurtleAnimation2.png", this.size, this.size, true, true);
+		turtle3 = new Image("file:src/main/resources/images/turtles/TurtleAnimation3.png", this.size, this.size, true, true);
 		setImage(turtle2);
 	}
 	
