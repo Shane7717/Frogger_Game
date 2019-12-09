@@ -11,8 +11,7 @@ import javafx.stage.Stage;
  * @author XIXUAN WANG
  */
 public class FroggerApp extends Application {
-	
-	
+		
 	/** This is set static because all scenes occur in the same stage. */
 	private static Stage primaryStage;
 		
