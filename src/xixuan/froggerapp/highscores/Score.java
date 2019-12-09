@@ -20,6 +20,7 @@ public class Score implements Serializable {
 	
 	/**
 	 * Player score getter
+	 * @return player's score
 	 */
 	public int getScore() {
 		return this.score;

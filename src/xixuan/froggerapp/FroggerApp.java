@@ -22,7 +22,7 @@ public class FroggerApp extends Application {
 	
 	/**
 	 * This makes execution move to the javaFX thread.
-	 * @param primaryStage		the primary stage
+	 * @param  primaryStage		the primary stage
 	 * @throws Exception 		the exception that might occurs
 	 */
 	@Override

@@ -373,8 +373,8 @@ public class GameView {
     public void setCountDown() {
     	timerlabel = new Label();
         timerlabel.setLayoutX(50);
-     	timerlabel.setLayoutY(700);
-     	timerlabel.setStyle("-fx-font-size:40;-fx-background-color:purple");
+     	timerlabel.setLayoutY(735);
+     	timerlabel.setStyle("-fx-font-size:40;-fx-background-color:pink");
      	background.getChildren().add(timerlabel);
     }
 }	
