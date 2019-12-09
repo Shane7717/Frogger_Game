@@ -197,7 +197,7 @@ public class GameView {
 		lizardsInitializer.initialize();
 			
 		//Display the frog in the game
-		Frog mainFrog = new Frog("file:resources/images/frogs/froggerUp.png");
+		Frog mainFrog = new Frog("file:src/main/resources/images/frogs/froggerUp.png");
 		FrogView frogview = new FrogView(background);
 		frogController = new FrogController(mainFrog, frogview);
 		frogController.updateView();
