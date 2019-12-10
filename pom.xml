@@ -5,6 +5,15 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
    
+   <dependencies>
+ 	<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+   <!--  <scope>test</scope> -->
+	</dependency>
+  </dependencies>
+   
   <build>  
   	<defaultGoal>compile</defaultGoal>
     <sourceDirectory>src</sourceDirectory>
@@ -16,17 +25,15 @@
         </excludes>
       </resource>
     </resources>
-    
-    <plugins>
-    
+       
+    <plugins>    
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>	
         <configuration>
           <release>10</release>            
         </configuration>
-      </plugin>
-      
+      </plugin>     
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
@@ -41,9 +48,7 @@
         <configuration>
           <mainClass>main.java.xixuan.froggerapp.FroggerApp</mainClass>
         </configuration>
-      </plugin>
-      
-      
+      </plugin>      
     </plugins>    
   </build>
 </project>
