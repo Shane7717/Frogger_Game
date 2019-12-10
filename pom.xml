@@ -3,9 +3,11 @@
   <groupId>G52SWM_CW2_scyxw3</groupId>
   <artifactId>G52SWM_CW2_scyxw3</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <build>
+  <packaging>jar</packaging>
+   
+  <build>  
+  	<defaultGoal>compile</defaultGoal>
     <sourceDirectory>src</sourceDirectory>
-    <defaultGoal>compile</defaultGoal>
     <resources>
       <resource>
         <directory>src</directory>
@@ -14,14 +16,34 @@
         </excludes>
       </resource>
     </resources>
+    
     <plugins>
+    
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
+        <version>3.8.0</version>	
         <configuration>
-          <release>10</release>
+          <release>10</release>            
         </configuration>
       </plugin>
-    </plugins>
+      
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <mainClass>main.java.xixuan.froggerapp.FroggerApp</mainClass>
+        </configuration>
+      </plugin>
+      
+      
+    </plugins>    
   </build>
 </project>

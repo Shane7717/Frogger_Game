@@ -1,13 +1,13 @@
+--maven--
+compile exec:java -Dexec.mainClass="main.java.xixuan.froggerapp.FroggerApp"
+
+
+
 Key refactoring for classes and interfaces (Where and Why)
  
 
 
 Additions to the game
-
-
-
-
-
 
 
 
