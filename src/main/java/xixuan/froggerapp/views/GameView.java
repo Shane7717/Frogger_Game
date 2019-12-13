@@ -28,6 +28,7 @@ import main.java.xixuan.froggerapp.settings.MyStage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 
 /**
  * This class displays the main game scene in Frogger.
@@ -97,7 +98,7 @@ public class GameView {
 		setCountDown();
 		background.start();		
         mainScene = new Scene(background, 600, 800);
-        
+               
 		FroggerApp.getPrimaryStage().setTitle("Frogger");
 		FroggerApp.getPrimaryStage().setScene(mainScene);
 		FroggerApp.getPrimaryStage().show();
@@ -125,7 +126,7 @@ public class GameView {
             	frameTime++;       
             	if ((frameTime % 60) == 0) {
             		second = 100 - frameTime / 60;           
-            		timerlabel.setText(second.toString());
+            		timerlabel.setText("Time Remaining: " + second.toString());
             	}          	     	
             	if (frogController.checkChangeScore()) 
             		setNumber(frogController.getPlayerPoints());
@@ -338,8 +339,7 @@ public class GameView {
 			if (gameSignal == 1) {
 				background.stop();
 				background.stopMusic();
-				timer.stop();
-				
+				timer.stop();				
 				frogController.setDisableKey(true);
 				gameSignal = 0;
 				pauseGameButton.setText("RESUME GAME");			
@@ -372,9 +372,10 @@ public class GameView {
      */
     public void setCountDown() {
     	timerlabel = new Label();
-        timerlabel.setLayoutX(50);
+        timerlabel.setLayoutX(200);
      	timerlabel.setLayoutY(735);
-     	timerlabel.setStyle("-fx-font-size:40;-fx-background-color:pink");
+     	timerlabel.setStyle("-fx-font-size:26");
+     	timerlabel.setTextFill(Color.PINK);
      	background.getChildren().add(timerlabel);
     }
 }	

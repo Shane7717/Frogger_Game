@@ -31,7 +31,7 @@ public class WetTurtle extends Actor{
 	
 	/**
 	 * This implements the animation of wet turtles from wetturtle1 to wetturtle4
-	 * @param now 		this is the real time that is increasing since game starts
+	 * @param now 		the timestamp of the current frame given in nanoseconds.
 	 */
 	@Override
 	public void act(long now) {		
