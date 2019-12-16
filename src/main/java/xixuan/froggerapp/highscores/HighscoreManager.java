@@ -43,7 +43,7 @@ public class HighscoreManager {
     }
     
     /**
-     * Sort the scores with the help of a score comparator
+     * This sorts the scores with the help of a score comparator
      */
     private void sort() {
         ScoreComparator comparator = ScoreComparator.getInstance();
@@ -51,7 +51,7 @@ public class HighscoreManager {
     }
     
     /**
-     * Adds the score , difficulty level and the corresponding player name into the scores arraylist.<br>
+     * This adds the score, difficulty level and the corresponding player name into the scores arraylist.<br>
      * And update the highscores disk file.
      * @param name player's name
      * @param score player's score
@@ -63,7 +63,7 @@ public class HighscoreManager {
     }
     
     /**
-     * Load the highscores file.
+     * This loads the highscores file.
      */
     @SuppressWarnings("unchecked")
 	public void loadScoreFile() {
@@ -89,7 +89,7 @@ public class HighscoreManager {
     }
     
     /**
-     * Update the highscores disk file.
+     * This updates the highscores disk file.
      */
     public void updateScoreFile() {
         try {
@@ -112,7 +112,7 @@ public class HighscoreManager {
     }
     
     /**
-     * Gets the highscores names and corresponding scores.<br>
+     * This gets the highscores names, difficulty levels and corresponding scores.<br>
      * Also put them into an String array 
      * @return the highscores string array
      */

@@ -85,7 +85,7 @@ public class GameView {
 	/** The time in seconds. */
 	private Integer second = 1;		
 	
-	/** The countdown timerlabel shown in the left bottom of the game. */
+	/** The countdown timerlabel shown in the bottom of the game. */
 	private Label timerlabel;	
 		
 	/**
@@ -262,7 +262,7 @@ public class GameView {
     	Button quitButton = new Button();
     	quitButton.setText("QUIT");
     	quitButton.setUnderline(true);
-    	quitButton.setStyle("-fx-background-color: pink;");
+    	quitButton.setStyle("-fx-background-color: pink;-fx-font-weight:bold");
     	quitButton.setLayoutX(540);
     	quitButton.setLayoutY(28);
     	quitButton.setPrefSize(50, 30);
@@ -296,7 +296,7 @@ public class GameView {
     	Button pauseMusicButton = new Button();
     	pauseMusicButton.setText("PAUSE MUSIC");
     	pauseMusicButton.setUnderline(true);
-    	pauseMusicButton.setStyle("-fx-background-color: #1fc966;");
+    	pauseMusicButton.setStyle("-fx-background-color: #1fc966;-fx-font-weight:bold");
     	pauseMusicButton.setLayoutX(430);
     	pauseMusicButton.setLayoutY(28);
     	pauseMusicButton.setPrefSize(100, 30);

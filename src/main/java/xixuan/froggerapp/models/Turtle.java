@@ -7,12 +7,22 @@ import javafx.scene.image.Image;
  * @author XIXUAN WANG
  */
 public class Turtle extends Actor {
+	/** The first state of animation of this moving turtle.*/
 	private Image turtle1;
+	
+	/** The second state of animation of this moving turtle.*/
 	private Image turtle2;
+	
+	/** The third state of animation of this moving turtle.*/
 	private Image turtle3;
+	
 	private double speed;
 	private int size;
+	
+	/** The x position of this turtle in the game. */
 	private int xpos;
+	
+	/** The y position of this turtle in the game. */
 	private int ypos;
 	 
 	public Turtle(int size, int xpos, int ypos, double speed) {

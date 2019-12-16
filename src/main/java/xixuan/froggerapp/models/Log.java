@@ -11,7 +11,11 @@ public class Log extends Actor {
 	private double speed;
 	private int size;
 	private String imageLink;
+	
+	/** The x position of this log in the game. */
 	private int xpos;
+	
+	/** The x position of this log in the game. */
 	private int ypos;
 	
 	public Log(String imageLink, int size, int xpos, int ypos, double speed) {

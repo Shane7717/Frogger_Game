@@ -8,7 +8,11 @@ import javafx.scene.image.Image;
  */
 public class Digit extends Actor {
 	private int size;
+	
+	/** The x position of this digit in the game. */
 	private int xpos;
+	
+	/** The y position of this digit in the game. */
 	private int ypos;
 	private int digit;
 	

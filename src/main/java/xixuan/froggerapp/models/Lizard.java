@@ -7,13 +7,25 @@ import javafx.scene.image.Image;
  * @author XIXUAN WANG
  */
 public class Lizard extends Actor {
+	/** The first state of animation of this moving lizard.*/
 	private Image lizard1;
+	
+	/** The second state of animation of this moving lizard.*/
 	private Image lizard2;
+	
+	/** The third state of animation of this moving lizard.*/
 	private Image lizard3;
+	
+	/** The fourth state of animation of this moving lizard.*/
 	private Image lizard4;
+	
 	private double speed;
 	private int size;
+	
+	/** The x position of this lizard in the game. */
 	private int xpos;
+	
+	/** The y position of this lizard in the game. */
 	private int ypos;
 	 
 	//Constructor

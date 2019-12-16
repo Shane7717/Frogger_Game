@@ -10,7 +10,11 @@ public class FrogLifeSymbol extends Actor {
 
 	private int size;
 	private String imageLink;
+	
+	/** The x position of this life symbol in the game. */
 	private int xpos;
+	
+	/** The y position of this life symbol in the game. */
 	private int ypos;
 	
 	//Constructor

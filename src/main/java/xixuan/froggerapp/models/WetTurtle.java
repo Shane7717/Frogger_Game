@@ -7,14 +7,28 @@ import javafx.scene.image.Image;
  * @author XIXUAN WANG
  */
 public class WetTurtle extends Turtle {
+	/** The first state of animation of this moving wet turtle.*/
 	private Image wetturtle1;
+	
+	/** The second state of animation of this moving wet turtle.*/
 	private Image wetturtle2;
+	
+	/** The third state of animation of this moving wet turtle.*/
 	private Image wetturtle3;
+	
+	/** The last state of animation of this moving wet turtle.*/
 	private Image wetturtle4;
+	
 	private double speed;
 	private int size;
+	
+	/** The x position of this wet turtle in the game. */
 	private int xpos;
+	
+	/** The y position of this wet turtle in the game. */
 	private int ypos;
+	
+	/** The variable that checks whether or not the wet turtle has sunk into the water. */
 	private boolean sunk = false;
 	
 	public WetTurtle(int size, int xpos, int ypos, double speed) {

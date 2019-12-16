@@ -28,10 +28,10 @@ public class Frog extends Actor {
 	/** The jumping-style imgage when pressing "A" */
 	private Image imgA2;
 	
-	/** The jumping-style imgage when pressing "S" */
+	/** The left jumping-style imgage when pressing "S" */
 	private Image imgS2;
 	
-	/** The jumping-style imgage when pressing "D" */
+	/** The right jumping-style imgage when pressing "D" */
 	private Image imgD2;
 	
 	/** The scores that a player gains */

@@ -10,7 +10,11 @@ public class Obstacle extends Actor {
 	private double speed;
 	private int size;
 	private String imageLink;
+	
+	/** The x position of this obstacle in the game. */
 	private int xpos;
+	
+	/** The y position of this obstacle in the game. */
 	private int ypos;
 		
 	public Obstacle(String imageLink, int size, int xpos, int ypos, double speed) {
