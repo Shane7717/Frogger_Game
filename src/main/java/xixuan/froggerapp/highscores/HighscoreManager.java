@@ -51,7 +51,7 @@ public class HighscoreManager {
     }
     
     /**
-     * Adds the score and the corresponding player name into the scores arraylist.<br>
+     * Adds the score , difficulty level and the corresponding player name into the scores arraylist.<br>
      * And update the highscores disk file.
      * @param name player's name
      * @param score player's score

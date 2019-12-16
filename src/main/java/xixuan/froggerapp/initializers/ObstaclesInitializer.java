@@ -173,7 +173,7 @@ public class ObstaclesInitializer implements Initializable {
 	
 	/**
 	 * This sets relevant parameters for the extra game level.<br> 
-	 * Specifically, this removes non-racing cars and adjust the speed of all the racing cars.
+	 * Specifically, this removes all the non-racing cars and adjusts the speed of all the racing cars.
 	 */
 	public void extra_settings() {
 		for (int i = 0; i <= 8; ++i) {

@@ -75,7 +75,7 @@ public class EndHighscoresSceneController {
 	 * &nbsp;&nbsp;&nbsp;&nbsp;<code> the "win or lose" state of the player</code><br>
 	 * &nbsp;&nbsp;&nbsp;&nbsp;<code> a text field for a player to input his own name</code><br>
 	 * &nbsp;&nbsp;&nbsp;&nbsp;<code> a submit button for the player to submit his scores</code><br>
-	 * &nbsp;&nbsp;&nbsp;&nbsp;<code> the updated highscores board with players' names and corresponding scores </code>
+	 * &nbsp;&nbsp;&nbsp;&nbsp;<code> the updated highscores board with players' names, difficulty levels and corresponding scores </code>
 	 */
 	public void initialize() {	
 		(MenuSceneController.beforeGameSound).play();

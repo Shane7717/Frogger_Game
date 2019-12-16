@@ -118,7 +118,7 @@ public class GameView {
             public void handle(long now) {
             	frameTime++;       
             	if ((frameTime % 60) == 0) {
-            		second = 100 - frameTime / 60;           
+            		second = 80 - frameTime / 60;           
             		timerlabel.setText("Time Remaining: " + second.toString());
             	}          	     	
             	if (frogController.checkChangeScore()) 
@@ -359,7 +359,7 @@ public class GameView {
     }
     
     /**
-     * This sets the visual count-down timer on the screen during the game. 
+     * This sets the visual count-down timer on the screen during the whole game. 
      */
     public void setCountDown() {
     	timerlabel = new Label();

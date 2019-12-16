@@ -3,7 +3,7 @@ package main.java.xixuan.froggerapp.highscores;
 import java.io.Serializable;
 
 /**
- * This class stores a player's game score and his name.
+ * This class stores a player's game score ,his name and corresponding difficulty level.
  * @author XIXUAN WANG
  */
 @SuppressWarnings("serial")
@@ -21,7 +21,7 @@ public class Score implements Serializable {
 	
 	/**
 	 * Player score getter
-	 * @return player's score
+	 * @return the player's score
 	 */
 	public int getScore() {
 		return this.score;
@@ -29,15 +29,15 @@ public class Score implements Serializable {
 	
 	/**
 	 * Player name getter
-	 * @return player's name
+	 * @return the player's name
 	 */
 	public String getName() {
 		return this.name;
 	}
 	
 	/**
-	 * Player level getter
-	 * @return player's chose difficulty level
+	 * Player difficulty level getter
+	 * @return the player's chosen difficulty level
 	 */
 	public String getLevel() {
 		return this.level;

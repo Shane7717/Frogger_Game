@@ -26,7 +26,7 @@ public class MenuToHighscoresViewController {
 	}
 		
 	/**
-	 * This displays the top 10 players' names and their corresponding scores on the screen.
+	 * This displays the top 10 players' names, difficulty levels and their corresponding scores on the screen.
 	 */
 	public void initialize() {
 		hsName.setText(scoreList[0]);

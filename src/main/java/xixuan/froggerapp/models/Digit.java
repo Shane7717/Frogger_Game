@@ -44,7 +44,7 @@ public class Digit extends Actor {
 	
 	/**
 	 * This sets a specific integer number that the object represents.
-	 * @param digit the integer number that needs to be displayed in the game.
+	 * @param digit the integer that needs to be displayed in the game as part of the player's score.
 	 */
 	public void setDigit(int digit) {
 		this.digit = digit;

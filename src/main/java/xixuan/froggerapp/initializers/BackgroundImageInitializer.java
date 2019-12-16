@@ -32,7 +32,7 @@ public class BackgroundImageInitializer implements Initializable {
 	
 	/**
 	 * This sets relevant parameters for the extra game level.<br>
-	 * Specifically, this changes a background image of the instance.
+	 * Specifically, this changes the background image of the instance.
 	 */
 	public void extra_settings() {
 		bgImageController.setImageLink("file:src/main/resources/images/background/arcade2.png");

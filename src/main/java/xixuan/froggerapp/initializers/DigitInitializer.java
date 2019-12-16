@@ -20,7 +20,8 @@ public class DigitInitializer implements Initializable {
 	}
 	
 	/**
-	 * This initializes three digits "0" in the game as the base score number.
+	 * This initializes three digits "0" in the game as the base score number. <br><br>
+	 * When the player's score has changed, his changed score will be shown on the screen, replacing these 3 digits.
 	 */
 	public void initialize() {
 		Digit digitUnit = new Digit(0, 30, digit_position, 28);

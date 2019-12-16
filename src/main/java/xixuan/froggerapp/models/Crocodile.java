@@ -15,7 +15,8 @@ public class Crocodile extends Actor {
 	private int xpos;
 	private int ypos;
 	
-	/** If the crocodile becomes red(crocodile3), this value will be set true.*/
+	/** If the crocodile becomes red(crazy), this value will be set true.<br><br>
+	 *  Therefore, the frog that player controls will die immediately.*/
 	private boolean crazyDeath = false;
 	 
 	//Constructor

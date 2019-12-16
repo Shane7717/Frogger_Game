@@ -13,6 +13,7 @@ public class FrogLifeSymbol extends Actor {
 	private int xpos;
 	private int ypos;
 	
+	//Constructor
 	public FrogLifeSymbol(String imageLink, int size, int xpos, int ypos) {
 		setImageLink(imageLink);
 		setSize(size);
@@ -28,7 +29,11 @@ public class FrogLifeSymbol extends Actor {
 		this.size = size;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
 	}
-
+	
+	/**
+	 * This sets the image/appearance of the frog's life symbol on the screen.
+	 * @param imageLink the image that is set for the frog's life symbol
+	 */
 	public void setImageLink(String imageLink) {
 		this.imageLink = imageLink;
 		setImage(new Image(this.imageLink, this.size, this.size, true, true));
