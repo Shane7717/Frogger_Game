@@ -64,7 +64,5 @@ public abstract class Actor extends ImageView{
      * This makes it possible for different kinds of objects to act differently.
      * @param now the timestamp of the current frame given in nanoseconds.
      */
-    public abstract void act(long now);
-    
-    
+    public abstract void act(long now);   
 }

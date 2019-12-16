@@ -15,6 +15,8 @@ import main.java.xixuan.froggerapp.views.GameView;
 public class LevelPageSceneController {
 	GameView gameView = new GameView();
 	
+	/** This shows the difficulty level that the player chose just now */
+	public static String level;
 	
 	/**
 	 * This is used for the "Easy" button in this page.<br>
@@ -23,6 +25,7 @@ public class LevelPageSceneController {
 	public void toEasyMainScene() {
 		gameView.easy_initialize();
 		gameView.launchGameView();
+		LevelPageSceneController.level = "Easy";
 	}
 	
 	/**
@@ -33,6 +36,7 @@ public class LevelPageSceneController {
 		gameView.easy_initialize();
 		gameView.normal_initialize();
 		gameView.launchGameView();
+		LevelPageSceneController.level = "Normal";
 	}
 	
 	/**
@@ -43,6 +47,7 @@ public class LevelPageSceneController {
 		gameView.easy_initialize();
 		gameView.hard_initialize();
 		gameView.launchGameView();
+		LevelPageSceneController.level = "Hard";
 	}
 	
 	/**
@@ -53,6 +58,7 @@ public class LevelPageSceneController {
 		gameView.easy_initialize();
 		gameView.extra_initialize();
 		gameView.launchGameView();
+		LevelPageSceneController.level = "Extra";
 	}
 	
 	/**

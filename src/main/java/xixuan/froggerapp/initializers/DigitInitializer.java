@@ -20,13 +20,22 @@ public class DigitInitializer implements Initializable {
 	}
 	
 	/**
-	 * This initializes a digit "0" in the game as the base number.
+	 * This initializes three digits "0" in the game as the base score number.
 	 */
 	public void initialize() {
-		Digit digit = new Digit(0, 30, digit_position, 28);
-		DigitView digitView = new DigitView(background);
-		DigitController digitController = new DigitController(digit, digitView);
-		digitController.updateView();
+		Digit digitUnit = new Digit(0, 30, digit_position, 28);
+		DigitView digitUnitView = new DigitView(background);
+		DigitController digitUnitController = new DigitController(digitUnit, digitUnitView);
+		digitUnitController.updateView();
+		
+		Digit digitDecade = new Digit(0, 30, digit_position - 30, 28);
+		DigitView digitDecadeView = new DigitView(background);
+		DigitController digitDecadeController = new DigitController(digitDecade, digitDecadeView);
+		digitDecadeController.updateView();
+		
+		Digit digitHundred = new Digit(0, 30, digit_position - 60, 28);
+		DigitView digitHundredView = new DigitView(background);
+		DigitController digitHundredController = new DigitController(digitHundred, digitHundredView);
+		digitHundredController.updateView();		
 	}
-
 }

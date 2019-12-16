@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
  * This class is used to instantiate turtles.
  * @author XIXUAN WANG
  */
-public class Turtle extends Actor{
+public class Turtle extends Actor {
 	private Image turtle1;
 	private Image turtle2;
 	private Image turtle3;

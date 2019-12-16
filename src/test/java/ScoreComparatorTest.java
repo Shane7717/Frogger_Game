@@ -15,9 +15,9 @@ public class ScoreComparatorTest {
 	@Test
 	public void test() {
 		ScoreComparator comparator = ScoreComparator.getInstance();
-		Score instance1 = new Score("tester1", 200);
-		Score instance2 = new Score("tester2", 300);
-		Score instance3 = new Score("tester3", 200);
+		Score instance1 = new Score("tester1", 200, "null");
+		Score instance2 = new Score("tester2", 300, "null");
+		Score instance3 = new Score("tester3", 200, "null");
 		int result = comparator.compare(instance1, instance2);
 		assertEquals(1, result);
 		result = comparator.compare(instance2, instance1);

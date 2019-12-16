@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
  * This class is used to instantiate digits.
  * @author XIXUAN WANG
  */
-public class Digit extends Actor{
+public class Digit extends Actor {
 	private int size;
 	private int xpos;
 	private int ypos;
@@ -49,5 +49,5 @@ public class Digit extends Actor{
 	public void setDigit(int digit) {
 		this.digit = digit;
 		setImage(new Image("file:src/main/resources/images/numbers/"+digit+".png", size, size, true, true));
-	}	
+	}
 }

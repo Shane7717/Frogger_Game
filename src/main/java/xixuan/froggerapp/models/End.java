@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
  * This class is used to instantiate ends.
  * @author XIXUAN WANG
  */
-public class End extends Actor{
+public class End extends Actor {
 	private boolean activated = false;
 	private String imageLink;
 	private int size = 60;

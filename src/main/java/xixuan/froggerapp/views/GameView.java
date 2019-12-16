@@ -86,8 +86,8 @@ public class GameView {
 	private Integer second = 1;		
 	
 	/** The countdown timerlabel shown in the left bottom of the game. */
-	private Label timerlabel;		
-	
+	private Label timerlabel;	
+		
 	/**
 	 * This launches all the elements of the game scene and thus game begins
 	 */
@@ -103,18 +103,11 @@ public class GameView {
 		FroggerApp.getPrimaryStage().setScene(mainScene);
 		FroggerApp.getPrimaryStage().show();
 		(MenuSceneController.beforeGameSound).stop();
-		startSettings();
-	}
-	
-	/**
-	 * This sets the music and timer of the game
-	 */
-	public void startSettings() {
-		background.playMusic();    
+		background.playMusic();
 		createTimer();
-        timer.start();
-    }
-	
+		timer.start();		
+	}
+		
 	/**
 	 * This creates the timer of the game
 	 */
@@ -253,15 +246,13 @@ public class GameView {
      * @param n the integer number that will be displayed.
      */
     //Set scores on screen in the game
-    public void setNumber(int n) {
-    	int shift = 0;
-    	while (n > 0) {
-    		int d = n / 10;
-    		int k = n - d * 10;
-    		n = d;
-    		background.add(new Digit(k, 30, digit_position - shift, 28));
-    		shift+=30;
-    	}
+    public void setNumber(int n) {   
+    	int hundred = n / 100;
+    	int decade = (n - hundred * 100) / 10;
+    	int unit = n - hundred * 100 - decade * 10;   		
+    	background.add(new Digit(unit, 30, digit_position, 28));
+    	background.add(new Digit(decade, 30, digit_position - 30, 28));
+    	background.add(new Digit(hundred, 30, digit_position - 60, 28));    	
     }
     
     /**
@@ -373,7 +364,7 @@ public class GameView {
     public void setCountDown() {
     	timerlabel = new Label();
         timerlabel.setLayoutX(200);
-     	timerlabel.setLayoutY(735);
+     	timerlabel.setLayoutY(745);
      	timerlabel.setStyle("-fx-font-size:26");
      	timerlabel.setTextFill(Color.PINK);
      	background.getChildren().add(timerlabel);

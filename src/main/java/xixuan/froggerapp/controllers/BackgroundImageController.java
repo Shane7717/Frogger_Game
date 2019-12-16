@@ -29,14 +29,6 @@ public class BackgroundImageController {
 		model.setImageLink(imageLink);
 	}
 
-	public void setImageWidth(int imageWidth) {
-		model.setImageWidth(imageWidth);
-	}
-
-	public void setImageHeight(int imageHeight) {
-		model.setImageHeight(imageHeight);
-	}
-
 	/** 
 	 * This uses the object 'view' to display the background object(model) in the game. 
 	 */

@@ -362,16 +362,17 @@ public class Frog extends Actor {
 		} 
 		
 		//Intersect with wet turtles
-		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) 
-			move(turtleIntersectSpeed,0);
-		
-		//Intersect with wet turtles
 		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) 
 				waterDeath = true;
 			else 
 				move(turtleIntersectSpeed,0);
 		}
+		
+		//Intersect with turtles
+		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) 
+			move(turtleIntersectSpeed,0);
+		
 		
 		//Intersect with ends
 		else if (getIntersectingObjects(End.class).size() >= 1) {
@@ -441,5 +442,6 @@ public class Frog extends Actor {
 		frogSoundEffect.play();
 		sound = null;
 		frogSoundEffect = null;
-	}	
+	}
+	
 }

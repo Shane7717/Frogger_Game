@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
  * This class is used to instantiate crocodiles.
  * @author XIXUAN WANG
  */
-public class Crocodile extends Actor{
+public class Crocodile extends Actor {
 	private Image crocodile1;
 	private Image crocodile2;
 	private Image crocodile3;
@@ -81,5 +81,6 @@ public class Crocodile extends Actor{
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
 		setY(this.ypos);
-	}	
+	}
+
 }

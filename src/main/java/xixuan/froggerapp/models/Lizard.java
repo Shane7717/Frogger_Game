@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
  * This class is used to instantiate lizards.
  * @author XIXUAN WANG
  */
-public class Lizard extends Actor{
+public class Lizard extends Actor {
 	private Image lizard1;
 	private Image lizard2;
 	private Image lizard3;

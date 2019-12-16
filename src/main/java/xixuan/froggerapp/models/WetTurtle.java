@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
  * This class is used to instantiate wet turtles.
  * @author XIXUAN WANG
  */
-public class WetTurtle extends Actor{
+public class WetTurtle extends Turtle {
 	private Image wetturtle1;
 	private Image wetturtle2;
 	private Image wetturtle3;
@@ -18,10 +18,7 @@ public class WetTurtle extends Actor{
 	private boolean sunk = false;
 	
 	public WetTurtle(int size, int xpos, int ypos, double speed) {
-		setSize(size);
-		setXpos(xpos);
-		setYpos(ypos);
-		setSpeed(speed);			
+		super(size, xpos, ypos, speed);			
 		wetturtle1 = new Image("file:src/main/resources/images/turtles/TurtleAnimation1.png", this.size, this.size, true, true);
 		wetturtle2 = new Image("file:src/main/resources/images/turtles/TurtleAnimation2Wet.png", this.size, this.size, true, true);
 		wetturtle3 = new Image("file:src/main/resources/images/turtles/TurtleAnimation3Wet.png", this.size, this.size, true, true);
@@ -83,5 +80,5 @@ public class WetTurtle extends Actor{
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
 		setY(this.ypos);
-	}	
+	}
 }

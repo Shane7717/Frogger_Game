@@ -9,13 +9,14 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class Score implements Serializable {
 	
-
 	private int score;
 	private String name;
+	private String level;
 	
-	public Score(String name, int score) {
+	public Score(String name, int score, String level) {
 		this.name = name;
 		this.score = score;
+		this.level = level;
 	}
 	
 	/**
@@ -32,5 +33,13 @@ public class Score implements Serializable {
 	 */
 	public String getName() {
 		return this.name;
+	}
+	
+	/**
+	 * Player level getter
+	 * @return player's chose difficulty level
+	 */
+	public String getLevel() {
+		return this.level;
 	}
 }

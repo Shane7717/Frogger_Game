@@ -2,6 +2,7 @@ package main.java.xixuan.froggerapp.highscores;
 
 import java.util.*;
 import java.io.*;
+import main.java.xixuan.froggerapp.controllers.LevelPageSceneController;
 
 /**
  * This class manages all the relevant functionalities of highscores
@@ -57,7 +58,7 @@ public class HighscoreManager {
      */
     public void addScore(String name, int score) {
         loadScoreFile();
-        scores.add(new Score(name, score));
+        scores.add(new Score(name, score, LevelPageSceneController.level));
         updateScoreFile();
     }
     
@@ -119,9 +120,10 @@ public class HighscoreManager {
     	//The function will only have the top 10 players shown
     	int maxShown = 10;
     	
-    	String[] highscores  = new String[2];
+    	String[] highscores  = new String[3];
     	highscores[0] = "";
-    	highscores[1] = "";  	
+    	highscores[1] = "";
+    	highscores[2] = "";
        
         ArrayList<Score> scores;
         scores = getScores();
@@ -134,6 +136,7 @@ public class HighscoreManager {
         while (i < x) {
             highscores[0] += (i + 1) + ".\t"+scores.get(i).getName()+"\n"; 
             highscores[1] += scores.get(i).getScore() + "\n";
+            highscores[2] += scores.get(i).getLevel() + "\n";
             i++;
         }
         return highscores;
@@ -148,6 +151,5 @@ public class HighscoreManager {
     		uniqueHSManager = new HighscoreManager();
     	}
     	return uniqueHSManager;
-    }
-    
+    }    
 }

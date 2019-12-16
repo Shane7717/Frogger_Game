@@ -11,12 +11,6 @@ Key refactoring for classes and interfaces (Where and Why)
 Additions to the game
 
 
-
-
-
-
-
-
 -Encapsulation-
 Setting private data fileds and the corresponding methods to set them and return them is
 the reflection of encapsulation. So I changed code in Log for now, for better maintenance.

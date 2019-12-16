@@ -38,6 +38,9 @@ public class EndHighscoresSceneController {
 	/** This shows all the top 10 players' scores in the highscores */
 	@FXML private Label hsScore;
 	
+	/** This shows all the top 10 players' levels in the highscores */
+	@FXML private Label hsLevel;
+	
 	/** This shows whether or not the player has won the game */
 	@FXML private Label state;
 	
@@ -55,7 +58,7 @@ public class EndHighscoresSceneController {
 	
 	/** This checks whether or not a player has submitted his name twice */
 	private int check;
-	
+		
 	//Constructor
 	public EndHighscoresSceneController(int score, int lifeNum, int second) {
 		this.score = score;
@@ -84,6 +87,7 @@ public class EndHighscoresSceneController {
 		scoreLabel.setText("YOUR FINAL SCORE: " + String.valueOf(score));
 		hsName.setText((hs_manager.getHighscoreString())[0]);
 		hsScore.setText((hs_manager.getHighscoreString())[1]);
+		hsLevel.setText((hs_manager.getHighscoreString())[2]);
 		
 		submitButton.setOnAction(event -> {
 			this.name = nameField.getText();						
@@ -99,6 +103,7 @@ public class EndHighscoresSceneController {
 					hs_manager.addScore(name, score);
 					hsName.setText((hs_manager.getHighscoreString())[0]);
 					hsScore.setText((hs_manager.getHighscoreString())[1]);
+					hsLevel.setText((hs_manager.getHighscoreString())[2]);
 					check = 1;
 				} else {
 					Alert alert = new Alert(AlertType.INFORMATION);
