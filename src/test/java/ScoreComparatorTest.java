@@ -6,7 +6,8 @@ import main.java.xixuan.froggerapp.highscores.*;
 
 /**
  * This class tests the correctness of ScoreComparator.<br>
- * Specifically, it tests the method "compare" of ScoreComparator.
+ * Specifically, it tests the method "compare" of ScoreComparator. <br>
+ * This ensures the correct order of the highscores ranking.
  * @see main.java.xixuan.froggerapp.highscores.ScoreComparator
  * @author XIXUAN WANG
  */
