@@ -87,11 +87,13 @@ it is both very entertaining and challenging, and it has gained an enormous foll
 *  **Count Down Timer**<br>
     *  Set the count down timer at the bottom of the game screen. 
     *  This is only not validated in the ```Easy``` difficulty level.
-    *  Set the time to be 80 seconds.<br><br>
+    *  Set the time to be 80 seconds.<br>
+    <img src="READMEimages/time.png" alt="time" width="250" height="50"><br><br>
 
 *  **Life Symbol**<br>
     *  Set the visual life symbols at the top of the game screen to show the number of lives that the frog got.
-    *  Different number of lives for different difficulty levels.<br><br>
+    *  Different number of lives for different difficulty levels.<br>
+    <img src="READMEimages/lifeSymbol.png" alt="lifeSymbol" width="100" height="50"><br><br>
 
 *  **Different Difficutly Levels**<br>
     *  These levels include ```Easy```, ```Normal```, ```Hard```, and ```Extra```. 
@@ -107,14 +109,15 @@ it is both very entertaining and challenging, and it has gained an enormous foll
 *  **Fundamental Settings**<br>
     *  Set the game pause button in the game
     *  Set the music pause button in the game
-    *  Set the game quit button in the game<br><br>
+    *  Set the game quit button in the game<br>
+    <img src="READMEimages/settings.png" alt="settings" width="250" height="50"><br><br>
 
 * **Highscores**<br>
     *  When game ends, the player can submit his name and score to the hard disk score file.
     *  The player is not allowed to submit his information twice.
     *  After the player's submission, the highscores ranking will be updated.
     *  The highscores ranking contain the player's name, score and the difficulty level that he chose.
-    *  Use ```.dat``` format file to keep the record of all players' information. This significantly avoids cheating.
+    *  Use ```.dat``` format file to keep the record of all players' information. This significantly avoids cheating.<br><br>
 
 *  A menu screen
 *  A game introduction screen
