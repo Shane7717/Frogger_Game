@@ -67,7 +67,7 @@ it is both very entertaining and challenging, and it has gained an enormous foll
 
 
 <h3> Current Class Diagram </h3>
-
+<img src="READMEimages/classDiagram.png" alt="classDiagram" width="2000" height="800">
 
 
 <br><br>
@@ -78,7 +78,11 @@ it is both very entertaining and challenging, and it has gained an enormous foll
     *  These objects are totally new elements which never occur in the original version.
     *  A crocodile has three forms when moving. When it gets crazy(red), if the frog is currently standing on it, it will die immediately.
        The frog will be safe if the crocodile is not getting crazy.
-    *  The frog will be eaten when it is close to a huge lizard. <br><br>
+    *  The frog will be eaten when it is close to a huge lizard. <br>
+    <img src="READMEimages/closeCrocodile.png" alt="first form" width="100" height="50">&nbsp;&nbsp;
+    <img src="READMEimages/openCrocodile.png" alt="second form" width="100" height="50">&nbsp;&nbsp;
+    <img src="READMEimages/deathCrocodile.png" alt="last form" width="100" height="50">&nbsp;&nbsp;
+    <img src="READMEimages/lizard.png" alt="test" width="100" height="50"><br><br>
     
 *  **Count Down Timer**<br>
     *  Set the count down timer at the bottom of the game screen. 
@@ -119,6 +123,3 @@ it is both very entertaining and challenging, and it has gained an enormous foll
 *  A symbol button to turn on or turn off the background music manually
 *  Updated images of some game elements(```Log```,```Obstacle```, ```BackgroundImage```)
 *  CSS and external fonts embeded in all ```.fxml``` files
-
-
-<img src="READMEimages/test.png" alt="test" width="50" height="50">
