@@ -62,6 +62,36 @@ it is both very entertaining and challenging, and it has gained an enormous foll
 *  Fixed the parameter order in the constructor of ```Obstacle```, since it was different from that of other model classes.
 *  Renamed ```Animal``` to ```Frog```. 
 *  Extracted much of the code in the constructor of ```Frog``` and make them into different specific functions.
+<br><br><br>
+
+
+<h3> Current Class Diagram </h3>
+
+
+<h3> Key Changes for Extension </h3>
+
+*  **Crocodiles and Huge Lizards**<br>
+    *  Added crocodiles and huge lizards into the game (```Crocodile``` and ```Lizard```), and they occur in different levels of this game. 
+    *  These objects are totally new elements which never occur in the original version.
+    *  A crocodile has three forms when moving. When it gets crazy(red), if the frog is currently standing on it, it will die immediately.
+       The frog will be safe if the crocodile is not getting crazy.
+    *  The frog will be eaten when it is close to a huge lizard. <br>
+    
+    
+
+*  **Different Difficutly Levels**<br>
+    *  These levels include ```Easy```, ```Normal```, ```Hard```, and ```Extra```. 
+    *  As for ```Easy``` level, this is the classic arcade mode. All objects in the game are moving quite slowly.
+    *  As for ```Normal``` level, objects are speeding up a little bit, and 
+
+
+
+*  A menu screen
+*  A game introduction screen
+*  A highscores screen which can be viewed after clicking the button in the menu
+*  Background music after launching the game
+*  A symbol button to turn on or turn off the background music manually
+*  Updated images of some game elements(```Log```,```Obstacle```, ```BackgroundImage```)
 
 
 
