@@ -1,6 +1,6 @@
 *This is the maintenance and extension of Frogger.*<br><br>
 **Author**: Xixuan Wang (20030619 scyxw3)<br>
-**Tested on**: Lab machine & Mac Java 10 JavaFX 10.0.2<br>
+**Tested on**: Lab machine & Mac Java 10 JavaFX 10.0.2 using Eclipse<br>
 **Build script**: Maven - set this as goals: ```compile exec:java -Dexec.mainClass="main.java.xixuan.froggerapp.FroggerApp" ```
 
 <br>
@@ -10,23 +10,31 @@ it is both very entertaining and challenging, and it has gained an enormous foll
 
 <h3>Key Changes for Maintenance</h3>
 
-* MVC Design Pattern<br>  
+* **MVC Design Pattern**<br>  
     *  Almost each visual object in this game is applied MVC(model-view-controller) design pattern. For those objects, 
        each one has its own controller and viewer. The controller controls relevant parameters and settings of this object,
        and the viewer is accountable for displaying this object on the screen. 
-       *  Where: each class in  ```main.
-       
     *  All the scenes after launching the game have also implemented MVC design pattern. Each ```.fxml``` file has its own controller,
-       controlling relevant layout of scenes as well as adding switch functionality for each button.
-    *  
+       controlling relevant layout of scenes as well as adding switch functionality for each button. <br>
+       
+        ***Where***: each model class in  ```main.java.xixuan.froggerapp.models``` is applied MVC.<br>
+        ***Why***: This is very beneficial for maintenance because relevant attributes of an object can be modified or extended very easily,
+        just by using its controller. When setting different difficutly levels of this game, we can just use controllers to achieve that,
+        by setting different parameters of the corresponding objects. We don't have to create different views in this way, hence 
+        significantly reducing the usage of memory.
     
+* **Maven** <br>
+   *  Maven is a powerful management tool used for projects build.<br><br>
+        ***Where***: The whold project is set up using Maven.<br>
+        ***Why***: This makes the Frogger application IDE-independent, without restricting to Eclipse only. 
+                It also provides project information (log document, dependency list, unit test reports etc.).
+                We can add jars and other dependencies of the project easily using the help of maven.
 
 
 
 
 
-
-
+<br><br><br>
 --maven--
 
 compile exec:java -Dexec.mainClass="main.java.xixuan.froggerapp.FroggerApp"
