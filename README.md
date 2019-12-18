@@ -23,13 +23,20 @@ it is both very entertaining and challenging, and it has gained an enormous foll
         by setting different parameters of the corresponding objects. We don't have to create different views in this way, hence 
         significantly reducing the usage of memory.
     
+
 * **Maven** <br>
    *  Maven is a powerful management tool used for projects build.<br><br>
         ***Where***: The whold project is set up using Maven.<br>
         ***Why***: This makes the Frogger application IDE-independent, without restricting to Eclipse only. 
                 It also provides project information (log document, dependency list, unit test reports etc.).
-                We can add jars and other dependencies of the project easily using the help of maven.
+                We can add jars and other dependencies of the project easily with the help of maven.<br><br>
 
+
+* **Single Responsibility**<br>
+    *  Each class and each method has its own single responsibility, and is responsible for doing only one thing. <br><br>
+       ***Where***: For example, method ```setPauseGameButton()``` in ```GameView``` is responsible only for setting a game-pause button
+       on the screen.  Besides, class ```ScoreComparator``` is only responsible for comparing two players' scores.<br>
+       ***Why***: 
 
 
 
