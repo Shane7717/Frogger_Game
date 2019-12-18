@@ -124,5 +124,7 @@ it is both very entertaining and challenging, and it has gained an enormous foll
 *  A highscores screen which can be viewed directly after clicking the button in the menu 
 *  Background music after launching the game
 *  A symbol button to turn on or turn off the background music manually
-*  Updated images of some game elements(```Log```,```Obstacle```, ```BackgroundImage```)
+*  Updated images of some game elements(```Log```,```Obstacle```, ```BackgroundImage```)<br>
+   <img src="READMEimages/car.png" alt="car" width="50" height="25">&nbsp;&nbsp;
+   <img src="READMEimages/log.png" alt="log" width="50" height="25">
 *  CSS and external fonts embeded in all ```.fxml``` files
