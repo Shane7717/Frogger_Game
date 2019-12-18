@@ -118,6 +118,7 @@ it is both very entertaining and challenging, and it has gained an enormous foll
 *  Background music after launching the game
 *  A symbol button to turn on or turn off the background music manually
 *  Updated images of some game elements(```Log```,```Obstacle```, ```BackgroundImage```)
+*  CSS embeded in all ```.fxml``` files
 
 
 <img src="READMEimages/test.png" alt="test" width="50" height="50">
