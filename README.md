@@ -21,7 +21,7 @@ it is both very entertaining and challenging, and it has gained an enormous foll
         ***Why***: This is very beneficial for maintenance because relevant attributes of an object can be modified or extended very easily,
         just by using its controller. When setting different difficutly levels of this game, we can just use controllers to achieve that,
         by setting different parameters of the corresponding objects. We don't have to create different views in this way, hence 
-        significantly reducing the usage of memory.
+        significantly reducing the usage of memory and space.
     
 
 * **Maven** <br>
@@ -35,8 +35,39 @@ it is both very entertaining and challenging, and it has gained an enormous foll
 * **Single Responsibility**<br>
     *  Each class and each method has its own single responsibility, and is responsible for doing only one thing. <br><br>
        ***Where***: For example, method ```setPauseGameButton()``` in ```GameView``` is responsible only for setting a game-pause button
-       on the screen.  Besides, class ```ScoreComparator``` is only responsible for comparing two players' scores.<br>
-       ***Why***: If one class does the job of two, it promotes tight coupling. Therefore, by implmenting single responsibility, 
+       on the screen. Besides, class ```ScoreComparator``` is only responsible for comparing two players' scores. More importantly, all
+       of my initializer classes in ```main.java.xixuan.froggerapp.initializers``` have only one job, which is initializing their corresponding
+       objects in the game.        
+
+       ***Why***: If one class does the job of two, it promotes tight coupling. Therefore, by implmenting single responsibility, the structure
+       of code is more clear, and it is easier to debug when bugs occur due to less coupling.<br><br>
+
+
+*  **Singleton Design Pattern**<br>  
+    *  Singleton design pattern ensures that a class only has one instance, and provides a global point of access to it.<br><br> 
+    ***Where***: This pattern is applied to classes ```HighscoreManager``` and ```ScoreComparator``` in my project. <br>
+    ***Why***: Only one instance of a class reduces the namespace, and it significantly improves the efficiency of both memory and space,
+    since creating multiple instances is rather inefficient.<br><br> 
+
+*  **Encapsulation**<br>
+    *  I made fields ```private``` and provide  ```public``` getters or setters to them when necessary.<br><br>
+    ***Where***: Encapsulation is applied mainly to all the model classes in ```main.java.xixuan.froggerapp.models``` <br>
+    ***Why***: This ensures the security of those fields, not allowing everyone to modify them. Also, 
+    it allows access to a level without revealing the complex details below that level. 
+
+
+
+
+
+
+
+*  **Bug**
+
+
+
+
+
+
 
 
 
