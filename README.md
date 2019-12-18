@@ -75,14 +75,27 @@ it is both very entertaining and challenging, and it has gained an enormous foll
     *  These objects are totally new elements which never occur in the original version.
     *  A crocodile has three forms when moving. When it gets crazy(red), if the frog is currently standing on it, it will die immediately.
        The frog will be safe if the crocodile is not getting crazy.
-    *  The frog will be eaten when it is close to a huge lizard. <br>
+    *  The frog will be eaten when it is close to a huge lizard. <br><br>
     
-    
+*  **Count Down Timer**<br>
+    *  Set the count down timer at the bottom of the game screen. 
+    *  This is only not validated in the ```Easy``` difficulty level.
+    *  Set the time to be 80 seconds.<br><br>
+
+*  **Life Symbol**<br>
+    *  Set the life symbols at the top of the game screen to show the number of lives that the frog got.
+    *  Different number of lives for different difficulty levels.
 
 *  **Different Difficutly Levels**<br>
     *  These levels include ```Easy```, ```Normal```, ```Hard```, and ```Extra```. 
     *  As for ```Easy``` level, this is the classic arcade mode. All objects in the game are moving quite slowly.
-    *  As for ```Normal``` level, objects are speeding up a little bit, and 
+    *  As for ```Normal``` level, objects are speeding up a little bit, and crocodiles occur.
+    *  As for ```Hard``` level, objects are moving very fast, and both crocodiles and huge lizards occur.
+    *  As for 
+    
+
+*  **Fundamental Settings**<br>
+*  **Life Symbol**<br>
 
 
 
