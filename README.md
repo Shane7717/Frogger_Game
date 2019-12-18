@@ -1,3 +1,8 @@
+This is the maintenance and extension of Frogger.<br>
+Author: Xixuan Wang<br>
+Tested on: Lab machine & Mac Java 10 JavaFX 10.0.2<br>
+Build script: Maven - set this as goals: ```compile exec:java -Dexec.mainClass="main.java.xixuan.froggerapp.FroggerApp" ```
+
 --maven--
 
 compile exec:java -Dexec.mainClass="main.java.xixuan.froggerapp.FroggerApp"
