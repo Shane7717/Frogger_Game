@@ -9,5 +9,6 @@ bin/*
 
 #ignore the .settings
 .settings
-/bin/
+
+#ignore target directory
 /target/

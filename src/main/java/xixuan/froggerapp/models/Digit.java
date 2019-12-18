@@ -6,9 +6,13 @@ import javafx.scene.image.Image;
  * This class is used to instantiate digits.
  * @author XIXUAN WANG
  */
-public class Digit extends Actor{
+public class Digit extends Actor {
 	private int size;
+	
+	/** The x position of this digit in the game. */
 	private int xpos;
+	
+	/** The y position of this digit in the game. */
 	private int ypos;
 	private int digit;
 	
@@ -44,10 +48,10 @@ public class Digit extends Actor{
 	
 	/**
 	 * This sets a specific integer number that the object represents.
-	 * @param digit the integer number that needs to be displayed in the game.
+	 * @param digit the integer that needs to be displayed in the game as part of the player's score.
 	 */
 	public void setDigit(int digit) {
 		this.digit = digit;
 		setImage(new Image("file:src/main/resources/images/numbers/"+digit+".png", size, size, true, true));
-	}	
+	}
 }

@@ -30,7 +30,7 @@ public abstract class Actor extends ImageView{
     /**
      * This gets the intersecting objects in arraylist.
      * @param <A> the generic type
-     * @param cls the class
+     * @param cls refers to the relevant intersecting classes
      * @return the intersecting objects in the form of arraylist.
      */
     public <A extends Actor> java.util.List<A> getIntersectingObjects(java.lang.Class<A> cls){
@@ -46,7 +46,7 @@ public abstract class Actor extends ImageView{
     /**
      * This gets one of the intersecting objects.
      * @param <A> the generic type
-     * @param cls the class
+     * @param cls refers to the relevant intersecting classes
      * @return one of the intersecting objects.
      */
     public <A extends Actor> A getOneIntersectingObject(java.lang.Class<A> cls) {
@@ -64,7 +64,5 @@ public abstract class Actor extends ImageView{
      * This makes it possible for different kinds of objects to act differently.
      * @param now the timestamp of the current frame given in nanoseconds.
      */
-    public abstract void act(long now);
-    
-    
+    public abstract void act(long now);   
 }

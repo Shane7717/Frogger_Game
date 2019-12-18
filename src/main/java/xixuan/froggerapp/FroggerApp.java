@@ -12,7 +12,8 @@ import javafx.stage.Stage;
  */
 public class FroggerApp extends Application {
 		
-	/** This is set static because all scenes occur in the same stage.*/
+	/** This is set static because all scenes occur in the same stage.<br><br>
+	 *  Other classes are able to access this variable very easily since it belongs to this class.*/
 	private static Stage primaryStage;
 		
 	public static void main(String[] args) {
@@ -21,7 +22,7 @@ public class FroggerApp extends Application {
 	
 	/**
 	 * This makes execution move to the javaFX thread.
-	 * @param  primaryStage		the primary stage
+	 * @param  primaryStage		the primary stage of the whole game
 	 * @throws Exception 		the exception that might occurs
 	 */
 	@Override
@@ -33,7 +34,11 @@ public class FroggerApp extends Application {
 	    primaryStage.setScene(menuScene);	 
 	    primaryStage.show();
 	}
-			
+	
+	/**
+	 * Primary stage getter
+	 * @return the primary stage that every scene shares
+	 */
 	public static Stage getPrimaryStage() {
 		return FroggerApp.primaryStage;
 	}

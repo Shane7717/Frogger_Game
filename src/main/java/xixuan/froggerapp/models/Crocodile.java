@@ -6,16 +6,27 @@ import javafx.scene.image.Image;
  * This class is used to instantiate crocodiles.
  * @author XIXUAN WANG
  */
-public class Crocodile extends Actor{
+public class Crocodile extends Actor {
+	/** The first state of animation of this moving crocodile.*/
 	private Image crocodile1;
+	
+	/** The second state of animation of this moving crocodile.*/
 	private Image crocodile2;
+	
+	/** The third state(crazy state) of animation of this moving crocodile.*/
 	private Image crocodile3;
+	
 	private double speed;
 	private int size;
+	
+	/** The x position of this crocodile in the game. */
 	private int xpos;
+	
+	/** The y position of this crocodile in the game. */
 	private int ypos;
 	
-	/** If the crocodile becomes red(crocodile3), this value will be set true.*/
+	/** If the crocodile becomes red(crazy), this value will be set true.<br><br>
+	 *  Therefore, the frog that player controls will die immediately.*/
 	private boolean crazyDeath = false;
 	 
 	//Constructor
@@ -81,5 +92,6 @@ public class Crocodile extends Actor{
 	public void setYpos(int ypos) {
 		this.ypos = ypos;
 		setY(this.ypos);
-	}	
+	}
+
 }

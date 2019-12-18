@@ -15,7 +15,7 @@ public class FrogView {
 	}
 	
 	/**
-	 * Display the frog that player controls in the game.
+	 * This displays the frog that player controls in the game.
 	 * @param model an instance of Frog
 	 */
 	public void viewFrog(Frog model) {

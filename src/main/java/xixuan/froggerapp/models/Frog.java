@@ -28,10 +28,10 @@ public class Frog extends Actor {
 	/** The jumping-style imgage when pressing "A" */
 	private Image imgA2;
 	
-	/** The jumping-style imgage when pressing "S" */
+	/** The left jumping-style imgage when pressing "S" */
 	private Image imgS2;
 	
-	/** The jumping-style imgage when pressing "D" */
+	/** The right jumping-style imgage when pressing "D" */
 	private Image imgD2;
 	
 	/** The scores that a player gains */
@@ -40,7 +40,7 @@ public class Frog extends Actor {
 	/** The number of ends that have already contained frogs */
 	private int endOccupy = 0;
 	
-	/** The real time that is increasing after game begins */
+	/** the timestamp of the current frame given in nanoseconds. */
 	private long now;
 	
 	/** This will be set to 0 if there's no water death checking for extra level. */
@@ -133,7 +133,7 @@ public class Frog extends Actor {
 	
 	/**
 	 * This checks the game stopping conditions.
-	 * @return <strong>true</strong> if all the frogs have ented ends or ther's on life for the frog
+	 * @return <strong>true</strong> if all the frogs have entered those 5 ends or the frog gets no life.
 	 * 	<br>   <strong>false</strong> otherwise
 	 */
 	public boolean getStop() {
@@ -362,16 +362,17 @@ public class Frog extends Actor {
 		} 
 		
 		//Intersect with wet turtles
-		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) 
-			move(turtleIntersectSpeed,0);
-		
-		//Intersect with wet turtles
 		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) 
 				waterDeath = true;
 			else 
 				move(turtleIntersectSpeed,0);
 		}
+		
+		//Intersect with turtles
+		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) 
+			move(turtleIntersectSpeed,0);
+		
 		
 		//Intersect with ends
 		else if (getIntersectingObjects(End.class).size() >= 1) {
@@ -419,7 +420,7 @@ public class Frog extends Actor {
 	}
 	
 	/**
-	 * This sets the number of lives.
+	 * This sets the number of lives of the frog.
 	 * @param value an integer number of lives
 	 */
 	public void setLiftNum(int value) {
@@ -441,5 +442,6 @@ public class Frog extends Actor {
 		frogSoundEffect.play();
 		sound = null;
 		frogSoundEffect = null;
-	}	
+	}
+	
 }

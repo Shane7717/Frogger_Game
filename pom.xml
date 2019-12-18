@@ -33,7 +33,7 @@
         <configuration>
           <release>10</release>            
         </configuration>
-      </plugin>     
+      </plugin> 
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>

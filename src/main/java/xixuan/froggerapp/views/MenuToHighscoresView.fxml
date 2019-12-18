@@ -9,14 +9,14 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="800.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../resources/images/scenes/otherPages.png" />
          </image>
       </ImageView>
-      <Label fx:id="hsName" layoutX="72.0" layoutY="227.0" prefHeight="352.0" prefWidth="317.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Names" textFill="#e11212">
+      <Label fx:id="hsName" layoutX="51.0" layoutY="227.0" prefHeight="352.0" prefWidth="256.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Names" textFill="#e11212">
          <font>
             <Font name="ArcadeClassic" size="26.0" />
          </font>
@@ -26,7 +26,7 @@
             <Font name="Xingkai SC Bold" size="32.0" />
          </font>
       </Button>
-      <Label fx:id="hsScore" layoutX="456.0" layoutY="224.0" prefHeight="352.0" prefWidth="118.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Scores" textFill="#e11212">
+      <Label fx:id="hsScore" layoutX="489.0" layoutY="227.0" prefHeight="352.0" prefWidth="103.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="Scores" textFill="#e11212">
          <font>
             <Font name="ArcadeClassic" size="26.0" />
          </font>
@@ -53,5 +53,10 @@
             </ImageView>
          </graphic>
       </Button>
+      <Label fx:id="hsLevel" layoutX="307.0" layoutY="227.0" prefHeight="352.0" prefWidth="118.0" stylesheets="@../../../../resources/css/highscoresSubLabel.css" text="LEVELs" textFill="#e11212">
+         <font>
+            <Font name="ArcadeClassic" size="26.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

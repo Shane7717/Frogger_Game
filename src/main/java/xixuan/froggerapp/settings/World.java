@@ -15,7 +15,7 @@ import main.java.xixuan.froggerapp.models.Actor;
 
 
 /**
- * This abstract class defines fundamental attributes/settings of the Frogger game. 
+ * This abstract class defines fundamental attributes/settings of the whole Frogger game. 
  * @author XIXUAN WANG
  */
 public abstract class World extends Pane {
@@ -65,7 +65,7 @@ public abstract class World extends Pane {
     }
 
     /**
-     * This creates the timer.
+     * This creates the timer that is the pulse of this game.
      */
     public void createTimer() {
         timer = new AnimationTimer() {
@@ -124,7 +124,7 @@ public abstract class World extends Pane {
 
     /**
      * This makes it possible for different kinds of objects to act differently.
-     * @param now the current time that is increasing when game begins.
+     * @param now the timestamp of the current frame given in nanoseconds.
      */
     public abstract void act(long now);
 }

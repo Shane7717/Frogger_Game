@@ -17,7 +17,8 @@ import main.java.xixuan.froggerapp.FroggerApp;
 public class MenuToHighscoresViewController {
 	@FXML private Label hsName;
 	@FXML private Label hsScore;
-	@FXML private Button backButton;
+	@FXML private Label hsLevel;
+	@FXML private Button backButton;	
 	private String[] scoreList;
 	
 	public MenuToHighscoresViewController(String[] scoreList) {
@@ -25,11 +26,12 @@ public class MenuToHighscoresViewController {
 	}
 		
 	/**
-	 * This displays the top 10 players' names and their corresponding scores on the screen.
+	 * This displays the top 10 players' names, difficulty levels and their corresponding scores on the screen.
 	 */
 	public void initialize() {
 		hsName.setText(scoreList[0]);
 		hsScore.setText(scoreList[1]);
+		hsLevel.setText(scoreList[2]);
 		backButton.setOnAction(event -> {
 			Parent root = null;
 			try {

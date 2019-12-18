@@ -7,7 +7,8 @@ package main.java.xixuan.froggerapp.initializers;
 public interface Initializable {
 	
 	/**
-	 * This initializes models or objects in the game
+	 * This initializes models or objects in the game<br><br>
+	 * This makes relevant initializer classes be able to initialize their corresponding instances.
 	 */
 	public void initialize();
 }

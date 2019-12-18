@@ -2,6 +2,7 @@ package main.java.xixuan.froggerapp.highscores;
 
 import java.util.*;
 import java.io.*;
+import main.java.xixuan.froggerapp.controllers.LevelPageSceneController;
 
 /**
  * This class manages all the relevant functionalities of highscores
@@ -42,7 +43,7 @@ public class HighscoreManager {
     }
     
     /**
-     * Sort the scores with the help of a score comparator
+     * This sorts the scores with the help of a score comparator
      */
     private void sort() {
         ScoreComparator comparator = ScoreComparator.getInstance();
@@ -50,19 +51,19 @@ public class HighscoreManager {
     }
     
     /**
-     * Adds the score and the corresponding player name into the scores arraylist.<br>
+     * This adds the score, difficulty level and the corresponding player name into the scores arraylist.<br>
      * And update the highscores disk file.
      * @param name player's name
      * @param score player's score
      */
     public void addScore(String name, int score) {
         loadScoreFile();
-        scores.add(new Score(name, score));
+        scores.add(new Score(name, score, LevelPageSceneController.level));
         updateScoreFile();
     }
     
     /**
-     * Load the highscores file.
+     * This loads the highscores file.
      */
     @SuppressWarnings("unchecked")
 	public void loadScoreFile() {
@@ -88,7 +89,7 @@ public class HighscoreManager {
     }
     
     /**
-     * Update the highscores disk file.
+     * This updates the highscores disk file.
      */
     public void updateScoreFile() {
         try {
@@ -111,7 +112,7 @@ public class HighscoreManager {
     }
     
     /**
-     * Gets the highscores names and corresponding scores.<br>
+     * This gets the highscores names, difficulty levels and corresponding scores.<br>
      * Also put them into an String array 
      * @return the highscores string array
      */
@@ -119,9 +120,10 @@ public class HighscoreManager {
     	//The function will only have the top 10 players shown
     	int maxShown = 10;
     	
-    	String[] highscores  = new String[2];
+    	String[] highscores  = new String[3];
     	highscores[0] = "";
-    	highscores[1] = "";  	
+    	highscores[1] = "";
+    	highscores[2] = "";
        
         ArrayList<Score> scores;
         scores = getScores();
@@ -134,6 +136,7 @@ public class HighscoreManager {
         while (i < x) {
             highscores[0] += (i + 1) + ".\t"+scores.get(i).getName()+"\n"; 
             highscores[1] += scores.get(i).getScore() + "\n";
+            highscores[2] += scores.get(i).getLevel() + "\n";
             i++;
         }
         return highscores;
@@ -148,6 +151,5 @@ public class HighscoreManager {
     		uniqueHSManager = new HighscoreManager();
     	}
     	return uniqueHSManager;
-    }
-    
+    }    
 }

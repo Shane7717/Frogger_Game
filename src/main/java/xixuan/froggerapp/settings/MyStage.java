@@ -7,7 +7,7 @@ import javafx.scene.media.MediaPlayer;
 
 
 /**
- * This class is used to instantiate the stage of Frogger game.
+ * This class is used to instantiate the stage of the whole Frogger game.
  * @author XIXUAN WANG
  */
 public class MyStage extends World{

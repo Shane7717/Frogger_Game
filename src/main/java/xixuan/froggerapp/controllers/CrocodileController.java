@@ -20,7 +20,6 @@ public class CrocodileController {
 		this.view = view;
 	}
 	
-	
 	public void setCrocodileSpeed(double speed) {
 		model.setSpeed(speed);
 	}

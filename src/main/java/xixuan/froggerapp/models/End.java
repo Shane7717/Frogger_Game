@@ -6,11 +6,17 @@ import javafx.scene.image.Image;
  * This class is used to instantiate ends.
  * @author XIXUAN WANG
  */
-public class End extends Actor{
+public class End extends Actor {
+	/** The boolean value that checks whether or not this end has contained a frog already*/
 	private boolean activated = false;
+	
 	private String imageLink;
 	private int size = 60;
+	
+	/** The x position of this end in the game. */
 	private int xpos;
+	
+	/** The y position of this end in the game. */
 	private int ypos;
 	
 	//Constructor
