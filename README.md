@@ -129,7 +129,8 @@ it is both very entertaining and challenging, and it has gained an enormous foll
 *  A menu screen
 *  A game introduction screen
 *  A highscores screen which can be viewed directly after clicking the button in the menu 
-*  Background music after launching the game
+*  Unique background music after launching the game
+*  Sound effect during the game when the frog jumps
 *  A symbol button to turn on or turn off the background music manually
 *  Updated images of some game elements(```Log```,```Obstacle```, ```BackgroundImage```)<br>
    <img src="READMEimages/car.png" alt="car" width="50" height="25">&nbsp;&nbsp;
