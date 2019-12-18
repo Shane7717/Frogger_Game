@@ -83,19 +83,22 @@ it is both very entertaining and challenging, and it has gained an enormous foll
     *  Set the time to be 80 seconds.<br><br>
 
 *  **Life Symbol**<br>
-    *  Set the life symbols at the top of the game screen to show the number of lives that the frog got.
-    *  Different number of lives for different difficulty levels.
+    *  Set the visual life symbols at the top of the game screen to show the number of lives that the frog got.
+    *  Different number of lives for different difficulty levels.<br><br>
 
 *  **Different Difficutly Levels**<br>
     *  These levels include ```Easy```, ```Normal```, ```Hard```, and ```Extra```. 
-    *  As for ```Easy``` level, this is the classic arcade mode. All objects in the game are moving quite slowly.
-    *  As for ```Normal``` level, objects are speeding up a little bit, and crocodiles occur.
-    *  As for ```Hard``` level, objects are moving very fast, and both crocodiles and huge lizards occur.
-    *  As for 
+    *  As for ```Easy``` level, this is the classic arcade mode. All objects in the game are moving quite slowly. Besides, there is
+       no time limit and no life limit for this level.
+    *  As for ```Normal``` level, objects are speeding up a little bit, and crocodiles occur. There are three lives for the frog,
+       and the time limit is 80 seconds.
+    *  As for ```Hard``` level, objects are moving very fast, and both crocodiles and huge lizards occur. 
+       There are four lives for the frog, and the time limit is 80 seconds.
+    *  As for ```Extra``` level, this is the entertaining mode of Frogger. There is only one type of objects in this level - 
+       ```RacingCar```. There are five lives for the frog, and the time limit is 80 seconds.<br><br> 
     
-
 *  **Fundamental Settings**<br>
-*  **Life Symbol**<br>
+    *  
 
 
 
