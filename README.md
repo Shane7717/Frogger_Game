@@ -1,7 +1,31 @@
-This is the maintenance and extension of Frogger.<br>
-Author: Xixuan Wang<br>
-Tested on: Lab machine & Mac Java 10 JavaFX 10.0.2<br>
-Build script: Maven - set this as goals: ```compile exec:java -Dexec.mainClass="main.java.xixuan.froggerapp.FroggerApp" ```
+*This is the maintenance and extension of Frogger.*<br><br>
+**Author**: Xixuan Wang (20030619 scyxw3)<br>
+**Tested on**: Lab machine & Mac Java 10 JavaFX 10.0.2<br>
+**Build script**: Maven - set this as goals: ```compile exec:java -Dexec.mainClass="main.java.xixuan.froggerapp.FroggerApp" ```
+
+<br>
+<h3>Brief Introduction</h3>
+Frogger is a classic arcade game, originated in 1980s. Although the objective of Frogger is simplistic,
+it is both very entertaining and challenging, and it has gained an enormous following.<br><br>
+
+<h3>Key Changes for Maintenance</h3>
+
+* MVC Design Pattern<br>  
+    *  Almost each visual object in this game is applied MVC(model-view-controller) design pattern. For those objects, 
+       each one has its own controller and viewer. The controller controls relevant parameters and settings of this object,
+       and the viewer is accountable for displaying this object on the screen. 
+       *  Where: each class in  ```main.
+       
+    *  All the scenes after launching the game have also implemented MVC design pattern. Each ```.fxml``` file has its own controller,
+       controlling relevant layout of scenes as well as adding switch functionality for each button.
+    *  
+    
+
+
+
+
+
+
 
 --maven--
 
