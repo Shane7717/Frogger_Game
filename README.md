@@ -36,7 +36,7 @@ it is both very entertaining and challenging, and it has gained an enormous foll
     *  Each class and each method has its own single responsibility, and is responsible for doing only one thing. <br><br>
        ***Where***: For example, method ```setPauseGameButton()``` in ```GameView``` is responsible only for setting a game-pause button
        on the screen.  Besides, class ```ScoreComparator``` is only responsible for comparing two players' scores.<br>
-       ***Why***: 
+       ***Why***: If one class does the job of two, it promotes tight coupling. Therefore, by implmenting single responsibility, 
 
 
 
