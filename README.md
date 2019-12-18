@@ -56,7 +56,8 @@ it is both very entertaining and challenging, and it has gained an enormous foll
     it allows access to a level without revealing the complex details below that level, hence enhancing the maintenance.<br><br>
 
 *  **Bug Fixed**
-    *  The original score system has a bug: if currently a player's score is 120, after his death, the score becomes 170, which 
+    *  Fix1: The frog can't enter the same end for the second time.
+    *  Fix2: The original score system has another bug: if currently a player's score is 120, after his death, the score becomes 170, which 
     is absolutely a mistake. So I fixed this bug by applying a new algorithm.<br><br>
 
 *  Fixed the parameter order in the constructor of ```Obstacle```, since it was different from that of other model classes.
@@ -68,6 +69,8 @@ it is both very entertaining and challenging, and it has gained an enormous foll
 <h3> Current Class Diagram </h3>
 
 
+
+<br><br>
 <h3> Key Changes for Extension </h3>
 
 *  **Crocodiles and Huge Lizards**<br>
@@ -98,35 +101,23 @@ it is both very entertaining and challenging, and it has gained an enormous foll
        ```RacingCar```. There are five lives for the frog, and the time limit is 80 seconds.<br><br> 
     
 *  **Fundamental Settings**<br>
-    *  
+    *  Set the game pause button in the game
+    *  Set the music pause button in the game
+    *  Set the game quit button in the game<br><br>
 
-
+* **Highscores**<br>
+    *  When game ends, the player can submit his name and score to the hard disk score file.
+    *  The player is not allowed to submit his information twice.
+    *  After the player's submission, the highscores ranking will be updated.
+    *  The highscores ranking contain the player's name, score and the difficulty level that he chose.
+    *  Use ```.dat``` to keep the record of all players' information. This significantly avoids cheating.
 
 *  A menu screen
 *  A game introduction screen
-*  A highscores screen which can be viewed after clicking the button in the menu
+*  A highscores screen which can be viewed directly after clicking the button in the menu 
 *  Background music after launching the game
 *  A symbol button to turn on or turn off the background music manually
 *  Updated images of some game elements(```Log```,```Obstacle```, ```BackgroundImage```)
 
 
-
-
-
-
-
-<br><br><br>
 <img src="READMEimages/test.png" alt="test" width="50" height="50">
-
-
-
-Additions to the game
-
---Highscores--
-We will be using a .dat file to keep the high-scores in, this will avoid cheating.
-
---feature1--
-You can't enter nothing before clicking the "submit" button, which means you have to enter
-your name or just quit the game directly
-
-frog can't enter the same end for the second time
