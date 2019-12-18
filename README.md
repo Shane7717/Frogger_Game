@@ -110,7 +110,7 @@ it is both very entertaining and challenging, and it has gained an enormous foll
     *  The player is not allowed to submit his information twice.
     *  After the player's submission, the highscores ranking will be updated.
     *  The highscores ranking contain the player's name, score and the difficulty level that he chose.
-    *  Use ```.dat``` to keep the record of all players' information. This significantly avoids cheating.
+    *  Use ```.dat``` format file to keep the record of all players' information. This significantly avoids cheating.
 
 *  A menu screen
 *  A game introduction screen
