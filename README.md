@@ -8,6 +8,13 @@
 Frogger is a classic arcade game, originated in 1980s. Although the objective of Frogger is simplistic,
 it is both very entertaining and challenging, and it has gained an enormous following.<br><br>
 
+<h3>Screenshots</h3>
+ <img src="READMEimages/screenshot1.png" alt="screenshot1" width="400" height="400">&nbsp;&nbsp;
+ <img src="READMEimages/screenshot2.png" alt="screenshot2" width="400" height="400">&nbsp;&nbsp;<br>
+ <img src="READMEimages/screenshot3.png" alt="screenshot3" width="400" height="400">&nbsp;&nbsp;
+ <img src="READMEimages/screenshot4.png" alt="screenshot4" width="400" height="400">&nbsp;&nbsp;<br><br>
+
+
 <h3>Key Changes for Maintenance</h3>
 
 * **MVC Design Pattern**<br>  
@@ -67,7 +74,7 @@ it is both very entertaining and challenging, and it has gained an enormous foll
 
 
 <h3> Current Class Diagram </h3>
-<img src="READMEimages/classDiagram.png" alt="classDiagram" width="2000" height="800">
+<img src="READMEimages/classDiagram.png" alt="classDiagram" width="1500" height="600">
 
 
 <br><br>
