@@ -1,7 +1,5 @@
 
 
-
-
 --maven--
 
 compile exec:java -Dexec.mainClass="main.java.xixuan.froggerapp.FroggerApp"
