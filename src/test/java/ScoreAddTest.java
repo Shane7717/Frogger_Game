@@ -10,7 +10,7 @@ import main.java.xixuan.froggerapp.highscores.HighscoreManager;
  * @see main.java.xixuan.froggerapp.highscores.HighscoreManager
  * @author XIXUAN WANG
  */
-public class scoreAddTest {
+public class ScoreAddTest {
 
 	@Test
 	public void test() {

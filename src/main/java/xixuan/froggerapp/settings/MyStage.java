@@ -22,7 +22,7 @@ public class MyStage extends World{
 	 * This plays the background music.
 	 */
 	public void playMusic() {
-		String musicFile = "src/main/resources/music/FroggerMainSound.mp3";   
+		String musicFile = "src/main/resources/music/FroggerMainMusic.mp3";   
 		Media music = new Media(new File(musicFile).toURI().toString());
 		mediaPlayer = new MediaPlayer(music);
 		mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
