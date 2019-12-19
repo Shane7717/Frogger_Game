@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="test.java.ScoreComparatorTest" time="0" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="test.java.ScoreComparatorTest" time="0.005" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="10.0.2+13"/>
@@ -26,7 +26,7 @@
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/Shane/Desktop/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf3056097923018600587.tmp"/>
+    <property name="classworlds.conf" value="/Users/Shane/Desktop/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf14827723127853625710.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/Shane/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="jdk.debug" value="release"/>
@@ -63,5 +63,5 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="test.java.ScoreComparatorTest" name="test" time="0"/>
+  <testcase classname="test.java.ScoreComparatorTest" name="test" time="0.005"/>
 </testsuite>
