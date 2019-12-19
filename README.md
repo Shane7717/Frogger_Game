@@ -1,6 +1,6 @@
 *This is the maintenance and extension of Frogger.*<br><br>
 **Author**: Xixuan Wang (20030619 scyxw3)<br>
-**Tested on**: Lab machine & Mac Java 10 JavaFX 10.0.2 using Eclipse<br>
+**Tested on**: Lab Machine & Mac Java 10 JavaFX 10.0.1(on Lab Machine) and 10.0.2 (on Mac) using Eclipse<br>
 **Build script**: Maven - set this as goals in run configuration of Maven Build: <br>
 ```compile exec:java -Dexec.mainClass="main.java.xixuan.froggerapp.FroggerApp" ```
 
