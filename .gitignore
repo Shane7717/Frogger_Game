@@ -12,3 +12,8 @@ bin/*
 
 #ignore target directory
 /target/
+
+#ignore others
+.classpath
+.project
+
